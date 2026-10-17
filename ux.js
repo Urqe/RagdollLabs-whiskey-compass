@@ -49,7 +49,7 @@ function updateProfileColor() {
     malt: "Single malt",
     bourbon: "Bourbon",
     rye: "Rye",
-    wheat: "Wheat whiskey",
+    wheat: "Wheated bourbon",
     "pot-still": "Pot still",
     blended: "Blended",
     corn: "Corn whiskey",
@@ -228,9 +228,9 @@ function handleSearchResultsKeydown(event) {
 function renderFeaturedDiscoveries() {
   const { styles, regions } = WhiskeyCompass.getData();
   const picks = [
-    ["assyrtiko", "santorini"],
-    ["mavrud", "thracian-valley"],
-    ["tannat", "canelones"]
+    ["peated-malt", "islay"],
+    ["sherry-malt", "speyside"],
+    ["bourbon", "kentucky"]
   ];
   const container = document.getElementById("featuredDiscoveries");
   container.replaceChildren();
@@ -253,7 +253,7 @@ function renderFeaturedDiscoveries() {
     meta.textContent = `${region.name} · ${region.country}`;
     const cue = document.createElement("span");
     cue.className = "tasting-cue";
-    cue.textContent = ({ assyrtiko: "Citrus · saline · crisp", mavrud: "Dark fruit · spice · structure", tannat: "Black fruit · firm · bold" })[styleId];
+    cue.textContent = ({ "peated-malt": "Bonfire smoke · brine · medicinal", "sherry-malt": "Dried fruit · walnut · chocolate", bourbon: "Caramel corn · vanilla · charred oak" })[styleId];
     button.append(strong, meta, cue);
     button.addEventListener("click", () => {
       showAppShell();

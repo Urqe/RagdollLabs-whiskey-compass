@@ -5,37 +5,40 @@
     "cocoa",
     "brownie"
   ],
-  "cheese": [
-    "cheese",
+  "blue cheese": [
     "blue cheese",
     "stilton",
-    "cheddar",
-    "brie"
+    "roquefort",
+    "gorgonzola"
   ],
   "bbq": [
     "bbq",
     "barbecue",
     "ribs",
     "brisket",
+    "grilled meats",
     "grill",
     "grilled"
   ],
-  "smoke": [
+  "smoked salmon": [
     "smoked salmon",
     "smoked fish",
-    "smoked meats",
-    "lox"
+    "lox",
+    "smoked meats"
   ],
-  "nuts": [
+  "oysters": [
+    "oysters",
+    "shellfish",
+    "seafood"
+  ],
+  "pecan pie": [
+    "pecan pie",
     "nuts",
     "walnuts",
     "pecans",
-    "pecan pie",
-    "almonds"
-  ],
-  "dessert": [
-    "dessert",
+    "almonds",
     "desserts",
+    "dessert",
     "pie",
     "cake",
     "pudding",

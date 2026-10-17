@@ -2,7 +2,7 @@
  * Recognized wine names impose AND constraints before textual/food ranking.
  * Crémant matches its actual appellations, never Champagne or still style profiles.
  */
-window.WineSearch = (() => {
+window.WhiskeySearch = (() => {
   const normalize = value => FoodDiscovery.normalize(value).replace(/[’']/g, " ")
     .replace(/-/g, " ").replace(/\s+/g, " ").trim();
 
@@ -32,16 +32,23 @@ window.WineSearch = (() => {
       while (remainder.includes(phrase)) remainder = remainder.replace(phrase, " ");
     }
     const rest = remainder.trim().replace(/\s+/g, " ");
-    const grapeIds = constraints.length ? searchIndex().styles
+    const styleIds = constraints.length ? searchIndex().styles
       .filter(style => style.names.some(name => (` ${rest} `).includes(` ${name} `)))
       .map(style => style.id) : [];
-    return { constraints, grapeIds, remainder: rest };
+    return { constraints, styleIds, remainder: rest };
   }
 
   function allows(item, intent) {
-    return intent.grapeIds.every(id => item.styleId === id) && intent.constraints.every(rule =>
+    const profile = item.profile;
+    return intent.styleIds.every(id => item.styleId === id) && intent.constraints.every(rule =>
       (!rule.family || item.regional.style?.family === rule.family) &&
-      (!rule.regions || rule.regions.includes(item.regionId)));
+      (!rule.families || rule.families.includes(item.regional.style?.family || item.style.family)) &&
+      (!rule.regions || rule.regions.includes(item.regionId)) &&
+      (!rule.countries || rule.countries.includes(item.region.country)) &&
+      (!rule.badges || rule.badges.some(badge => (item.region.badges || []).includes(badge))) &&
+      Object.entries(rule.minMetrics || {}).every(([key, min]) => (profile[key] || 0) >= min) &&
+      Object.entries(rule.maxMetrics || {}).every(([key, max]) => (profile[key] || 0) <= max) &&
+      (!rule.text || rule.text.every(term => haystack(item).includes(normalize(term)))));
   }
   function identity(item) {
     // Only the displayed style/expression is indexed here. Permitted blend styles
@@ -51,10 +58,12 @@ window.WineSearch = (() => {
   }
   function haystack(item) {
     const style = item.regional.style || {};
+    const bottles = item.regional.bottles || [];
     return normalize([identity(item), item.region.climate, item.region.summary,
       item.regional.expect, ...Object.values(item.regional.notes || {}).flat(),
       ...(item.regional.pairings || []), ...(item.region.badges || []),
-      style.family, style.cue, style.sweetness, style.method, style.effect].filter(Boolean).join(" "));
+      ...bottles.flatMap(bottle => [bottle.name, bottle.note, bottle.tag]),
+      style.family, style.cue, style.method, style.effect].filter(Boolean).join(" "));
   }
   function matchedPairings(pairings, foodQuery) {
     return (pairings || []).filter(label => FoodDiscovery.score([label], foodQuery) > 0);
@@ -65,7 +74,7 @@ window.WineSearch = (() => {
     const query = intent.remainder;
     const terms = query.split(/\s+/).filter(Boolean);
     const candidates = searchIndex().profiles.filter(({item}) => allows(item, intent));
-    // Pure wine names/categories need no food network request. A food query can
+    // Pure category/origin queries need no food network request. A food query can
     // wait for aliases, but only for the bounded optional request, never guidance.
     const identityMatch = candidates.some(row => terms.every(term => row.identity.includes(term)));
     if (query && !identityMatch) await FoodDiscovery.load();

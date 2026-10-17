@@ -12,7 +12,7 @@ function smartDistance(a, b) {
   return Math.sqrt(SMART_METRICS.reduce((sum, key) => sum + Math.pow((a.profile[key] || 0) - (b.profile[key] || 0), 2), 0));
 }
 
-function smartCompatibilityKey(item) { return WhiskeyModel.familyKey(item); }
+function smartCompatibilityKey(item) { return WhiskeyModel.compareGroup(item); }
 function smartAppearance(item) { return WhiskeyModel.cue(item); }
 
 function smartIsDiscovery(item) {
@@ -23,7 +23,7 @@ function smartClosestMetrics(a, b) {
   return SMART_METRICS.map(key => ({ key, diff: Math.abs((a.profile[key] || 0) - (b.profile[key] || 0)) }))
     .sort((x, y) => x.diff - y.diff)
     .slice(0, 3)
-    .map(({ key }) => key === "finish" ? "savoury character" : key)
+    .map(({ key }) => WhiskeyModel.metrics.find(metric => metric.key === key)?.label || key)
     .join(", ");
 }
 

@@ -47,6 +47,13 @@ def valid_reference_url(value) -> bool:
         return False
 
 
+
+def food_key_check(alias, label, aliases):
+    for targets in aliases.values():
+        if alias in targets and label in targets:
+            return True
+    return False
+
 def main() -> None:
     styles = load(DATA / "styles.json")
     sources = load(DATA / "sources.json")
@@ -195,6 +202,46 @@ def main() -> None:
 
     extra_locators = set(locators) - set(regions)
     assert not extra_locators, f"locator entries without regions: {sorted(extra_locators)}"
+
+    # Semantic coverage: every style family must have at least one regional profile.
+    profile_styles: set[str] = set()
+    for region in regions.values():
+        profile_styles.update(region["styles"].keys())
+    orphan_styles = set(styles) - profile_styles
+    assert not orphan_styles, f"style families with no regional profiles: {sorted(orphan_styles)}"
+
+    # Semantic satisfiability: every search rule must match at least one profile.
+    metric_keys = METRICS
+    for rule in search_rules:
+        satisfied = False
+        for region_id, region in regions.items():
+            for style_id, profile in region["styles"].items():
+                base = styles[style_id]
+                combined = {key: max(0, min(5, (base.get(key, 0) or 0) + (profile.get("mods", {}).get(key, 0) or 0))) for key in metric_keys}
+                item_ok = (
+                    (not rule.get("regions") or region_id in rule["regions"])
+                    and (not rule.get("countries") or region.get("country") in rule["countries"])
+                    and (not rule.get("families") or profile.get("style", {}).get("family") in rule["families"])
+                    and (not rule.get("badges") or any(badge in (region.get("badges") or []) for badge in rule["badges"]))
+                    and all(combined[key] >= minimum for key, minimum in (rule.get("minMetrics") or {}).items())
+                    and all(combined[key] <= maximum for key, maximum in (rule.get("maxMetrics") or {}).items())
+                )
+                if item_ok:
+                    satisfied = True
+                    break
+            if satisfied:
+                break
+        assert satisfied, f"search rule matches no profile: {rule['id']}"
+
+    # Dish guidance must be complete: the guidance UI renders these fields verbatim.
+    food_dishes = load(DATA / "food-dishes.json")
+    pairing_values_final = pairing_values
+    for label, dish in food_dishes["dishes"].items():
+        assert dish.get("guidance") and dish["guidance"].strip(), f"dish missing guidance: {label}"
+        assert dish.get("source") in food_dishes["sources"], f"dish with unknown source: {label}"
+        assert label in food_aliases, f"dish without an alias entry: {label}"
+        for alias in dish["aliases"]:
+            assert label in food_aliases.get(alias, []) or alias in food_aliases.get(label, []) or food_key_check(alias, label, food_aliases), f"dish alias unresolved: {alias}"
 
     profile_count = sum(len(region["styles"]) for region in regions.values())
     print(

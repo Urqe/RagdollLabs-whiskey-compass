@@ -156,8 +156,7 @@
       "Classic"
     ],
     "sources": [
-      "swa",
-      "oxford-companion"
+      "swa"
     ]
   },
   "speyside": {
@@ -223,12 +222,13 @@
           }
         ]
       },
-      "peated-malt": {
+      "sherry-malt": {
         "mods": {
           "sweetness": 0.5,
-          "smoke": 0.5,
-          "fruit": 1,
-          "finish": 0.5
+          "fruit": 0.5,
+          "oak": 0.5,
+          "finish": 0.5,
+          "smoke": -0.5
         },
         "notes": {
           "Fruit": [
@@ -247,7 +247,7 @@
             "nutmeg"
           ],
           "Smoke / peat": [
-            "gentle peat"
+            "faint peat"
           ]
         },
         "serve": "Neat; water softens the richness",

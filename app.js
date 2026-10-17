@@ -373,8 +373,24 @@ function renderExplore() {
     return box;
   }));
   $("pair").replaceChildren(...regional.pairings.map(item => WhiskeyDOM.element("span", item, "chip")));
+  renderBottles(regional);
   renderSimilar(current);
   return true;
+}
+function renderBottles(regional) {
+  const target = document.getElementById("bottleList");
+  if (!target) return;
+  target.replaceChildren();
+  const bottles = regional.bottles || [];
+  const section = document.getElementById("bottleSection");
+  if (section) section.classList.toggle("hidden", bottles.length === 0);
+  for (const bottle of bottles) {
+    const card = WhiskeyDOM.element("article", null, "bottle-card");
+    const head = WhiskeyDOM.element("div", null, "bottle-head");
+    head.append(WhiskeyDOM.element("strong", bottle.name), WhiskeyDOM.element("span", bottle.tag, "bottle-tag"));
+    card.append(head, WhiskeyDOM.element("p", bottle.note, "bottle-note"));
+    target.append(card);
+  }
 }
 
 function renderBiggestDifferences(selections) {

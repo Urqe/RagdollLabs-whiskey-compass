@@ -45,8 +45,8 @@ function advancedStyle(profile) {
 }
 
 function advancedCompatibilityLabel(profile) {
-  const style = advancedStyle(profile);
-  return `${style.family} whiskeys`;
+  const groups = { "american-whiskey-family": "American whiskeys (bourbon, rye, wheat, Tennessee)", "scotch-whiskey-family": "Scotch malt whiskies", "irish-whiskey-family": "Irish whiskeys", "blended-whiskey-family": "blended whiskeys" };
+  return groups[WhiskeyModel.compareGroup(profile)] || `${advancedStyle(profile).family} whiskeys`;
 }
 
 function advancedCompatible(reference, candidate) { return WhiskeyModel.compatible(reference, candidate); }

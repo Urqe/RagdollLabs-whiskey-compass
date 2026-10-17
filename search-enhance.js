@@ -19,9 +19,9 @@ async function renderEnhancedAtlasSearch() {
   container.replaceChildren();
   if (query.length < 2) return;
 
-  const matches = await WineSearch.rank(rawQuery, 10);
+  const matches = await WhiskeySearch.rank(rawQuery, 10);
   if (input.value.trim() !== rawQuery) return;
-  const foodQuery = WineSearch.parse(rawQuery).remainder;
+  const foodQuery = WhiskeySearch.parse(rawQuery).remainder;
   const aliasKnown = FoodDiscovery.known(foodQuery);
 
   if (!matches.length) {
@@ -39,7 +39,7 @@ async function renderEnhancedAtlasSearch() {
     container.appendChild(label);
   }
 
-  const wineContext = WineSearch.describe(rawQuery);
+  const wineContext = WhiskeySearch.describe(rawQuery);
   if (wineContext) {
     const context = document.createElement("div");
     context.className = "search-empty";
@@ -63,7 +63,7 @@ async function renderEnhancedAtlasSearch() {
     const meta = document.createElement("span");
     const styleLabel = item.regional.style?.label ? ` · ${item.regional.style.label}` : "";
     meta.textContent = pairingScore > 0
-      ? `${item.region.country} · pairs with ${WineSearch.matchedPairings(item.regional.pairings, foodQuery).join(" · ")}`
+      ? `${item.region.country} · pairs with ${WhiskeySearch.matchedPairings(item.regional.pairings, foodQuery).join(" · ")}`
       : `${item.region.country} · ${item.region.climate}${styleLabel}`;
     button.append(title, meta);
     button.addEventListener("click", () => {

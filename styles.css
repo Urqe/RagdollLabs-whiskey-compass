@@ -170,3 +170,9 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
   .section-head { display: block; }
   .browse-toggle { margin-bottom: 8px; }
 }
+.bottle-section { margin-top: 16px; }
+.bottle-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 10px; }
+.bottle-card { background: #14100c; border: 1px solid #2e261c; border-radius: 12px; padding: 12px; }
+.bottle-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.bottle-tag { padding: 2px 8px; border: 1px solid rgba(217,164,78,.3); border-radius: 999px; color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+.bottle-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }

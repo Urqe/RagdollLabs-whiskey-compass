@@ -31,7 +31,7 @@ function compareProfileLabel(item) {
 }
 
 async function rankCompareMatches(rawQuery) {
-  return WineSearch.rank(rawQuery, 12);
+  return WhiskeySearch.rank(rawQuery, 12);
 }
 
 function compareCanAdd(item) {
@@ -55,7 +55,7 @@ function compareRenderResults() {
     return;
   }
 
-  FoodDiscovery.appendGuidance(container, WineSearch.parse(document.getElementById("compareDiscoveryInput")?.value).remainder);
+  FoodDiscovery.appendGuidance(container, WhiskeySearch.parse(document.getElementById("compareDiscoveryInput")?.value).remainder);
 
   for (const result of compareDiscoveryMatches) {
     const { item, pairingMatch, foodQuery } = result;
@@ -66,7 +66,7 @@ function compareRenderResults() {
     const strong = document.createElement("strong");
     strong.textContent = compareProfileLabel(item);
     const meta = document.createElement("span");
-    meta.textContent = `${item.region.country}${pairingMatch ? ` · pairs with ${WineSearch.matchedPairings(item.regional.pairings, foodQuery).join(" · ")}` : ""}`;
+    meta.textContent = `${item.region.country}${pairingMatch ? ` · pairs with ${WhiskeySearch.matchedPairings(item.regional.pairings, foodQuery).join(" · ")}` : ""}`;
     copy.append(strong, meta);
     const button = document.createElement("button");
     button.type = "button";
@@ -144,7 +144,7 @@ function injectCompareDiscovery() {
     <h3>Find whiskeys to compare</h3>
     <p class="small">Search by style, place, style or food. Add candidates individually, or let Whiskey Compass build a compatible comparison from the best matches.</p>
     <label for="compareDiscoveryInput">Search comparison candidates</label>
-    <input id="compareDiscoveryInput" type="search" autocomplete="off" placeholder="Try ‘lamb’, ‘sparkling’, ‘rosé’ or ‘Cabernet’" aria-controls="compareDiscoveryResults">
+    <input id="compareDiscoveryInput" type="search" autocomplete="off" placeholder="Try ‘Islay’, ‘bourbon’, ‘peat’ or ‘Speyside’" aria-controls="compareDiscoveryResults">
     <div id="compareDiscoveryResults" class="compare-discovery-results" aria-label="Comparison search results"></div>
     <button id="compareTopMatches" class="compare-top-matches hidden" type="button">Compare top 3 compatible matches</button>`;
   controls.prepend(panel);

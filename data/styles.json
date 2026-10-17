@@ -97,20 +97,6 @@
     "finish": 3,
     "heat": 2.5
   },
-  "blended-scotch": {
-    "name": "Blended Scotch",
-    "cue": "blended",
-    "family": "blended",
-    "regionalSignature": false,
-    "body": 2.5,
-    "smoke": 1.5,
-    "sweetness": 2,
-    "spice": 1.5,
-    "fruit": 2.5,
-    "oak": 2.5,
-    "finish": 2.5,
-    "heat": 2.5
-  },
   "blended-irish": {
     "name": "Blended Irish",
     "cue": "blended",
@@ -152,20 +138,6 @@
     "oak": 3,
     "finish": 3.5,
     "heat": 2.5
-  },
-  "corn": {
-    "name": "Corn whiskey",
-    "cue": "corn",
-    "family": "corn",
-    "regionalSignature": false,
-    "body": 2,
-    "smoke": 0,
-    "sweetness": 3,
-    "spice": 0.5,
-    "fruit": 2.5,
-    "oak": 0.5,
-    "finish": 2,
-    "heat": 2
   },
   "canadian-blended": {
     "name": "Canadian blended",
@@ -221,6 +193,20 @@
     "fruit": 2.5,
     "oak": 2.5,
     "finish": 3,
+    "heat": 2.5
+  },
+  "sherry-malt": {
+    "name": "Sherry-cask malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3.5,
+    "smoke": 0.5,
+    "sweetness": 3,
+    "spice": 2.5,
+    "fruit": 3.5,
+    "oak": 4,
+    "finish": 4,
     "heat": 2.5
   }
 }

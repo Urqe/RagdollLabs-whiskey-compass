@@ -1,122 +1,217 @@
 {
   "angel-share": {
     "term": "Angel's share",
-    "aliases": ["angel's share", "angels share", "angel share"],
-    "definition": "The portion of whiskey that evaporates from the cask during maturation. In cool Scotland it runs roughly 2% per year; in tropical India and Taiwan it can exceed 8–12%.",
+    "aliases": [
+      "angel's share",
+      "angels share",
+      "angel share"
+    ],
+    "definition": "The portion of whiskey that evaporates from the cask during maturation. In cool Scotland it runs roughly 2% per year; in tropical India and Taiwan it can exceed 8\u201312%.",
     "why": "Evaporation concentrates the remaining spirit and speeds cask interaction, which is why young tropical-climate whiskeys can taste far older than their age statements.",
-    "sources": ["swa", "amrut-ref"],
+    "sources": [
+      "swa",
+      "amrut-ref"
+    ],
     "inline": true
   },
   "peat": {
     "term": "Peat",
-    "aliases": ["peat", "peated", "peaty"],
+    "aliases": [
+      "peat",
+      "peated",
+      "peaty"
+    ],
     "definition": "Decomposed, waterlogged vegetation (often centuries of moss and heather) cut from bogs, dried and burned to dry malted barley. Smoke compounds deposit on the grain and carry through distillation.",
     "why": "Peat's character depends on what decomposed into it: Islay's seaweed-influenced peat reads medicinal and briny, while inland heather peat reads softer and smokier.",
-    "sources": ["swa", "oxford-companion"],
+    "sources": [
+      "swa"
+    ],
     "inline": true
   },
   "phenol-ppm": {
     "term": "Phenol level (ppm)",
-    "aliases": ["ppm", "phenol", "phenols"],
-    "definition": "A measure of smoke compounds in the malted barley. Islay's heavily peated malts run roughly 30–55 ppm; unpeated 'malt' is under 1–3 ppm.",
+    "aliases": [
+      "ppm",
+      "phenol",
+      "phenols"
+    ],
+    "definition": "A measure of smoke compounds in the malted barley. Islay's heavily peated malts run roughly 30\u201355 ppm; unpeated 'malt' is under 1\u20133 ppm.",
     "why": "Much of the peat character actually falls away by the time the spirit reaches the cask, so a high ppm barley does not mean a proportionally smokier pour.",
-    "sources": ["swa"],
+    "sources": [
+      "swa"
+    ],
     "inline": true
   },
   "mashbill": {
     "term": "Mashbill",
-    "aliases": ["mashbill", "mash bill", "grain bill"],
+    "aliases": [
+      "mashbill",
+      "mash bill",
+      "grain bill"
+    ],
     "definition": "The grain recipe for American whiskey. Bourbon must be at least 51% corn; rye at least 51% rye. The remainder is typically rye, wheat or barley.",
     "why": "The flavor grain defines the style: corn gives caramel sweetness, rye gives dry spice, and wheat gives softness. This single choice shapes the entire pour.",
-    "sources": ["ttb", "kda"],
+    "sources": [
+      "ttb",
+      "kda"
+    ],
     "inline": true
   },
   "charred-barrel": {
     "term": "Charred barrel",
-    "aliases": ["char", "charred", "char level", "alligator char"],
+    "aliases": [
+      "char",
+      "charred",
+      "char level",
+      "alligator char"
+    ],
     "definition": "American oak barrels for bourbon are flame-charred inside (level 1 to 4; level 4 is called 'alligator char' for its cracked texture). Charred wood acts as both flavor source and filter.",
     "why": "Charring caramelizes wood sugars into a red layer that dissolves into the spirit, and the carbon char strips harsh sulfur compounds. Legally, bourbon must use new charred oak containers.",
-    "sources": ["ttb", "kda"],
+    "sources": [
+      "ttb",
+      "kda"
+    ],
     "inline": true
   },
   "lincoln-county": {
     "term": "Lincoln County Process",
-    "aliases": ["lincoln county process", "charcoal mellowing", "charcoal filtering"],
+    "aliases": [
+      "lincoln county process",
+      "charcoal mellowing",
+      "charcoal filtering"
+    ],
     "definition": "The Tennessee whiskey requirement that new spirit drips through sugar-maple charcoal before barreling.",
     "why": "Charcoal mellowing removes sharp, oily compounds early, which is why a 4-year-old Tennessee whiskey can taste smoother than an older bourbon.",
-    "sources": ["ttb"],
+    "sources": [
+      "ttb"
+    ],
     "inline": true
   },
   "bottled-in-bond": {
     "term": "Bottled in Bond",
-    "aliases": ["bottled in bond", "bonded", "bond"],
+    "aliases": [
+      "bottled in bond",
+      "bonded",
+      "bond"
+    ],
     "definition": "A US legal standard from 1897: the whiskey must be at least 4 years old, exactly 100 proof (50% ABV), from one distilling season and one distiller, in a US bonded warehouse.",
     "why": "Created to guarantee authenticity in an era of doctored whiskey; today it signals honest age and full flavor at a fair price.",
-    "sources": ["ttb"],
+    "sources": [
+      "ttb"
+    ],
     "inline": true
   },
   "nas": {
     "term": "NAS (No Age Statement)",
-    "aliases": ["nas", "no age statement", "age statement"],
+    "aliases": [
+      "nas",
+      "no age statement",
+      "age statement"
+    ],
     "definition": "A whiskey bottled without declaring a minimum age, usually because it blends older and younger casks or responds to stock pressure.",
     "why": "Age statements guarantee a floor, not quality: cask type, warehouse and peating can matter more. NAS bottlings range from cynical to brilliant.",
-    "sources": ["swa"],
+    "sources": [
+      "swa"
+    ],
     "inline": true
   },
   "cask-strength": {
     "term": "Cask strength",
-    "aliases": ["cask strength", "barrel proof", "cask strength bottling"],
-    "definition": "Whiskey bottled at its natural cask strength, undiluted (typically 50–60% ABV) except for evaporation.",
+    "aliases": [
+      "cask strength",
+      "barrel proof",
+      "cask strength bottling"
+    ],
+    "definition": "Whiskey bottled at its natural cask strength, undiluted (typically 50\u201360% ABV) except for evaporation.",
     "why": "No added water means the full flavor texture survives bottling; a few drops of water in the glass can open aromas that chill-filtration would have removed.",
-    "sources": ["swa", "kda"],
+    "sources": [
+      "swa",
+      "kda"
+    ],
     "inline": true
   },
   "chill-filtration": {
     "term": "Chill filtration",
-    "aliases": ["chill filtration", "chill filtered", "chillfilter"],
+    "aliases": [
+      "chill filtration",
+      "chill filtered",
+      "chillfilter"
+    ],
     "definition": "Cooling whiskey to near freezing and filtering out fatty acids and esters so it stays clear when ice is added.",
     "why": "Filtration improves appearance but strips body and aroma. 'Non-chill-filtered' bottlings keep full texture at the cost of going hazy when cold.",
-    "sources": ["swa"],
+    "sources": [
+      "swa"
+    ],
     "inline": true
   },
   "mizunara": {
     "term": "Mizunara oak",
-    "aliases": ["mizunara", "japanese oak"],
+    "aliases": [
+      "mizunara",
+      "japanese oak"
+    ],
     "definition": "Japan's indigenous oak (Quercus mongolica), used for maturation after American and European oak proved to leak on it in Japan's climate.",
-    "why": "Mizunara's lactones and eugenols read as sandalwood, incense and coconut; it became the signature of premium Japanese whisky — a limit born of difficulty.",
-    "sources": ["mizunara-ref"],
+    "why": "Mizunara's lactones and eugenols read as sandalwood, incense and coconut; it became the signature of premium Japanese whisky \u2014 a limit born of difficulty.",
+    "sources": [
+      "mizunara-ref"
+    ],
     "inline": true
   },
   "pot-still-character": {
     "term": "Pot still character",
-    "aliases": ["pot still", "single pot still", "pot still character"],
+    "aliases": [
+      "pot still",
+      "single pot still",
+      "pot still character"
+    ],
     "definition": "The creamy, lightly spicy texture of Irish whiskey distilled from a mash of both malted and unmalted barley in a pot still.",
     "why": "The unmalted barley tradition began as a tax dodge on malt, and it happened to create a texture no other country replicates.",
-    "sources": ["iwai"],
+    "sources": [
+      "iwai"
+    ],
     "inline": true
   },
   "worm-tub": {
     "term": "Worm tub",
-    "aliases": ["worm tub", "worm tubs", "condensing worm"],
+    "aliases": [
+      "worm tub",
+      "worm tubs",
+      "condensing worm"
+    ],
     "definition": "A traditional condenser: a long copper coil submerged in a cold water tank, still used at a handful of Scottish distilleries.",
     "why": "Worm tubs condense vapor quickly with limited copper contact, preserving a meaty, sulfur-adjacent weight that modern condensers remove.",
-    "sources": ["swa"],
+    "sources": [
+      "swa"
+    ],
     "inline": true
   },
   "sour-mash": {
     "term": "Sour mash",
-    "aliases": ["sour mash", "sourmash"],
+    "aliases": [
+      "sour mash",
+      "sourmash"
+    ],
     "definition": "The American practice of adding a portion of the previous fermentation's acidic spent mash to the new one, keeping pH consistent.",
     "why": "A stable pH prevents bacterial takeover between batches; nearly all bourbon is sour mash, so the label says less than people assume.",
-    "sources": ["kda", "ttb"],
+    "sources": [
+      "kda",
+      "ttb"
+    ],
     "inline": true
   },
   "whisky-vs-whiskey": {
     "term": "Whisky vs whiskey",
-    "aliases": ["whisky", "whiskey spelling", "whisky or whiskey"],
+    "aliases": [
+      "whisky",
+      "whiskey spelling",
+      "whisky or whiskey"
+    ],
     "definition": "Scotland, Japan and Canada write 'whisky'; Ireland and the USA write 'whiskey'. This app uses 'whiskey' as its own global default and follows each region's convention in its own copy.",
     "why": "The spelling is a linguistic inheritance of Scotch vs Irish emigration, not a quality or style difference.",
-    "sources": ["swa", "iwai"],
+    "sources": [
+      "swa",
+      "iwai"
+    ],
     "inline": true
   }
 }

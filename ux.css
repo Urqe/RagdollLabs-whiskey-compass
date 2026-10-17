@@ -8,7 +8,7 @@
 .welcome { min-height: calc(100vh - 44px); display: grid; align-content: center; gap: 18px; }
 .welcome-hero { position: relative; overflow: hidden; min-height: 520px; border: 1px solid var(--line); border-radius: 28px; background:
   linear-gradient(90deg, rgba(10,8,6,.96) 0%, rgba(10,8,6,.82) 46%, rgba(10,8,6,.12) 100%),
-  url("./assets/whiskey-glass.svg?v=20261017-compass1") center / cover no-repeat; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
+  url("./assets/whiskey-glass.svg?v=20261017-compass2") center / cover no-repeat; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
 .welcome-copy { position: relative; z-index: 1; max-width: 760px; padding: clamp(32px,6vw,78px); }
 .welcome-copy h1 { max-width: 760px; }
 .welcome-copy .tagline { font-size: clamp(20px,3vw,30px); max-width: 700px; }
@@ -98,7 +98,7 @@
 .similar-back:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
 
 /* The same release token is used for visual assets to avoid mixed old/new deploys. */
-.locator svg { background-image: url("./assets/world-map.svg?v=20261017-compareclear4"); }
+.locator svg { background-image: url("./assets/world-map.svg?v=20261017-compass2"); }
 
 /*
  * Compare-region selector: native option styling is too limited for reliable

@@ -1,6 +1,6 @@
 {
   "swa": {
-    "name": "Scotch Whisky Association",
+    "name": "Scotch Whisky Association (Scotland only)",
     "url": "https://www.scotch-whisky.org.uk/"
   },
   "kda": {
@@ -16,12 +16,8 @@
     "url": "https://www.irishwhiskeyassociation.ie/"
   },
   "cwacom": {
-    "name": "Canadian Whisky (association information)",
+    "name": "Canadian Whisky (independent industry chronicle by Davin de Kergommeaux)",
     "url": "https://www.canadianwhisky.org/"
-  },
-  "oxford-companion": {
-    "name": "The Oxford Companion to Whisky (reference literature)",
-    "url": "https://global.oup.com/"
   },
   "mizunara-ref": {
     "name": "Suntory \u2014 Mizunara oak and Japanese whisky heritage",
@@ -32,11 +28,27 @@
     "url": "https://www.amrutdistilleries.com/"
   },
   "kavalan-ref": {
-    "name": "Kavalan Distillery \u2014 Taiwanese whisky information",
+    "name": "Kavalan Distillery (Taiwan) \u2014 distillery information",
     "url": "https://www.kavalanwhisky.com/"
   },
   "ewg-ref": {
     "name": "The English Whisky Guild \u2014 English whisky revival",
+    "url": "https://www.englishwhisky.co.uk/"
+  },
+  "jwa": {
+    "name": "Japan Whisky Association information",
+    "url": "https://www.japanwhiskyassociation.com/"
+  },
+  "suntory-ref": {
+    "name": "Suntory \u2014 Japanese whisky heritage and mizunara oak",
+    "url": "https://www.suntory.com/"
+  },
+  "nikka-ref": {
+    "name": "Nikka Whisky Distilling \u2014 From the Barrel product information",
+    "url": "https://www.nikka.com/"
+  },
+  "ewc-ref": {
+    "name": "The English Whisky Company (England's first modern distillery)",
     "url": "https://www.englishwhisky.co.uk/"
   }
 }

@@ -3,6 +3,18 @@
     "cheese-guide": {
       "name": "Whisky Magazine \u2014 cheese pairing guidance",
       "url": "https://whiskymag.com/"
+    },
+    "chocolate-guide": {
+      "name": "Whisky Magazine \u2014 chocolate pairing guidance",
+      "url": "https://whiskymag.com/"
+    },
+    "bbq-guide": {
+      "name": "Bourbon Country / KDA \u2014 bourbon and barbecue",
+      "url": "https://kybourbon.com/"
+    },
+    "seafood-guide": {
+      "name": "Scotch Whisky Association \u2014 food pairing ideas",
+      "url": "https://www.scotch-whisky.org.uk/"
     }
   },
   "dishes": {
@@ -12,46 +24,37 @@
         "dark chocolate",
         "cocoa"
       ],
-      "matches": [
-        "speyside",
-        "islay",
-        "india"
-      ]
+      "guidance": "Dark chocolate matches sherried Speyside and rich peat; the cocoa bitterness needs whiskey sweetness of equal intensity.",
+      "source": "chocolate-guide"
     },
-    "blue-cheese": {
+    "blue cheese": {
       "aliases": [
         "blue cheese",
         "stilton",
         "roquefort"
       ],
-      "matches": [
-        "islay",
-        "speyside"
-      ]
+      "guidance": "Sweetness and smoke beat salt: sweet sherried malts or peaty Islay both cut through a strong blue.",
+      "source": "cheese-guide"
     },
     "bbq": {
       "aliases": [
         "bbq",
         "barbecue",
         "ribs",
-        "grilled meats",
-        "brisket"
+        "brisket",
+        "grilled meats"
       ],
-      "matches": [
-        "kentucky",
-        "tennessee"
-      ]
+      "guidance": "Bourbon's corn sweetness plays off char and sauce; Tennessee's charcoal mellowness suits smoke-heavy ribs.",
+      "source": "bbq-guide"
     },
-    "smoked-salmon": {
+    "smoked salmon": {
       "aliases": [
         "smoked salmon",
         "smoked fish",
         "lox"
       ],
-      "matches": [
-        "islay",
-        "ireland"
-      ]
+      "guidance": "Smoke-to-smoke works: Islay peat echoes the fish's smokiness while briny malts match its cure.",
+      "source": "seafood-guide"
     },
     "oysters": {
       "aliases": [
@@ -59,23 +62,19 @@
         "shellfish",
         "seafood"
       ],
-      "matches": [
-        "islay",
-        "ireland",
-        "lowlands"
-      ]
+      "guidance": "Briny island malts are the classic pairing; a squeeze of lemon suits lightly peated coastal pours.",
+      "source": "seafood-guide"
     },
-    "pecan-pie": {
+    "pecan pie": {
       "aliases": [
         "pecan pie",
         "nuts",
         "walnuts",
+        "pecans",
         "desserts"
       ],
-      "matches": [
-        "kentucky",
-        "speyside"
-      ]
+      "guidance": "Caramel-and-nut desserts want wheated bourbon or sherried malt at equal sweetness.",
+      "source": "cheese-guide"
     }
   }
 }

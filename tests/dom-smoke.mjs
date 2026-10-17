@@ -56,6 +56,31 @@ searchInput.dispatchEvent(new window.Event("input", { bubbles: true }));
 await settle();
 assert.ok([...document.querySelectorAll("#searchResults .search-result")].some(button => /Islay/i.test(button.textContent)));
 
+// Sherry cask influence is modelled as oak and fruit, never as peat smoke.
+const sherriedSpeyside = window.WhiskeyCompass.combinedProfile("sherry-malt", "speyside");
+assert.equal(sherriedSpeyside.profile.smoke, 0, "sherry-cask Speyside must not carry peat smoke");
+assert.ok(sherriedSpeyside.profile.oak >= 4, "sherry-cask Speyside should be oak-forward");
+const islayPeated = window.WhiskeyCompass.combinedProfile("peated-malt", "islay");
+assert.ok(islayPeated.profile.smoke >= 4.5, "Islay peated should stay heavily smoky");
+
+// Search semantics: smoky means smoke, not any Scottish profile.
+searchInput.value = "smoky";
+searchInput.dispatchEvent(new window.Event("input", { bubbles: true }));
+await settle();
+const smokyResults = [...document.querySelectorAll("#searchResults .search-result")];
+assert.ok(smokyResults.length > 0);
+assert.ok(smokyResults.every(button => /Islay/i.test(button.textContent)), "smoky must only match heavily peated profiles");
+
+// Bottle layer: names are searchable and bottles render on the profile.
+searchInput.value = "redbreast";
+searchInput.dispatchEvent(new window.Event("input", { bubbles: true }));
+await settle();
+assert.ok(document.querySelectorAll("#searchResults .search-result").length > 0, "bottle names must be searchable");
+window.WhiskeyCompass.selectProfile("pot-still", "ireland");
+await settle();
+assert.ok(document.querySelectorAll("#bottle-card, .bottle-card").length >= 2, "profile card must render its bottles");
+assert.ok(document.getElementById("bottleList").textContent.includes("Redbreast"));
+
 // Advanced Compare uses canonical metrics and compatibility-aware selectors.
 window.WhiskeyCompass.selectProfile("bourbon", "kentucky");
 await settle();

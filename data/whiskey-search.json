@@ -1,121 +1,310 @@
 {
   "rules": [
     {
-      "id": "peated",
-      "label": "peated whiskeys",
-      "aliases": [
-        "peat",
-        "peaty",
-        "peated",
-        "smoky",
-        "smoke",
-        "bonfire",
-        "iodine",
-        "medicinal"
-      ],
-      "family": "malt"
-    },
-    {
-      "id": "bourbon-rule",
-      "label": "bourbons",
-      "aliases": [
-        "bourbon",
-        "bourbons",
-        "corn whiskey",
-        "sweet whiskey"
-      ],
-      "family": "bourbon"
-    },
-    {
-      "id": "rye-rule",
-      "label": "rye whiskeys",
-      "aliases": [
-        "rye",
-        "rye whiskey",
-        "spicy whiskey",
-        "dill"
-      ],
-      "family": "rye"
-    },
-    {
-      "id": "irish-rule",
-      "label": "Irish whiskeys",
-      "aliases": [
-        "irish",
-        "irish whiskey",
-        "pot still",
-        "smooth whiskey"
-      ],
-      "family": "pot-still"
-    },
-    {
-      "id": "japan-rule",
-      "label": "Japanese whiskies",
-      "aliases": [
-        "japanese",
-        "japan",
-        "mizunara",
-        "highball"
-      ],
-      "regions": [
-        "japan"
-      ]
-    },
-    {
-      "id": "islay-rule",
+      "id": "islay",
       "label": "Islay",
       "aliases": [
-        "islay",
-        "laphroaig",
-        "ardbeg",
-        "lagavulin"
+        "islay"
       ],
       "regions": [
         "islay"
       ]
     },
     {
-      "id": "speyside-rule",
+      "id": "speyside",
       "label": "Speyside",
       "aliases": [
-        "speyside",
-        "macallan",
-        "glenfiddich",
-        "sherried",
-        "sherry bomb"
+        "speyside"
       ],
       "regions": [
         "speyside"
       ]
     },
     {
-      "id": "kentucky-rule",
+      "id": "highlands",
+      "label": "the Highlands",
+      "aliases": [
+        "highlands",
+        "highland"
+      ],
+      "regions": [
+        "highlands"
+      ]
+    },
+    {
+      "id": "lowlands",
+      "label": "the Lowlands",
+      "aliases": [
+        "lowlands",
+        "lowland"
+      ],
+      "regions": [
+        "lowlands"
+      ]
+    },
+    {
+      "id": "campbeltown",
+      "label": "Campbeltown",
+      "aliases": [
+        "campbeltown"
+      ],
+      "regions": [
+        "campbeltown"
+      ]
+    },
+    {
+      "id": "islands",
+      "label": "the Islands",
+      "aliases": [
+        "islands",
+        "island"
+      ],
+      "regions": [
+        "islands"
+      ]
+    },
+    {
+      "id": "kentucky",
       "label": "Kentucky",
       "aliases": [
-        "kentucky",
-        "bourbon country",
-        "rickhouse"
+        "kentucky"
       ],
       "regions": [
         "kentucky"
       ]
     },
     {
+      "id": "tennessee-rule",
+      "label": "Tennessee",
+      "aliases": [
+        "tennessee"
+      ],
+      "regions": [
+        "tennessee"
+      ]
+    },
+    {
+      "id": "ireland-rule",
+      "label": "Ireland",
+      "aliases": [
+        "ireland",
+        "irish"
+      ],
+      "regions": [
+        "ireland"
+      ]
+    },
+    {
+      "id": "japan-rule",
+      "label": "Japan",
+      "aliases": [
+        "japan",
+        "japanese"
+      ],
+      "regions": [
+        "japan"
+      ]
+    },
+    {
+      "id": "canada-rule",
+      "label": "Canada",
+      "aliases": [
+        "canada",
+        "canadian"
+      ],
+      "regions": [
+        "canada"
+      ]
+    },
+    {
+      "id": "india-rule",
+      "label": "India",
+      "aliases": [
+        "india",
+        "indian"
+      ],
+      "regions": [
+        "india"
+      ]
+    },
+    {
+      "id": "taiwan-rule",
+      "label": "Taiwan",
+      "aliases": [
+        "taiwan",
+        "taiwanese"
+      ],
+      "regions": [
+        "taiwan"
+      ]
+    },
+    {
+      "id": "england-rule",
+      "label": "England",
+      "aliases": [
+        "england",
+        "english"
+      ],
+      "regions": [
+        "england"
+      ]
+    },
+    {
+      "id": "scotland-rule",
+      "label": "Scotland",
+      "aliases": [
+        "scotland",
+        "scotch"
+      ],
+      "countries": [
+        "Scotland"
+      ]
+    },
+    {
+      "id": "usa-rule",
+      "label": "the USA",
+      "aliases": [
+        "usa",
+        "us",
+        "america",
+        "american"
+      ],
+      "countries": [
+        "USA"
+      ]
+    },
+    {
+      "id": "bourbon-rule",
+      "label": "bourbons",
+      "aliases": [
+        "bourbon"
+      ],
+      "families": [
+        "bourbon"
+      ]
+    },
+    {
+      "id": "rye-rule",
+      "label": "rye whiskeys",
+      "aliases": [
+        "rye"
+      ],
+      "families": [
+        "rye"
+      ]
+    },
+    {
+      "id": "blended-rule",
+      "label": "blended whiskeys",
+      "aliases": [
+        "blend",
+        "blended",
+        "blends"
+      ],
+      "families": [
+        "blended"
+      ]
+    },
+    {
+      "id": "pot-still-rule",
+      "label": "pot still whiskeys",
+      "aliases": [
+        "pot still"
+      ],
+      "families": [
+        "pot-still"
+      ]
+    },
+    {
+      "id": "malt-rule",
+      "label": "malt whiskeys",
+      "aliases": [
+        "single malt",
+        "malt"
+      ],
+      "families": [
+        "malt"
+      ]
+    },
+    {
+      "id": "peat-rule",
+      "label": "peated and smoky whiskeys",
+      "aliases": [
+        "peat",
+        "peated",
+        "peaty",
+        "smoky",
+        "smoke",
+        "smokey"
+      ],
+      "minMetrics": {
+        "smoke": 3
+      }
+    },
+    {
+      "id": "unpeated-rule",
+      "label": "unpeated and clean whiskeys",
+      "aliases": [
+        "unpeated",
+        "no peat",
+        "non peated"
+      ],
+      "maxMetrics": {
+        "smoke": 1.5
+      }
+    },
+    {
+      "id": "sherried-rule",
+      "label": "sherried whiskeys",
+      "aliases": [
+        "sherried",
+        "sherry"
+      ],
+      "text": [
+        "sherry"
+      ]
+    },
+    {
+      "id": "sweet-rule",
+      "label": "sweet whiskeys",
+      "aliases": [
+        "sweet"
+      ],
+      "minMetrics": {
+        "sweetness": 3
+      }
+    },
+    {
+      "id": "spicy-rule",
+      "label": "spicy whiskeys",
+      "aliases": [
+        "spicy"
+      ],
+      "minMetrics": {
+        "spice": 3.5
+      }
+    },
+    {
+      "id": "light-rule",
+      "label": "light whiskeys",
+      "aliases": [
+        "light",
+        "delicate"
+      ],
+      "maxMetrics": {
+        "body": 2.5
+      }
+    },
+    {
       "id": "emerging-rule",
       "label": "emerging regions",
       "aliases": [
         "emerging",
-        "discovery",
-        "unusual",
-        "india",
-        "taiwan",
-        "amrut",
-        "kavalan"
+        "discovery"
       ],
-      "regions": [
-        "india",
-        "taiwan",
-        "england"
+      "badges": [
+        "Discovery",
+        "Emerging region"
       ]
     }
   ]
