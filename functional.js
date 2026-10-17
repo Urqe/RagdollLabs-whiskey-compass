@@ -1,7 +1,7 @@
 /*
  * RagDollLabs Whiskey Compass — practical discovery enhancements
  * --------------------------------------------------------
- * Keeps style metadata and profile-specific winemaking context separate
+ * Keeps style metadata and profile-specific production context separate
  * from the core profile engine. Both renderers consume validated data and use
  * the public WhiskeyCompass profile API; this module never recomputes profile rules.
  *
@@ -10,14 +10,14 @@
  * and the error is logged. Core browsing remains usable; reload is the retry.
  */
 
-let winemakingPromise = null;
+let productionPromise = null;
 let lastProfile = null;
 
 function renderSpecialStyle(profile) {
   document.getElementById("specialStyle")?.remove();
   const style = profile?.regional?.style;
   if (!style) return;
-  const anchor = document.getElementById("winemaking") || document.querySelector("#exploreView .content2");
+  const anchor = document.getElementById("production") || document.querySelector("#exploreView .content2");
   if (!anchor) return;
 
   const section = document.createElement("section");
@@ -54,20 +54,20 @@ function renderSpecialStyle(profile) {
   document.dispatchEvent(new CustomEvent("whiskeycompass:special-style-rendered", { detail: { profile } }));
 }
 
-function loadWinemaking() {
-  if (!winemakingPromise) winemakingPromise = WhiskeyData.json("./data/winemaking.json", { optional: true });
-  return winemakingPromise;
+function loadProduction() {
+  if (!productionPromise) productionPromise = WhiskeyData.json("./data/production.json", { optional: true });
+  return productionPromise;
 }
 
-function signalWinemakingRendered(profile, visible) {
-  document.dispatchEvent(new CustomEvent("whiskeycompass:winemaking-rendered", { detail: { profile, visible } }));
+function signalProductionRendered(profile, visible) {
+  document.dispatchEvent(new CustomEvent("whiskeycompass:production-rendered", { detail: { profile, visible } }));
 }
 
-async function renderWinemaking(profile) {
-  const section = document.getElementById("winemaking");
-  const choicesTarget = document.getElementById("winemakingChoices");
+async function renderProduction(profile) {
+  const section = document.getElementById("production");
+  const choicesTarget = document.getElementById("productionChoices");
   if (!section || !choicesTarget || !profile) return;
-  const data = await loadWinemaking();
+  const data = await loadProduction();
   if (lastProfile !== profile) return;
 
   const entry = data?.[profile.regionId]?.[profile.styleId];
@@ -75,26 +75,26 @@ async function renderWinemaking(profile) {
   choicesTarget.replaceChildren();
   if (!choices.length) {
     section.classList.add("hidden");
-    signalWinemakingRendered(profile, false);
+    signalProductionRendered(profile, false);
     return;
   }
 
   for (const choice of choices) {
     const card = document.createElement("article");
-    card.className = "winemaking-choice";
+    card.className = "production-choice";
     const heading = document.createElement("div");
-    heading.className = "winemaking-choice-head";
+    heading.className = "production-choice-head";
     const vessel = document.createElement("strong");
     vessel.textContent = choice.vessel;
     const prevalence = document.createElement("span");
-    prevalence.className = "winemaking-prevalence";
+    prevalence.className = "production-prevalence";
     prevalence.textContent = choice.prevalence;
     heading.append(vessel, prevalence);
     card.appendChild(heading);
 
     if (choice.context) {
       const context = document.createElement("div");
-      context.className = "winemaking-context";
+      context.className = "production-context";
       context.textContent = choice.context;
       card.appendChild(context);
     }
@@ -105,21 +105,21 @@ async function renderWinemaking(profile) {
     choicesTarget.appendChild(card);
   }
   section.classList.remove("hidden");
-  signalWinemakingRendered(profile, true);
+  signalProductionRendered(profile, true);
 }
 
 document.addEventListener("whiskeycompass:ready", () => {
-  void loadWinemaking();
+  void loadProduction();
 });
 
 document.addEventListener("whiskeycompass:profile-selected", event => {
   lastProfile = event.detail.profile;
   renderSpecialStyle(lastProfile);
-  void renderWinemaking(lastProfile);
+  void renderProduction(lastProfile);
 });
 
 document.addEventListener("whiskeycompass:selection-needed", () => {
   lastProfile = null;
   document.getElementById("specialStyle")?.remove();
-  document.getElementById("winemaking")?.classList.add("hidden");
+  document.getElementById("production")?.classList.add("hidden");
 });

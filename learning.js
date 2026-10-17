@@ -114,7 +114,7 @@ async function annotateContext() {
   await loadGlossary();
   const regex = glossaryRegex();
   if (!regex) return;
-  ["expect", "climate", "identity", "why", "winemaking", "notes", "maturity"]
+  ["expect", "climate", "identity", "why", "production", "notes", "maturity"]
     .map(id => document.getElementById(id))
     .forEach(root => annotateRoot(root, regex));
 }
@@ -210,7 +210,7 @@ document.addEventListener("whiskeycompass:profile-selected", () => {
   void annotateContext();
 });
 
-document.addEventListener("whiskeycompass:winemaking-rendered", () => {
+document.addEventListener("whiskeycompass:production-rendered", () => {
   void annotateContext();
 });
 

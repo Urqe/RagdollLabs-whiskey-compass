@@ -176,3 +176,6 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 .bottle-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .bottle-tag { padding: 2px 8px; border: 1px solid rgba(217,164,78,.3); border-radius: 999px; color: var(--gold); font-size: 10px; text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
 .bottle-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+.pairings-heading { margin-top: 16px; font-size: 13px; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.vintage-note strong { color: var(--gold); }

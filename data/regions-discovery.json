@@ -32,8 +32,7 @@
             "sweet smoke"
           ]
         },
-        "serve": "Neat or with water",
-        "decant": "No decanting",
+        "serve": "Neat with water to taste",
         "glass": "Glencairn",
         "ageing": "4\u20138 years (accelerated tropical maturation)",
         "pairings": [
@@ -62,7 +61,9 @@
             "tag": "sherried"
           }
         ],
-        "phenol": "peated in the peated expressions (Amrut Fusion), unpeated in others"
+        "phenol": "peated in the peated expressions (Amrut Fusion), unpeated in others",
+        "dilution": "Amrut Fusion is 50% \u2014 takes water well; cask-strength editions need it",
+        "ice": "Avoid ice; the peat and oak detail wash out"
       }
     },
     "identity": {
@@ -119,8 +120,7 @@
             "warm spice"
           ]
         },
-        "serve": "Neat",
-        "decant": "No decanting",
+        "serve": "Neat with a few drops of water",
         "glass": "Glencairn",
         "ageing": "3\u20138 years (subtropical acceleration)",
         "pairings": [
@@ -147,7 +147,9 @@
             "note": "The accessible face of Taiwanese whisky",
             "tag": "classic"
           }
-        ]
+        ],
+        "dilution": "Kavalan Solist editions are cask strength (55%+) \u2014 always dilute to taste",
+        "ice": "Subtropical fruit shows best without ice"
       }
     },
     "identity": {
@@ -203,7 +205,6 @@
           ]
         },
         "serve": "Neat",
-        "decant": "No decanting",
         "glass": "Glencairn",
         "ageing": "3\u201310 years (young industry)",
         "pairings": [
@@ -230,7 +231,9 @@
             "note": "Wine-cask influenced and unfiltered",
             "tag": "craft"
           }
-        ]
+        ],
+        "dilution": "40\u201346%; no water needed",
+        "ice": "A cube is fine for the bright, young style"
       }
     },
     "identity": {

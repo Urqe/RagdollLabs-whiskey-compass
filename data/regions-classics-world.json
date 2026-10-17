@@ -33,7 +33,6 @@
           ]
         },
         "serve": "Neat, on the rocks, or in an Old Fashioned",
-        "decant": "No decanting",
         "glass": "Rocks glass or Glencairn",
         "ageing": "4\u201312 years (bonded at 4, premium at 8+)",
         "pairings": [
@@ -67,7 +66,9 @@
             "note": "Floral and fruity from unique yeast strains",
             "tag": "floral"
           }
-        ]
+        ],
+        "dilution": "Bottled in Bond (100 proof) expressions take a cube well; 90\u201395 proof is fine either way",
+        "ice": "Excellent on rocks and in cocktails \u2014 the classic bourbon serves"
       },
       "wheated-bourbon": {
         "mods": {
@@ -89,7 +90,6 @@
           ]
         },
         "serve": "Neat or on the rocks",
-        "decant": "No decanting",
         "glass": "Rocks glass",
         "ageing": "6\u201312 years for the classics",
         "pairings": [
@@ -117,7 +117,9 @@
             "note": "Cult wheater with dusty oak and caramel",
             "tag": "cult"
           }
-        ]
+        ],
+        "dilution": "Maker's Mark (45%) needs no water; Weller 12 too",
+        "ice": "Excellent over ice; the soft wheat profile suits a cube"
       },
       "rye": {
         "mods": {
@@ -142,7 +144,6 @@
           ]
         },
         "serve": "Neat or in a Manhattan",
-        "decant": "No decanting",
         "glass": "Rocks glass",
         "ageing": "4\u201310 years",
         "pairings": [
@@ -170,7 +171,9 @@
             "note": "High-rye mashbill: dry and herbal",
             "tag": "herbal"
           }
-        ]
+        ],
+        "dilution": "Rittenhouse (100 proof) takes ice or water well",
+        "ice": "Good on rocks; best in stirred cocktails"
       }
     },
     "identity": {
@@ -229,7 +232,6 @@
           ]
         },
         "serve": "Neat, on the rocks, or with cola",
-        "decant": "No decanting",
         "glass": "Rocks glass",
         "ageing": "4\u20137 years",
         "pairings": [
@@ -256,7 +258,9 @@
             "note": "Smoother, slightly sweeter rival from Cascade Hollow",
             "tag": "smooth"
           }
-        ]
+        ],
+        "dilution": "40% standard; no dilution needed",
+        "ice": "Classic with ice; charcoal mellowness survives mixers"
       }
     },
     "identity": {
@@ -312,7 +316,6 @@
           ]
         },
         "serve": "Neat or with a single ice cube",
-        "decant": "No decanting",
         "glass": "Glencairn or tumbler",
         "ageing": "10\u201321 years",
         "pairings": [
@@ -340,7 +343,9 @@
             "note": "Fruity, rounded and historically a wine-merchant blend",
             "tag": "fruity"
           }
-        ]
+        ],
+        "dilution": "40\u201346%; Redbreast's cask-strength editions take water well",
+        "ice": "A cube is traditional for Irish pot still"
       },
       "blended-irish": {
         "mods": {},
@@ -358,7 +363,6 @@
           ]
         },
         "serve": "On the rocks, in coffee, or as a highball",
-        "decant": "No decanting",
         "glass": "Tumbler or highball",
         "ageing": "3\u20138 years for the core range",
         "pairings": [
@@ -395,7 +399,9 @@
             "cause": "Pot still whiskey as the flavour component",
             "effect": "Unmalted barley adds the creamy, lightly spicy texture in the blend's core"
           }
-        ]
+        ],
+        "dilution": "40% blends need no water",
+        "ice": "Built for ice and mixers; its light body is mixer-friendly"
       },
       "irish-malt": {
         "mods": {},
@@ -415,7 +421,6 @@
           ]
         },
         "serve": "Neat or with a single ice cube",
-        "decant": "No decanting",
         "glass": "Glencairn or tumbler",
         "ageing": "10\u201316 years",
         "pairings": [
@@ -437,7 +442,9 @@
             "note": "Triple-distilled single malt: honeyed, light and fruity",
             "tag": "triple distilled"
           }
-        ]
+        ],
+        "dilution": "40% (Bushmills 10); no water needed",
+        "ice": "A cube suits the light triple-distilled style"
       }
     },
     "identity": {
@@ -498,7 +505,6 @@
           ]
         },
         "serve": "Neat, or mizuwari (with water)",
-        "decant": "No decanting",
         "glass": "Copita or small tumbler",
         "ageing": "10\u201317 years for flagships",
         "pairings": [
@@ -527,7 +533,9 @@
             "tag": "lightly peated"
           }
         ],
-        "phenol": "lightly peated (Hakushu) or unpeated (Yamazaki) \u2014 expression-dependent"
+        "phenol": "lightly peated (Hakushu) or unpeated (Yamazaki) \u2014 expression-dependent",
+        "dilution": "43% typical; a little water opens mizunara aromatics",
+        "ice": "Avoid ice for first tasting; highball culture prefers the blends"
       },
       "japanese-blended": {
         "mods": {},
@@ -545,7 +553,6 @@
           ]
         },
         "serve": "Mizuwari (2 parts water), on the rocks, or oyuwari (hot water)",
-        "decant": "No decanting",
         "glass": "Highball glass",
         "ageing": "Blends of various ages; core range NAS",
         "pairings": [
@@ -573,7 +580,9 @@
             "note": "Cask-strength blend at 51.4% ABV with bold malt-forward character",
             "tag": "bold"
           }
-        ]
+        ],
+        "dilution": "Dilution is the point \u2014 blends are engineered to stretch",
+        "ice": "The highball (with soda) is the signature serve"
       }
     },
     "identity": {
@@ -631,7 +640,6 @@
           ]
         },
         "serve": "On the rocks or in cocktails",
-        "decant": "No decanting",
         "glass": "Tumbler",
         "ageing": "6\u201312 years minimum in practice",
         "pairings": [
@@ -658,7 +666,9 @@
             "note": "100% rye flavouring whisky: the rye lover's Canadian",
             "tag": "rye-forward"
           }
-        ]
+        ],
+        "dilution": "40% standard; no water needed",
+        "ice": "Ice-friendly by design; classic Canadian serve"
       }
     },
     "identity": {

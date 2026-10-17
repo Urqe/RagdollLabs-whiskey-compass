@@ -111,10 +111,15 @@ await settle();
 assert.equal(document.getElementById("title").textContent, "Heavily peated malt · Islay");
 assert.ok(document.querySelectorAll("#bars .bar").length > 0);
 assert.ok(document.getElementById("notes").textContent.trim().length > 0);
-assert.equal(document.querySelectorAll("#serve .box").length, 3);
+// Whiskey-native serving guidance: four boxes, no wine decanting concept.
+const serveBoxes = [...document.querySelectorAll("#serve .box")].map(box => box.textContent.trim());
+assert.equal(serveBoxes.length, 4, "serving guidance shows four boxes");
+assert.ok(serveBoxes.some(text => text.startsWith("Serve")), "first box is the serve baseline");
+assert.ok(document.querySelector(".serve-card h2").textContent === "How to drink it", "serve card uses whiskey-native heading");
+assert.ok(!document.body.textContent.includes("Decant"), "no wine decanting vocabulary remains");
 // Production choices load asynchronously; wait for the section to appear.
-await waitFor(() => document.getElementById("winemaking").classList.contains("hidden") === false, "production choices should render for Islay peated malt");
-assert.ok(document.querySelectorAll("#winemakingChoices .winemaking-choice").length > 0, "Islay peated profile must show its cask choices");
+await waitFor(() => document.getElementById("production").classList.contains("hidden") === false, "production choices should render for Islay peated malt");
+assert.ok(document.querySelectorAll("#productionChoices .production-choice").length > 0, "Islay peated profile must show its cask choices");
 
 window.WhiskeyCompass.selectProfile("sherry-malt", "speyside");
 await settle();
@@ -177,7 +182,7 @@ assert.ok(reasons.every(reason => !/scotch malt whiskies/i.test(reason)),
 // Pot still has meaningful comparisons now (Irish malt was added).
 window.WhiskeyCompass.selectProfile("pot-still", "ireland");
 await settle();
-const potStillComparisons = [...document.querySelectorAll("#similarWines .similar-item")];
+const potStillComparisons = [...document.querySelectorAll("#similarProfiles .similar-item")];
 assert.ok(potStillComparisons.length > 0, "pot still must have at least one eligible recommendation");
 
 console.log("OK: Whiskey Compass DOM smoke tests passed");

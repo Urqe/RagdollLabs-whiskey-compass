@@ -1,7 +1,7 @@
 /*
  * RagDollLabs Whiskey Compass — Smart Discovery
  * ----------------------------------------
- * Replaces the core nearest-neighbour Similar Wines output with three distinct
+ * Replaces the core nearest-neighbour similar whiskey recommendations output with three distinct
  * discovery intents. Profile calculation still comes from WhiskeyCompass.allPairs();
  * this layer only chooses and explains recommendations.
  */
@@ -74,7 +74,7 @@ function smartRecommendations(current) {
 }
 
 function smartRender(current) {
-  const container = document.getElementById("similarWines");
+  const container = document.getElementById("similarProfiles");
   if (!container || !current) return;
   const picks = smartRecommendations(current);
   container.replaceChildren();

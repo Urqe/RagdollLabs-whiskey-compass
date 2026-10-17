@@ -23,7 +23,7 @@ REGION_FILES = [
     DATA / "regions-discovery.json",
 ]
 
-REQUIRED_PROFILE_FIELDS = {"notes", "serve", "glass", "ageing", "pairings", "expect"}
+REQUIRED_PROFILE_FIELDS = {"notes", "serve", "dilution", "ice", "glass", "ageing", "pairings", "expect"}
 METRICS = {"body", "smoke", "sweetness", "spice", "fruit", "oak", "finish", "heat"}
 PRODUCTION_PREVALENCE = {"dominant", "very common", "common", "sometimes", "rare"}
 MATURITY_STAGE_PREFIXES = ("Young", "Developing", "Mature")
@@ -63,7 +63,7 @@ def main() -> None:
     locators = load(DATA / "locators.json")
     why_rules = load(DATA / "why-rules.json")
     food_aliases = load(DATA / "food-aliases.json")
-    production = load(DATA / "winemaking.json")
+    production = load(DATA / "production.json")
     maturity = load(DATA / "maturity.json")
     glossary = load(DATA / "glossary.json")
 

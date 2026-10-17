@@ -66,15 +66,15 @@
 .discover-actions .surprise, .discover-actions .glossary-open { margin: 0; width: 100%; min-height: 40px; }
 .discover-tools .moods { margin-top: 12px; padding-top: 10px; }
 
-.winemaking { margin-top: 16px; }
-.winemaking > .small { margin-top: -4px; }
-.winemaking-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
-.winemaking-choice { background: #120d10; border: 1px solid #302128; border-radius: 12px; padding: 12px; }
-.winemaking-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.winemaking-choice-head strong { font-size: 13px; color: #eadfe2; }
-.winemaking-prevalence { flex: 0 0 auto; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; }
-.winemaking-context { margin-top: 6px; color: #c6b6bb; font-size: 10px; font-style: italic; }
-.winemaking-choice p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.production { margin-top: 16px; }
+.production > .small { margin-top: -4px; }
+.production-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
+.production-choice { background: #120d10; border: 1px solid #302128; border-radius: 12px; padding: 12px; }
+.production-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.production-choice-head strong { font-size: 13px; color: #eadfe2; }
+.production-prevalence { flex: 0 0 auto; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; }
+.production-context { margin-top: 6px; color: #c6b6bb; font-size: 10px; font-style: italic; }
+.production-choice p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
 /* The default profile answers "what is this like?" first. Deeper educational
    material is kept intact in one disclosure instead of competing as flat blocks. */
@@ -134,7 +134,7 @@
   #appShell .app-masthead .hero-art { width: 58px; }
   #appShell .app-masthead .tagline { display: none; }
   .title-meta { justify-content: flex-start; }
-  .winemaking-grid { grid-template-columns: 1fr; }
+  .production-grid { grid-template-columns: 1fr; }
   .compare-select-trigger { min-height: 62px; }
   .compare-select-menu { max-height: 240px; }
   .profile-learning > summary { display: grid; gap: 3px; }

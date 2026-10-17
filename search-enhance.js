@@ -39,11 +39,11 @@ async function renderEnhancedAtlasSearch() {
     container.appendChild(label);
   }
 
-  const wineContext = WhiskeySearch.describe(rawQuery);
-  if (wineContext) {
+  const searchContext = WhiskeySearch.describe(rawQuery);
+  if (searchContext) {
     const context = document.createElement("div");
     context.className = "search-empty";
-    context.textContent = `Showing ${wineContext}`;
+    context.textContent = `Showing ${searchContext}`;
     container.append(context);
   }
   FoodDiscovery.appendGuidance(container, foodQuery);

@@ -133,18 +133,6 @@ function currentProfileReference() {
   };
 }
 
-/* Ageing is still rendered by the core Serve It Tonight model, but the focused
-   profile hierarchy presents it with maturity/vintage education instead. Moving
-   the already-rendered DOM node keeps one source of truth for the content. */
-function moveAgeingToLearning() {
-  const target = document.getElementById("ageingSnapshot");
-  if (!target) return;
-  target.replaceChildren();
-  const ageingBox = [...document.querySelectorAll("#serve .box")]
-    .find(box => box.querySelector(".k")?.textContent.trim() === "Ageing");
-  if (ageingBox) target.appendChild(ageingBox);
-}
-
 function renderSimilarBack() {
   const card = document.querySelector(".similar-card");
   if (!card) return;
@@ -287,9 +275,9 @@ function wireUxOnce() {
   document.getElementById("searchInput")?.addEventListener("keydown", handleSearchInputKeydown);
   document.getElementById("searchResults")?.addEventListener("keydown", handleSearchResultsKeydown);
 
-  /* Capture before app.js handles the Similar Wines button click, so we can
+  /* Capture before app.js handles the similar whiskey recommendations button click, so we can
      remember the profile the user came from without introducing router state. */
-  document.getElementById("similarWines")?.addEventListener("click", event => {
+  document.getElementById("similarProfiles")?.addEventListener("click", event => {
     if (!event.target.closest(".similar-item")) return;
     pendingSimilarOrigin = currentProfileReference();
   }, true);
@@ -305,7 +293,7 @@ document.addEventListener("whiskeycompass:ready", event => {
   if (event.detail.sharedProfile) {
     showAppShell();
     showExploreResult();
-    moveAgeingToLearning();
+    
   } else {
     const route = event.detail.initialRoute;
     const attemptedProfile = route?.searchParams?.has("style") || route?.searchParams?.has("region");
@@ -326,7 +314,7 @@ document.addEventListener("whiskeycompass:profile-selected", () => {
 
   showAppShell();
   showExploreResult();
-  moveAgeingToLearning();
+  
   renderSimilarBack();
   updateSelectorColor("style", "styleCue");
   updateSelectorColor("placeStyle", "placeStyleColor");

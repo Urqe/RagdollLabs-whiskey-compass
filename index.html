@@ -64,7 +64,7 @@
           </section>
 
           <section id="exploreControls" class="sidebar-primary" aria-labelledby="exploreHeading">
-            <div class="section-head"><h2 id="exploreHeading">Whiskey Explorer</h2><div class="browse-toggle" role="group" aria-label="Browse method"><button id="browseByStyle" class="on" type="button" aria-pressed="true">By style</button><button id="browseByPlace" type="button" aria-pressed="false">By place</button></div></div>
+            <div class="section-head"><h2 id="exploreHeading">Whiskey Explorer</h2><div class="browse-toggle" role="group" aria-label="Browse method"><button id="browseByStyle" type="button" aria-pressed="false">By style</button><button id="browseByPlace" class="on" type="button" aria-pressed="true">By place</button></div></div>
             <div id="styleBrowseControls"><label for="style">Style / blend</label><select id="style"></select><div id="styleCue" aria-live="polite"></div><label for="region">Region</label><select id="region"></select></div>
             <div id="placeBrowseControls" class="hidden"><label for="country">Country</label><select id="country"></select><label for="placeRegion">Region</label><select id="placeRegion"></select><label for="placeStyle">Style / blend</label><select id="placeStyle"></select><div id="placeStyleColor" aria-live="polite"></div></div>
 
@@ -101,21 +101,20 @@
                   </section>
 
                   <div id="makingCluster" class="learning-section">
-                    <section id="winemaking" class="winemaking hidden" aria-labelledby="winemakingHeading"><h3 id="winemakingHeading">Production choices</h3><p class="small">Common distillation and cask choices that can materially change this regional expression.</p><div id="winemakingChoices" class="winemaking-grid"></div></section>
+                    <section id="production" class="production hidden" aria-labelledby="productionHeading"><h3 id="productionHeading">Production choices</h3><p class="small">Common distillation and cask choices that can materially change this regional expression.</p><div id="productionChoices" class="production-grid"></div></section>
                   </div>
 
                   <section class="learning-section" aria-labelledby="ageingLearningHeading">
-                    <h3 id="ageingLearningHeading">Ageing &amp; maturity</h3>
-                    <div id="ageingSnapshot" class="ageing-snapshot"></div>
-                    <section id="maturity" class="maturity hidden" aria-labelledby="maturityHeading"><h3 id="maturityHeading">Maturity &amp; vintage evolution</h3><p id="maturitySummary" class="small"></p><div id="maturityStages" class="maturity-stages"></div><div class="vintage-note"><strong>Vintage effect:</strong> <span id="vintageEffect"></span></div></section>
+                    <h3 id="ageingLearningHeading">Age &amp; maturation</h3>
+                    <section id="maturity" class="maturity hidden" aria-labelledby="maturityHeading"><h3 id="maturityHeading">Age &amp; maturation</h3><p id="maturitySummary" class="small"></p><div id="maturityStages" class="maturity-stages"></div><div class="vintage-note"><strong>Batch &amp; age variation:</strong> <span id="variationNote"></span></div></section>
                   </section>
 
                   <div id="sourcesDrawer"></div>
                 </div>
               </details>
             </article>
-            <article class="card serve-card"><h2>Serve It Tonight</h2><div class="serve" id="serve"></div><h3>Food pairings</h3><div class="chips" id="pair"></div></article><article class="card bottle-section hidden" id="bottleSection"><h2>Notable bottles</h2><p class="small">Curated example bottles of this regional style. Character notes describe the typical pour; batches and age statements vary.</p><div id="bottleList" class="bottle-list"></div></article>
-            <article class="card similar-card"><h2>Where to go next</h2><p class="small">Three ways onward: follow the same style, stay close in style, or try something more adventurous.</p><div id="similarWines" class="similar-grid"></div></article>
+            <article class="card serve-card"><h2>How to drink it</h2><div class="serve" id="serve"></div><h3 class="pairings-heading">Also pairs with</h3><div class="chips" id="pair"></div></article><article class="card bottle-section hidden" id="bottleSection"><h2>Notable bottles</h2><p class="small">Curated example bottles of this regional style. Character notes describe the typical pour; batches and age statements vary.</p><div id="bottleList" class="bottle-list"></div></article>
+            <article class="card similar-card"><h2>If you like this, try</h2><p class="small">Three ways onward: follow the same style, stay close in style, or try something more adventurous.</p><div id="similarProfiles" class="similar-grid"></div></article>
           </section>
           <section id="compareView" class="hidden" aria-labelledby="regionalComparisonHeading"><article class="card"><h2 id="regionalComparisonHeading">Regional Comparison</h2><div id="compareMessage" class="compare-message hidden" role="status" aria-live="polite"></div><div class="compareGrid" id="compareGrid"></div><div id="compareDifferences"></div></article></section>
         </main>

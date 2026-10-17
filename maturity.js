@@ -26,8 +26,8 @@ async function renderMaturity(profile) {
   const section = document.getElementById("maturity");
   const stagesTarget = document.getElementById("maturityStages");
   const summaryTarget = document.getElementById("maturitySummary");
-  const vintageTarget = document.getElementById("vintageEffect");
-  if (!section || !stagesTarget || !summaryTarget || !vintageTarget || !profile) return;
+  const variationTarget = document.getElementById("variationNote");
+  if (!section || !stagesTarget || !summaryTarget || !variationTarget || !profile) return;
 
   const data = await loadMaturity();
   if (maturityProfile !== profile) return;
@@ -36,7 +36,7 @@ async function renderMaturity(profile) {
     section.classList.add("hidden");
     stagesTarget.replaceChildren();
     summaryTarget.textContent = "";
-    vintageTarget.textContent = "";
+    variationTarget.textContent = "";
     signalMaturityRendered(profile, false);
     return;
   }
@@ -53,7 +53,7 @@ async function renderMaturity(profile) {
     article.append(heading, text);
     stagesTarget.appendChild(article);
   }
-  vintageTarget.textContent = entry.vintage;
+  variationTarget.textContent = entry.vintage;
   section.classList.remove("hidden");
   signalMaturityRendered(profile, true);
 }

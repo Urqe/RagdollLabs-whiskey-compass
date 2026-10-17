@@ -43,7 +43,7 @@ let LOCATORS = {};
 let WHY_RULES = {};
 let PAIR_CACHE = null;
 let lastSurprise = null;
-let browseMethod = "style";
+let browseMethod = "place";
 let currentProfile = null;
 
 const $ = id => document.getElementById(id);
@@ -220,14 +220,14 @@ function syncPlaceControls(styleId, regionId) {
 
 function setBrowseMethod(method) {
   browseMethod = method;
-  const grapeMode = method === "style";
-  $("browseByStyle").classList.toggle("on", grapeMode);
-  $("browseByPlace").classList.toggle("on", !grapeMode);
-  $("browseByStyle").setAttribute("aria-pressed", String(grapeMode));
-  $("browseByPlace").setAttribute("aria-pressed", String(!grapeMode));
-  $("styleBrowseControls").classList.toggle("hidden", !grapeMode);
-  $("placeBrowseControls").classList.toggle("hidden", grapeMode);
-  if (!grapeMode && currentProfile) syncPlaceControls(currentProfile.styleId, currentProfile.regionId);
+  const styleMode = method === "style";
+  $("browseByStyle").classList.toggle("on", styleMode);
+  $("browseByPlace").classList.toggle("on", !styleMode);
+  $("browseByStyle").setAttribute("aria-pressed", String(styleMode));
+  $("browseByPlace").setAttribute("aria-pressed", String(!styleMode));
+  $("styleBrowseControls").classList.toggle("hidden", !styleMode);
+  $("placeBrowseControls").classList.toggle("hidden", styleMode);
+  if (!styleMode && currentProfile) syncPlaceControls(currentProfile.styleId, currentProfile.regionId);
 }
 
 function formatScore(value) { return value.toFixed(value % 1 ? 1 : 0); }
@@ -349,8 +349,8 @@ function renderSimilar(current) {
     .map(item => ({ ...item, score: profileDistance(current.profile, item.profile) + (item.styleId === current.styleId ? 0.12 : 0) }))
     .sort((a, b) => a.score - b.score)
     .slice(0, 3);
-  $("similarWines").innerHTML = candidates.map(item => `<button type="button" class="similar-item" data-style="${escapeAttr(item.styleId)}" data-region="${escapeAttr(item.regionId)}"><strong>${styleCueDot(item.style, item.regional)}${escapeHtml(item.style.name)}</strong><span class="similar-region">${escapeHtml(item.region.name)} · ${escapeHtml(item.region.country)}</span><span class="similar-reason">${escapeHtml(similarReason(current.profile, item.profile))}</span></button>`).join("");
-  $("similarWines").querySelectorAll(".similar-item").forEach(button => button.addEventListener("click", () => selectProfile(button.dataset.style, button.dataset.region, true)));
+  $("similarProfiles").innerHTML = candidates.map(item => `<button type="button" class="similar-item" data-style="${escapeAttr(item.styleId)}" data-region="${escapeAttr(item.regionId)}"><strong>${styleCueDot(item.style, item.regional)}${escapeHtml(item.style.name)}</strong><span class="similar-region">${escapeHtml(item.region.name)} · ${escapeHtml(item.region.country)}</span><span class="similar-reason">${escapeHtml(similarReason(current.profile, item.profile))}</span></button>`).join("");
+  $("similarProfiles").querySelectorAll(".similar-item").forEach(button => button.addEventListener("click", () => selectProfile(button.dataset.style, button.dataset.region, true)));
 }
 
 function renderExplore() {
@@ -367,7 +367,7 @@ function renderExplore() {
   $("sourcesDrawer").replaceChildren(renderSources(region));
   $("bars").innerHTML = METRICS.map(metric => metricBar(metric, profile)).join("");
   $("notes").replaceChildren(renderFlavorGroups(regional.notes));
-  $("serve").replaceChildren(...[["Serving temp", regional.serve], ["Decant", regional.decant], ["Glass", regional.glass], ["Ageing", regional.ageing]].map(([key, value]) => {
+  $("serve").replaceChildren(...[["Serve", regional.serve], ["Water & ABV", regional.dilution], ["Ice & highball", regional.ice], ["Glass", regional.glass]].map(([key, value]) => {
     const box = WhiskeyDOM.element("div", null, "box");
     box.append(WhiskeyDOM.element("div", key, "k"), WhiskeyDOM.element("div", value, "v"));
     return box;
@@ -480,7 +480,7 @@ function renderCompare() {
   $("compareHint").textContent = duplicateCount
     ? "Each region can only be compared once; duplicate selections are ignored."
     : "Choose two or three regional expressions to compare.";
-  $("compareGrid").innerHTML = selections.map(({ style, region, regional, profile }) => `<article class="compareCard"><h3>${escapeHtml(region.name)}</h3><div class="small">${escapeHtml(region.country)} · ${escapeHtml(region.climate)}</div>${renderBadges(region, style)}<div class="bars compare-bars">${COMPARE_METRICS.map(metric => metricBar(metric, profile, true)).join("")}</div><p class="small compare-summary">${escapeHtml(regional.expect)}</p><p class="small"><strong>Serve:</strong> ${escapeHtml(regional.serve)} · <strong>Decant:</strong> ${escapeHtml(regional.decant)}</p></article>`).join("") || '<p class="small">Select regions to compare.</p>';
+  $("compareGrid").innerHTML = selections.map(({ style, region, regional, profile }) => `<article class="compareCard"><h3>${escapeHtml(region.name)}</h3><div class="small">${escapeHtml(region.country)} · ${escapeHtml(region.climate)}</div>${renderBadges(region, style)}<div class="bars compare-bars">${COMPARE_METRICS.map(metric => metricBar(metric, profile, true)).join("")}</div><p class="small compare-summary">${escapeHtml(regional.expect)}</p><p class="small"><strong>Serve:</strong> ${escapeHtml(regional.serve)} · <strong>Water & ABV:</strong> ${escapeHtml(regional.dilution)}</p></article>`).join("") || '<p class="small">Select regions to compare.</p>';
   $("compareDifferences").innerHTML = renderBiggestDifferences(selections);
 }
 
@@ -696,6 +696,7 @@ function wireEvents() {
 async function init() {
   try {
     await loadData();
+    setBrowseMethod("place");
     populateStyles();
     fillExploreRegions($("style").value, null, false);
     populateCountries(null, false);
