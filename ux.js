@@ -228,7 +228,7 @@ function handleSearchResultsKeydown(event) {
 function renderFeaturedDiscoveries() {
   const { styles, regions } = WhiskeyCompass.getData();
   const picks = [
-    ["peated-malt", "islay"],
+    ["heavily-peated-malt", "islay"],
     ["sherry-malt", "speyside"],
     ["bourbon", "kentucky"]
   ];

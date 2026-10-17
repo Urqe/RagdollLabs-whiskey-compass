@@ -1,11 +1,25 @@
 {
-  "single-malt": {
-    "name": "Single malt",
+  "unpeated-malt": {
+    "name": "Unpeated malt",
     "cue": "malt",
     "family": "malt",
     "regionalSignature": false,
     "body": 3.5,
-    "smoke": 1.5,
+    "smoke": 0,
+    "sweetness": 2,
+    "spice": 2.5,
+    "fruit": 2.5,
+    "oak": 3,
+    "finish": 3.5,
+    "heat": 3
+  },
+  "lightly-peated-malt": {
+    "name": "Lightly peated malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3.5,
+    "smoke": 2,
     "sweetness": 2,
     "spice": 2.5,
     "fruit": 2.5,
@@ -14,7 +28,21 @@
     "heat": 3
   },
   "peated-malt": {
-    "name": "Peated single malt",
+    "name": "Peated malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3.5,
+    "smoke": 3.5,
+    "sweetness": 1.5,
+    "spice": 2,
+    "fruit": 2,
+    "oak": 2.5,
+    "finish": 4,
+    "heat": 3
+  },
+  "heavily-peated-malt": {
+    "name": "Heavily peated malt",
     "cue": "malt",
     "family": "malt",
     "regionalSignature": false,
@@ -26,6 +54,20 @@
     "oak": 2.5,
     "finish": 4,
     "heat": 3
+  },
+  "sherry-malt": {
+    "name": "Sherry-cask malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3.5,
+    "smoke": 0,
+    "sweetness": 3,
+    "spice": 2.5,
+    "fruit": 3.5,
+    "oak": 4,
+    "finish": 4,
+    "heat": 2.5
   },
   "bourbon": {
     "name": "Bourbon",
@@ -111,6 +153,20 @@
     "finish": 2.5,
     "heat": 2
   },
+  "irish-malt": {
+    "name": "Irish single malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 2.5,
+    "smoke": 0,
+    "sweetness": 2,
+    "spice": 1.5,
+    "fruit": 3,
+    "oak": 2.5,
+    "finish": 2.5,
+    "heat": 2
+  },
   "japanese-blended": {
     "name": "Japanese blended",
     "cue": "blended",
@@ -193,20 +249,6 @@
     "fruit": 2.5,
     "oak": 2.5,
     "finish": 3,
-    "heat": 2.5
-  },
-  "sherry-malt": {
-    "name": "Sherry-cask malt",
-    "cue": "malt",
-    "family": "malt",
-    "regionalSignature": false,
-    "body": 3.5,
-    "smoke": 0.5,
-    "sweetness": 3,
-    "spice": 2.5,
-    "fruit": 3.5,
-    "oak": 4,
-    "finish": 4,
     "heat": 2.5
   }
 }

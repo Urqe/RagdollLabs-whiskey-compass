@@ -306,6 +306,441 @@
         "Discovery",
         "Emerging region"
       ]
+    },
+    {
+      "id": "laphroaig",
+      "label": "Laphroaig",
+      "aliases": [
+        "laphroaig"
+      ],
+      "regions": [
+        "islay"
+      ],
+      "producer": true
+    },
+    {
+      "id": "ardbeg",
+      "label": "Ardbeg",
+      "aliases": [
+        "ardbeg"
+      ],
+      "regions": [
+        "islay"
+      ],
+      "producer": true
+    },
+    {
+      "id": "lagavulin",
+      "label": "Lagavulin",
+      "aliases": [
+        "lagavulin"
+      ],
+      "regions": [
+        "islay"
+      ],
+      "producer": true
+    },
+    {
+      "id": "bruichladdich",
+      "label": "Bruichladdich",
+      "aliases": [
+        "bruichladdich"
+      ],
+      "regions": [
+        "islay"
+      ],
+      "producer": true
+    },
+    {
+      "id": "bunnahabhain",
+      "label": "Bunnahabhain",
+      "aliases": [
+        "bunnahabhain"
+      ],
+      "regions": [
+        "islay"
+      ],
+      "producer": true
+    },
+    {
+      "id": "macallan",
+      "label": "The Macallan",
+      "aliases": [
+        "macallan"
+      ],
+      "regions": [
+        "speyside"
+      ],
+      "producer": true
+    },
+    {
+      "id": "glenfiddich",
+      "label": "Glenfiddich",
+      "aliases": [
+        "glenfiddich"
+      ],
+      "regions": [
+        "speyside"
+      ],
+      "producer": true
+    },
+    {
+      "id": "glenfarclas",
+      "label": "Glenfarclas",
+      "aliases": [
+        "glenfarclas"
+      ],
+      "regions": [
+        "speyside"
+      ],
+      "producer": true
+    },
+    {
+      "id": "benromach",
+      "label": "Benromach",
+      "aliases": [
+        "benromach"
+      ],
+      "regions": [
+        "speyside"
+      ],
+      "producer": true
+    },
+    {
+      "id": "dalwhinnie",
+      "label": "Dalwhinnie",
+      "aliases": [
+        "dalwhinnie"
+      ],
+      "regions": [
+        "highlands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "glenmorangie",
+      "label": "Glenmorangie",
+      "aliases": [
+        "glenmorangie"
+      ],
+      "regions": [
+        "highlands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "ardmore",
+      "label": "Ardmore",
+      "aliases": [
+        "ardmore"
+      ],
+      "regions": [
+        "highlands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "talisker",
+      "label": "Talisker",
+      "aliases": [
+        "talisker"
+      ],
+      "regions": [
+        "islands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "highland-park",
+      "label": "Highland Park",
+      "aliases": [
+        "highland park"
+      ],
+      "regions": [
+        "islands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "springbank",
+      "label": "Springbank",
+      "aliases": [
+        "springbank"
+      ],
+      "regions": [
+        "campbeltown"
+      ],
+      "producer": true
+    },
+    {
+      "id": "longrow",
+      "label": "Longrow",
+      "aliases": [
+        "longrow"
+      ],
+      "regions": [
+        "campbeltown"
+      ],
+      "producer": true
+    },
+    {
+      "id": "hazelburn",
+      "label": "Hazelburn",
+      "aliases": [
+        "hazelburn"
+      ],
+      "regions": [
+        "campbeltown"
+      ],
+      "producer": true
+    },
+    {
+      "id": "auchentoshan",
+      "label": "Auchentoshan",
+      "aliases": [
+        "auchentoshan"
+      ],
+      "regions": [
+        "lowlands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "glenkinchie",
+      "label": "Glenkinchie",
+      "aliases": [
+        "glenkinchie"
+      ],
+      "regions": [
+        "lowlands"
+      ],
+      "producer": true
+    },
+    {
+      "id": "redbreast",
+      "label": "Redbreast",
+      "aliases": [
+        "redbreast"
+      ],
+      "regions": [
+        "ireland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "green-spot",
+      "label": "Green Spot",
+      "aliases": [
+        "green spot"
+      ],
+      "regions": [
+        "ireland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "jameson",
+      "label": "Jameson",
+      "aliases": [
+        "jameson"
+      ],
+      "regions": [
+        "ireland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "bushmills",
+      "label": "Bushmills",
+      "aliases": [
+        "bushmills",
+        "black bush"
+      ],
+      "regions": [
+        "ireland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "yamazaki",
+      "label": "Yamazaki",
+      "aliases": [
+        "yamazaki"
+      ],
+      "regions": [
+        "japan"
+      ],
+      "producer": true
+    },
+    {
+      "id": "hakushu",
+      "label": "Hakushu",
+      "aliases": [
+        "hakushu"
+      ],
+      "regions": [
+        "japan"
+      ],
+      "producer": true
+    },
+    {
+      "id": "nikka",
+      "label": "Nikka",
+      "aliases": [
+        "nikka",
+        "from the barrel"
+      ],
+      "regions": [
+        "japan"
+      ],
+      "producer": true
+    },
+    {
+      "id": "kavalan",
+      "label": "Kavalan",
+      "aliases": [
+        "kavalan"
+      ],
+      "regions": [
+        "taiwan"
+      ],
+      "producer": true
+    },
+    {
+      "id": "amrut",
+      "label": "Amrut",
+      "aliases": [
+        "amrut"
+      ],
+      "regions": [
+        "india"
+      ],
+      "producer": true
+    },
+    {
+      "id": "elijah-craig",
+      "label": "Elijah Craig",
+      "aliases": [
+        "elijah craig"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "wild-turkey",
+      "label": "Wild Turkey",
+      "aliases": [
+        "wild turkey"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "four-roses",
+      "label": "Four Roses",
+      "aliases": [
+        "four roses"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "makers-mark",
+      "label": "Maker's Mark",
+      "aliases": [
+        "makers mark",
+        "maker's mark"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "weller",
+      "label": "W.L. Weller",
+      "aliases": [
+        "w l weller",
+        "weller"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "rittenhouse",
+      "label": "Rittenhouse",
+      "aliases": [
+        "rittenhouse"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "bulleit",
+      "label": "Bulleit",
+      "aliases": [
+        "bulleit"
+      ],
+      "regions": [
+        "kentucky"
+      ],
+      "producer": true
+    },
+    {
+      "id": "jack-daniels",
+      "label": "Jack Daniel's",
+      "aliases": [
+        "jack daniels",
+        "jack daniel's"
+      ],
+      "regions": [
+        "tennessee"
+      ],
+      "producer": true
+    },
+    {
+      "id": "george-dickel",
+      "label": "George Dickel",
+      "aliases": [
+        "george dickel"
+      ],
+      "regions": [
+        "tennessee"
+      ],
+      "producer": true
+    },
+    {
+      "id": "crown-royal",
+      "label": "Crown Royal",
+      "aliases": [
+        "crown royal"
+      ],
+      "regions": [
+        "canada"
+      ],
+      "producer": true
+    },
+    {
+      "id": "lot-no-40",
+      "label": "Lot No. 40",
+      "aliases": [
+        "lot no 40",
+        "lot 40"
+      ],
+      "regions": [
+        "canada"
+      ],
+      "producer": true
     }
   ]
 }

@@ -9,13 +9,14 @@
         "mods": {
           "oak": 0.5,
           "fruit": 0.5,
-          "body": 0.5
+          "body": 0.5,
+          "smoke": 2.5
         },
         "notes": {
           "Fruit": [
             "tropical fruit",
-            "banana",
-            "raisin"
+            "raisin",
+            "chocolate-adjacent dark fruit"
           ],
           "Oak / ageing": [
             "dark chocolate",
@@ -25,6 +26,10 @@
           "Spice": [
             "peppery spice",
             "cardamom-adjacent"
+          ],
+          "Smoke / peat": [
+            "pronounced peat",
+            "sweet smoke"
           ]
         },
         "serve": "Neat or with water",
@@ -37,26 +42,27 @@
           "curry-adjacent nibbles",
           "aged cheese"
         ],
-        "expect": "Bold and fast-matured: rich oak, tropical fruit and surprising depth at young ages.",
+        "expect": "Bold and fast-matured: rich oak, tropical fruit and, in peated bottlings, pronounced sweet smoke.",
         "style": {
           "family": "malt",
           "cue": "malt",
           "label": "Indian malt \u00b7 Tropical maturity",
           "method": "Scottish-style pot distillation under extreme heat, ex-bourbon and sherry casks",
-          "effect": "Tropical heat accelerates oak extraction and evaporation dramatically"
+          "effect": "Tropical heat accelerates oak extraction; peated expressions carry distinctly sweet, bold smoke"
         },
         "bottles": [
           {
             "name": "Amrut Fusion",
-            "note": "Peated and unpeated barley married: the Indian breakthrough bottle",
-            "tag": "breakthrough"
+            "note": "Marries peated and unpeated barley: bold, sweet, pronounced smoke",
+            "tag": "peated"
           },
           {
             "name": "Rampur Double Wood",
             "note": "Sherry-finished Himalayan-region malt",
             "tag": "sherried"
           }
-        ]
+        ],
+        "phenol": "peated in the peated expressions (Amrut Fusion), unpeated in others"
       }
     },
     "identity": {

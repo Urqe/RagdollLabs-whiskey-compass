@@ -1,6 +1,6 @@
 {
   "islay": {
-    "peated-malt": {
+    "heavily-peated-malt": {
       "sources": [
         "swa"
       ],
@@ -24,7 +24,7 @@
     }
   },
   "speyside": {
-    "single-malt": {
+    "unpeated-malt": {
       "sources": [
         "swa"
       ],

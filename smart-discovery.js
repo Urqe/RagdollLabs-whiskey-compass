@@ -47,16 +47,13 @@ function smartRecommendations(current) {
     picks.push({ item, kind, label, reason });
   };
 
-  const sameGrape = smartPick(compatible, used, item => item.styleId === current.styleId);
-  add(sameGrape, "same-style", "Same style, different place", "See how the same style changes with region, climate and local practice.");
+  const sameStyle = smartPick(compatible, used, item => item.styleId === current.styleId);
+  add(sameStyle, "same-style", "Same style, different place", "See how the same style changes with region, climate and local practice.");
 
-  const family = current.regional.style?.family || "still";
-  if (family !== "still") {
-    const sameFamily = smartPick(compatible, used, item => item.styleId !== current.styleId);
-    add(sameFamily, "same-style", "Same style family", `Another ${family} whiskey with comparable production context.`);
-  } else {
-    const structural = smartPick(compatible, used, item => item.styleId !== current.styleId);
-    if (structural) add(structural, "similar-structure", "Similar structure", `Close on ${smartClosestMetrics(current, structural)}.`);
+  const sameFamily = smartPick(compatible, used, item => item.styleId !== current.styleId);
+  if (sameFamily) {
+    const groupLabel = WhiskeyModel.compareGroupLabel(current);
+    add(sameFamily, "same-group", "Different style, same comparison group", `A different style within ${groupLabel}; metrics stay meaningfully comparable.`);
   }
 
   const adventurous = smartPick(

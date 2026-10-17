@@ -12,7 +12,7 @@ window.WhiskeySearch = (() => {
       const aliases = WhiskeyCompass.getSearchRules().flatMap(rule => rule.aliases.map(alias => ({ rule, alias: normalize(alias) })))
         .sort((a, b) => b.alias.length - a.alias.length);
       const styles = Object.entries(WhiskeyCompass.getData().styles).map(([id, style]) => ({ id, names: style.name.split("/").map(normalize) }));
-      const profiles = WhiskeyCompass.allPairs().map(item => ({ item, identity: identity(item), haystack: haystack(item),
+      const profiles = WhiskeyCompass.allPairs().map(item => ({ item, identity: identity(item), bottles: bottleText(item), haystack: haystack(item),
         style: normalize(item.style.name), region: normalize(item.region.name), country: normalize(item.region.country) }));
       index = { aliases, styles, profiles };
     }
@@ -25,11 +25,24 @@ window.WhiskeySearch = (() => {
     const constraints = [];
     // Longest phrases win, so "sparkling wines" is not partly consumed as "sparkling".
     const { aliases } = searchIndex();
+    const producerSpans = [];
     for (const { rule, alias } of aliases) {
       const phrase = ` ${alias} `;
       if (!remainder.includes(phrase)) continue;
       if (!constraints.some(item => item.id === rule.id)) constraints.push(rule);
-      while (remainder.includes(phrase)) remainder = remainder.replace(phrase, " ");
+      if (rule.producer) {
+        // Producer/bottle names must not be consumed by shorter geographic aliases
+        // ("highland park" must never trigger a "highlands" region constraint).
+        // Protect the span with a placeholder, then restore it for ranking text.
+        const token = ` \u0000${producerSpans.length}\u0000 `;
+        producerSpans.push(phrase.trim());
+        remainder = remainder.split(phrase).join(token);
+      } else {
+        while (remainder.includes(phrase)) remainder = remainder.replace(phrase, " ");
+      }
+    }
+    for (let index = 0; index < producerSpans.length; index += 1) {
+      remainder = remainder.split(` \u0000${index}\u0000 `).join(` ${producerSpans[index]} `);
     }
     const rest = remainder.trim().replace(/\s+/g, " ");
     const styleIds = constraints.length ? searchIndex().styles
@@ -51,10 +64,14 @@ window.WhiskeySearch = (() => {
       (!rule.text || rule.text.every(term => haystack(item).includes(normalize(term)))));
   }
   function identity(item) {
-    // Only the displayed style/expression is indexed here. Permitted blend styles
-    // mentioned in explanatory prose must not masquerade as this expression.
+    // Only the displayed style/expression is indexed here. Explanatory prose
+    // must not masquerade as this expression.
     return normalize([item.style.name, item.region.name, item.region.country,
       item.regional.style?.label].filter(Boolean).join(" "));
+  }
+  function bottleText(item) {
+    // Bottle names are deliberate entity matches, unlike prose mentions.
+    return normalize((item.regional.bottles || []).flatMap(bottle => [bottle.name, bottle.note, bottle.tag]).join(" "));
   }
   function haystack(item) {
     const style = item.regional.style || {};
@@ -82,7 +99,7 @@ window.WhiskeySearch = (() => {
     return candidates.map(row => {
       const { item } = row;
       const pairingScore = query ? FoodDiscovery.score(item.regional.pairings, query) : 0;
-      const text = intent.constraints.length ? row.identity : row.haystack;
+      const text = intent.constraints.length ? `${row.identity} ${row.bottles}` : row.haystack;
       const textMatch = terms.every(term => intent.constraints.length
         ? (` ${text} `).includes(` ${term} `) : text.includes(term));
       const matched = !query || pairingScore > 0 || (!foodKnown && textMatch);

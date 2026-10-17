@@ -11,8 +11,8 @@ const keys = () => Array.from(w.WhiskeyComparison.snapshot().keys);
 const bourbon = profile("bourbon", "kentucky");
 const wheated = profile("wheated-bourbon", "kentucky");
 const rye = profile("rye", "kentucky");
-const islay = profile("peated-malt", "islay");
-const speyside = profile("single-malt", "speyside");
+const islay = profile("heavily-peated-malt", "islay");
+const speyside = profile("unpeated-malt", "speyside");
 
 w.WhiskeyCompass.setMode("compare");
 w.WhiskeyComparison.replace([bourbon, wheated, rye]);
@@ -23,7 +23,7 @@ d.addEventListener("whiskeycompass:comparison-changed", changed);
 
 w.WhiskeyComparison.replace([islay, speyside]);
 assert.equal(notifications, 1, "replacement must be one atomic transaction");
-assert.deepEqual(keys(), ["peated-malt::islay", "single-malt::speyside", ""], "old third whiskey must be cleared");
+assert.deepEqual(keys(), ["heavily-peated-malt::islay", "unpeated-malt::speyside", ""], "old third whiskey must be cleared");
 assert.equal(d.querySelectorAll("#advancedCompareGrid .compareCard").length, 2);
 assert.equal(d.getElementById("advancedCompare3").value, "");
 assert.equal(d.querySelector('.advanced-slot-remove[data-slot="1"]').hidden, false);
@@ -32,13 +32,13 @@ assert.equal(d.querySelector('.advanced-slot-remove[data-slot="3"]').hidden, tru
 
 const slotOneRemove = d.querySelector('.advanced-slot-remove[data-slot="1"]');
 slotOneRemove.click();
-assert.deepEqual(keys(), ["single-malt::speyside", "", ""], "slot removal must promote the next whiskey");
+assert.deepEqual(keys(), ["unpeated-malt::speyside", "", ""], "slot removal must promote the next whiskey");
 assert.equal(slotOneRemove.hidden, false, "the promoted first whiskey must remain removable");
 
 w.WhiskeyComparison.replace([islay, speyside]);
 const leakedSnapshot = w.WhiskeyComparison.snapshot();
 leakedSnapshot.keys[0] = "tampered";
-assert.equal(keys()[0], "peated-malt::islay", "snapshots must not expose the state array");
+assert.equal(keys()[0], "heavily-peated-malt::islay", "snapshots must not expose the state array");
 
 w.advancedSeedProfile(bourbon);
 const input = d.getElementById("compareDiscoveryInput");
@@ -56,12 +56,12 @@ assert.equal(d.querySelector("#compareDiscoveryResults button").textContent, "Ad
 // Manual changes, duplicates and compatibility share the same rules as discovery.
 w.WhiskeyComparison.replace([bourbon, wheated, rye]);
 const slot1 = d.getElementById("advancedCompare1");
-slot1.value = "single-malt::islay";
+slot1.value = "unpeated-malt::islay";
 slot1.dispatchEvent(new w.Event("change", { bubbles: true }));
-assert.deepEqual(keys(), ["single-malt::islay", "", ""]);
+assert.deepEqual(keys(), ["unpeated-malt::islay", "", ""]);
 assert.equal(d.getElementById("advancedBiggestOnly").checked, false);
 
-w.WhiskeyComparison.replace([bourbon, bourbon, profile("single-malt", "islay")]);
+w.WhiskeyComparison.replace([bourbon, bourbon, profile("unpeated-malt", "islay")]);
 assert.deepEqual(keys(), ["bourbon::kentucky", "", ""]);
 
 w.WhiskeyComparison.replace([bourbon]);

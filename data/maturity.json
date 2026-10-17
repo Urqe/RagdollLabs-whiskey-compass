@@ -1,6 +1,6 @@
 {
   "speyside": {
-    "single-malt": {
+    "unpeated-malt": {
       "summary": "Speyside malts generally gain depth and sherry integration with age statements while losing some fresh fruit.",
       "stages": [
         {
@@ -17,10 +17,28 @@
         }
       ],
       "vintage": "Cask type matters more than a couple of years' difference: first-fill sherry at 12 can taste older than refill at 18."
+    },
+    "sherry-malt": {
+      "summary": "Sherry-cask Speyside malts generally deepen with age statements while fresh fruit recedes.",
+      "stages": [
+        {
+          "label": "Young (10\u201312)",
+          "effect": "Fresh dried fruit, bright sherry sweetness and lively oak spice."
+        },
+        {
+          "label": "Developing (15\u201318)",
+          "effect": "Walnut, polished oak and darker fruit; the sherry integrates fully."
+        },
+        {
+          "label": "Mature (21+)",
+          "effect": "Antique oak, marmalade and savoury depth; sweetness turns dignified."
+        }
+      ],
+      "vintage": "Cask type matters more than a couple of years: first-fill sherry at 12 can taste older than refill at 18."
     }
   },
   "islay": {
-    "peated-malt": {
+    "heavily-peated-malt": {
       "summary": "Peat slowly mellows with age while oak sweetness rises to meet it.",
       "stages": [
         {

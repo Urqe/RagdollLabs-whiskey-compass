@@ -366,7 +366,7 @@
           "coffee",
           "soft cheese"
         ],
-        "expect": "Light, smooth and easygoing: the world's most approachable whiskey style.",
+        "expect": "Light, smooth and easygoing: grain lightness plus pot still character.",
         "style": {
           "family": "blended",
           "cue": "blended",
@@ -382,8 +382,8 @@
           },
           {
             "name": "Bushmills Black Bush",
-            "note": "Sherried and richer than the standard blend",
-            "tag": "sherried"
+            "note": "Malt-led exception: mostly triple-distilled malt with a grain component, sherried",
+            "tag": "malt-led exception"
           }
         ],
         "why": [
@@ -394,6 +394,48 @@
           {
             "cause": "Pot still whiskey as the flavour component",
             "effect": "Unmalted barley adds the creamy, lightly spicy texture in the blend's core"
+          }
+        ]
+      },
+      "irish-malt": {
+        "mods": {},
+        "phenol": "unpeated",
+        "notes": {
+          "Fruit": [
+            "green apple",
+            "citrus",
+            "pear"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "light oak"
+          ],
+          "Floral": [
+            "floral notes"
+          ]
+        },
+        "serve": "Neat or with a single ice cube",
+        "decant": "No decanting",
+        "glass": "Glencairn or tumbler",
+        "ageing": "10\u201316 years",
+        "pairings": [
+          "smoked salmon",
+          "irish cheddar",
+          "apple tart"
+        ],
+        "expect": "Triple-distilled malt: lighter and fruitier than Scottish malts, with no smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Irish single malt \u00b7 Light & fruity",
+          "method": "Triple-distilled pot-still malted barley, ex-bourbon and sherry casks",
+          "effect": "Triple distillation gives Irish malt its lighter, cleaner character"
+        },
+        "bottles": [
+          {
+            "name": "Bushmills 10",
+            "note": "Triple-distilled single malt: honeyed, light and fruity",
+            "tag": "triple distilled"
           }
         ]
       }
@@ -417,7 +459,7 @@
         "effect": "Historically no smoke \u2014 Ireland's clean, bright style"
       },
       {
-        "cause": "Unmalted barley in the mash",
+        "cause": "Unmalted barley in pot still whiskey",
         "effect": "Adds a creamy, peppery texture no other country replicates"
       }
     ],
@@ -471,20 +513,21 @@
           "cue": "malt",
           "label": "Japanese malt \u00b7 Refined & aromatic",
           "method": "Scottish-style pot distillation, often with rare indigenous mizunara oak casks",
-          "effect": "Mizunara oak adds sandalwood and incense notes unique to Japanese maturation"
+          "effect": "Mizunara's leak-prone, slow-growing oak yields sandalwood and incense notes when used long-term"
         },
         "bottles": [
           {
             "name": "Yamazaki 12",
             "note": "The flagship: fruit, mizunara spice and balance",
-            "tag": "flagship"
+            "tag": "unpeated flagship"
           },
           {
             "name": "Hakushu 12",
-            "note": "Forest-distilled: pine, mint and gentle peat",
-            "tag": "forested"
+            "note": "Forest-distilled: pine, mint and gentle, clean peat",
+            "tag": "lightly peated"
           }
-        ]
+        ],
+        "phenol": "lightly peated (Hakushu) or unpeated (Yamazaki) \u2014 expression-dependent"
       },
       "japanese-blended": {
         "mods": {},
@@ -549,8 +592,8 @@
         "effect": "Scotch methods replicated with Japanese precision and restraint"
       },
       {
-        "cause": "Rare indigenous mizunara oak casks",
-        "effect": "Sandalwood, incense and coconut-like aromas no other tradition shares"
+        "cause": "Mizunara oak is leak-prone and hard to cooper, so it was used only when imported barrels were scarce",
+        "effect": "Its distinctive sandalwood and incense notes became a prized, distinctly Japanese signature"
       },
       {
         "cause": "Highball-dominated drinking culture",

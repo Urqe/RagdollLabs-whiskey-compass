@@ -50,5 +50,45 @@
   "ewc-ref": {
     "name": "The English Whisky Company (England's first modern distillery)",
     "url": "https://www.englishwhisky.co.uk/"
+  },
+  "bruichladdich": {
+    "name": "Bruichladdich Distillery \u2014 Classic Laddie (unpeated Islay barley)",
+    "url": "https://uk.bruichladdich.com/products/bruichladdich-the-classic-laddie"
+  },
+  "bunnahabhain": {
+    "name": "Bunnahabhain Distillery \u2014 12 Year Old product page",
+    "url": "https://bunnahabhain.com/products/12-year-old"
+  },
+  "springbank": {
+    "name": "Springbank Distillery \u2014 whisky range (Springbank, Longrow, Hazelburn)",
+    "url": "https://www.springbank.scot/whisky/"
+  },
+  "talisker": {
+    "name": "Talisker 10 Year Old \u2014 official product page",
+    "url": "https://www.malts.com/en-gb/products/talisker-10-year-old"
+  },
+  "highlandpark": {
+    "name": "Highland Park 12 Year Old \u2014 official product page",
+    "url": "https://www.highlandparkwhisky.com/en/products/12-year-old-single-malt-whisky"
+  },
+  "ardmore": {
+    "name": "Ardmore Distillery \u2014 lightly peated Highland malt",
+    "url": "https://www.ardmorewhisky.com/"
+  },
+  "benromach": {
+    "name": "Benromach 10 Years Old \u2014 official product page",
+    "url": "https://www.benromach.com/whisky/aged-10-years"
+  },
+  "bushmills": {
+    "name": "Bushmills Black Bush \u2014 official product page",
+    "url": "https://bushmills.com/products/black-bush"
+  },
+  "amrut-fusion": {
+    "name": "Amrut Fusion \u2014 official product page",
+    "url": "https://amrutdistilleries.com/amrut-asm-fusion-50/"
+  },
+  "suntory-mizunara": {
+    "name": "Suntory \u2014 The mysteries of mizunara oak",
+    "url": "https://house.suntory.com/stories/the-mysteries-of-mizunara"
   }
 }
