@@ -1,0 +1,258 @@
+{
+  "india": {
+    "name": "India",
+    "country": "India",
+    "climate": "Tropical: hot and humid",
+    "summary": "The fastest-maturing whisky region on earth: tropical heat gives 5-year-old malts the depth of 15-year Scotch.",
+    "styles": {
+      "indian-malt": {
+        "mods": {
+          "oak": 0.5,
+          "fruit": 0.5,
+          "body": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "tropical fruit",
+            "banana",
+            "raisin"
+          ],
+          "Oak / ageing": [
+            "dark chocolate",
+            "toffee",
+            "sherry"
+          ],
+          "Spice": [
+            "peppery spice",
+            "cardamom-adjacent"
+          ]
+        },
+        "serve": "Neat or with water",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "4\u20138 years (accelerated tropical maturation)",
+        "pairings": [
+          "dark chocolate",
+          "spiced desserts",
+          "curry-adjacent nibbles",
+          "aged cheese"
+        ],
+        "expect": "Bold and fast-matured: rich oak, tropical fruit and surprising depth at young ages.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Indian malt \u00b7 Tropical maturity",
+          "method": "Scottish-style pot distillation under extreme heat, ex-bourbon and sherry casks",
+          "effect": "Tropical heat accelerates oak extraction and evaporation dramatically"
+        },
+        "bottles": [
+          {
+            "name": "Amrut Fusion",
+            "note": "Peated and unpeated barley married: the Indian breakthrough bottle",
+            "tag": "breakthrough"
+          },
+          {
+            "name": "Rampur Double Wood",
+            "note": "Sherry-finished Himalayan-region malt",
+            "tag": "sherried"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Hot plains to Himalayan foothills",
+      "terrain": "Varied; key distilleries near Bangalore and the Himalayas",
+      "soil": "Tropical agricultural zones",
+      "influences": [
+        "Up to 12% per-year angel's share in the tropics",
+        "World's largest whisky market by volume"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Sustained 30\u201340\u00b0C warehouse temperatures",
+        "effect": "Oak extraction runs several times faster than in Scotland; 5 years here behaves like 15 there"
+      },
+      {
+        "cause": "Extreme evaporation (angel's share)",
+        "effect": "Rapid concentration of flavor and cask interaction"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "iwai",
+      "amrut-ref"
+    ]
+  },
+  "taiwan": {
+    "name": "Taiwan",
+    "country": "Taiwan",
+    "climate": "Subtropical, humid",
+    "summary": "The world's most decorated new whisky region: Kavalan's subtropical casks sweep international awards.",
+    "styles": {
+      "taiwanese-malt": {
+        "mods": {
+          "fruit": 0.5,
+          "oak": 0.5,
+          "sweetness": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "tropical fruit",
+            "mango",
+            "coconut"
+          ],
+          "Oak / ageing": [
+            "sherry",
+            "vinous oak",
+            "chocolate"
+          ],
+          "Spice": [
+            "warm spice"
+          ]
+        },
+        "serve": "Neat",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "3\u20138 years (subtropical acceleration)",
+        "pairings": [
+          "dark chocolate",
+          "tropical fruit desserts",
+          "blue cheese"
+        ],
+        "expect": "Lush and fruity with wine-cask refinement: award-winning depth at remarkably young ages.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Taiwanese malt \u00b7 Lush & wine-cask-influenced",
+          "method": "Pot distillation in subtropical heat, heavy use of wine and sherry casks",
+          "effect": "Heat plus wine-cask finishing creates mature depth at young age statements"
+        },
+        "bottles": [
+          {
+            "name": "Kavalan Solist Sherry",
+            "note": "Cask-strength sherry bomb from the award magnet",
+            "tag": "sherry"
+          },
+          {
+            "name": "Kavalan Classic",
+            "note": "The accessible face of Taiwanese whisky",
+            "tag": "classic"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Subtropical coastal plains",
+      "terrain": "Yilan county, sea-mountain interface",
+      "soil": "Snow-mountain water sources",
+      "influences": [
+        "King Car Group's 2005 entry into whisky",
+        "Multiple World Whiskies Awards since 2015"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Humid subtropical climate",
+        "effect": "Fast maturation with rich extraction, like India but wine-cask focused"
+      },
+      {
+        "cause": "Ambitious wine and sherry cask programs",
+        "effect": "Distinguish a young industry with layered vinous flavors"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "kavalan-ref"
+    ]
+  },
+  "england": {
+    "name": "England",
+    "country": "England",
+    "climate": "Temperate maritime",
+    "summary": "A whisky revival after a century-long hiatus: small craft distilleries making precise, spirit-driven malts.",
+    "styles": {
+      "english-malt": {
+        "mods": {
+          "fruit": 0.5,
+          "smoke": -0.5
+        },
+        "notes": {
+          "Fruit": [
+            "apple",
+            "citrus",
+            "stone fruit"
+          ],
+          "Oak / ageing": [
+            "fresh oak",
+            "wine casks"
+          ],
+          "Floral": [
+            "elderflower"
+          ]
+        },
+        "serve": "Neat",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "3\u201310 years (young industry)",
+        "pairings": [
+          "light cheeses",
+          "fruit desserts",
+          "seafood"
+        ],
+        "expect": "Bright and spirit-led: young but precise, with wine-cask creativity.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "English malt \u00b7 Bright & craft-led",
+          "method": "Small-batch pot distillation, often wine and ex-bourbon casks",
+          "effect": "Craft-scale precision with cask creativity marks the revival"
+        },
+        "bottles": [
+          {
+            "name": "The English Whisky Co. Chapter 14",
+            "note": "From England's first modern distillery (2006)",
+            "tag": "pioneer"
+          },
+          {
+            "name": "Cotswolds Single Malt",
+            "note": "Wine-cask influenced and unfiltered",
+            "tag": "craft"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Temperate southern England",
+      "terrain": "Cotswold hills, Norfolk flatlands",
+      "soil": "Barley-growing country",
+      "influences": [
+        "No English whisky from ~1905 to 2006",
+        "Brewing-country heritage informs fermentation"
+      ]
+    },
+    "why": [
+      {
+        "cause": "A century-long gap then craft-era restart",
+        "effect": "Modern equipment and no legacy constraints: creative casks and yeast choices"
+      },
+      {
+        "cause": "Premium English barley from brewing supply chains",
+        "effect": "Excellent raw material for spirit-first styles"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "ewg-ref"
+    ]
+  }
+}

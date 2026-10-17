@@ -1,0 +1,22 @@
+{
+  "islay": {
+    "0": {
+      "effect": "Peat smoke compounds (phenols) deposited during barley drying carry directly into the spirit; iodine and tar notes are chemical signatures of Islay's seaweed-influenced peat rather than literal medicine."
+    }
+  },
+  "kentucky": {
+    "0": {
+      "effect": "Temperature cycling pushes spirit in and out of the barrel wood each season, extracting oak lactones and caramels faster than stable climates; a 4-year-old bourbon can show oak levels a 12-year Scotch never reaches."
+    }
+  },
+  "japan": {
+    "1": {
+      "effect": "Mizunara oak contains unique lactone and eugenol compounds; 'incense' and 'sandalwood' describe those extractives, not literal temple smoke."
+    }
+  },
+  "india": {
+    "0": {
+      "effect": "Heat increases both wood extraction rates and evaporation; accelerated flavor concentration is a physical effect of temperature, not a shortcut to identical complexity."
+    }
+  }
+}

@@ -1,0 +1,143 @@
+/*
+ * RagDollLabs Whiskey Compass — welcome / navigation UX layer
+ * ------------------------------------------------------
+ * Kept separate from styles.css so landing-state and navigation affordances stay
+ * easy to review without mixing them into the core visual system.
+ */
+
+.welcome { min-height: calc(100vh - 44px); display: grid; align-content: center; gap: 18px; }
+.welcome-hero { position: relative; overflow: hidden; min-height: 520px; border: 1px solid var(--line); border-radius: 28px; background:
+  linear-gradient(90deg, rgba(14,10,12,.94) 0%, rgba(14,10,12,.72) 44%, rgba(14,10,12,.08) 100%),
+  url("./assets/whiskey-glass.svg?v=20261017-compass1") center / cover no-repeat; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
+.welcome-copy { position: relative; z-index: 1; max-width: 760px; padding: clamp(32px,6vw,78px); }
+.welcome-copy h1 { max-width: 760px; }
+.welcome-copy .tagline { font-size: clamp(20px,3vw,30px); max-width: 700px; }
+.welcome-copy > p { max-width: 650px; color: #d1c1c5; line-height: 1.6; font-size: 15px; }
+.welcome-actions { margin-top: 28px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; max-width: 650px; }
+.welcome-action { min-height: 96px; padding: 14px; text-align: left; border: 1px solid rgba(201,171,107,.28); border-radius: 14px; background: rgba(16,12,14,.72); color: var(--text); cursor: pointer; backdrop-filter: blur(8px); }
+.welcome-action:hover { border-color: var(--gold); background: rgba(27,18,21,.88); transform: translateY(-1px); }
+.welcome-action strong { display: block; color: var(--gold); font-size: 13px; }
+.welcome-action span { display: block; color: var(--muted); font-size: 11px; line-height: 1.4; margin-top: 5px; }
+.welcome-discoveries { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.welcome-discoveries button { text-align: left; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(23,17,20,.92); color: var(--text); cursor: pointer; }
+.welcome-discoveries button:hover { border-color: var(--gold); }
+.welcome-discoveries .meta { display: block; color: var(--muted); font-size: 10px; margin-top: 4px; }
+
+/* The landing page can be cinematic; once inside the app the masthead gets out
+   of the way so the wine itself becomes the first visual priority. */
+#appShell .app-masthead { padding: 16px 22px; border-radius: 18px; min-height: 0; }
+#appShell .app-masthead h1 { font-size: clamp(28px,3vw,42px); margin: 4px 0 3px; line-height: 1; }
+#appShell .app-masthead .tagline { font-size: 14px; }
+#appShell .app-masthead p { display: none; }
+#appShell .app-masthead .hero-art { width: 82px; }
+
+.empty-state { min-height: 280px; display: grid; place-items: center; text-align: center; }
+.empty-state-inner { max-width: 500px; }
+.empty-state h2 { margin-bottom: 8px; }
+.empty-state p { color: var(--muted); line-height: 1.55; }
+.title-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+.style-cue-indicator { display: inline-flex; align-items: center; gap: 7px; margin-top: 7px; font-size: 11px; color: var(--muted); }
+.style-cue-dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 auto; box-shadow: 0 0 0 1px rgba(255,255,255,.14); }
+.style-cue-dot.malt { background: #c47f3a; }
+.style-cue-dot.bourbon { background: #b8642a; }
+.style-cue-dot.rye { background: #a34d2e; }
+.style-cue-dot.orange { background: #c8783c; }
+.style-cue-dot.wheat { background: #d9a44e; }
+.style-cue-dot.blended { background: #8a6a3d; }
+.style-cue-dot.pot-still { background: #3f7d5a; }
+.style-cue-dot.tennessee { background: #6b4a2f; }
+.style-cue-dot.corn { background: #d9b95c; }
+.style-cue-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: #d8cbd0; font-size: 10px; white-space: nowrap; }
+.search-result .style-cue-dot, .similar-item .style-cue-dot, .welcome-discoveries .style-cue-dot { display: inline-block; vertical-align: -1px; margin-right: 5px; width: 8px; height: 8px; }
+
+.sidebar-primary + .sidebar-primary { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.sidebar-primary > h2 { margin-top: 0; }
+
+/* Food-first ranking remains available, but is summoned from the universal
+   search area instead of consuming a second permanent sidebar block. */
+.food-search { margin-top: 10px; border-top: 1px solid #2f2026; padding-top: 8px; }
+.food-search > summary, .discover-tools > summary { cursor: pointer; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.food-search-inner { padding-top: 3px; }
+.food-result span { line-height: 1.35; }
+
+.discover-tools { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+.discover-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.discover-actions .surprise, .discover-actions .glossary-open { margin: 0; width: 100%; min-height: 40px; }
+.discover-tools .moods { margin-top: 12px; padding-top: 10px; }
+
+.winemaking { margin-top: 16px; }
+.winemaking > .small { margin-top: -4px; }
+.winemaking-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
+.winemaking-choice { background: #120d10; border: 1px solid #302128; border-radius: 12px; padding: 12px; }
+.winemaking-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.winemaking-choice-head strong { font-size: 13px; color: #eadfe2; }
+.winemaking-prevalence { flex: 0 0 auto; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; }
+.winemaking-context { margin-top: 6px; color: #c6b6bb; font-size: 10px; font-style: italic; }
+.winemaking-choice p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+/* The default profile answers "what is this like?" first. Deeper educational
+   material is kept intact in one disclosure instead of competing as flat blocks. */
+.profile-core { margin-top: 8px; }
+.profile-learning { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
+.profile-learning > summary { cursor: pointer; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.profile-learning > summary small { color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.profile-learning-content { display: grid; gap: 18px; padding-top: 12px; }
+.learning-section + .learning-section { border-top: 1px solid #2d1e24; padding-top: 4px; }
+.learning-section > h3:first-child { margin-top: 8px; }
+.ageing-snapshot { max-width: 440px; }
+.ageing-snapshot .box { margin-top: 2px; }
+.profile-learning .sources { margin-top: 0; }
+
+/* Ageing moves into Learn more, leaving serving guidance as three concise cards. */
+.serve { grid-template-columns: repeat(3,1fr); }
+
+.similar-back-slot { min-height: 0; margin: 2px 0 12px; }
+.similar-back { border: 0; padding: 0; background: transparent; color: var(--gold); font: inherit; font-size: 11px; cursor: pointer; text-align: left; }
+.similar-back:hover { text-decoration: underline; }
+.similar-back:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; border-radius: 3px; }
+
+/* The same release token is used for visual assets to avoid mixed old/new deploys. */
+.locator svg { background-image: url("./assets/world-map.svg?v=20261017-compareclear4"); }
+
+/*
+ * Compare-region selector: native option styling is too limited for reliable
+ * two-line region + country labels on iOS/Safari, so a compact custom listbox
+ * progressively enhances the native value used by app.js.
+ */
+.compare-region-field { position: relative; }
+.compare-select { position: relative; }
+.compare-select-trigger { width: 100%; min-height: 58px; padding: 10px 42px 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; text-align: left; border: 1px solid var(--line); border-radius: 10px; background: #100c0e; color: var(--text); cursor: pointer; }
+.compare-select-trigger:hover { border-color: #5a3d48; }
+.compare-select-trigger[aria-expanded="true"] { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(201,171,107,.16); }
+.compare-select-trigger:focus-visible, .compare-select-option:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.compare-select-value { min-width: 0; display: grid; gap: 2px; }
+.compare-select-name { display: block; font-size: 14px; color: var(--text); line-height: 1.25; }
+.compare-select-country { display: block; font-size: 10px; line-height: 1.2; color: var(--muted); font-style: italic; font-weight: 400; }
+.compare-select-chevron { position: absolute; right: 14px; top: 50%; transform: translateY(-52%); color: var(--muted); font-size: 17px; pointer-events: none; }
+.compare-select-menu { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); max-height: 280px; overflow-y: auto; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: #130d10; box-shadow: 0 18px 36px rgba(0,0,0,.42); }
+.compare-select-option { width: 100%; display: grid; gap: 2px; padding: 10px 11px; text-align: left; border: 0; border-radius: 8px; background: transparent; color: var(--text); cursor: pointer; }
+.compare-select-option:hover, .compare-select-option[aria-selected="true"] { background: #21161a; }
+.compare-select-option[aria-selected="true"] .compare-select-name { color: var(--gold); }
+
+@media (max-width: 980px) {
+  .welcome-actions { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .welcome-discoveries { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .welcome { min-height: auto; }
+  .welcome-hero { min-height: 560px; background-position: 58% center; }
+  .welcome-copy { padding: 28px 22px; }
+  .welcome-actions { grid-template-columns: 1fr; }
+  .welcome-action { min-height: 78px; }
+  #appShell .app-masthead { padding: 14px 16px; }
+  #appShell .app-masthead .hero-art { width: 58px; }
+  #appShell .app-masthead .tagline { display: none; }
+  .title-meta { justify-content: flex-start; }
+  .winemaking-grid { grid-template-columns: 1fr; }
+  .compare-select-trigger { min-height: 62px; }
+  .compare-select-menu { max-height: 240px; }
+  .profile-learning > summary { display: grid; gap: 3px; }
+  .discover-actions { grid-template-columns: 1fr; }
+  .serve { grid-template-columns: 1fr 1fr; }
+}

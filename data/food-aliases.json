@@ -1,0 +1,44 @@
+{
+  "chocolate": [
+    "chocolate",
+    "dark chocolate",
+    "cocoa",
+    "brownie"
+  ],
+  "cheese": [
+    "cheese",
+    "blue cheese",
+    "stilton",
+    "cheddar",
+    "brie"
+  ],
+  "bbq": [
+    "bbq",
+    "barbecue",
+    "ribs",
+    "brisket",
+    "grill",
+    "grilled"
+  ],
+  "smoke": [
+    "smoked salmon",
+    "smoked fish",
+    "smoked meats",
+    "lox"
+  ],
+  "nuts": [
+    "nuts",
+    "walnuts",
+    "pecans",
+    "pecan pie",
+    "almonds"
+  ],
+  "dessert": [
+    "dessert",
+    "desserts",
+    "pie",
+    "cake",
+    "pudding",
+    "ice cream"
+  ]
+}

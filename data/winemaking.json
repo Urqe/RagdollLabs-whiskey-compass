@@ -1,0 +1,50 @@
+{
+  "islay": {
+    "peated-malt": {
+      "sources": [
+        "swa"
+      ],
+      "choices": [
+        {
+          "vessel": "Ex-bourbon American oak",
+          "prevalence": "dominant",
+          "effect": "Keeps the focus on peat and barley; vanilla supports rather than competes."
+        },
+        {
+          "vessel": "Sherry casks",
+          "prevalence": "sometimes",
+          "effect": "Adds dried fruit and richness that rounds the medicinal edge \u2014 the Lagavulin 16 approach."
+        },
+        {
+          "vessel": "Heavily charred / re-charred casks",
+          "prevalence": "rare",
+          "effect": "Adds sweetness and spice at the cost of some peat clarity."
+        }
+      ]
+    }
+  },
+  "speyside": {
+    "single-malt": {
+      "sources": [
+        "swa"
+      ],
+      "choices": [
+        {
+          "vessel": "Refill ex-bourbon",
+          "prevalence": "very common",
+          "effect": "Preserves light fruit and honey; the Glenfiddich style."
+        },
+        {
+          "vessel": "First-fill sherry (European oak)",
+          "prevalence": "common",
+          "effect": "Dried fruit, walnut and spice \u2014 the Macallan sherry-oak approach."
+        },
+        {
+          "vessel": "Virgin oak",
+          "prevalence": "rare",
+          "effect": "Bold wood spice and coconut; used sparingly in Speyside."
+        }
+      ]
+    }
+  }
+}

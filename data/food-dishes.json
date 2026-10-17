@@ -1,0 +1,81 @@
+{
+  "sources": {
+    "cheese-guide": {
+      "name": "Whisky Magazine \u2014 cheese pairing guidance",
+      "url": "https://whiskymag.com/"
+    }
+  },
+  "dishes": {
+    "chocolate": {
+      "aliases": [
+        "chocolate",
+        "dark chocolate",
+        "cocoa"
+      ],
+      "matches": [
+        "speyside",
+        "islay",
+        "india"
+      ]
+    },
+    "blue-cheese": {
+      "aliases": [
+        "blue cheese",
+        "stilton",
+        "roquefort"
+      ],
+      "matches": [
+        "islay",
+        "speyside"
+      ]
+    },
+    "bbq": {
+      "aliases": [
+        "bbq",
+        "barbecue",
+        "ribs",
+        "grilled meats",
+        "brisket"
+      ],
+      "matches": [
+        "kentucky",
+        "tennessee"
+      ]
+    },
+    "smoked-salmon": {
+      "aliases": [
+        "smoked salmon",
+        "smoked fish",
+        "lox"
+      ],
+      "matches": [
+        "islay",
+        "ireland"
+      ]
+    },
+    "oysters": {
+      "aliases": [
+        "oysters",
+        "shellfish",
+        "seafood"
+      ],
+      "matches": [
+        "islay",
+        "ireland",
+        "lowlands"
+      ]
+    },
+    "pecan-pie": {
+      "aliases": [
+        "pecan pie",
+        "nuts",
+        "walnuts",
+        "desserts"
+      ],
+      "matches": [
+        "kentucky",
+        "speyside"
+      ]
+    }
+  }
+}

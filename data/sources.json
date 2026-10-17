@@ -1,0 +1,42 @@
+{
+  "swa": {
+    "name": "Scotch Whisky Association",
+    "url": "https://www.scotch-whisky.org.uk/"
+  },
+  "kda": {
+    "name": "Kentucky Distillers' Association",
+    "url": "https://kybourbon.com/"
+  },
+  "ttb": {
+    "name": "TTB \u2014 Alcohol and Tobacco Tax and Trade Bureau (US whiskey standards)",
+    "url": "https://www.ttb.gov/spirits/whiskey.shtml"
+  },
+  "iwai": {
+    "name": "Irish Whiskey Association",
+    "url": "https://www.irishwhiskeyassociation.ie/"
+  },
+  "cwacom": {
+    "name": "Canadian Whisky (association information)",
+    "url": "https://www.canadianwhisky.org/"
+  },
+  "oxford-companion": {
+    "name": "The Oxford Companion to Whisky (reference literature)",
+    "url": "https://global.oup.com/"
+  },
+  "mizunara-ref": {
+    "name": "Suntory \u2014 Mizunara oak and Japanese whisky heritage",
+    "url": "https://www.suntory.com/"
+  },
+  "amrut-ref": {
+    "name": "Amrut Distilleries \u2014 Indian single malt distillery information",
+    "url": "https://www.amrutdistilleries.com/"
+  },
+  "kavalan-ref": {
+    "name": "Kavalan Distillery \u2014 Taiwanese whisky information",
+    "url": "https://www.kavalanwhisky.com/"
+  },
+  "ewg-ref": {
+    "name": "The English Whisky Guild \u2014 English whisky revival",
+    "url": "https://www.englishwhisky.co.uk/"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "rules": [
+    {
+      "id": "peated",
+      "label": "peated whiskeys",
+      "aliases": [
+        "peat",
+        "peaty",
+        "peated",
+        "smoky",
+        "smoke",
+        "bonfire",
+        "iodine",
+        "medicinal"
+      ],
+      "family": "malt"
+    },
+    {
+      "id": "bourbon-rule",
+      "label": "bourbons",
+      "aliases": [
+        "bourbon",
+        "bourbons",
+        "corn whiskey",
+        "sweet whiskey"
+      ],
+      "family": "bourbon"
+    },
+    {
+      "id": "rye-rule",
+      "label": "rye whiskeys",
+      "aliases": [
+        "rye",
+        "rye whiskey",
+        "spicy whiskey",
+        "dill"
+      ],
+      "family": "rye"
+    },
+    {
+      "id": "irish-rule",
+      "label": "Irish whiskeys",
+      "aliases": [
+        "irish",
+        "irish whiskey",
+        "pot still",
+        "smooth whiskey"
+      ],
+      "family": "pot-still"
+    },
+    {
+      "id": "japan-rule",
+      "label": "Japanese whiskies",
+      "aliases": [
+        "japanese",
+        "japan",
+        "mizunara",
+        "highball"
+      ],
+      "regions": [
+        "japan"
+      ]
+    },
+    {
+      "id": "islay-rule",
+      "label": "Islay",
+      "aliases": [
+        "islay",
+        "laphroaig",
+        "ardbeg",
+        "lagavulin"
+      ],
+      "regions": [
+        "islay"
+      ]
+    },
+    {
+      "id": "speyside-rule",
+      "label": "Speyside",
+      "aliases": [
+        "speyside",
+        "macallan",
+        "glenfiddich",
+        "sherried",
+        "sherry bomb"
+      ],
+      "regions": [
+        "speyside"
+      ]
+    },
+    {
+      "id": "kentucky-rule",
+      "label": "Kentucky",
+      "aliases": [
+        "kentucky",
+        "bourbon country",
+        "rickhouse"
+      ],
+      "regions": [
+        "kentucky"
+      ]
+    },
+    {
+      "id": "emerging-rule",
+      "label": "emerging regions",
+      "aliases": [
+        "emerging",
+        "discovery",
+        "unusual",
+        "india",
+        "taiwan",
+        "amrut",
+        "kavalan"
+      ],
+      "regions": [
+        "india",
+        "taiwan",
+        "england"
+      ]
+    }
+  ]
+}

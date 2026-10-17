@@ -1,0 +1,58 @@
+{
+  "islay": {
+    "lat": 55.8,
+    "lon": -6.2
+  },
+  "speyside": {
+    "lat": 57.5,
+    "lon": -3.2
+  },
+  "highlands": {
+    "lat": 56.8,
+    "lon": -4.2
+  },
+  "lowlands": {
+    "lat": 55.9,
+    "lon": -3.2
+  },
+  "campbeltown": {
+    "lat": 55.4,
+    "lon": -5.6
+  },
+  "islands": {
+    "lat": 56.6,
+    "lon": -6.2
+  },
+  "kentucky": {
+    "lat": 38.2,
+    "lon": -85.5
+  },
+  "tennessee": {
+    "lat": 35.5,
+    "lon": -86.0
+  },
+  "ireland": {
+    "lat": 53.4,
+    "lon": -6.5
+  },
+  "japan": {
+    "lat": 35.0,
+    "lon": 137.0
+  },
+  "canada": {
+    "lat": 50.0,
+    "lon": -95.0
+  },
+  "india": {
+    "lat": 13.0,
+    "lon": 77.5
+  },
+  "taiwan": {
+    "lat": 24.8,
+    "lon": 121.7
+  },
+  "england": {
+    "lat": 52.0,
+    "lon": -1.5
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "kentucky": {
+    "name": "Kentucky",
+    "country": "USA",
+    "climate": "Humid subtropical with hot summers",
+    "summary": "The heartland of American whiskey: sweet corn, charred new oak and rickhouse heat cycling.",
+    "styles": {
+      "bourbon": {
+        "mods": {
+          "sweetness": 0.5,
+          "oak": 0.5,
+          "fruit": 0.5,
+          "body": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "caramel corn",
+            "corn sweetness",
+            "ripe stone fruit"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "toasted oak",
+            "char"
+          ],
+          "Spice": [
+            "cinnamon",
+            "black pepper"
+          ],
+          "Earth / savory": [
+            "tobacco",
+            "leather"
+          ]
+        },
+        "serve": "Neat, on the rocks, or in an Old Fashioned",
+        "decant": "No decanting",
+        "glass": "Rocks glass or Glencairn",
+        "ageing": "4\u201312 years (bonded at 4, premium at 8+)",
+        "pairings": [
+          "bbq",
+          "pecan pie",
+          "dark chocolate",
+          "aged cheddar",
+          "maple desserts"
+        ],
+        "expect": "Sweet, full and oaky: caramel corn and vanilla with charred-oak spice.",
+        "style": {
+          "family": "bourbon",
+          "cue": "bourbon",
+          "label": "Straight bourbon \u00b7 Sweet corn & charred oak",
+          "method": "At least 51% corn mashbill, charred new American oak barrels",
+          "effect": "New charred oak gives bourbon its caramel-vanilla signature in a few hot-warehouse years"
+        },
+        "bottles": [
+          {
+            "name": "Elijah Craig Small Batch",
+            "note": "Spearmint, caramel and baking spice at 94 proof",
+            "tag": "spicy caramel"
+          },
+          {
+            "name": "Wild Turkey 101",
+            "note": "High-proof, punchy and classic",
+            "tag": "high proof"
+          },
+          {
+            "name": "Four Roses Single Barrel",
+            "note": "Floral and fruity from unique yeast strains",
+            "tag": "floral"
+          }
+        ]
+      },
+      "wheated-bourbon": {
+        "mods": {
+          "spice": -0.5,
+          "sweetness": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "caramel",
+            "corn",
+            "soft fruit"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "honey"
+          ],
+          "Spice": [
+            "gentle baking spice"
+          ]
+        },
+        "serve": "Neat or on the rocks",
+        "decant": "No decanting",
+        "glass": "Rocks glass",
+        "ageing": "6\u201312 years for the classics",
+        "pairings": [
+          "pecan pie",
+          "bread pudding",
+          "mild cheeses",
+          "vanilla desserts"
+        ],
+        "expect": "Soft, round and dessert-like: wheated mashbills trade rye spice for gentle sweetness.",
+        "style": {
+          "family": "bourbon",
+          "cue": "wheat",
+          "label": "Wheated bourbon \u00b7 Soft & rounded",
+          "method": "Corn plus wheat instead of rye in the mashbill, charred new oak",
+          "effect": "Wheat removes rye's bite, giving a smoother, sweeter pour"
+        },
+        "bottles": [
+          {
+            "name": "Maker's Mark",
+            "note": "The accessible wheated benchmark with its red-dipped neck",
+            "tag": "soft"
+          },
+          {
+            "name": "W.L. Weller 12",
+            "note": "Cult wheater with dusty oak and caramel",
+            "tag": "cult"
+          }
+        ]
+      },
+      "rye": {
+        "mods": {
+          "spice": 0.5,
+          "sweetness": -0.5,
+          "body": -0.5
+        },
+        "notes": {
+          "Spice": [
+            "rye bread",
+            "dill",
+            "black pepper",
+            "cinnamon"
+          ],
+          "Fruit": [
+            "apple",
+            "citrus peel"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "charred oak"
+          ]
+        },
+        "serve": "Neat or in a Manhattan",
+        "decant": "No decanting",
+        "glass": "Rocks glass",
+        "ageing": "4\u201310 years",
+        "pairings": [
+          "rye bread",
+          "pastrami",
+          "strong cheeses",
+          "dark chocolate"
+        ],
+        "expect": "Dry and assertively spicy: rye's herbal kick over oak sweetness.",
+        "style": {
+          "family": "rye",
+          "cue": "rye",
+          "label": "Straight rye \u00b7 Spicy & dry",
+          "method": "At least 51% rye mashbill, charred new oak",
+          "effect": "Rye grain contributes herbal, peppery spice distinct from corn sweetness"
+        },
+        "bottles": [
+          {
+            "name": "Rittenhouse Rye Bottled in Bond",
+            "note": "100-proof rye staple for Manhattans",
+            "tag": "classic"
+          },
+          {
+            "name": "Bulleit Rye",
+            "note": "High-rye mashbill: dry and herbal",
+            "tag": "herbal"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Limestone plateau with hot summers and cold winters",
+      "terrain": "Rolling bluegrass plains and river valleys",
+      "soil": "Limestone-filtered water, iron-free springs",
+      "influences": [
+        "Rickhouse temperature cycling drives fast extraction",
+        "Limestone water ideal for sour mash"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Hot summers and cold winters in the rickhouse",
+        "effect": "Barrels breathe deeply, extracting oak quickly \u2014 bourbon matures in years, not decades"
+      },
+      {
+        "cause": "Charred, never-reused American oak barrels",
+        "effect": "A caramel-colored layer of charred wood sugars filters the spirit and adds vanilla"
+      },
+      {
+        "cause": "Limestone-filtered, iron-free water",
+        "effect": "Sweet mash fermentation stays clean and bright"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "kda",
+      "ttb"
+    ]
+  },
+  "tennessee": {
+    "name": "Tennessee",
+    "country": "USA",
+    "climate": "Humid subtropical",
+    "summary": "Bourbon's charcoal-mellowed cousin: filtered through sugar maple before aging for extra smoothness.",
+    "styles": {
+      "tennessee": {
+        "mods": {
+          "smoke": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "caramel corn",
+            "banana"
+          ],
+          "Oak / ageing": [
+            "charcoal",
+            "maple smoke",
+            "vanilla"
+          ],
+          "Spice": [
+            "gentle spice"
+          ]
+        },
+        "serve": "Neat, on the rocks, or with cola",
+        "decant": "No decanting",
+        "glass": "Rocks glass",
+        "ageing": "4\u20137 years",
+        "pairings": [
+          "bbq ribs",
+          "maple desserts",
+          "grilled meats"
+        ],
+        "expect": "Smooth and charcoal-softened: corn sweetness with a faint maple-smoke whisper.",
+        "style": {
+          "family": "tennessee",
+          "cue": "tennessee",
+          "label": "Tennessee whiskey \u00b7 Charcoal-mellowed",
+          "method": "Bourbon-style mashbill filtered through sugar-maple charcoal (Lincoln County Process) before barreling",
+          "effect": "Charcoal mellowing removes sharp congeners and adds a faint smoky maple undertone"
+        },
+        "bottles": [
+          {
+            "name": "Jack Daniel's Old No. 7",
+            "note": "The global face of Tennessee whiskey",
+            "tag": "classic"
+          },
+          {
+            "name": "George Dickel No. 12",
+            "note": "Smoother, slightly sweeter rival from Cascade Hollow",
+            "tag": "smooth"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Humid valleys of middle Tennessee",
+      "terrain": "Hollows and limestone springs",
+      "soil": "Limestone water sources",
+      "influences": [
+        "Lincoln County Process legally required for 'Tennessee whiskey'",
+        "Cave spring water at every historic distillery"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Dripping through feet of sugar-maple charcoal before aging",
+        "effect": "Strips harsh grain edges early, making the whiskey taste older than its age"
+      },
+      {
+        "cause": "Same charred new-oak barrels as bourbon",
+        "effect": "Keeps caramel and vanilla in common with its Kentucky cousin"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "ttb"
+    ]
+  },
+  "ireland": {
+    "name": "Ireland",
+    "country": "Ireland",
+    "climate": "Temperate maritime, mild and green",
+    "summary": "Smooth, unpeated and often triple-distilled: the world's lightest and most approachable whiskey tradition.",
+    "styles": {
+      "pot-still": {
+        "mods": {},
+        "notes": {
+          "Fruit": [
+            "green apple",
+            "orchard fruit"
+          ],
+          "Spice": [
+            "creamy spice",
+            "black pepper"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "sherry"
+          ],
+          "Mineral / herbal": [
+            "barley cream",
+            "pot still spice"
+          ]
+        },
+        "serve": "Neat or with a single ice cube",
+        "decant": "No decanting",
+        "glass": "Glencairn or tumbler",
+        "ageing": "10\u201321 years",
+        "pairings": [
+          "smoked salmon",
+          "irish cheddar",
+          "apple tart",
+          "oysters"
+        ],
+        "expect": "Silky and spice-creamy with barley sweetness: Ireland's signature pot still character.",
+        "style": {
+          "family": "pot-still",
+          "cue": "pot-still",
+          "label": "Single pot still \u00b7 Creamy & spicy",
+          "method": "Mash of malted and unmalted barley, triple distilled in pot stills",
+          "effect": "Unmalted barley gives a distinctive oily, spicy 'pot still character'"
+        },
+        "bottles": [
+          {
+            "name": "Redbreast 12",
+            "note": "The definitive pot still whiskey: sherry, spice and cream",
+            "tag": "benchmark"
+          },
+          {
+            "name": "Green Spot",
+            "note": "Fruity, rounded and historically a wine-merchant blend",
+            "tag": "fruity"
+          }
+        ]
+      },
+      "blended-irish": {
+        "mods": {},
+        "notes": {
+          "Fruit": [
+            "apple",
+            "citrus"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "grain sweetness"
+          ],
+          "Spice": [
+            "light spice"
+          ]
+        },
+        "serve": "On the rocks, in coffee, or as a highball",
+        "decant": "No decanting",
+        "glass": "Tumbler or highball",
+        "ageing": "3\u20138 years for the core range",
+        "pairings": [
+          "light desserts",
+          "coffee",
+          "soft cheese"
+        ],
+        "expect": "Light, smooth and easygoing: the world's most approachable whiskey style.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Blended Irish \u00b7 Light & smooth",
+          "method": "Column-still grain whiskey blended with triple-distilled malt",
+          "effect": "Grain lightness plus malt body gives the famously smooth Irish profile"
+        },
+        "bottles": [
+          {
+            "name": "Jameson",
+            "note": "The global standard Irish blend",
+            "tag": "classic"
+          },
+          {
+            "name": "Bushmills Black Bush",
+            "note": "Sherried and richer than the standard blend",
+            "tag": "sherried"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Mild, green and Atlantic-washed",
+      "terrain": "Rolling farmland, river valleys",
+      "soil": "Fertile barley country",
+      "influences": [
+        "Invented column-still grain blending",
+        "Unmalted barley tradition from tax-avoidance history"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Triple distillation",
+        "effect": "A third pass removes more heavy compounds, giving the famous smoothness"
+      },
+      {
+        "cause": "Coal-dried rather than peat-dried malt",
+        "effect": "Historically no smoke \u2014 Ireland's clean, bright style"
+      },
+      {
+        "cause": "Unmalted barley in the mash",
+        "effect": "Adds a creamy, peppery texture no other country replicates"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "iwai"
+    ]
+  },
+  "japan": {
+    "name": "Japan",
+    "country": "Japan",
+    "climate": "Four distinct seasons; cold winters, humid summers",
+    "summary": "Precision Scotch: delicate, balanced and often lightly peated, built for food-friendly subtlety.",
+    "styles": {
+      "japanese-malt": {
+        "mods": {},
+        "notes": {
+          "Fruit": [
+            "pear",
+            "citrus",
+            "peach"
+          ],
+          "Oak / ageing": [
+            "mizunara oak",
+            "vanilla",
+            "sandalwood"
+          ],
+          "Smoke / peat": [
+            "delicate peat"
+          ],
+          "Earth / savory": [
+            "incense",
+            "pine"
+          ]
+        },
+        "serve": "Neat, or mizuwari (with water)",
+        "decant": "No decanting",
+        "glass": "Copita or small tumbler",
+        "ageing": "10\u201317 years for flagships",
+        "pairings": [
+          "sashimi",
+          "mild cheeses",
+          "dark chocolate",
+          "yakitori"
+        ],
+        "expect": "Refined and aromatic: orchard fruit and incense-like mizunara oak over a whisper of peat.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Japanese malt \u00b7 Refined & aromatic",
+          "method": "Scottish-style pot distillation, often with rare indigenous mizunara oak casks",
+          "effect": "Mizunara oak adds sandalwood and incense notes unique to Japanese maturation"
+        },
+        "bottles": [
+          {
+            "name": "Yamazaki 12",
+            "note": "The flagship: fruit, mizunara spice and balance",
+            "tag": "flagship"
+          },
+          {
+            "name": "Hakushu 12",
+            "note": "Forest-distilled: pine, mint and gentle peat",
+            "tag": "forested"
+          }
+        ]
+      },
+      "japanese-blended": {
+        "mods": {},
+        "notes": {
+          "Fruit": [
+            "apple",
+            "citrus"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "light oak"
+          ],
+          "Smoke / peat": [
+            "faint smoke"
+          ]
+        },
+        "serve": "Mizuwari (2 parts water), on the rocks, or oyuwari (hot water)",
+        "decant": "No decanting",
+        "glass": "Highball glass",
+        "ageing": "Blends of various ages; core range NAS",
+        "pairings": [
+          "izakaya snacks",
+          "edamame",
+          "grilled fish",
+          "karaage"
+        ],
+        "expect": "Clean and balanced for highball culture: subtle, restrained and food-friendly.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Japanese blended \u00b7 Clean & highball-ready",
+          "method": "Malt and grain blended with deliberate lightness",
+          "effect": "Designed to pair with food and stretch in a highball without collapsing"
+        },
+        "bottles": [
+          {
+            "name": "Suntory Toki",
+            "note": "Built for the highball boom: light, crisp, citrusy",
+            "tag": "highball"
+          },
+          {
+            "name": "Nikka From the Barrel",
+            "note": "Punchy 50-proof blend with malt-forward punch",
+            "tag": "bold"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Mountain valleys and cool forests",
+      "terrain": "Alpine-adjacent distillery sites",
+      "soil": "Granite and soft mountain water",
+      "influences": [
+        "Masataka Taketsuru studied in Scotland, 1918\u201320",
+        "Mizunara (Japanese oak) casks unique to the tradition",
+        "Highball culture drives blend design"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Founders trained directly in Scotland",
+        "effect": "Scotch methods replicated with Japanese precision and restraint"
+      },
+      {
+        "cause": "Rare indigenous mizunara oak casks",
+        "effect": "Sandalwood, incense and coconut-like aromas no other tradition shares"
+      },
+      {
+        "cause": "Highball-dominated drinking culture",
+        "effect": "Blends engineered for delicacy and food pairing"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa",
+      "mizunara-ref"
+    ]
+  },
+  "canada": {
+    "name": "Canada",
+    "country": "Canada",
+    "climate": "Cold continental",
+    "summary": "Light, smooth and rye-inflected: a blending tradition built for easy drinking.",
+    "styles": {
+      "canadian-blended": {
+        "mods": {},
+        "notes": {
+          "Spice": [
+            "gentle rye spice"
+          ],
+          "Fruit": [
+            "apple",
+            "caramel"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "soft oak"
+          ]
+        },
+        "serve": "On the rocks or in cocktails",
+        "decant": "No decanting",
+        "glass": "Tumbler",
+        "ageing": "6\u201312 years minimum in practice",
+        "pairings": [
+          "maple desserts",
+          "light snacks",
+          "ginger-based dishes"
+        ],
+        "expect": "Light and gentle with a rye whisper: cocktail-friendly and easy-sipping.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Canadian blended \u00b7 Light & rye-soft",
+          "method": "Column-still base whiskies blended with a small 'flavouring whisky' often rye-heavy",
+          "effect": "Blending a light base with a flavourful rye component gives smoothness plus subtle spice"
+        },
+        "bottles": [
+          {
+            "name": "Crown Royal",
+            "note": "The Canadian standard: smooth, caramel-soft",
+            "tag": "classic"
+          },
+          {
+            "name": "Lot No. 40",
+            "note": "100% rye flavouring whisky: the rye lover's Canadian",
+            "tag": "rye-forward"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Cold winters, hot short summers",
+      "terrain": "Prairie grain belt",
+      "soil": "Rich prairie soils growing rye and corn",
+      "influences": [
+        "Historically 'rye' means Canadian whisky, even with small rye content",
+        "Long, cold maturation slows extraction"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Centuries of blending-base tradition",
+        "effect": "Canadian whisky prioritizes smoothness and mixability over assertive character"
+      },
+      {
+        "cause": "Cold climate maturation",
+        "effect": "Slower oak extraction keeps the palate light"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "cwacom"
+    ]
+  }
+}

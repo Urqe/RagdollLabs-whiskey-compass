@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RagDollLabs Whiskey Compass — explore how style family, place and production shape a whiskey's character.">
+  <title>RagDollLabs Whiskey Compass</title>
+  <!-- One release token keeps visible assets in sync after a GitHub Pages deploy. -->
+  <link rel="stylesheet" href="./styles.css?v=20261017-compareclear4">
+  <link rel="stylesheet" href="./ux.css?v=20261017-compareclear4">
+  <link rel="stylesheet" href="./maturity.css?v=20261017-compareclear4">
+  <link rel="stylesheet" href="./learning.css?v=20261017-compareclear4">
+  <link rel="stylesheet" href="./advanced-compare.css?v=20261017-compareclear4">
+  <link rel="stylesheet" href="./home-brand.css?v=20261017-compareclear4">
+</head>
+<body>
+  <div class="wrap">
+    <section id="welcomeView" class="welcome hidden" aria-labelledby="welcomeTitle">
+      <div class="welcome-hero">
+        <div class="welcome-copy">
+          <div class="kicker"><span class="brand-ragdoll">RagDoll</span><span class="brand-labs">Labs</span> <span class="brand-reference">reference tools</span></div>
+          <h1 id="welcomeTitle"><span class="welcome-brand">RagDollLabs</span> <span class="welcome-name">Whiskey Compass</span></h1>
+          <div class="tagline">Explore how style family, place and production shape the glass.</div>
+          <p>Discover classic and emerging whiskey regions through style profiles, serving guidance and side-by-side comparison. Start wherever your curiosity does.</p>
+          <div class="welcome-actions" aria-label="Ways to start using Whiskey Compass">
+            <button class="welcome-action" type="button" data-welcome-action="style"><strong>Explore whiskeys</strong><span>Browse by style family or place, then open a regional expression.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="search"><strong>Search the atlas</strong><span>Find styles, regions, styles and food pairings.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="surprise"><strong>Surprise me</strong><span>Jump straight into a discovery profile.</span></button>
+          </div>
+        </div>
+        <!-- The cat artwork lives inside the rickhouse SVG so the foreground glassware can sit in front of it. This link is only its interactive hit target. -->
+        <a class="welcome-ragdoll-link" href="./" data-home-return aria-label="RagDollLabs home"></a>
+      </div>
+      <section aria-labelledby="featuredHeading">
+        <h2 id="featuredHeading">A few places to start</h2>
+        <div id="featuredDiscoveries" class="welcome-discoveries"></div>
+      </section>
+    </section>
+
+    <div id="appShell" class="hidden">
+      <header class="hero app-masthead">
+        <div>
+          <a class="brand-home-link" href="./" data-home-return aria-label="Return to Whiskey Compass home">
+            <div class="kicker"><span class="brand-ragdoll">RagDoll</span><span class="brand-labs">Labs</span> <span class="brand-reference">reference tools</span></div>
+          </a>
+          <h1><a class="brand-home-link" href="./" data-home-return>RagDollLabs Whiskey Compass</a></h1>
+          <div class="tagline">Explore how style family, place and production shape the glass.</div>
+          <p>Search, browse by style family or place, compare regional expressions, and discover whiskeys from classic and emerging regions.</p>
+        </div>
+        <a class="app-home-cat" href="./" data-home-return aria-label="Return to Whiskey Compass home">
+          <img src="./assets/ragdoll-cat.svg?v=20261017-compareclear4" alt="">
+        </a>
+      </header>
+
+      <div class="layout">
+        <aside class="card side" aria-label="Whiskey Compass controls">
+          <div class="mode" role="group" aria-label="View mode"><button id="bExplore" class="on" type="button" aria-pressed="true">Explore</button><button id="bCompare" type="button" aria-pressed="false">Compare</button></div>
+
+          <section id="searchSection" class="sidebar-primary" aria-labelledby="searchHeading">
+            <h2 id="searchHeading">Search Whiskey Compass</h2>
+            <label for="searchInput">Style, place, style or food</label>
+            <input id="searchInput" type="search" autocomplete="off" placeholder="Try ‘Islay’, ‘bourbon’, ‘chocolate’ or ‘rye’" aria-controls="searchResults">
+            <div id="searchResults" class="search-results" aria-label="Search results"></div>
+          </section>
+
+          <section id="exploreControls" class="sidebar-primary" aria-labelledby="exploreHeading">
+            <div class="section-head"><h2 id="exploreHeading">Whiskey Explorer</h2><div class="browse-toggle" role="group" aria-label="Browse method"><button id="browseByStyle" class="on" type="button" aria-pressed="true">By style</button><button id="browseByPlace" type="button" aria-pressed="false">By place</button></div></div>
+            <div id="styleBrowseControls"><label for="style">Style / blend</label><select id="style"></select><div id="styleCue" aria-live="polite"></div><label for="region">Region</label><select id="region"></select></div>
+            <div id="placeBrowseControls" class="hidden"><label for="country">Country</label><select id="country"></select><label for="placeRegion">Region</label><select id="placeRegion"></select><label for="placeStyle">Style / blend</label><select id="placeStyle"></select><div id="placeStyleColor" aria-live="polite"></div></div>
+
+            <details id="discoverTools" class="discover-tools">
+              <summary>Discover</summary>
+              <div class="discover-actions">
+                <button id="surprise" class="surprise" type="button">Surprise me</button>
+                <button id="glossaryOpen" class="glossary-open" type="button">Whiskey glossary</button>
+              </div>
+              <section id="moodSection" class="moods" aria-labelledby="moodHeading"><h3 id="moodHeading">What are you in the mood for?</h3><div id="moodButtons" class="mood-grid"></div></section>
+            </details>
+          </section>
+
+          <section id="compareControls" class="hidden" aria-labelledby="compareHeading"><h2 id="compareHeading">Compare Regions</h2><label for="cg">Style / blend</label><select id="cg"></select><div id="compareStyleCue" aria-live="polite"></div><div id="compareRegionControls" class="compareControls"></div><p id="compareHint" class="small" role="status" aria-live="polite"></p></section>
+        </aside>
+
+        <main>
+          <p id="liveStatus" class="sr-only" role="status" aria-live="polite"></p>
+          <section id="emptyView" class="card empty-state hidden"><div class="empty-state-inner"><h2 id="emptyTitle">Choose where to begin</h2><p id="emptyText"></p></div></section>
+          <section id="exploreView" aria-labelledby="profileHeading">
+            <article class="card profile-card">
+              <div class="titleline"><h2 id="profileHeading"><span id="title"></span></h2><div class="title-meta"><span id="profileStyleCue"></span><div class="pill" id="pill"></div></div></div>
+              <p class="summary" id="expect"></p>
+
+              <div class="content2 profile-core"><section aria-labelledby="styleHeading"><h3 id="styleHeading">Style profile</h3><div class="bars" id="bars"></div></section><section aria-labelledby="notesHeading"><h3 id="notesHeading">Typical notes</h3><div id="notes"></div></section></div>
+
+              <details id="learnMore" class="profile-learning">
+                <summary><span>Learn more</span><small>Place, production, ageing &amp; sources</small></summary>
+                <div class="profile-learning-content">
+                  <section class="learning-section" aria-labelledby="placeClimateHeading">
+                    <h3 id="placeClimateHeading">Place &amp; climate</h3>
+                    <div class="profile-topline"><div id="climate" class="climate"></div><div id="locatorMap" class="locator-wrap"></div></div>
+                    <div id="identity"></div><div id="why"></div>
+                  </section>
+
+                  <div id="makingCluster" class="learning-section">
+                    <section id="winemaking" class="winemaking hidden" aria-labelledby="winemakingHeading"><h3 id="winemakingHeading">Production choices</h3><p class="small">Common distillation and cask choices that can materially change this regional expression.</p><div id="winemakingChoices" class="winemaking-grid"></div></section>
+                  </div>
+
+                  <section class="learning-section" aria-labelledby="ageingLearningHeading">
+                    <h3 id="ageingLearningHeading">Ageing &amp; maturity</h3>
+                    <div id="ageingSnapshot" class="ageing-snapshot"></div>
+                    <section id="maturity" class="maturity hidden" aria-labelledby="maturityHeading"><h3 id="maturityHeading">Maturity &amp; vintage evolution</h3><p id="maturitySummary" class="small"></p><div id="maturityStages" class="maturity-stages"></div><div class="vintage-note"><strong>Vintage effect:</strong> <span id="vintageEffect"></span></div></section>
+                  </section>
+
+                  <div id="sourcesDrawer"></div>
+                </div>
+              </details>
+            </article>
+            <article class="card serve-card"><h2>Serve It Tonight</h2><div class="serve" id="serve"></div><h3>Food pairings</h3><div class="chips" id="pair"></div></article>
+            <article class="card similar-card"><h2>Where to go next</h2><p class="small">Three ways onward: follow the same style, stay close in style, or try something more adventurous.</p><div id="similarWines" class="similar-grid"></div></article>
+          </section>
+          <section id="compareView" class="hidden" aria-labelledby="regionalComparisonHeading"><article class="card"><h2 id="regionalComparisonHeading">Regional Comparison</h2><div id="compareMessage" class="compare-message hidden" role="status" aria-live="polite"></div><div class="compareGrid" id="compareGrid"></div><div id="compareDifferences"></div></article></section>
+        </main>
+      </div>
+    </div>
+
+    <dialog id="glossaryDialog" class="glossary-dialog" aria-labelledby="glossaryDialogTitle">
+      <div class="glossary-dialog-inner">
+        <div class="glossary-dialog-head"><div><div class="kicker">Learning layer</div><h2 id="glossaryDialogTitle">Whiskey glossary</h2></div><button id="glossaryClose" class="glossary-close" type="button">Close</button></div>
+        <p id="glossaryIntro" class="small">Short explanations for technical terms that appear across Whiskey Compass.</p>
+        <div id="glossaryContent" class="glossary-content"></div>
+      </div>
+    </dialog>
+
+    <footer class="footer">RagDollLabs Whiskey Compass · Typical-style reference, not a guarantee about a specific bottle.</footer>
+  </div>
+  <script src="./whiskey-model.js?v=20261017-compareclear4" defer></script>
+  <script src="./dom-utils.js?v=20261017-compareclear4" defer></script>
+  <script src="./data-loader.js?v=20261017-compareclear4" defer></script>
+  <script src="./app.js?v=20261017-compareclear4" defer></script>
+  <script src="./compare-country.js?v=20261017-compareclear4" defer></script>
+  <script src="./ux.js?v=20261017-compareclear4" defer></script>
+  <script src="./food-discovery.js?v=20261017-compareclear4" defer></script>
+  <script src="./whiskey-search.js?v=20261017-compareclear4" defer></script>
+  <script src="./functional.js?v=20261017-compareclear4" defer></script>
+  <script src="./search-enhance.js?v=20261017-compareclear4" defer></script>
+  <script src="./compare-state.js?v=20261017-compareclear4" defer></script>
+  <script src="./advanced-compare.js?v=20261017-compareclear4" defer></script>
+  <script src="./compare-discovery.js?v=20261017-compareclear4" defer></script>
+  <script src="./maturity.js?v=20261017-compareclear4" defer></script>
+  <script src="./learning.js?v=20261017-compareclear4" defer></script>
+  <script src="./smart-discovery.js?v=20261017-compareclear4" defer></script>
+  <script src="./home-brand.js?v=20261017-compareclear4" defer></script>
+</body>
+</html>

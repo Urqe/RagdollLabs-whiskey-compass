@@ -1,0 +1,14 @@
+{
+  "name": "ragdolllabs-whiskey-compass",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:syntax": "node scripts/check-syntax.mjs",
+    "validate:data": "python3 scripts/validate.py",
+    "test": "node tests/dom-smoke.mjs && node tests/hardening.mjs",
+    "validate": "npm run check:syntax && npm run validate:data && npm test"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}

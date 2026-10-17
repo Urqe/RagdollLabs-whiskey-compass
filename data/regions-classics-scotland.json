@@ -1,0 +1,662 @@
+{
+  "islay": {
+    "name": "Islay",
+    "country": "Scotland",
+    "climate": "Cool, maritime, windswept Atlantic island",
+    "summary": "The world's peat benchmark: sea spray, bonfire smoke and medicinal notes over malt sweetness.",
+    "styles": {
+      "peated-malt": {
+        "mods": {
+          "body": 0.5,
+          "smoke": 0.5,
+          "finish": 0.5,
+          "fruit": -0.5
+        },
+        "notes": {
+          "Smoke / peat": [
+            "bonfire smoke",
+            "iodine",
+            "sea spray",
+            "medicinal",
+            "tarred rope"
+          ],
+          "Fruit": [
+            "lemon",
+            "bramley apple"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "coastal oak"
+          ],
+          "Earth / savory": [
+            "kelp",
+            "wet stone",
+            "linen smoke"
+          ]
+        },
+        "serve": "Neat or with a few drops of water",
+        "decant": "No decanting; rest 5 min in the glass",
+        "glass": "Copita or Glencairn",
+        "ageing": "10\u201325 years typical peak window",
+        "pairings": [
+          "blue cheese",
+          "smoked salmon",
+          "oysters",
+          "dark chocolate",
+          "lagavulin-style cigars",
+          "smoked meats"
+        ],
+        "expect": "Intensely peaty and coastal: bonfire smoke, iodine and sea spray over a firm malt backbone.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Peated island malt \u00b7 Medicinal & coastal",
+          "method": "Heavily peated barley (30\u201355 ppm), pot distilled twice, ex-bourbon casks dominant",
+          "effect": "Peat smoke from barley drying defines the flavor; sea air and oak maturation add brine and sweetness"
+        },
+        "bottles": [
+          {
+            "name": "Laphroaig 10",
+            "note": "The medicinal benchmark: iodine, tar and sweet smoke",
+            "tag": "medicinal"
+          },
+          {
+            "name": "Ardbeg 10",
+            "note": "Bonfire peat balanced by citrus sweetness",
+            "tag": "bonfire"
+          },
+          {
+            "name": "Lagavulin 16",
+            "note": "Deep, sherry-influenced peat with a long dry finish",
+            "tag": "deep smoke"
+          }
+        ]
+      },
+      "single-malt": {
+        "mods": {
+          "smoke": -1,
+          "fruit": 0.5,
+          "sweetness": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "peach",
+            "lemon zest",
+            "pear"
+          ],
+          "Smoke / peat": [
+            "light peat",
+            "sea breeze"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "cream"
+          ],
+          "Earth / savory": [
+            "brine",
+            "coastal air"
+          ]
+        },
+        "serve": "Neat or with a splash of water",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "8\u201318 years",
+        "pairings": [
+          "oysters",
+          "mussels",
+          "smoked salmon",
+          "creamy cheeses"
+        ],
+        "expect": "Unpeated and gentle by Islay standards: orchard fruit, vanilla and a whisper of sea air.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Unpeated island malt \u00b7 Gentle & coastal",
+          "method": "Unpeated or lightly peated barley, ex-bourbon casks",
+          "effect": "Lets the island's maritime softness show without smoke dominating"
+        },
+        "bottles": [
+          {
+            "name": "Bruichladdich The Classic Laddie",
+            "note": "Unpeated, barley-driven and coastal",
+            "tag": "unpeated"
+          },
+          {
+            "name": "Bunnahabhain 12",
+            "note": "Sherry-soaked and barely peated",
+            "tag": "sherry"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Cool maritime island, frequent Atlantic storms",
+      "terrain": "Low-lying moorland and peat bogs, rocky shores",
+      "soil": "Deep peat, sandstone",
+      "influences": [
+        "Sea spray reaching the warehouses",
+        "Peat cut from island bogs for malting"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Island peat, rich in decayed vegetation and seaweed",
+        "effect": "Burns smoky and medicinal, giving iodine and tar notes"
+      },
+      {
+        "cause": "Warehouses within reach of Atlantic salt spray",
+        "effect": "Barrels breathe maritime air, adding brine and salinity"
+      },
+      {
+        "cause": "Cool, slow ripening climate",
+        "effect": "Barley matures slowly, keeping malt sugars delicate"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa",
+      "oxford-companion"
+    ]
+  },
+  "speyside": {
+    "name": "Speyside",
+    "country": "Scotland",
+    "climate": "Cool, sheltered inland valley",
+    "summary": "Scotland's sweet heartland: honey, orchard fruit and, in the sherry-driven houses, rich dried fruit.",
+    "styles": {
+      "single-malt": {
+        "mods": {
+          "sweetness": 0.5,
+          "fruit": 0.5,
+          "smoke": -1,
+          "oak": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "honey",
+            "apple",
+            "pear",
+            "orange"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "toffee",
+            "coconut"
+          ],
+          "Floral": [
+            "heather"
+          ],
+          "Spice": [
+            "cinnamon"
+          ]
+        },
+        "serve": "Neat; a drop of water opens the fruit",
+        "decant": "No decanting",
+        "glass": "Glencairn or copita",
+        "ageing": "10\u201321 years",
+        "pairings": [
+          "shortbread",
+          "apple pie",
+          "creamy blue cheese",
+          "fruit cake"
+        ],
+        "expect": "Honeyed and fruity with gentle oak: the approachable face of Scotch.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Speyside malt \u00b7 Honeyed & fruity",
+          "method": "Unpeated barley, ex-bourbon casks, often double distilled",
+          "effect": "Refill bourbon wood keeps the style light, fruity and accessible"
+        },
+        "bottles": [
+          {
+            "name": "Glenfiddich 12",
+            "note": "Pear, honey and gentle oak: the beginner's classic",
+            "tag": "fruity"
+          },
+          {
+            "name": "The Balvenie DoubleWood 12",
+            "note": "Bourbon casks finished in sherry for layered sweetness",
+            "tag": "double cask"
+          }
+        ]
+      },
+      "peated-malt": {
+        "mods": {
+          "sweetness": 0.5,
+          "smoke": 0.5,
+          "fruit": 1,
+          "finish": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "raisin",
+            "sultana",
+            "date",
+            "orange peel"
+          ],
+          "Oak / ageing": [
+            "sherry",
+            "walnut",
+            "dark chocolate"
+          ],
+          "Spice": [
+            "clove",
+            "nutmeg"
+          ],
+          "Smoke / peat": [
+            "gentle peat"
+          ]
+        },
+        "serve": "Neat; water softens the richness",
+        "decant": "No decanting",
+        "glass": "Copita",
+        "ageing": "12\u201325 years",
+        "pairings": [
+          "dark chocolate",
+          "stilton",
+          "fruit cake",
+          "walnuts",
+          "cigar-friendly desserts"
+        ],
+        "expect": "Rich and sherried: dried fruit, walnut and chocolate over a wisp of smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Speyside sherry malt \u00b7 Rich & sherried",
+          "method": "First-fill and refill sherry casks (European and American oak)",
+          "effect": "Sherry wood adds dried fruit, spice and depth to the honeyed malt base"
+        },
+        "bottles": [
+          {
+            "name": "Macallan 12 Sherry Oak",
+            "note": "The sherry-cask benchmark: dried fruit and chocolate",
+            "tag": "sherried"
+          },
+          {
+            "name": "Glenfarclas 15",
+            "note": "Deep, oily sherry character at cask-friendly prices",
+            "tag": "sherried"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Sheltered river valley, cool and stable",
+      "terrain": "Rolling farmland around the River Spey",
+      "soil": "Granite-based, well-drained glacial soils",
+      "influences": [
+        "Over half of Scotland's malt distilleries",
+        "Historic access to sherry casks from Spain"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Sheltered valley with soft river water",
+        "effect": "Gives malts a gentle, honeyed profile"
+      },
+      {
+        "cause": "Historic sherry-cask trade with Jerez",
+        "effect": "European oak sherry casks impart dried fruit and spice"
+      },
+      {
+        "cause": "Dense cluster of distilleries sharing supply chains",
+        "effect": "A distinct recognizable house style developed over generations"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa"
+    ]
+  },
+  "highlands": {
+    "name": "Highlands",
+    "country": "Scotland",
+    "climate": "Varied: maritime west to continental east",
+    "summary": "Scotland's largest region: heather honey in the south, coastal spice in the north, dry peat in the east.",
+    "styles": {
+      "single-malt": {
+        "mods": {
+          "fruit": 0.5,
+          "oak": 0.5,
+          "smoke": -1.5,
+          "finish": 0.5
+        },
+        "notes": {
+          "Fruit": [
+            "heather honey",
+            "orchard fruit",
+            "citrus"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "toasted oak"
+          ],
+          "Earth / savory": [
+            "heather",
+            "light peat"
+          ]
+        },
+        "serve": "Neat",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "10\u201318 years",
+        "pairings": [
+          "oatcakes",
+          "mild cheese",
+          "honey desserts",
+          "roast pork"
+        ],
+        "expect": "Rounded and honeyed with heather and gentle oak: the middle path of Scotch.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Highland malt \u00b7 Rounded & heathery",
+          "method": "Unpeated or lightly peated, mixed cask types",
+          "effect": "Regional diversity is large, but heather-honey softness is the common thread"
+        },
+        "bottles": [
+          {
+            "name": "Dalwhinnie 15",
+            "note": "Heather honey and gentle smoke from Scotland's highest distillery",
+            "tag": "heathery"
+          },
+          {
+            "name": "Glenmorangie 10 (The Original)",
+            "note": "Citrus and vanilla from tall stills and first-fill bourbon casks",
+            "tag": "floral"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Vast region from Atlantic coast to North Sea",
+      "terrain": "Mountains, glens and coastal fringes",
+      "soil": "Granite, heather moorland, peat pockets",
+      "influences": [
+        "Tall stills in the south give lighter spirits",
+        "Coastal sites add saline spice in the north and west"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Enormous geographic spread",
+        "effect": "Coastal, inland and mountain malts all share the Highland name"
+      },
+      {
+        "cause": "Tall, narrow stills in many southern distilleries",
+        "effect": "Lighter, more floral spirit with less heavy body"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa"
+    ]
+  },
+  "lowlands": {
+    "name": "Lowlands",
+    "country": "Scotland",
+    "climate": "Cool, temperate, gentle",
+    "summary": "Scotland's lightest malts: grassy, floral and triple-distilled in the Irish tradition.",
+    "styles": {
+      "single-malt": {
+        "mods": {
+          "body": -1,
+          "smoke": -1.5,
+          "fruit": 0.5,
+          "finish": -0.5,
+          "heat": -0.5
+        },
+        "notes": {
+          "Fruit": [
+            "green apple",
+            "lemon"
+          ],
+          "Floral": [
+            "honeysuckle",
+            "grass"
+          ],
+          "Oak / ageing": [
+            "light vanilla"
+          ],
+          "Mineral / herbal": [
+            "almond",
+            "creamy barley"
+          ]
+        },
+        "serve": "Neat, or as a long highball",
+        "decant": "No decanting",
+        "glass": "Glencairn or highball",
+        "ageing": "8\u201312 years",
+        "pairings": [
+          "seafood",
+          "light salads",
+          "sushi-adjacent dishes",
+          "soft cheese"
+        ],
+        "expect": "Light, grassy and delicate: aperitif Scotch with almost no smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Lowland malt \u00b7 Light & grassy",
+          "method": "Triple distillation in some houses, unpeated barley, refill casks",
+          "effect": "A third distillation lifts and lightens the spirit"
+        },
+        "bottles": [
+          {
+            "name": "Auchentoshan American Oak",
+            "note": "Triple-distilled, bourbon-cask bright and citrusy",
+            "tag": "triple distilled"
+          },
+          {
+            "name": "Glenkinchie 12",
+            "note": "Floral, light and aperitif-friendly",
+            "tag": "floral"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Gentle rolling farmland",
+      "terrain": "Low hills and farmland around Edinburgh and Glasgow",
+      "soil": "Fertile loam over sandstone",
+      "influences": [
+        "Historic triple distillation borrowed from Ireland",
+        "Grain-whisky heartland for blends"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Triple distillation in the Irish style",
+        "effect": "Removes heavier compounds, giving a lighter, cleaner spirit"
+      },
+      {
+        "cause": "Unpeated malt and gentle maturation",
+        "effect": "Keeps the focus on barley and floral notes"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa"
+    ]
+  },
+  "campbeltown": {
+    "name": "Campbeltown",
+    "country": "Scotland",
+    "climate": "Maritime peninsula",
+    "summary": "A tiny enclave with a cult following: oily, briny, lightly peated malts with a distinctive coastal snap.",
+    "styles": {
+      "single-malt": {
+        "mods": {
+          "smoke": 0.5,
+          "finish": 0.5,
+          "fruit": -0.5
+        },
+        "notes": {
+          "Smoke / peat": [
+            "gentle peat",
+            "sea salt"
+          ],
+          "Fruit": [
+            "dried apple"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "briny oak"
+          ],
+          "Earth / savory": [
+            "coastal funk",
+            "oily texture"
+          ]
+        },
+        "serve": "Neat with water",
+        "decant": "No decanting",
+        "glass": "Copita",
+        "ageing": "10\u201316 years",
+        "pairings": [
+          "oysters",
+          "smoked fish",
+          "aged cheddar"
+        ],
+        "expect": "Briny, gently smoky and oily: Islay's subtler peninsula cousin.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Campbeltown malt \u00b7 Briny & oily",
+          "method": "Lightly peated (10\u201315 ppm), small-scale pot distillation, ex-bourbon dominant",
+          "effect": "Peninsula sea air and small-still character give a distinct oily brine"
+        },
+        "bottles": [
+          {
+            "name": "Springbank 10",
+            "note": "The cult benchmark: briny, oily, lightly smoky",
+            "tag": "briny"
+          },
+          {
+            "name": "Glen Scotia Double Cask",
+            "note": "Maritime with a sherry finish",
+            "tag": "maritime"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Narrow peninsula on the Kintyre coast",
+      "terrain": "Small harbor town hemmed by sea",
+      "soil": "Peaty pockets over granite",
+      "influences": [
+        "Once had 30+ distilleries; three survive",
+        "2.5 distillations at Springbank: a unique hybrid process"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Total exposure to sea air on a narrow peninsula",
+        "effect": "Brine and salinity mark even young malts"
+      },
+      {
+        "cause": "Traditional small-scale production survives intact",
+        "effect": "Oily, characterful spirit that mass production would smooth away"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa"
+    ]
+  },
+  "islands": {
+    "name": "Islands",
+    "country": "Scotland",
+    "climate": "Maritime, storm-exposed",
+    "summary": "Scotland's island malts outside Islay: smoke and sea spray ranging from gentle Arran to potent Talisker.",
+    "styles": {
+      "single-malt": {
+        "mods": {
+          "smoke": 0.5,
+          "finish": 0.5,
+          "spice": 0.5
+        },
+        "notes": {
+          "Smoke / peat": [
+            "soft peat",
+            "bonfire embers"
+          ],
+          "Fruit": [
+            "citrus",
+            "dried fruit"
+          ],
+          "Spice": [
+            "black pepper"
+          ],
+          "Earth / savory": [
+            "sea spray"
+          ]
+        },
+        "serve": "Neat",
+        "decant": "No decanting",
+        "glass": "Glencairn",
+        "ageing": "10\u201318 years",
+        "pairings": [
+          "smoked meats",
+          "strong cheddar",
+          "dark chocolate"
+        ],
+        "expect": "Maritime and lightly smoky with a peppery snap: islands between Lowland gentleness and Islay power.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Island malt \u00b7 Maritime & peppery",
+          "method": "Varied peating (mostly moderate), ex-bourbon and sherry casks",
+          "effect": "Sea maturation and moderate peat give pepper and brine without Islay's medicine"
+        },
+        "bottles": [
+          {
+            "name": "Talisker 10",
+            "note": "Peppery, smoky and sea-sprayed from Skye",
+            "tag": "peppery"
+          },
+          {
+            "name": "Highland Park 12",
+            "note": "Heather honey balanced by gentle Orkney peat",
+            "tag": "balanced"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Islands from Arran to Orkney",
+      "terrain": "Rocky coastlines, sea cliffs, heather moorland",
+      "soil": "Peat, volcanic and sandstone mixes",
+      "influences": [
+        "Every warehouse sits within sight of the sea",
+        "Each island has its own peat character"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Full maritime exposure during maturation",
+        "effect": "Salt and pepper notes appear across the family"
+      },
+      {
+        "cause": "Local heather-rich peat in the north",
+        "effect": "Softer, honeyed smoke rather than medicinal Islay peat"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa"
+    ]
+  }
+}

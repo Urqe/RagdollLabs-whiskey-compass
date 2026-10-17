@@ -1,0 +1,42 @@
+{
+  "speyside": {
+    "single-malt": {
+      "summary": "Speyside malts generally gain depth and sherry integration with age statements while losing some fresh fruit.",
+      "stages": [
+        {
+          "label": "Young (10\u201312)",
+          "effect": "Bright orchard fruit, honey and light vanilla; the barrel is a supporting player."
+        },
+        {
+          "label": "Developing (15\u201318)",
+          "effect": "Dried fruit deepens, oak spice builds and the texture gains weight."
+        },
+        {
+          "label": "Mature (21+)",
+          "effect": "Walnut, polished oak and marmalade; fresh fruit recedes into the background."
+        }
+      ],
+      "vintage": "Cask type matters more than a couple of years' difference: first-fill sherry at 12 can taste older than refill at 18."
+    }
+  },
+  "islay": {
+    "peated-malt": {
+      "summary": "Peat slowly mellows with age while oak sweetness rises to meet it.",
+      "stages": [
+        {
+          "label": "Young (10)",
+          "effect": "Raw, aggressive smoke and brine; the peat is the whole story."
+        },
+        {
+          "label": "Developing (16)",
+          "effect": "Smoke integrates with sherry or oak sweetness into a rounder whole."
+        },
+        {
+          "label": "Mature (25+)",
+          "effect": "Peat softens to embers; dried fruit and polished oak lead."
+        }
+      ],
+      "vintage": "High-peat bottlings vary batch to batch even at the same age statement."
+    }
+  }
+}
