@@ -6,12 +6,13 @@
   <meta name="description" content="RagDollLabs Whiskey Compass — explore how style family, place and production shape a whiskey's character.">
   <title>RagDollLabs Whiskey Compass</title>
   <!-- One release token keeps visible assets in sync after a GitHub Pages deploy. -->
-  <link rel="stylesheet" href="./styles.css?v=20261017-compass2">
-  <link rel="stylesheet" href="./ux.css?v=20261017-compass2">
-  <link rel="stylesheet" href="./maturity.css?v=20261017-compass2">
-  <link rel="stylesheet" href="./learning.css?v=20261017-compass2">
-  <link rel="stylesheet" href="./advanced-compare.css?v=20261017-compass2">
-  <link rel="stylesheet" href="./home-brand.css?v=20261017-compass2">
+  <link rel="stylesheet" href="./styles.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./ux.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./maturity.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./learning.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./advanced-compare.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./home-brand.css?v=20261018-whisky-room">
+  <link rel="stylesheet" href="./whisky-room.css?v=20261018-whisky-room">
 </head>
 <body>
   <div class="wrap">
@@ -19,20 +20,22 @@
       <div class="welcome-hero">
         <div class="welcome-copy">
           <div class="kicker"><span class="brand-ragdoll">RagDoll</span><span class="brand-labs">Labs</span> <span class="brand-reference">reference tools</span></div>
-          <h1 id="welcomeTitle"><span class="welcome-brand">RagDollLabs</span> <span class="welcome-name">Whiskey Compass</span></h1>
-          <div class="tagline">Explore how style family, place and production shape the glass.</div>
-          <p>Discover classic and emerging whiskey regions through style profiles, serving guidance and side-by-side comparison. Start wherever your curiosity does.</p>
+          <h1 id="welcomeTitle"><span class="welcome-name">Whiskey<br>Compass<span class="welcome-period">.</span></span></h1>
+          <div class="tagline">Find your next favourite pour.</div>
+          <p>Pull up a chair. Explore the places, flavours and craft behind a great whiskey.</p>
           <div class="welcome-actions" aria-label="Ways to start using Whiskey Compass">
-            <button class="welcome-action" type="button" data-welcome-action="style"><strong>Explore whiskeys</strong><span>Browse by style family or place, then open a regional expression.</span></button>
-            <button class="welcome-action" type="button" data-welcome-action="search"><strong>Search the atlas</strong><span>Find styles, regions, styles and food pairings.</span></button>
-            <button class="welcome-action" type="button" data-welcome-action="surprise"><strong>Surprise me</strong><span>Jump straight into a discovery profile.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="style"><strong>Explore whiskeys <span aria-hidden="true" class="action-arrow">↗</span></strong><span>Find a place. Discover its character.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="search"><strong>Find your flavour</strong><span>Search bottles, smoke, spice &amp; more.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="surprise"><strong>Surprise me</strong><span>Let curiosity choose.</span></button>
           </div>
         </div>
-        <!-- The cat artwork lives inside the rickhouse SVG so the foreground glassware can sit in front of it. This link is only its interactive hit target. -->
-        <a class="welcome-ragdoll-link" href="./" data-home-return aria-label="RagDollLabs home"></a>
+        <div class="welcome-scene">
+          <img src="./assets/whisky-room.webp" width="1536" height="1024" fetchpriority="high" alt="A blue-eyed ragdoll on a cognac leather chair, beside a glass of whisky in a warmly lit private whisky room.">
+          <span class="scene-caption" aria-hidden="true">Good company. Better discoveries.</span>
+        </div>
       </div>
       <section aria-labelledby="featuredHeading">
-        <h2 id="featuredHeading">A few places to start</h2>
+        <h2 id="featuredHeading">Choose your first pour</h2>
         <div id="featuredDiscoveries" class="welcome-discoveries"></div>
       </section>
     </section>
@@ -48,7 +51,7 @@
           <p>Search, browse by style family or place, compare regional expressions, and discover whiskeys from classic and emerging regions.</p>
         </div>
         <a class="app-home-cat" href="./" data-home-return aria-label="Return to Whiskey Compass home">
-          <img src="./assets/ragdoll-cat.svg?v=20261017-compass2" alt="">
+          <img src="./assets/ragdoll-cat.svg?v=20261018-whisky-room" alt="">
         </a>
       </header>
 
@@ -131,22 +134,22 @@
 
     <footer class="footer">RagDollLabs Whiskey Compass · Typical-style reference, not a guarantee about a specific bottle.</footer>
   </div>
-  <script src="./whiskey-model.js?v=20261017-compass2" defer></script>
-  <script src="./dom-utils.js?v=20261017-compass2" defer></script>
-  <script src="./data-loader.js?v=20261017-compass2" defer></script>
-  <script src="./app.js?v=20261017-compass2" defer></script>
-  <script src="./compare-country.js?v=20261017-compass2" defer></script>
-  <script src="./ux.js?v=20261017-compass2" defer></script>
-  <script src="./food-discovery.js?v=20261017-compass2" defer></script>
-  <script src="./whiskey-search.js?v=20261017-compass2" defer></script>
-  <script src="./functional.js?v=20261017-compass2" defer></script>
-  <script src="./search-enhance.js?v=20261017-compass2" defer></script>
-  <script src="./compare-state.js?v=20261017-compass2" defer></script>
-  <script src="./advanced-compare.js?v=20261017-compass2" defer></script>
-  <script src="./compare-discovery.js?v=20261017-compass2" defer></script>
-  <script src="./maturity.js?v=20261017-compass2" defer></script>
-  <script src="./learning.js?v=20261017-compass2" defer></script>
-  <script src="./smart-discovery.js?v=20261017-compass2" defer></script>
-  <script src="./home-brand.js?v=20261017-compass2" defer></script>
+  <script src="./whiskey-model.js?v=20261018-whisky-room" defer></script>
+  <script src="./dom-utils.js?v=20261018-whisky-room" defer></script>
+  <script src="./data-loader.js?v=20261018-whisky-room" defer></script>
+  <script src="./app.js?v=20261018-whisky-room" defer></script>
+  <script src="./compare-country.js?v=20261018-whisky-room" defer></script>
+  <script src="./ux.js?v=20261018-whisky-room" defer></script>
+  <script src="./food-discovery.js?v=20261018-whisky-room" defer></script>
+  <script src="./whiskey-search.js?v=20261018-whisky-room" defer></script>
+  <script src="./functional.js?v=20261018-whisky-room" defer></script>
+  <script src="./search-enhance.js?v=20261018-whisky-room" defer></script>
+  <script src="./compare-state.js?v=20261018-whisky-room" defer></script>
+  <script src="./advanced-compare.js?v=20261018-whisky-room" defer></script>
+  <script src="./compare-discovery.js?v=20261018-whisky-room" defer></script>
+  <script src="./maturity.js?v=20261018-whisky-room" defer></script>
+  <script src="./learning.js?v=20261018-whisky-room" defer></script>
+  <script src="./smart-discovery.js?v=20261018-whisky-room" defer></script>
+  <script src="./home-brand.js?v=20261018-whisky-room" defer></script>
 </body>
 </html>
