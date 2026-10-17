@@ -1,42 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-label="A whiskey glass with a ragdoll cat">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A dim whiskey bar with a glencairn glass glowing amber in candlelight">
   <defs>
-    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#e0a54e"/>
-      <stop offset="1" stop-color="#8a4a1b"/>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c150e"/>
+      <stop offset=".55" stop-color="#120d08"/>
+      <stop offset="1" stop-color="#0a0705"/>
     </linearGradient>
-    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="rgba(245,234,216,.18)"/>
-      <stop offset=".5" stop-color="rgba(245,234,216,.05)"/>
-      <stop offset="1" stop-color="rgba(245,234,216,.16)"/>
+    <radialGradient id="glow" cx=".68" cy=".52" r=".55">
+      <stop offset="0" stop-color="#f0b45e" stop-opacity=".5"/>
+      <stop offset=".45" stop-color="#c47f3a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#c47f3a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8a54b"/>
+      <stop offset="1" stop-color="#7a3f14"/>
+    </linearGradient>
+    <linearGradient id="shelf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241a10"/>
+      <stop offset="1" stop-color="#161009"/>
     </linearGradient>
   </defs>
-  <rect width="320" height="240" fill="none"/>
-  <!-- rickhouse planks -->
-  <g opacity=".22" stroke="#8a5a2b" stroke-width="3">
-    <path d="M0 40h320M0 90h320M0 140h320M0 190h320"/>
+
+  <rect width="960" height="560" fill="url(#room)"/>
+  <rect width="960" height="560" fill="url(#glow)"/>
+
+  <g id="landing-ragdoll">
+    <path d="M0 472c30-8 52-4 74 8 14 8 30 10 48 6-8 16-30 26-62 24-26-2-46-12-60-38z" fill="#060403" opacity=".9"/>
+    <path d="M52 486c10-2 20 1 26 8-8 3-18 4-26-8z" fill="#0a0705"/>
+    <path d="M96 470c4-10 14-14 22-10-4 10-12 14-22 10z" fill="#060403" opacity=".9"/>
   </g>
-  <g opacity=".14" stroke="#8a5a2b" stroke-width="2">
-    <path d="M40 0v240M120 0v240M200 0v240M280 0v240"/>
+
+  <g opacity=".85">
+    <rect x="0" y="150" width="960" height="10" fill="url(#shelf)"/>
+    <rect x="0" y="330" width="960" height="10" fill="url(#shelf)"/>
+    <g fill="#0d0906">
+      <path d="M120 150c8-40 4-70-10-92l10-6c18 26 22 62 12 98z"/>
+      <path d="M170 150c4-32 2-58-8-78l8-5c14 24 17 54 9 83z"/>
+      <path d="M620 150c-6-36-2-64 10-88l-9-6c-16 28-20 60-10 94z"/>
+      <path d="M686 150c-3-28-1-52 7-72l-8-5c-12 22-15 48-8 77z"/>
+      <path d="M96 330c6-30 3-54-8-72l8-5c14 20 17 46 9 77z"/>
+      <path d="M736 330c-5-26-2-48 8-68l-8-5c-11 19-14 42-8 73z"/>
+    </g>
+    <g opacity=".55">
+      <ellipse cx="612" cy="118" rx="4" ry="14" fill="url(#amber)"/>
+      <ellipse cx="676" cy="124" rx="3" ry="11" fill="url(#amber)"/>
+      <ellipse cx="112" cy="272" rx="3" ry="12" fill="url(#amber)"/>
+      <ellipse cx="720" cy="276" rx="3" ry="10" fill="url(#amber)"/>
+    </g>
   </g>
-  <!-- whiskey glass -->
-  <g>
-    <path d="M118 92h84l-12 96a10 10 0 0 1-10 9h-40a10 10 0 0 1-10-9z" fill="url(#glass)" stroke="#d6c8b2" stroke-width="2"/>
-    <path d="M124 118h72l-9 68a8 8 0 0 1-8 7h-38a8 8 0 0 1-8-7z" fill="url(#amber)"/>
-    <ellipse cx="160" cy="118" rx="36" ry="6" fill="#e8b465" opacity=".8"/>
+
+  <g transform="translate(618,300)">
+    <ellipse cx="60" cy="212" rx="86" ry="9" fill="#060403" opacity=".8"/>
+    <path d="M74 30c0 22 20 34 20 62 0 34-14 44-14 70 0 0-20 6-40 0 0-26-14-36-14-70 0-28 20-40 20-62 0 0 14-4 28 0z" fill="rgba(240,226,205,.09)" stroke="rgba(240,226,205,.32)" stroke-width="2"/>
+    <path d="M80 96c14 6 14 26 8 48-4 16-14 24-24 26-8-2-16-10-20-24-6-22-6-42 8-48 6-2 22-4 28-2z" fill="url(#amber)"/>
+    <path d="M78 78c10 4 10 10 10 18-8-4-16-4-24 0 0-8 2-14 14-18z" fill="#e8a54b" opacity=".85"/>
+    <path d="M86 132c8-4 14-2 16 4-6 4-12 6-16-4z" fill="#f6d9a0" opacity=".5"/>
   </g>
-  <!-- ragdoll cat -->
-  <g transform="translate(196,120) scale(.9)">
-    <ellipse cx="30" cy="52" rx="34" ry="26" fill="#e8ddcc"/>
-    <circle cx="12" cy="20" r="16" fill="#efe6d8"/>
-    <path d="M-2 8c4-8 14-10 20-6l10 4-6 8-24 2z" fill="#c9b8a4"/>
-    <circle cx="6" cy="18" r="2.4" fill="#5a7fae"/>
-    <circle cx="20" cy="18" r="2.4" fill="#5a7fae"/>
-    <path d="M4 26c3 3 10 3 14 0" stroke="#8a7a66" stroke-width="1.6" fill="none"/>
-    <path d="M52 30c14-6 22 4 20 16" stroke="#e8ddcc" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+  <g transform="translate(760,296) scale(.72)">
+    <ellipse cx="60" cy="212" rx="86" ry="9" fill="#060403" opacity=".7"/>
+    <path d="M74 30c0 22 20 34 20 62 0 34-14 44-14 70 0 0-20 6-40 0 0-26-14-36-14-70 0-28 20-40 20-62 0 0 14-4 28 0z" fill="rgba(240,226,205,.07)" stroke="rgba(240,226,205,.22)" stroke-width="2"/>
+    <path d="M80 96c14 6 14 26 8 48-4 16-14 24-24 26-8-2-16-10-20-24-6-22-6-42 8-48 6-2 22-4 28-2z" fill="url(#amber)" opacity=".7"/>
   </g>
-  <!-- steam -->
-  <g stroke="#d6c8b2" stroke-width="2" fill="none" opacity=".35" stroke-linecap="round">
-    <path d="M148 84c-4-8 4-12 0-20"/>
-    <path d="M164 84c-4-8 4-12 0-20"/>
+
+  <g transform="translate(884,258)">
+    <ellipse cx="30" cy="120" rx="44" ry="6" fill="#060403" opacity=".75"/>
+    <rect x="6" y="96" width="48" height="26" fill="#3a2a16" stroke="#57432a" stroke-width="2"/>
+    <rect x="2" y="122" width="56" height="4" fill="#4a361f"/>
+    <ellipse cx="30" cy="150" rx="7" ry="11" fill="#f6cf7f" opacity=".8"/>
+    <ellipse cx="30" cy="150" rx="14" ry="22" fill="url(#glow)" opacity=".9"/>
+    <path d="M30 138c3-8 2-14-2-20" stroke="#2a1c0e" stroke-width="2" fill="none" opacity=".6"/>
   </g>
+
+  <g opacity=".5" stroke="#c47f3a" stroke-width="1" fill="none">
+    <path d="M150 500c40-6 90-4 150 6"/>
+    <path d="M420 530c50-8 120-6 200 8"/>
+  </g>
+  <rect width="960" height="560" fill="url(#glow)" opacity=".35"/>
 </svg>
