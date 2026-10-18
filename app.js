@@ -16,6 +16,7 @@ const DISCOVERY_WEIGHT = 3;
 const CLASSIC_WEIGHT = 1;
 const INITIAL_ROUTE = new URL(window.location.href);
 
+// Mirrored in scripts/validate.py MOOD_PREDICATES — keep both in sync.
 const MOODS = [
   { id: "light-delicate", label: "Light & delicate", hint: "Soft, sippable and gentle", test: ({ profile }) => profile.body <= 2.5 && profile.smoke <= 1.5 },
   { id: "big-rich", label: "Big & rich", hint: "Dried fruit, chocolate and weight", test: ({ profile }) => profile.body >= 4 && profile.oak >= 3.5 && profile.fruit >= 3 },
@@ -72,13 +73,13 @@ function emit(name, detail = {}) {
 
 async function loadData() {
   const paths = [
-    "./data/styles.json",
-    "./data/regions-classics-scotland.json",
-    "./data/regions-classics-world.json",
-    "./data/regions-discovery.json",
-    "./data/sources.json",
-    "./data/locators.json",
-    "./data/why-rules.json",
+    WhiskeyDataUrl("./data/styles.json"),
+    WhiskeyDataUrl("./data/regions-classics-scotland.json"),
+    WhiskeyDataUrl("./data/regions-classics-world.json"),
+    WhiskeyDataUrl("./data/regions-discovery.json"),
+    WhiskeyDataUrl("./data/sources.json"),
+    WhiskeyDataUrl("./data/locators.json"),
+    WhiskeyDataUrl("./data/why-rules.json"),
     "./data/whiskey-search.json"
   ];
   const [styles, classicScotland, classicWorld, discovery, sources, locators, whyRules, whiskeySearch] = await Promise.all(paths.map(path => WhiskeyData.json(path)));

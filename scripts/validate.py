@@ -55,6 +55,8 @@ def food_key_check(alias, label, aliases):
     return False
 
 def main() -> None:
+    if not __debug__:
+        raise SystemExit("validate.py requires assertions; run without -O")
     styles = load(DATA / "styles.json")
     sources = load(DATA / "sources.json")
     for source_id, source in sources.items():
@@ -263,6 +265,7 @@ def main() -> None:
 
     # Mood satisfiability: each hardcoded mood predicate from app.js must match
     # at least one combined profile, so no mood button can dead-end.
+    # Mirrors MOODS in app.js — keep both in sync.
     MOOD_PREDICATES = {
         "light-delicate": lambda p: p["body"] <= 2.5 and p["smoke"] <= 1.5,
         "big-rich": lambda p: p["body"] >= 4 and p["oak"] >= 3.5 and p["fruit"] >= 3,

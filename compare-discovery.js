@@ -142,7 +142,7 @@ function injectCompareDiscovery() {
   panel.className = "compare-discovery";
   panel.innerHTML = `
     <h3>Find whiskeys to compare</h3>
-    <p class="small">Search by style, place, style or food. Add candidates individually, or let Whiskey Compass build a compatible comparison from the best matches.</p>
+    <p class="small">Search by style, place, region or food. Add candidates individually, or let Whiskey Compass build a compatible comparison from the best matches.</p>
     <label for="compareDiscoveryInput">Search comparison candidates</label>
     <input id="compareDiscoveryInput" type="search" autocomplete="off" placeholder="Try ‘Islay’, ‘bourbon’, ‘peat’ or ‘Speyside’" aria-controls="compareDiscoveryResults">
     <div id="compareDiscoveryResults" class="compare-discovery-results" aria-label="Comparison search results"></div>

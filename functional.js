@@ -54,7 +54,7 @@ function renderSpecialStyle(profile) {
 }
 
 function loadProduction() {
-  if (!productionPromise) productionPromise = WhiskeyData.json("./data/production.json", { optional: true });
+  if (!productionPromise) productionPromise = WhiskeyData.json(WhiskeyDataUrl("./data/production.json"), { optional: true });
   return productionPromise;
 }
 

@@ -13,7 +13,7 @@ window.FoodDiscovery = (() => {
   // Search vocabulary is independent of optional prose/reference enrichment.
   function load() {
     if (!aliasesPromise) {
-      aliasesPromise = WhiskeyData.json("./data/food-aliases.json", { optional: true }).then(vocabulary => {
+      aliasesPromise = WhiskeyData.json(WhiskeyDataUrl("./data/food-aliases.json"), { optional: true }).then(vocabulary => {
         aliases = {};
         for (const [alias, targets] of Object.entries(vocabulary)) {
           const key = normalize(alias);
@@ -26,7 +26,7 @@ window.FoodDiscovery = (() => {
   }
   function loadGuidance() {
     if (!guidancePromise) {
-      guidancePromise = WhiskeyData.json("./data/food-dishes.json", { optional: true }).then(curated => {
+      guidancePromise = WhiskeyData.json(WhiskeyDataUrl("./data/food-dishes.json"), { optional: true }).then(curated => {
         dishes = curated.dishes || {};
         sources = curated.sources || {};
       });

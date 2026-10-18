@@ -17,18 +17,13 @@
 let glossaryPromise = null;
 let glossaryData = {};
 let glossaryAliases = [];
-let glossaryLoadFailed = false;
 
 function loadGlossary() {
   if (!glossaryPromise) {
-    glossaryPromise = WhiskeyData.json("./data/glossary.json", { optional: true }).then(data => {
+    glossaryPromise = WhiskeyData.json(WhiskeyDataUrl("./data/glossary.json"), { optional: true }).then(data => {
       glossaryData = data;
-      glossaryLoadFailed = false;
       glossaryAliases = buildAliasIndex(data);
       return data;
-    }).catch(() => {
-      glossaryLoadFailed = true;
-      return {};
     });
   }
   return glossaryPromise;
@@ -163,7 +158,7 @@ async function showGlossaryEntry(id) {
   await loadGlossary();
   const entry = glossaryData[id];
   if (!entry) {
-    if (glossaryLoadFailed) return showGlossaryUnavailable();
+    if (Object.keys(glossaryData).length === 0) return showGlossaryUnavailable();
     return;
   }
   const title = document.getElementById("glossaryDialogTitle");
@@ -199,7 +194,7 @@ function showGlossaryUnavailable() {
 
 async function showFullGlossary() {
   await loadGlossary();
-  if (glossaryLoadFailed || !Object.keys(glossaryData).length) return showGlossaryUnavailable();
+  if (!Object.keys(glossaryData).length) return showGlossaryUnavailable();
   const title = document.getElementById("glossaryDialogTitle");
   const intro = document.getElementById("glossaryIntro");
   const content = document.getElementById("glossaryContent");

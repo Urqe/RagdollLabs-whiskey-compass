@@ -186,6 +186,11 @@
   });
 
   document.addEventListener("click", event => {
-    if (!event.target.closest(".compare-select")) closeOtherMenus();
+    if (event.target.closest(".compare-select")) return;
+    // Outside-click: close open menus and return focus to the trigger that was
+    // open, so keyboard users are not dropped onto <body>. Clicking another
+    // trigger is handled by its own listener and skips the focus jump.
+    const open = [...document.querySelectorAll(".compare-select")].find(control => control.querySelector(".compare-select-menu")?.classList.contains("hidden") === false);
+    if (open) closeMenu(open, true);
   });
 })();

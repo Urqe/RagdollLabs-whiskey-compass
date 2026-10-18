@@ -5,7 +5,7 @@
 .maturity-stage { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .maturity-stage h4 { margin: 0 0 7px; color: var(--gold); font: 16px Georgia, serif; }
 .maturity-stage p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-.vintage-note { margin-top: 12px; padding: 11px 13px; border-left: 3px solid var(--wine2); border-radius: 8px; background: var(--surface); color: var(--muted); font-size: 12px; line-height: 1.5; }
+.vintage-note { margin-top: 12px; padding: 11px 13px; border-left: 3px solid var(--copper-light); border-radius: 8px; background: var(--surface); color: var(--muted); font-size: 12px; line-height: 1.5; }
 .vintage-note strong { color: var(--text); }
 
 @media (max-width: 760px) {

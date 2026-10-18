@@ -1,6 +1,7 @@
-/* One query engine for Explore and Compare.
- * Recognized wine names impose AND constraints before textual/food ranking.
- * Crémant matches its actual appellations, never Champagne or still style profiles.
+/*
+ * One query engine for Explore and Compare.
+ * Recognized whiskey names impose AND constraints before textual/food ranking.
+ * Producer names match their actual bottles, never a similarly named region.
  */
 window.WhiskeySearch = (() => {
   const normalize = value => FoodDiscovery.normalize(value).replace(/[’']/g, " ")

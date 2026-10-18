@@ -218,6 +218,10 @@ assert.ok(document.getElementById("specialStyle").textContent.includes("Yamazaki
 // --- Every mood button selects a profile on a fresh load ---
 const moodButtons = [...document.querySelectorAll("#moodButtons .mood")];
 assert.equal(moodButtons.length, 6, "all six moods render");
+// The id set is the contract shared with validate.py MOOD_PREDICATES; drift here means the sync guard is broken.
+assert.deepEqual(new Set(moodButtons.map(button => button.dataset.mood)),
+  new Set(["light-delicate", "big-rich", "smoky-briny", "sweet-sherried", "spicy-bold", "something-unusual"]),
+  "mood ids must match the set mirrored in scripts/validate.py");
 for (const button of moodButtons) {
   button.click();
   await settle();

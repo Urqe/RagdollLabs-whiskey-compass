@@ -14,7 +14,7 @@ let maturityPromise = null;
 let maturityProfile = null;
 
 function loadMaturity() {
-  if (!maturityPromise) maturityPromise = WhiskeyData.json("./data/maturity.json", { optional: true });
+  if (!maturityPromise) maturityPromise = WhiskeyData.json(WhiskeyDataUrl("./data/maturity.json"), { optional: true });
   return maturityPromise;
 }
 

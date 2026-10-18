@@ -14,8 +14,8 @@
   --muted: #b9b4aa;
   --gold: #e9b467;
   --copper: #d99535;
-  --wine: #a75d36;
-  --wine2: #c77e43;
+  --copper-deep: #a75d36;
+  --copper-light: #c77e43;
   --focus: #f4c986;
 }
 
@@ -39,7 +39,7 @@ h1 { font-size: clamp(40px,6vw,72px); line-height: .95; margin: 9px 0 12px; font
 .mode { margin-bottom: 16px; }
 .mode button, .browse-toggle button { padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); font-weight: 700; cursor: pointer; }
 .mode button.on, .browse-toggle button.on { background: var(--copper); color: #172025; }
-.browse-toggle button { padding: 6px 8px; font-size: 10px; }
+.browse-toggle button { padding: 10px 12px; font-size: 12px; min-height: 44px; }
 .section-head { display: flex; align-items: start; justify-content: space-between; gap: 10px; }
 .section-head h2 { margin-right: auto; }
 
@@ -75,14 +75,14 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 .locator { height: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 8px; display: grid; grid-template-rows: 1fr auto; gap: 4px; }
 .locator svg { width: 100%; min-height: 86px; display: block; background: url("./assets/world-map.svg") center / 100% 100% no-repeat; }
 .locator .land, .locator .gridline { display: none; }
-.locator .marker-ring { fill: rgba(160,68,96,.18); stroke: var(--wine2); stroke-width: 1.4; }
+.locator .marker-ring { fill: rgba(160,68,96,.18); stroke: var(--copper-light); stroke-width: 1.4; }
 .locator .marker-core { fill: var(--gold); }
 .locator-caption { color: var(--muted); font-size: 10px; text-align: center; }
 
 .bars { display: grid; gap: 9px; }
 .bar { display: grid; grid-template-columns: 100px 1fr 38px; gap: 9px; align-items: center; font-size: 12px; }
 .track { height: 9px; border-radius: 99px; background: var(--line); overflow: hidden; }
-.fill { height: 100%; background: linear-gradient(90deg,var(--wine2),var(--gold)); border-radius: 99px; }
+.fill { height: 100%; background: linear-gradient(90deg,var(--copper-light),var(--gold)); border-radius: 99px; }
 .score { text-align: right; color: var(--text); }
 
 .note-groups { display: grid; gap: 10px; }
