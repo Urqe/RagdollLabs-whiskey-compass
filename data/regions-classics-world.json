@@ -168,7 +168,7 @@
           },
           {
             "name": "Bulleit Rye",
-            "note": "High-rye mashbill: dry and herbal",
+            "note": "Kentucky-bottled but distilled at MGP in Indiana from a 95% rye mashbill: dry and herbal",
             "tag": "herbal"
           }
         ],
@@ -179,7 +179,7 @@
     "identity": {
       "setting": "Limestone plateau with hot summers and cold winters",
       "terrain": "Rolling bluegrass plains and river valleys",
-      "soil": "Limestone-filtered water, iron-free springs",
+      "soil": "Limestone-filtered spring water, low in iron",
       "influences": [
         "Rickhouse temperature cycling drives fast extraction",
         "Limestone water ideal for sour mash"
@@ -192,11 +192,11 @@
       },
       {
         "cause": "Charred, never-reused American oak barrels",
-        "effect": "A caramel-colored layer of charred wood sugars filters the spirit and adds vanilla"
+        "effect": "The char strips harsh sulfur notes; beneath it, the heat-caramelised 'red layer' of wood sugars gives vanilla and caramel"
       },
       {
-        "cause": "Limestone-filtered, iron-free water",
-        "effect": "Sweet mash fermentation stays clean and bright"
+        "cause": "Limestone spring water, low in iron and carrying calcium and magnesium",
+        "effect": "Supports healthy sour-mash fermentation; iron would darken and spoil the spirit"
       }
     ],
     "badges": [
@@ -218,9 +218,7 @@
     "summary": "Bourbon's charcoal-mellowed cousin: filtered through sugar maple before aging for extra smoothness.",
     "styles": {
       "tennessee": {
-        "mods": {
-          "smoke": 0.5
-        },
+        "mods": {},
         "notes": {
           "Fruit": [
             "caramel corn",
@@ -228,7 +226,7 @@
           ],
           "Oak / ageing": [
             "charcoal",
-            "maple smoke",
+            "sooty char",
             "vanilla"
           ],
           "Spice": [
@@ -243,13 +241,13 @@
           "maple desserts",
           "grilled meats"
         ],
-        "expect": "Smooth and charcoal-softened: corn sweetness with a faint maple-smoke whisper.",
+        "expect": "Smooth and charcoal-softened: corn sweetness, banana and caramel with a dry, sooty-char edge.",
         "style": {
           "family": "tennessee",
           "cue": "tennessee",
           "label": "Tennessee whiskey \u00b7 Charcoal-mellowed",
           "method": "Bourbon-style mashbill filtered through sugar-maple charcoal (Lincoln County Process) before barreling",
-          "effect": "Charcoal mellowing removes sharp congeners and adds a faint smoky maple undertone"
+          "effect": "Charcoal mellowing removes sharp congeners before the barrel; it filters the spirit rather than adding smoke"
         },
         "bottles": [
           {
@@ -273,7 +271,7 @@
       "soil": "Limestone water sources",
       "influences": [
         "Lincoln County Process legally required for 'Tennessee whiskey'",
-        "Cave spring water at every historic distillery"
+        "Spring water sources, most famously Jack Daniel's Cave Spring Hollow"
       ]
     },
     "why": [
@@ -346,7 +344,7 @@
           },
           {
             "name": "Green Spot",
-            "note": "Fruity, rounded and historically a wine-merchant blend",
+            "note": "Single pot still made by Midleton for the Dublin wine merchants Mitchell & Son: fruity and rounded",
             "tag": "fruity"
           }
         ],
@@ -458,7 +456,7 @@
       "terrain": "Rolling farmland, river valleys",
       "soil": "Fertile barley country",
       "influences": [
-        "Invented column-still grain blending",
+        "Aeneas Coffey's column still (1830) was an Irish invention, though Irish distillers largely shunned it at first",
         "Unmalted barley tradition from tax-avoidance history"
       ]
     },
@@ -679,7 +677,7 @@
     },
     "identity": {
       "setting": "Mountain valleys and cool forests",
-      "terrain": "Alpine-adjacent distillery sites",
+      "terrain": "Varied: Yamazaki near Kyoto, Hakushu in mountain forest, Yoichi on Hokkaido's coast",
       "soil": "Granite and soft mountain water",
       "influences": [
         "Yamazaki (1923) and Yoichi (1934) founded the tradition",
@@ -735,7 +733,7 @@
         },
         "serve": "On the rocks or in cocktails",
         "glass": "Tumbler",
-        "ageing": "6\u201312 years minimum in practice",
+        "ageing": "Legal minimum 3 years; core blends often carry 6 years or more",
         "pairings": [
           "maple desserts",
           "light snacks",
@@ -757,7 +755,7 @@
           },
           {
             "name": "Lot No. 40",
-            "note": "100% rye flavouring whisky: the rye lover's Canadian",
+            "note": "Not a blend: 100% rye from a copper pot still \u2014 the rye lover's Canadian",
             "tag": "rye-forward"
           }
         ],
@@ -776,8 +774,8 @@
     },
     "why": [
       {
-        "cause": "Centuries of blending-base tradition",
-        "effect": "Canadian whisky prioritizes smoothness and mixability over assertive character"
+        "cause": "Grains are usually distilled and aged separately, then blended after maturation",
+        "effect": "A light corn base plus a smaller, flavourful rye component gives smoothness with subtle spice"
       },
       {
         "cause": "Cold climate maturation",

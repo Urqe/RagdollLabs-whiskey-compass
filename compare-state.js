@@ -22,7 +22,7 @@ window.WhiskeyComparison = (() => {
       seen.add(key);
       return key;
     });
-    // Slot 1 is the compatibility anchor; promote a valid later slot if needed.
+    // Keep filled slots contiguous: if slot 1 is empty, promote the next filled slot.
     if (!keys[0]) keys = keys.filter(Boolean).concat(["", "", ""]).slice(0, 3);
     biggestOnly = Boolean(resetWhenThirdCleared && !keys[2] ? false : concise);
     document.dispatchEvent(new CustomEvent("whiskeycompass:comparison-changed", { detail: snapshot() }));

@@ -18,12 +18,12 @@ const INITIAL_ROUTE = new URL(window.location.href);
 
 // Mirrored in scripts/validate.py MOOD_PREDICATES — keep both in sync.
 const MOODS = [
-  { id: "light-delicate", label: "Light & delicate", hint: "Soft, sippable and gentle", test: ({ profile }) => profile.body <= 2.5 && profile.smoke <= 1.5 },
+  { id: "light-delicate", label: "Light & delicate", hint: "Soft, sippable and gentle", test: ({ profile }) => profile.body <= 2.5 && profile.smoke <= 1.5 && profile.spice <= 2.5 },
   { id: "big-rich", label: "Big & rich", hint: "Dried fruit, chocolate and weight", test: ({ profile }) => profile.body >= 4 && profile.oak >= 3.5 && profile.fruit >= 3 },
   { id: "smoky-briny", label: "Smoky & briny", hint: "Bonfires, iodine and sea air", test: ({ profile }) => profile.smoke >= 3.5 },
-  { id: "sweet-sherried", label: "Sweet & sherried", hint: "Honey, raisins and cocoa", test: ({ profile }) => profile.sweetness >= 3 && profile.fruit >= 3 },
+  { id: "sweet-sherried", label: "Sweet & sherried", hint: "Honey, raisins and cocoa", test: ({ profile, style }) => profile.sweetness >= 3 && profile.fruit >= 3 && style.family !== "bourbon" },
   { id: "spicy-bold", label: "Spicy & bold", hint: "Pepper, rye bite and warmth", test: ({ profile }) => profile.spice >= 3.5 },
-  { id: "something-unusual", label: "Something unusual", hint: "Off the beaten path: India, Taiwan, England", test: ({ style, region }) => Boolean(style.regionalSignature) || (region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag)) }
+  { id: "something-unusual", label: "Something unusual", hint: "Emerging regions and one-country styles", test: ({ style, region }) => Boolean(style.regionalSignature) || (region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag)) }
 ];
 
 const NOTE_ICONS = {

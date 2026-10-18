@@ -7,7 +7,7 @@
       "angel share"
     ],
     "definition": "The portion of whiskey that evaporates from the cask during maturation. In cool Scotland it runs roughly 2% per year; in tropical India and Taiwan it can exceed 8\u201312%.",
-    "why": "Evaporation concentrates the remaining spirit and speeds cask interaction, which is why young tropical-climate whiskeys can taste far older than their age statements.",
+    "why": "Heat speeds the spirit's interaction with the cask, and the heavy evaporation that comes with it concentrates what remains. Together they are why young tropical-climate whiskeys can taste older than their age statements, at the cost of losing volume fast.",
     "sources": [
       "swa",
       "amrut-ref"
@@ -22,7 +22,7 @@
       "peaty"
     ],
     "definition": "Decomposed, waterlogged vegetation (often centuries of moss and heather) cut from bogs, dried and burned to dry malted barley. Smoke compounds deposit on the grain and carry through distillation.",
-    "why": "Peat's character depends on what decomposed into it: Islay's seaweed-influenced peat reads medicinal and briny, while inland heather peat reads softer and smokier.",
+    "why": "Peat's character depends on what decomposed into it: Islay's moss-and-sedge peat gives more of the medicinal phenols (cresols, guaiacol), while woodier, heather-rich mainland peat reads softer and more like a wood fire. Seaweed in the peat is a popular myth.",
     "sources": [
       "swa"
     ],
@@ -123,7 +123,7 @@
       "cask strength bottling"
     ],
     "definition": "Whiskey bottled at its natural cask strength, undiluted (typically 50\u201360% ABV) except for evaporation.",
-    "why": "No added water means the full flavor texture survives bottling; a few drops of water in the glass can open aromas that chill-filtration would have removed.",
+    "why": "No water is added before bottling, so you choose the dilution; a few drops in the glass often release aromas the high alcohol holds back.",
     "sources": [
       "swa",
       "kda"
@@ -138,7 +138,7 @@
       "chillfilter"
     ],
     "definition": "Cooling whiskey to near freezing and filtering out fatty acids and esters so it stays clear when ice is added.",
-    "why": "Filtration improves appearance but strips body and aroma. 'Non-chill-filtered' bottlings keep full texture at the cost of going hazy when cold.",
+    "why": "It keeps the whiskey clear when cold or diluted. Whether it removes noticeable flavour is debated; many enthusiasts prefer non-chill-filtered bottlings, which can turn hazy with water or ice. Bottlings at 46% and above generally don't need it.",
     "sources": [
       "swa"
     ],
@@ -150,7 +150,7 @@
       "mizunara",
       "japanese oak"
     ],
-    "definition": "Japan's indigenous oak, Quercus mongolica var. grosseserrata (also called Q. crispula or mizunara oak), used for maturation after American and European oak proved leak-prone in Japan's climate.",
+    "definition": "Japan's indigenous oak, Quercus mongolica var. grosseserrata (also called Q. crispula or mizunara oak). It was first used out of necessity when imported casks were scarce during the Second World War; it is porous and leak-prone, and difficult to cooper.",
     "why": "Mizunara's lactones and eugenols read as sandalwood, incense and coconut; it became the signature of premium Japanese whisky \u2014 a limit born of difficulty.",
     "sources": [
       "suntory-mizunara"

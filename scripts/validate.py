@@ -275,11 +275,11 @@ def main() -> None:
     # at least one combined profile, so no mood button can dead-end.
     # Mirrors MOODS in app.js — keep both in sync.
     MOOD_PREDICATES = {
-        "light-delicate": lambda p: p["body"] <= 2.5 and p["smoke"] <= 1.5,
-        "big-rich": lambda p: p["body"] >= 4 and p["oak"] >= 3.5 and p["fruit"] >= 3,
-        "smoky-briny": lambda p: p["smoke"] >= 3.5,
-        "sweet-sherried": lambda p: p["sweetness"] >= 3 and p["fruit"] >= 3,
-        "spicy-bold": lambda p: p["spice"] >= 3.5,
+        "light-delicate": lambda p, s: p["body"] <= 2.5 and p["smoke"] <= 1.5 and p["spice"] <= 2.5,
+        "big-rich": lambda p, s: p["body"] >= 4 and p["oak"] >= 3.5 and p["fruit"] >= 3,
+        "smoky-briny": lambda p, s: p["smoke"] >= 3.5,
+        "sweet-sherried": lambda p, s: p["sweetness"] >= 3 and p["fruit"] >= 3 and s.get("family") != "bourbon",
+        "spicy-bold": lambda p, s: p["spice"] >= 3.5,
     }
     combined_profiles = []
     for region in regions.values():
@@ -288,7 +288,7 @@ def main() -> None:
             combined = {key: max(0, min(5, (base.get(key, 0) or 0) + (profile.get("mods", {}).get(key, 0) or 0))) for key in metric_keys}
             combined_profiles.append((region, base, combined))
     for mood_id, predicate in MOOD_PREDICATES.items():
-        assert any(predicate(c) for _, _, c in combined_profiles), f"mood '{mood_id}' matches no profile — recalibrate the mood test or profile scores"
+        assert any(predicate(c, base) for _, base, c in combined_profiles), f"mood '{mood_id}' matches no profile — recalibrate the mood test or profile scores"
     # something-unusual is badge/signature-based: at least one profile must qualify.
     unusual = any(
         bool(styles[sid].get("regionalSignature")) or any(b in (region.get("badges") or []) for b in ("Discovery", "Emerging region"))

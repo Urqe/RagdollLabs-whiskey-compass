@@ -119,7 +119,7 @@
       "influences": [
         "Amrut (Bangalore) pioneered Indian single malt exports from 2004",
         "Rampur (Himalayan foothills) offers a cooler-maturation contrast",
-        "Heat-driven maturation is the region's defining variable"
+        "Heat-driven maturation is the region's defining variable; note that much whisky sold in India is molasses-based and would not qualify as whisky in the EU \u2014 single malts like Amrut and Rampur are grain-based"
       ]
     },
     "why": [
@@ -151,7 +151,8 @@
         "mods": {
           "fruit": 0.5,
           "oak": 0.5,
-          "sweetness": 0.5
+          "sweetness": 0.5,
+          "heat": 0.5
         },
         "notes": {
           "Fruit": [

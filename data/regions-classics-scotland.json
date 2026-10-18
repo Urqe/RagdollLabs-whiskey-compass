@@ -48,9 +48,14 @@
           "cue": "malt",
           "label": "Heavily peated Islay malt \u00b7 Medicinal & coastal",
           "method": "Heavily peated barley, pot distilled twice, ex-bourbon casks dominant",
-          "effect": "Peat smoke from barley drying dominates; sea air and oak maturation add brine and sweetness"
+          "effect": "Peat smoke from barley drying dominates; ex-bourbon oak adds vanilla sweetness around it"
         },
         "bottles": [
+          {
+            "name": "Kilchoman Machir Bay",
+            "note": "Young farm-distillery Islay: heavily peated (around 50 ppm), citrus and sweet smoke",
+            "tag": "farm distillery"
+          },
           {
             "name": "Laphroaig 10",
             "note": "The medicinal benchmark: iodine, tar and sweet smoke",
@@ -118,11 +123,6 @@
             "name": "Bunnahabhain 12",
             "note": "Unpeated and sherry-influenced with coastal weight",
             "tag": "unpeated"
-          },
-          {
-            "name": "Kilchoman Machir Bay",
-            "note": "Farm-distillery Islay: citrus-led with a light peat touch",
-            "tag": "farm distillery"
           }
         ],
         "dilution": "The Classic Laddie is bottled at 50% \u2014 a teaspoon of water softens the heat",
@@ -140,12 +140,12 @@
     },
     "why": [
       {
-        "cause": "Island peat, rich in decayed vegetation and seaweed",
-        "effect": "Burns smoky and medicinal, giving iodine and tar notes"
+        "cause": "Island peat formed mostly from sphagnum moss and sedges, with little woody heather or tree material",
+        "effect": "Its smoke is rich in cresols and guaiacol, the phenols read as medicinal, iodine-like and tarry"
       },
       {
-        "cause": "Warehouses within reach of Atlantic salt spray",
-        "effect": "Barrels breathe maritime air, adding brine and salinity"
+        "cause": "Coastal warehouses in a damp, cool climate",
+        "effect": "Often credited with a briny edge, though how much salt reaches the spirit is debated; much of the 'coastal' impression comes from the peat phenols themselves"
       },
       {
         "cause": "Cool, slow maturation climate",
@@ -203,7 +203,7 @@
           "family": "malt",
           "cue": "malt",
           "label": "Unpeated Speyside malt \u00b7 Honeyed & fruity",
-          "method": "Unpeated barley, refill ex-bourbon casks, often double distilled",
+          "method": "Unpeated barley, double distilled, mostly refill ex-bourbon casks",
           "effect": "Refill bourbon wood keeps the style light, fruity and accessible"
         },
         "bottles": [
@@ -226,7 +226,8 @@
           "sweetness": 0.5,
           "fruit": 0.5,
           "oak": 0.5,
-          "finish": 0.5
+          "finish": 0.5,
+          "body": 0.5
         },
         "phenol": "unpeated",
         "notes": {
@@ -271,7 +272,7 @@
           },
           {
             "name": "Glenfarclas 15",
-            "note": "Deep, direct-anchored sherry character",
+            "note": "Deep sherry-butt character from direct-fired stills",
             "tag": "sherried"
           }
         ],
@@ -279,7 +280,11 @@
         "ice": "Sherry depth shows best neat or with water; ice is workable casually"
       },
       "lightly-peated-malt": {
-        "mods": {},
+        "mods": {
+          "fruit": 0.5,
+          "sweetness": 0.5,
+          "smoke": -0.5
+        },
         "phenol": "lightly peated (around 8\u201315 ppm)",
         "notes": {
           "Fruit": [
@@ -333,8 +338,8 @@
     },
     "why": [
       {
-        "cause": "Sheltered valley with soft river water",
-        "effect": "Gives malts a gentle, honeyed profile"
+        "cause": "Mostly unpeated malt, often long fermentations and lighter-spirit stills",
+        "effect": "Leaves room for fruity esters: the honeyed, orchard-fruit house style (water source matters far less than folklore suggests)"
       },
       {
         "cause": "Historic sherry-cask trade with Jerez",
@@ -416,7 +421,10 @@
         "ice": "Works over ice; Dalwhinnie is famously good as a cold-serve dram"
       },
       "lightly-peated-malt": {
-        "mods": {},
+        "mods": {
+          "smoke": 0.5,
+          "spice": 0.5
+        },
         "phenol": "lightly peated",
         "notes": {
           "Smoke / peat": [
@@ -492,7 +500,7 @@
     "name": "Lowlands",
     "country": "Scotland",
     "climate": "Cool, temperate, gentle",
-    "summary": "Scotland's lightest malts: grassy, floral, and home to Scotland's only current triple-distilled malt (Auchentoshan).",
+    "summary": "Scotland's lightest malts: grassy and floral. Auchentoshan is one of the few Scotch malts still triple distilled.",
     "styles": {
       "unpeated-malt": {
         "mods": {
@@ -666,18 +674,19 @@
         },
         "bottles": [
           {
-            "name": "Longrow 10",
+            "name": "Longrow Peated",
             "note": "Springbank's heavily peated line: ash, bonfire and brine",
             "tag": "heavily peated"
           }
         ],
-        "dilution": "Longrow is cask strength in many editions \u2014 dilute to taste",
+        "dilution": "Longrow Peated is bottled at 46%; limited releases can run higher \u2014 dilute to taste",
         "ice": "Ash detail holds better with water than with ice"
       },
       "unpeated-malt": {
         "mods": {
           "fruit": 0.5,
-          "sweetness": 0.5
+          "sweetness": 0.5,
+          "body": -0.5
         },
         "phenol": "unpeated",
         "notes": {
@@ -732,8 +741,8 @@
     },
     "why": [
       {
-        "cause": "Total exposure to sea air on a narrow peninsula",
-        "effect": "Brine and salinity mark even young malts"
+        "cause": "Heavy, traditional spirit: direct-fired stills, worm tubs and partial triple distillation at Springbank",
+        "effect": "An oily, mouth-coating texture; the briny edge drinkers describe is usually credited to the coastal setting, though the mechanism is debated"
       },
       {
         "cause": "Traditional small-scale production survives intact",
@@ -852,14 +861,14 @@
       "terrain": "Rocky coastlines, sea cliffs, heather moorland",
       "soil": "Peat, volcanic and sandstone mixes",
       "influences": [
-        "Every warehouse sits within sight of the sea",
+        "Not one of Scotland's five legal whisky regions: officially part of the Highlands, grouped here for character",
         "Each island has its own peat character"
       ]
     },
     "why": [
       {
-        "cause": "Full maritime exposure during maturation",
-        "effect": "Salt and pepper notes appear across the family"
+        "cause": "Coastal sites and, on Skye, Talisker's peated spirit and distinctive stills",
+        "effect": "Pepper and a briny impression appear across much of the family, though each island's house style differs"
       },
       {
         "cause": "Local heather-rich peat in the north",

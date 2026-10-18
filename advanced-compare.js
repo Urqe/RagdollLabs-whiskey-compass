@@ -2,8 +2,8 @@
  * RagDollLabs Whiskey Compass — Advanced Compare
  * -----------------------------------------
  * Compares up to three full whiskey profiles rather than only one style across
- * regions. Comparisons stay within one whiskey style family,
- * so differences remain meaningful.
+ * regions. Any profile can be compared with any other: every profile is scored
+ * on the same eight sensory axes (see WhiskeyModel.compatible).
  *
  * Important architecture rule: profile computation is owned by app.js. This
  * module consumes WhiskeyCompass.combinedProfile() / WhiskeyCompass.allPairs() and must
@@ -188,11 +188,11 @@ function advancedRender() {
   if (!message || !grid || !differences || !hint) return;
 
   if (!selections.length) {
-    message.textContent = "Pick a whiskey to start. The next slots will fill with whiskeys you can meaningfully compare it to."
+    message.textContent = "Pick a whiskey to start, then add one or two more to compare."
     message.classList.remove("hidden");
     grid.replaceChildren();
     differences.replaceChildren();
-    hint.textContent = "You can compare whiskeys from the same family side by side — the differences you see are about the whiskey, not apples vs oranges."
+    hint.textContent = "Any two whiskeys can be compared: every profile is scored on the same flavour scale."
     return;
   }
 
@@ -244,7 +244,7 @@ function advancedInjectUi() {
   const panel = document.createElement("div");
   panel.id = "advancedCompareControls";
   panel.innerHTML = `
-    <p class="small">Start with any whiskey. Slots 2 and 3 are limited to the same style family, so the comparison stays meaningful.</p>
+    <p class="small">Start with any whiskey, then add up to two more. Across different categories, some differences reflect production conventions (cask, mashbill) as much as place.</p>
     <label for="advancedCompare1">Whiskey 1</label><div class="advanced-slot"><select id="advancedCompare1"></select><button type="button" class="advanced-slot-remove" data-slot="1" aria-label="Remove Whiskey 1" hidden>Remove</button></div>
     <label for="advancedCompare2">Whiskey 2</label><div class="advanced-slot"><select id="advancedCompare2" disabled></select><button type="button" class="advanced-slot-remove" data-slot="2" aria-label="Remove Whiskey 2" hidden>Remove</button></div>
     <label for="advancedCompare3">Whiskey 3</label><div class="advanced-slot"><select id="advancedCompare3" disabled></select><button type="button" class="advanced-slot-remove" data-slot="3" aria-label="Remove Whiskey 3" hidden>Remove</button></div>

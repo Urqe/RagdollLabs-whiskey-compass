@@ -73,7 +73,7 @@ function smartRecommendations(current) {
 
   const sameFamily = smartPick(compatible, used, item => item.styleId !== current.styleId);
   if (sameFamily) {
-    add(sameFamily, "same-group", "A different angle on the same family", `If you like this, you'll likely enjoy its ${sameFamily.style.name.toLowerCase()} cousin — ${smartFlavorBridge(current, sameFamily)}`);
+    add(sameFamily, "same-group", "Close in flavour, different style", `The nearest match in a different style: ${sameFamily.style.name.toLowerCase()}. ${smartFlavorBridge(current, sameFamily)}`);
   }
 
   const adventurous = smartPick(
@@ -83,7 +83,9 @@ function smartRecommendations(current) {
     item => item.distance - (item.style.regionalSignature ? 0.35 : 0) - ((item.region.badges || []).includes("Emerging region") ? 0.2 : 0)
   );
   if (adventurous) {
-    add(adventurous, "adventurous", "Something more adventurous", `From ${adventurous.region.name} — an emerging region doing things differently. ${smartFlavorBridge(current, adventurous)}`);
+    const isEmerging = (adventurous.region.badges || []).includes("Emerging region");
+    const why = isEmerging ? "an emerging region doing things differently" : "a style made in only one country";
+    add(adventurous, "adventurous", "Something more adventurous", `From ${adventurous.region.name} — ${why}. ${smartFlavorBridge(current, adventurous)}`);
   }
 
   while (picks.length < 3) {
