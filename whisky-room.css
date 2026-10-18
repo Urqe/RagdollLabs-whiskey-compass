@@ -24,8 +24,9 @@ h1, h2 { color: var(--text); }
 .welcome-action { min-width: 0; min-height: 84px; padding: 14px; border-radius: 10px; background: #173039; border: 1px solid var(--line); backdrop-filter: none; }
 .welcome-action strong { color: var(--text); font-size: 13px; }
 .welcome-action span { color: var(--muted); font-size: 11px; line-height: 1.5; }
-.welcome-actions button:first-child { grid-column: 1 / -1; min-height: 78px; background: var(--copper); border-color: var(--copper); box-shadow: 0 6px 24px #d995351a; }
-.welcome-actions button:first-child strong { color: #172025; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+.welcome-actions button:first-child { background: var(--copper); border-color: var(--copper); box-shadow: 0 6px 24px #d995351a; }
+.welcome-actions button:first-child strong { color: #172025; display: flex; justify-content: space-between; align-items: center; }
+.welcome-actions .action-arrow { font-size: 16px; }
 .welcome-actions button:first-child span { color: #263035; }
 .welcome-actions .action-arrow { margin: 0; font-size: 24px; }
 .welcome-action:hover { background: #24434c; border-color: var(--gold); transform: none; }
@@ -91,7 +92,6 @@ h1, h2 { color: var(--text); }
   .welcome-copy > p { font-size: 14px; max-width: 100%; margin-top: 12px; }
   .welcome-actions { margin-top: 22px; }
   .welcome-action { min-height: 74px; padding: 12px; }
-  .welcome-actions button:first-child { min-height: 68px; }
   .welcome-discoveries { grid-template-columns: 1fr; }
   .welcome-discoveries button { padding: 18px 20px; }
   .welcome-discoveries .tasting-cue { margin-top: 10px; }
