@@ -204,7 +204,11 @@
     ],
     "sources": [
       "kda",
-      "ttb"
+      "ttb",
+      "elijah-craig",
+      "rittenhouse",
+      "makers-mark",
+      "weller"
     ]
   },
   "tennessee": {
@@ -286,7 +290,9 @@
       "Classic"
     ],
     "sources": [
-      "ttb"
+      "ttb",
+      "jack-daniels",
+      "george-dickel"
     ]
   },
   "ireland": {
@@ -345,7 +351,7 @@
           }
         ],
         "dilution": "40\u201346%; Redbreast's cask-strength editions take water well",
-        "ice": "A cube is traditional for Irish pot still"
+        "ice": "A cube is a common Irish serve; purists prefer neat or with water"
       },
       "blended-irish": {
         "mods": {},
@@ -474,17 +480,21 @@
       "Classic"
     ],
     "sources": [
-      "iwai"
+      "iwai",
+      "redbreast",
+      "green-spot",
+      "bushmills"
     ]
   },
   "japan": {
     "name": "Japan",
     "country": "Japan",
     "climate": "Four distinct seasons; cold winters, humid summers",
-    "summary": "Precision Scotch: delicate, balanced and often lightly peated, built for food-friendly subtlety.",
+    "summary": "Malt whisky built on Scottish methods with local precision; styles range from unpeated fruit-forward flagships to clean, lightly peated forest expressions.",
     "styles": {
       "japanese-malt": {
         "mods": {},
+        "phenol": "unpeated in the Yamazaki house style; Hakushu uses light peating \u2014 check the specific expression",
         "notes": {
           "Fruit": [
             "pear",
@@ -492,50 +502,51 @@
             "peach"
           ],
           "Oak / ageing": [
-            "mizunara oak",
-            "vanilla",
-            "sandalwood"
+            "mizunara oak (long-matured editions)",
+            "vanilla"
           ],
-          "Smoke / peat": [
-            "delicate peat"
+          "Floral": [
+            "blossom"
           ],
           "Earth / savory": [
-            "incense",
-            "pine"
+            "pine (Hakushu)"
           ]
         },
-        "serve": "Neat, or mizuwari (with water)",
+        "serve": "Neat, or mizuwari (a little water)",
+        "dilution": "Flagships are typically 43% ABV; a few drops of water can soften the heat, though many drinkers take these neat",
+        "ice": "Ice is uncommon for malts in Japan; the highball tradition centres on the blends",
         "glass": "Copita or small tumbler",
-        "ageing": "10\u201317 years for flagships",
+        "ageing": "12-year flagships are the classic reference points; no-age-statement editions vary more batch to batch",
         "pairings": [
           "sashimi",
           "mild cheeses",
           "dark chocolate",
           "yakitori"
         ],
-        "expect": "Refined and aromatic: orchard fruit and incense-like mizunara oak over a whisper of peat.",
+        "expect": "Refined and aromatic: orchard fruit over delicate oak; the peated Hakushu expressions add a clean, gentle smoke.",
         "style": {
           "family": "malt",
           "cue": "malt",
           "label": "Japanese malt \u00b7 Refined & aromatic",
-          "method": "Scottish-style pot distillation, often with rare indigenous mizunara oak casks",
-          "effect": "Mizunara's leak-prone, slow-growing oak yields sandalwood and incense notes when used long-term"
+          "method": "Scottish-style pot distillation; mizunara oak appears mainly in long-matured or premium editions",
+          "effect": "Mizunara is a leak-prone, slow-growing oak historically used when imported casks were scarce; coopered carefully, it contributes sandalwood and incense-like aromas (Suntory)"
         },
         "bottles": [
           {
             "name": "Yamazaki 12",
-            "note": "The flagship: fruit, mizunara spice and balance",
-            "tag": "unpeated flagship"
+            "note": "Unpeated flagship: fruit, subtle oak spice and balance (Suntory)",
+            "tag": "unpeated"
           },
           {
             "name": "Hakushu 12",
-            "note": "Forest-distilled: pine, mint and gentle, clean peat",
+            "note": "Lightly peated: pine, mint and a clean gentle smoke (Suntory)",
             "tag": "lightly peated"
           }
         ],
-        "phenol": "lightly peated (Hakushu) or unpeated (Yamazaki) \u2014 expression-dependent",
-        "dilution": "43% typical; a little water opens mizunara aromatics",
-        "ice": "Avoid ice for first tasting; highball culture prefers the blends"
+        "sources": [
+          "suntory-mizunara",
+          "nikka-ref"
+        ]
       },
       "japanese-blended": {
         "mods": {},
@@ -552,22 +563,22 @@
             "faint smoke"
           ]
         },
-        "serve": "Mizuwari (2 parts water), on the rocks, or oyuwari (hot water)",
+        "serve": "Mizuwari (with water), on the rocks, or as a highball",
         "glass": "Highball glass",
-        "ageing": "Blends of various ages; core range NAS",
+        "ageing": "Blends of various ages; core ranges carry no age statement",
         "pairings": [
           "izakaya snacks",
           "edamame",
           "grilled fish",
           "karaage"
         ],
-        "expect": "Clean and balanced for highball culture: subtle, restrained and food-friendly.",
+        "expect": "Clean, light and food-friendly: built for dilution and highball service rather than neat tasting.",
         "style": {
           "family": "blended",
           "cue": "blended",
           "label": "Japanese blended \u00b7 Clean & highball-ready",
-          "method": "Malt and grain blended with deliberate lightness",
-          "effect": "Designed to pair with food and stretch in a highball without collapsing"
+          "method": "Malt and grain whiskies blended with deliberate lightness (each house guards its own recipe)",
+          "effect": "The blend is engineered to stay coherent when diluted \u2014 a deliberate design choice tied to highball culture"
         },
         "bottles": [
           {
@@ -581,8 +592,12 @@
             "tag": "bold"
           }
         ],
-        "dilution": "Dilution is the point \u2014 blends are engineered to stretch",
-        "ice": "The highball (with soda) is the signature serve"
+        "dilution": "Core-range blends are typically around 40\u201343%; they are blended to stay balanced when stretched with water or soda",
+        "ice": "The highball (whiskey and soda over ice) is the signature serve for these blends in Japan",
+        "sources": [
+          "suntory-mizunara",
+          "nikka-ref"
+        ]
       }
     },
     "identity": {
@@ -590,30 +605,30 @@
       "terrain": "Alpine-adjacent distillery sites",
       "soil": "Granite and soft mountain water",
       "influences": [
-        "Masataka Taketsuru studied in Scotland, 1918\u201320",
-        "Mizunara (Japanese oak) casks unique to the tradition",
+        "Yamazaki (1923) and Yoichi (1934) founded the tradition",
+        "Mizunara oak used mainly in long-matured or premium editions",
         "Highball culture drives blend design"
       ]
     },
     "why": [
       {
-        "cause": "Founders trained directly in Scotland",
-        "effect": "Scotch methods replicated with Japanese precision and restraint"
+        "cause": "Founders Masataka Taketsuru and Shinjiro Torii trained in or drew directly on Scotch methods",
+        "effect": "Japanese malt whisky follows Scottish-style pot distillation with local precision (Suntory, Nikka company histories)"
       },
       {
-        "cause": "Mizunara oak is leak-prone and hard to cooper, so it was used only when imported barrels were scarce",
-        "effect": "Its distinctive sandalwood and incense notes became a prized, distinctly Japanese signature"
+        "cause": "Mizunara oak is leak-prone and difficult to cooper, and was originally used out of necessity when imported barrels were scarce",
+        "effect": "Its distinctive sandalwood and incense notes became a prized signature mainly in long-matured expressions (Suntory)"
       },
       {
-        "cause": "Highball-dominated drinking culture",
-        "effect": "Blends engineered for delicacy and food pairing"
+        "cause": "Highball-centred drinking culture",
+        "effect": "Blends are engineered to stay balanced when diluted; this is a stylistic choice, not a quality hierarchy"
       }
     ],
     "badges": [
       "Classic"
     ],
     "sources": [
-      "suntory-ref",
+      "suntory-mizunara",
       "nikka-ref",
       "jwa"
     ]
@@ -667,8 +682,8 @@
             "tag": "rye-forward"
           }
         ],
-        "dilution": "40% standard; no water needed",
-        "ice": "Ice-friendly by design; classic Canadian serve"
+        "dilution": "40% standard; designed to be served without added water",
+        "ice": "Ice-friendly by design; the classic Canadian serve for this style"
       }
     },
     "identity": {
@@ -694,7 +709,8 @@
       "Classic"
     ],
     "sources": [
-      "cwacom"
+      "cwacom",
+      "crown-royal"
     ]
   }
 }

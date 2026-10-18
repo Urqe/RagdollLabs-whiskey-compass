@@ -32,8 +32,7 @@ function renderSpecialStyle(profile) {
   grid.className = "identity-grid";
   const rows = [
     ["Style", style.label],
-    ["Family", style.family],
-    ["Sweetness", style.sweetness],
+    ["Peating", profile.regional.phenol],
     ["Method", style.method]
   ];
   for (const [term, value] of rows) {

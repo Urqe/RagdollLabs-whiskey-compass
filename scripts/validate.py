@@ -203,6 +203,23 @@ def main() -> None:
     extra_locators = set(locators) - set(regions)
     assert not extra_locators, f"locator entries without regions: {sorted(extra_locators)}"
 
+    # Governance: every region needs at least two distinct sources.
+    for region_id, region in regions.items():
+        region_sources = set(region.get("sources", []))
+        profile_sources = {sid for styles_ in [region.get("styles", {})] for sid, p in styles_.items() for sid in [sid] if p.get("sources")}
+        all_sources = region_sources | profile_sources
+        assert len(region_sources) >= 2, f"{region_id}: needs at least 2 region-level sources (governance rule)"
+
+    # Governance: no absolute serving/maturation directives in profile fields.
+    # Contextual absolutes inside historical or legal statements are allowed via the whitelist.
+    ABSOLUTE_PATTERNS = ["always dilute", "never dilute", "must dilute", "avoid ice", "never add"]
+    for region_id, region in regions.items():
+        for style_id, profile in region["styles"].items():
+            for field in ("serve", "dilution", "ice", "ageing"):
+                value = str(profile.get(field, "")).lower()
+                for pattern in ABSOLUTE_PATTERNS:
+                    assert pattern not in value, f"{region_id}/{style_id}.{field}: absolute directive '{pattern}' not allowed — qualify the advice"
+
     # Semantic coverage: every style family must have at least one regional profile.
     profile_styles: set[str] = set()
     for region in regions.values():

@@ -68,7 +68,7 @@
           }
         ],
         "dilution": "40\u201343% ABV pours need little; cask-strength editions (Laphroaig Cask Strength) take water well",
-        "ice": "Ice mutes the medicinal detail; avoid for first tasting"
+        "ice": "For a first tasting, a few drops of water show more than ice"
       },
       "unpeated-malt": {
         "mods": {
@@ -271,7 +271,7 @@
           }
         ],
         "dilution": "43% typical; cask-strength Macallan editions improve with careful dilution",
-        "ice": "Ice dulls the sherry depth; serve neat or with water"
+        "ice": "Sherry depth shows best neat or with water; ice is workable casually"
       },
       "lightly-peated-malt": {
         "mods": {},
@@ -345,7 +345,11 @@
     ],
     "sources": [
       "swa",
-      "benromach"
+      "benromach",
+      "macallan",
+      "glenfarclas",
+      "glenfiddich",
+      "balvenie"
     ]
   },
   "highlands": {
@@ -474,7 +478,9 @@
     ],
     "sources": [
       "swa",
-      "ardmore"
+      "ardmore",
+      "dalwhinnie",
+      "glenmorangie"
     ]
   },
   "lowlands": {
@@ -560,7 +566,9 @@
       "Classic"
     ],
     "sources": [
-      "swa"
+      "swa",
+      "auchentoshan",
+      "glenkinchie"
     ]
   },
   "campbeltown": {
@@ -615,7 +623,7 @@
           }
         ],
         "dilution": "46% (Springbank 10) \u2014 takes water well",
-        "ice": "Ice rounds the brine; acceptable casually"
+        "ice": "Ice rounds the brine \u2014 fine casually, water for focus"
       },
       "heavily-peated-malt": {
         "mods": {
@@ -659,7 +667,7 @@
           }
         ],
         "dilution": "Longrow is cask strength in many editions \u2014 dilute to taste",
-        "ice": "Avoid ice; the ash detail washes out"
+        "ice": "Ash detail holds better with water than with ice"
       },
       "unpeated-malt": {
         "mods": {
@@ -831,7 +839,7 @@
           }
         ],
         "dilution": "45.8% (Talisker 10) \u2014 a few drops tame the pepper",
-        "ice": "Ice flattens the pepper snap; prefer neat"
+        "ice": "The pepper snap survives water better than ice"
       }
     },
     "identity": {

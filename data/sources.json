@@ -90,5 +90,101 @@
   "suntory-mizunara": {
     "name": "Suntory \u2014 The mysteries of mizunara oak",
     "url": "https://house.suntory.com/stories/the-mysteries-of-mizunara"
+  },
+  "auchentoshan": {
+    "name": "Auchentoshan Distillery \u2014 triple distillation",
+    "url": "https://www.auchentoshan.com/"
+  },
+  "glenkinchie": {
+    "name": "Glenkinchie Distillery \u2014 Lowland malt",
+    "url": "https://www.malts.com/en-gb/products/glenkinchie-12-year-old"
+  },
+  "crown-royal": {
+    "name": "Crown Royal \u2014 Canadian whisky (Diageo)",
+    "url": "https://www.crownroyal.com/"
+  },
+  "jack-daniels": {
+    "name": "Jack Daniel Distillery \u2014 Lincoln County Process",
+    "url": "https://www.jackdaniels.com/"
+  },
+  "george-dickel": {
+    "name": "George Dickel Distillery \u2014 Tennessee whisky",
+    "url": "https://www.georgedickel.com/"
+  },
+  "cotswolds": {
+    "name": "Cotswolds Distillery \u2014 English single malt",
+    "url": "https://cotswoldsdistillery.com/"
+  },
+  "english-whisky-co": {
+    "name": "The English Whisky Co. \u2014 England's first modern distillery",
+    "url": "https://www.englishwhisky.co.uk/"
+  },
+  "green-spot": {
+    "name": "Green Spot \u2014 Irish pot still whiskey",
+    "url": "https://greenspotwhiskey.com/"
+  },
+  "redbreast": {
+    "name": "Redbreast \u2014 Irish single pot still (Irish Distillers)",
+    "url": "https://www.redbreastwhiskey.com/"
+  },
+  "rittenhouse": {
+    "name": "Rittenhouse Rye \u2014 Heaven Hill product page",
+    "url": "https://www.heavenhilldistillery.com/brand/rittenhouse/"
+  },
+  "bulleit": {
+    "name": "Bulleit Rye \u2014 product page",
+    "url": "https://www.bulleitwhiskey.com/"
+  },
+  "wild-turkey": {
+    "name": "Wild Turkey \u2014 distillery information",
+    "url": "https://www.wildturkeybourbon.com/"
+  },
+  "elijah-craig": {
+    "name": "Elijah Craig \u2014 Heaven Hill product page",
+    "url": "https://www.heavenhilldistillery.com/"
+  },
+  "makers-mark": {
+    "name": "Maker's Mark \u2014 wheated bourbon",
+    "url": "https://www.makersmark.com/"
+  },
+  "weller": {
+    "name": "W.L. Weller \u2014 wheated bourbon (Buffalo Trace)",
+    "url": "https://www.buffalotrace.com/"
+  },
+  "macallan": {
+    "name": "The Macallan \u2014 Sherry Oak 12 product page",
+    "url": "https://www.macallan.com/en/sherry-oak-12"
+  },
+  "glenfarclas": {
+    "name": "Glenfarclas Distillery \u2014 Speyside sherry-cask malt",
+    "url": "https://www.glenfarclas.com/"
+  },
+  "glenfiddich": {
+    "name": "Glenfiddich \u2014 12 Year Old product page",
+    "url": "https://www.glenfiddich.com/"
+  },
+  "balvenie": {
+    "name": "The Balvenie \u2014 DoubleWood 12 product page",
+    "url": "https://www.thebalvenie.com/"
+  },
+  "dalwhinnie": {
+    "name": "Dalwhinnie 15 \u2014 Diageo product page",
+    "url": "https://www.malts.com/en-gb/products/dalwhinnie-15-year-old"
+  },
+  "glenmorangie": {
+    "name": "Glenmorangie \u2014 The Original 10 product page",
+    "url": "https://www.glenmorangie.com/"
+  },
+  "four-roses": {
+    "name": "Four Roses \u2014 distillery information",
+    "url": "https://www.fourrosesbourbon.com/"
+  },
+  "lot-40": {
+    "name": "Lot No. 40 \u2014 Canadian rye whisky",
+    "url": "https://www.lot40.ca/"
+  },
+  "kavalan-solist": {
+    "name": "Kavalan Solist \u2014 cask-strength single cask range",
+    "url": "https://www.kavalanwhisky.com/en/products/solist/"
   }
 }

@@ -61,9 +61,12 @@ const ardmore = window.WhiskeyCompass.combinedProfile("lightly-peated-malt", "hi
 assert.ok(benromach.profile.smoke >= 1.5, "Benromach expression must carry light peat");
 assert.ok(ardmore.profile.smoke >= 1.5, "Ardmore expression must carry light peat");
 
-// Amrut Fusion is genuinely peated: no generic low-smoke country profile.
-const amrut = window.WhiskeyCompass.combinedProfile("indian-malt", "india");
-assert.ok(amrut.profile.smoke >= 3, "Amrut Fusion's profile must reflect its pronounced peat");
+// Amrut Fusion is genuinely peated: it has its own peated profile, separate
+// from the unpeated Indian expression (Rampur).
+const amrutPeated = window.WhiskeyCompass.combinedProfile("indian-peated-malt", "india");
+assert.ok(amrutPeated.profile.smoke >= 3, "Amrut Fusion's profile must reflect its pronounced peat");
+const rampurUnpeated = window.WhiskeyCompass.combinedProfile("indian-malt", "india");
+assert.ok(rampurUnpeated.profile.smoke <= 1.5, "the unpeated Indian expression must not carry Fusion's peat");
 
 // --- Search semantics ---
 // Smoky means smoke: peated expressions from several regions match; genuinely
@@ -184,6 +187,29 @@ window.WhiskeyCompass.selectProfile("pot-still", "ireland");
 await settle();
 const potStillComparisons = [...document.querySelectorAll("#similarProfiles .similar-item")];
 assert.ok(potStillComparisons.length > 0, "pot still must have at least one eligible recommendation");
+
+// --- Governance: editorial transparency and qualified advice ---
+// The sensory chart explains its editorial scale.
+assert.ok(document.querySelector(".editorial-scale-note"),
+  "the style profile must explain that scores are editorial judgements");
+// Japan's malt profile no longer conflates Yamazaki and Hakushu peat levels.
+const japanMalt = window.WhiskeyCompass.combinedProfile("japanese-malt", "japan");
+assert.match(String(japanMalt.regional.phenol), /unpeated in the Yamazaki/i,
+  "Japan malt must distinguish unpeated Yamazaki from peated Hakushu");
+// Sources drawer renders profile-level sources for Japan.
+window.WhiskeyCompass.selectProfile("japanese-malt", "japan");
+await settle();
+const sourcesText = document.getElementById("sourcesDrawer").textContent;
+assert.ok(sourcesText.includes("Suntory") || sourcesText.includes("Nikka"),
+  "Japan profile sources must include producer references");
+assert.ok(sourcesText.toLowerCase().includes("editorial"),
+  "methodology note must mention editorial judgement");
+// The peating classification is user-visible on the profile, not just in data.
+const peatingRow = document.querySelector("#specialStyle dt");
+assert.ok([...document.querySelectorAll("#specialStyle dt")].some(dt => dt.textContent === "Peating"),
+  "the production section must show the peating classification");
+assert.ok(document.getElementById("specialStyle").textContent.includes("Yamazaki"),
+  "Japan's peating row must name the house styles");
 
 console.log("OK: Whiskey Compass DOM smoke tests passed");
 await close();

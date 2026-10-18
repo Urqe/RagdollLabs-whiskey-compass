@@ -296,11 +296,12 @@ function renderWhy(regionId, region, regional, styleId) {
   return `<section class="why" aria-labelledby="whyHeading"><h3 id="whyHeading">Why does it taste like this?</h3><p class="small">Typical raw-material, production and maturation associations; sensory descriptors are style associations, not literal flavor transfer.</p><ul class="why-list">${why.map(item => `<li><span class="why-cause">${escapeHtml(item.cause)}</span><span class="why-arrow" aria-hidden="true">→</span><span class="why-effect">${escapeHtml(item.effect)}</span></li>`).join("")}</ul></section>`;
 }
 
-function renderSources(region) {
+function renderSources(region, regional = null) {
   const details = WhiskeyDOM.element("details", null, "sources");
   details.append(WhiskeyDOM.element("summary", "Sources & methodology"),
-    WhiskeyDOM.element("p", "Regional profiles summarize typical characteristics. Distilleries, batches and age statements vary.", "small"));
-  const resolved = (region.sources || []).map(id => SOURCES[id]).filter(Boolean);
+    WhiskeyDOM.element("p", "Regional profiles summarize typical characteristics. Distilleries, batches and age statements vary. Flavour scores are editorial judgements; production and historical claims are tied to the sources below.", "small"));
+  const profileSources = (regional?.sources || []).map(id => SOURCES[id]).filter(Boolean);
+  const resolved = [...new Map([...(region.sources || []), ...(regional?.sources || [])].map(id => [id, SOURCES[id]]).filter(([, source]) => source)).values()];
   if (resolved.length) {
     const list = WhiskeyDOM.element("ul", null, "source-list");
     for (const source of resolved) {
@@ -364,7 +365,7 @@ function renderExplore() {
   $("locatorMap").innerHTML = renderLocator(regionId, region);
   $("identity").innerHTML = renderBadges(region, style) + renderIdentity(region);
   $("why").innerHTML = renderWhy(regionId, region, regional, styleId);
-  $("sourcesDrawer").replaceChildren(renderSources(region));
+  $("sourcesDrawer").replaceChildren(renderSources(region, regional));
   $("bars").innerHTML = METRICS.map(metric => metricBar(metric, profile)).join("");
   $("notes").replaceChildren(renderFlavorGroups(regional.notes));
   $("serve").replaceChildren(...[["Serve", regional.serve], ["Water & ABV", regional.dilution], ["Ice & highball", regional.ice], ["Glass", regional.glass]].map(([key, value]) => {

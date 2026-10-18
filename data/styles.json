@@ -250,5 +250,19 @@
     "oak": 2.5,
     "finish": 3,
     "heat": 2.5
+  },
+  "indian-peated-malt": {
+    "name": "Indian peated malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3.5,
+    "smoke": 3.5,
+    "sweetness": 2.5,
+    "spice": 2.5,
+    "fruit": 3,
+    "oak": 3.5,
+    "finish": 3.5,
+    "heat": 3
   }
 }

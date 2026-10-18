@@ -3,67 +3,113 @@
     "name": "India",
     "country": "India",
     "climate": "Tropical: hot and humid",
-    "summary": "The fastest-maturing whisky region on earth: tropical heat gives 5-year-old malts the depth of 15-year Scotch.",
+    "summary": "A fast-growing single-malt region where tropical heat drives rapid oak extraction; expressions range from unpeated sherried malts to boldly peated ones.",
     "styles": {
       "indian-malt": {
         "mods": {
           "oak": 0.5,
           "fruit": 0.5,
-          "body": 0.5,
-          "smoke": 2.5
+          "body": 0.5
         },
+        "phenol": "unpeated in the standard expressions (Rampur); Amrut's peated lines differ \u2014 see the peated profile",
         "notes": {
           "Fruit": [
             "tropical fruit",
             "raisin",
-            "chocolate-adjacent dark fruit"
+            "dried apricot"
           ],
           "Oak / ageing": [
             "dark chocolate",
             "toffee",
-            "sherry"
+            "sherry influence (Double Wood)"
           ],
           "Spice": [
             "peppery spice",
-            "cardamom-adjacent"
-          ],
-          "Smoke / peat": [
-            "pronounced peat",
-            "sweet smoke"
+            "warm baking spice"
           ]
         },
         "serve": "Neat with water to taste",
+        "dilution": "Typically 43\u201350% depending on the expression; the 50% bottlings take a few drops of water well",
+        "ice": "A single cube is workable for casual drinking; detail shows best without it",
         "glass": "Glencairn",
-        "ageing": "4\u20138 years (accelerated tropical maturation)",
+        "ageing": "Often 4\u201312 years; tropical heat accelerates oak extraction relative to cooler climates (widely reported, e.g. Amrut's own maturation notes)",
         "pairings": [
           "dark chocolate",
           "spiced desserts",
-          "curry-adjacent nibbles",
           "aged cheese"
         ],
-        "expect": "Bold and fast-matured: rich oak, tropical fruit and, in peated bottlings, pronounced sweet smoke.",
+        "expect": "Rich and fast-matured: bold oak, tropical fruit and spice even at young age statements.",
         "style": {
           "family": "malt",
           "cue": "malt",
-          "label": "Indian malt \u00b7 Tropical maturity",
-          "method": "Scottish-style pot distillation under extreme heat, ex-bourbon and sherry casks",
-          "effect": "Tropical heat accelerates oak extraction; peated expressions carry distinctly sweet, bold smoke"
+          "label": "Indian malt (unpeated) \u00b7 Tropical richness",
+          "method": "Scottish-style pot distillation; ex-bourbon casks with sherry finishing common (Rampur Double Wood)",
+          "effect": "Sustained tropical heat speeds the spirit's interaction with oak, concentrating flavor faster than in Scotland \u2014 the mechanism is physical, not a shortcut to identical complexity"
+        },
+        "bottles": [
+          {
+            "name": "Rampur Double Wood",
+            "note": "Unpeated, sherry-finished Himalayan-region malt",
+            "tag": "unpeated"
+          }
+        ],
+        "sources": [
+          "amrut-ref"
+        ]
+      },
+      "indian-peated-malt": {
+        "mods": {
+          "oak": 0.5,
+          "fruit": 0.5,
+          "body": 0.5,
+          "smoke": 3.5
+        },
+        "phenol": "peated \u2014 Amrut Fusion marries peated and unpeated barley (Amrut's published notes describe pronounced peat)",
+        "notes": {
+          "Smoke / peat": [
+            "pronounced peat",
+            "sweet smoke"
+          ],
+          "Fruit": [
+            "tropical fruit",
+            "raisin"
+          ],
+          "Oak / ageing": [
+            "dark chocolate",
+            "toffee"
+          ],
+          "Spice": [
+            "peppery spice"
+          ]
+        },
+        "serve": "Neat with water to taste",
+        "dilution": "Amrut Fusion is bottled at 50% ABV; water tames the heat and opens the smoke",
+        "ice": "Ice tends to close down the peat and oak detail; prefer water if diluting",
+        "glass": "Glencairn",
+        "ageing": "Fusion's components vary; check the batch \u2014 no single age window covers it",
+        "pairings": [
+          "dark chocolate",
+          "bbq",
+          "blue cheese"
+        ],
+        "expect": "Bold and smoky: pronounced sweet peat over tropical fruit and heavy oak.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Indian peated malt \u00b7 Bold sweet smoke",
+          "method": "Peated and unpeated barley married after separate distillation (Amrut Fusion)",
+          "effect": "Peat reads sweeter and bolder against the ripe fruit profile of tropical maturation"
         },
         "bottles": [
           {
             "name": "Amrut Fusion",
-            "note": "Marries peated and unpeated barley: bold, sweet, pronounced smoke",
+            "note": "Peated-plus-unpeated marriage at 50% ABV; pronounced sweet smoke (Amrut)",
             "tag": "peated"
-          },
-          {
-            "name": "Rampur Double Wood",
-            "note": "Sherry-finished Himalayan-region malt",
-            "tag": "sherried"
           }
         ],
-        "phenol": "peated in the peated expressions (Amrut Fusion), unpeated in others",
-        "dilution": "Amrut Fusion is 50% \u2014 takes water well; cask-strength editions need it",
-        "ice": "Avoid ice; the peat and oak detail wash out"
+        "sources": [
+          "amrut-fusion"
+        ]
       }
     },
     "identity": {
@@ -71,18 +117,19 @@
       "terrain": "Varied; key distilleries near Bangalore and the Himalayas",
       "soil": "Tropical agricultural zones",
       "influences": [
-        "Up to 12% per-year angel's share in the tropics",
-        "World's largest whisky market by volume"
+        "Amrut (Bangalore) pioneered Indian single malt exports from 2004",
+        "Rampur (Himalayan foothills) offers a cooler-maturation contrast",
+        "Heat-driven maturation is the region's defining variable"
       ]
     },
     "why": [
       {
-        "cause": "Sustained 30\u201340\u00b0C warehouse temperatures",
-        "effect": "Oak extraction runs several times faster than in Scotland; 5 years here behaves like 15 there"
+        "cause": "Sustained high warehouse temperatures in the tropics",
+        "effect": "Oak extraction and evaporation run faster than in cool climates \u2014 maturation is accelerated, though it does not simply replicate Scotch's slower development (Amrut maturation notes; widely reported industry observation)"
       },
       {
-        "cause": "Extreme evaporation (angel's share)",
-        "effect": "Rapid concentration of flavor and cask interaction"
+        "cause": "High evaporation losses in hot, humid conditions",
+        "effect": "Concentration of the remaining spirit \u2014 the famous 'angel's share' trade-off, one reason Indian malts can taste mature young"
       }
     ],
     "badges": [
@@ -90,6 +137,7 @@
       "Emerging region"
     ],
     "sources": [
+      "amrut-fusion",
       "amrut-ref"
     ]
   },
@@ -148,8 +196,8 @@
             "tag": "classic"
           }
         ],
-        "dilution": "Kavalan Solist editions are cask strength (55%+) \u2014 always dilute to taste",
-        "ice": "Subtropical fruit shows best without ice"
+        "dilution": "Kavalan Solist editions are cask strength (around 55\u201358%); most drinkers prefer some water, but the strength is the point \u2014 dilute to your own taste",
+        "ice": "Many drinkers find the fruit shows best without ice; a small cube is workable"
       }
     },
     "identity": {
@@ -176,7 +224,8 @@
       "Emerging region"
     ],
     "sources": [
-      "kavalan-ref"
+      "kavalan-ref",
+      "kavalan-solist"
     ]
   },
   "england": {
@@ -260,7 +309,9 @@
       "Emerging region"
     ],
     "sources": [
-      "ewg-ref"
+      "ewg-ref",
+      "english-whisky-co",
+      "cotswolds"
     ]
   }
 }
