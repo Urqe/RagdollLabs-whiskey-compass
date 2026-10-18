@@ -492,52 +492,6 @@
     "climate": "Four distinct seasons; cold winters, humid summers",
     "summary": "Malt whisky built on Scottish methods with local precision; styles range from unpeated fruit-forward flagships to clean, lightly peated forest expressions.",
     "styles": {
-      "japanese-blended": {
-        "mods": {},
-        "notes": {
-          "Fruit": [
-            "apple",
-            "citrus"
-          ],
-          "Oak / ageing": [
-            "vanilla",
-            "light oak"
-          ],
-          "Smoke / peat": [
-            "faint smoke"
-          ]
-        },
-        "serve": "As a highball (whisky and soda over ice), mizuwari, or on the rocks",
-        "glass": "Highball glass",
-        "ageing": "Blends of various ages; core ranges carry no age statement",
-        "pairings": [
-          "izakaya snacks",
-          "edamame",
-          "grilled fish",
-          "karaage"
-        ],
-        "expect": "Clean, light and food-friendly: built for dilution and highball service rather than neat tasting.",
-        "style": {
-          "family": "blended",
-          "cue": "blended",
-          "label": "Japanese blended \u00b7 Clean & highball-ready",
-          "method": "Malt and grain whiskies blended with deliberate lightness (each house guards its own recipe)",
-          "effect": "The blend is engineered to stay coherent when diluted \u2014 a deliberate design choice tied to highball culture"
-        },
-        "bottles": [
-          {
-            "name": "Suntory Toki",
-            "note": "Built for the highball boom: light, crisp, citrusy",
-            "tag": "highball"
-          }
-        ],
-        "dilution": "Core-range blends are typically 40\u201343% and blended to stay balanced when stretched; mizuwari uses roughly one part whisky to two parts water",
-        "ice": "The highball is the signature serve for this style in Japan; Suntory recommends its blends for highballs",
-        "sources": [
-          "suntory-mizunara",
-          "jwa"
-        ]
-      },
       "japanese-malt-unpeated": {
         "mods": {},
         "phenol": "unpeated \u2014 the Yamazaki house style",
@@ -581,8 +535,8 @@
           }
         ],
         "sources": [
-          "suntory-mizunara",
-          "jwa"
+          "suntory-yamazaki",
+          "suntory-serves"
         ]
       },
       "japanese-malt-peated": {
@@ -627,8 +581,103 @@
           }
         ],
         "sources": [
-          "suntory-mizunara",
-          "jwa"
+          "suntory-hakushu",
+          "suntory-serves"
+        ]
+      },
+      "japanese-highball-blend": {
+        "mods": {},
+        "notes": {
+          "Fruit": [
+            "apple",
+            "citrus"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "light oak"
+          ],
+          "Smoke / peat": [
+            "faint smoke"
+          ]
+        },
+        "serve": "As a highball (whisky and soda over ice), mizuwari, or on the rocks",
+        "glass": "Highball glass",
+        "ageing": "Blends of various ages; core ranges carry no age statement",
+        "pairings": [
+          "izakaya snacks",
+          "edamame",
+          "grilled fish",
+          "karaage"
+        ],
+        "expect": "Light, crisp and citrusy: built for the highball glass rather than neat tasting.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Japanese highball blend \u00b7 Light & crisp",
+          "method": "Malt and grain whiskies blended deliberately light for highball service (Suntory Toki)",
+          "effect": "Blended to stay coherent when stretched with soda \u2014 the signature serve of this branch of Japanese whisky"
+        },
+        "bottles": [
+          {
+            "name": "Suntory Toki",
+            "note": "Built for the highball boom: light, crisp, citrusy",
+            "tag": "highball"
+          }
+        ],
+        "dilution": "Core-range blends are typically 40\u201343% and blended to stay balanced when stretched; mizuwari uses roughly one part whisky to two parts water",
+        "ice": "The highball is the signature serve for this style in Japan; Suntory recommends its blends for highballs",
+        "sources": [
+          "suntory-toki",
+          "suntory-highball"
+        ]
+      },
+      "japanese-bold-blend": {
+        "mods": {},
+        "phenol": "unpeated to lightly peated components depending on the recipe \u2014 check the specific bottling",
+        "notes": {
+          "Fruit": [
+            "dried fruit",
+            "orange peel"
+          ],
+          "Oak / ageing": [
+            "rich oak",
+            "sherry influence"
+          ],
+          "Spice": [
+            "warming spice"
+          ],
+          "Smoke / peat": [
+            "a wisp of smoke from its malt components"
+          ]
+        },
+        "serve": "Neat, or with a splash of water",
+        "dilution": "Bottled at 51.4% ABV; a splash of water opens the aromatics and softens the heat",
+        "ice": "A large cube is workable; many drinkers prefer water to keep the dense flavor intact",
+        "glass": "Copita or small tumbler",
+        "ageing": "Married from malt and grain components at higher strength (Nikka's From the Barrel)",
+        "pairings": [
+          "dark chocolate",
+          "aged cheddar",
+          "grilled meats"
+        ],
+        "expect": "Bold and full-bodied: dense oak and dried fruit with a warming, higher-strength finish.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Japanese bold blend \u00b7 Full & robust",
+          "method": "Malt-forward blend bottled at high strength after marrying (Nikka From the Barrel)",
+          "effect": "The opposite design goal from the highball blends: intensity over stretchability (Nikka)"
+        },
+        "bottles": [
+          {
+            "name": "Nikka From the Barrel",
+            "note": "Malt-forward blend at 51.4% ABV; bold, dense and full-bodied (Nikka)",
+            "tag": "bold"
+          }
+        ],
+        "sources": [
+          "nikka-ftb",
+          "nikka-brands"
         ]
       }
     },
@@ -660,8 +709,10 @@
       "Classic"
     ],
     "sources": [
-      "suntory-mizunara",
-      "nikka-ref",
+      "suntory-toki",
+      "suntory-yamazaki",
+      "suntory-hakushu",
+      "nikka-brands",
       "jwa"
     ]
   },

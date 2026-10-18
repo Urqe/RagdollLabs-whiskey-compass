@@ -35,7 +35,7 @@ window.WhiskeySearch = (() => {
         // ("highland park" must never trigger a "highlands" region constraint).
         // Protect the span with a placeholder, then restore it for ranking text.
         const token = ` \u0000${producerSpans.length}\u0000 `;
-        producerSpans.push(phrase.trim());
+        producerSpans.push(normalize(rule.label || phrase.trim()));
         remainder = remainder.split(phrase).join(token);
       } else {
         while (remainder.includes(phrase)) remainder = remainder.replace(phrase, " ");

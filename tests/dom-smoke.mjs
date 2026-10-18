@@ -193,8 +193,7 @@ assert.ok(potStillComparisons.length > 0, "pot still must have at least one elig
 assert.ok(document.querySelector(".editorial-scale-note"),
   "the style profile must explain that scores are editorial judgements");
 // Japan's malt expressions are separate profiles with distinct charts.
-const yamazakiProfile = window.WhiskeyCompass.combinedProfile("japanese-malt-unpected", "japan") 
-  || window.WhiskeyCompass.combinedProfile("japanese-malt-unpeated", "japan");
+const yamazakiProfile = window.WhiskeyCompass.combinedProfile("japanese-malt-unpeated", "japan");
 const hakushuProfile = window.WhiskeyCompass.combinedProfile("japanese-malt-peated", "japan");
 assert.ok(yamazakiProfile && hakushuProfile, "both Japanese malt profiles must exist");
 assert.ok(hakushuProfile.profile.smoke - yamazakiProfile.profile.smoke >= 1,
@@ -236,19 +235,17 @@ window.WhiskeyCompass.selectProfile("unpeated-malt", "lowlands");
 await settle();
 const lowlandsRecs = [...document.querySelectorAll("#similarProfiles .similar-item")];
 const islayRec = lowlandsRecs.find(item => item.textContent.includes("Islay"));
-if (islayRec) {
-  assert.ok(!/smok/i.test(islayRec.querySelector(".similar-reason").textContent),
-    "a recommendation to unpeated Islay from unpeated Lowlands must not promise smoke");
-}
+assert.ok(islayRec, "an Islay recommendation must exist from unpeated Lowlands");
+assert.ok(!/smok/i.test(islayRec.querySelector(".similar-reason").textContent),
+  "a recommendation to unpeated Islay from unpeated Lowlands must not promise smoke");
 // From unpeated Speyside and Highlands likewise.
 for (const rid of ["speyside", "highlands"]) {
   window.WhiskeyCompass.selectProfile("unpeated-malt", rid);
   await settle();
   const rec = [...document.querySelectorAll("#similarProfiles .similar-item")].find(item => item.textContent.includes("Islay"));
-  if (rec) {
-    assert.ok(!/smok/i.test(rec.querySelector(".similar-reason").textContent),
-      `a recommendation to unpeated Islay from unpeated ${rid} must not promise smoke`);
-  }
+  assert.ok(rec, `an Islay recommendation must exist from unpeated ${rid}`);
+  assert.ok(!/smok/i.test(rec.querySelector(".similar-reason").textContent),
+    `a recommendation to unpeated Islay from unpeated ${rid} must not promise smoke`);
 }
 
 // --- Regression: relative wording, no unsupported absolutes ---
@@ -257,7 +254,6 @@ const islayPeated2 = window.WhiskeyCompass.combinedProfile("heavily-peated-malt"
 const campbeltownPeated = window.WhiskeyCompass.combinedProfile("heavily-peated-malt", "campbeltown");
 assert.ok(islayPeated2.profile.smoke >= 4 && campbeltownPeated.profile.smoke >= 4,
   "both comparison members must be strongly peated for this regression");
-const reason1 = window.WhiskeyCompass.escapeHtml; // no-op reference keeps lints calm
 // Flavour language contains only relative phrasing; no ingredient claims from scores.
 const samplePhrases = [
   WhiskeyModel => WhiskeyModel.flavorPhrase("spice", "high"),
@@ -273,10 +269,36 @@ assert.equal(window.WhiskeyModel.flavorPhrase("smoke", "low"), "less smoky",
 const indiaPeated = window.WhiskeyCompass.combinedProfile("indian-peated-malt", "india");
 assert.equal(indiaPeated.profile.smoke, 4, "Amrut Fusion expression must chart at exactly 4.0, not a clamped 5");
 
-// --- Regression: Nikka From the Barrel not in the light-blend profile ---
-const japanBlend = window.WhiskeyCompass.combinedProfile("japanese-blended", "japan");
-assert.ok(!japanBlend.regional.bottles.some(b => b.name.includes("Nikka")),
-  "the light, dilution-oriented blend profile must not include the 51.4% bold Nikka From the Barrel");
+// --- Regression: Nikka From the Barrel not in the highball blend profile ---
+const japanHighballBlend = window.WhiskeyCompass.combinedProfile("japanese-highball-blend", "japan");
+assert.ok(!japanHighballBlend.regional.bottles.some(b => b.name.includes("Nikka")),
+  "the light, highball-oriented blend profile must not include the 51.4% bold Nikka From the Barrel");
+const japanBoldBlend = window.WhiskeyCompass.combinedProfile("japanese-bold-blend", "japan");
+assert.ok(japanBoldBlend.regional.bottles.some(b => b.name.includes("Nikka From the Barrel")),
+  "Nikka From the Barrel must live in the bold blend profile where it belongs");
+
+// --- Nikka search resolves to the bold blend, not the highball Toki profile ---
+const nikkaResults = await search("nikka");
+assert.ok(nikkaResults.length > 0, "nikka must return a result");
+assert.ok(nikkaResults.every(button => /Japanese bold blend/i.test(button.textContent)),
+  "nikka must resolve to the bold Nikka From the Barrel profile");
+const ftbResults = await search("from the barrel");
+assert.ok(ftbResults.length > 0, "from the barrel must return a result");
+assert.ok(ftbResults.every(button => /Japanese bold blend/i.test(button.textContent)),
+  "from the barrel must not resolve to the light highball blend");
+const tokiResults = await search("toki");
+assert.ok(tokiResults.length > 0 && tokiResults.every(button => /Japanese highball blend/i.test(button.textContent)),
+  "toki must resolve to the highball-oriented profile");
+
+// --- Every producer alias returns at least one result ---
+const producerQueries = ["laphroaig", "ardbeg", "lagavulin", "macallan", "glenfiddich", "talisker",
+  "highland park", "springbank", "longrow", "hazelburn", "redbreast", "jameson", "bushmills",
+  "yamazaki", "hakushu", "nikka", "amrut", "elijah craig", "wild turkey", "makers mark",
+  "rittenhouse", "jack daniels", "george dickel", "crown royal", "kavalan"];
+for (const query of producerQueries) {
+  const results = await search(query);
+  assert.ok(results.length > 0, `producer query '${query}' must return at least one result`);
+}
 
 console.log("OK: Whiskey Compass DOM smoke tests passed");
 await close();

@@ -188,7 +188,35 @@
     "url": "https://www.kavalanwhisky.com/en/products/solist/"
   },
   "rampur": {
-    "name": "Rampur Single Malt \u2014 Double Cask product page (Radico Kaithal)",
+    "name": "Rampur Single Malt \u2014 Double Cask product page (Radico Khaitan (Rampur Distillery, Uttar Pradesh))",
     "url": "https://rampursinglemalt.com/double-cask/"
+  },
+  "suntory-toki": {
+    "name": "Suntory Toki \u2014 official product page",
+    "url": "https://house.suntory.com/toki-whisky"
+  },
+  "suntory-highball": {
+    "name": "Suntory \u2014 the whisky highball (official serve)",
+    "url": "https://house.suntory.com/cocktails/whisky-highball"
+  },
+  "suntory-hakushu": {
+    "name": "Suntory Hakushu \u2014 official product and serving guidance (Japanese site)",
+    "url": "https://www.suntory.co.jp/whisky/hakushu/whisky/"
+  },
+  "suntory-yamazaki": {
+    "name": "Suntory Yamazaki 12 Years Old \u2014 official product page",
+    "url": "https://house.suntory.com/yamazaki-whisky/yamazaki-12-years-old"
+  },
+  "suntory-serves": {
+    "name": "Suntory \u2014 official serving suggestions",
+    "url": "https://house.suntory.com/cocktails/serves"
+  },
+  "nikka-brands": {
+    "name": "Nikka Whisky \u2014 official brand information",
+    "url": "https://www.nikka.com/en/brands/"
+  },
+  "nikka-ftb": {
+    "name": "Nikka From the Barrel \u2014 official product page",
+    "url": "https://www.nikka.com/brands/fromthebarrel/"
   }
 }
