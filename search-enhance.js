@@ -1,21 +1,21 @@
 /*
- * Unified, accent-insensitive Atlas search
+ * Unified, accent-insensitive Compass search
  * ----------------------------------------
  * One Explore search handles styles, places, styles and food. When a query
  * resolves through the validated food-alias vocabulary, pairing relevance gets
  * an explicit ranking boost instead of requiring a second food-only input.
  */
 
-function atlasNormalize(value) { return FoodDiscovery.normalize(value); }
-function atlasLoadFoodAliases() { return FoodDiscovery.load(); }
-function atlasPairingScore(pairings, query) { return FoodDiscovery.score(pairings, query); }
+function compassNormalize(value) { return FoodDiscovery.normalize(value); }
+function compassLoadFoodAliases() { return FoodDiscovery.load(); }
+function compassPairingScore(pairings, query) { return FoodDiscovery.score(pairings, query); }
 
-async function renderEnhancedAtlasSearch() {
+async function renderEnhancedCompassSearch() {
   const input = document.getElementById("searchInput");
   const container = document.getElementById("searchResults");
   if (!input || !container) return;
   const rawQuery = input.value.trim();
-  const query = atlasNormalize(rawQuery);
+  const query = compassNormalize(rawQuery);
   container.replaceChildren();
   if (query.length < 2) return;
 
@@ -76,7 +76,7 @@ async function renderEnhancedAtlasSearch() {
 }
 
 document.addEventListener("whiskeycompass:ready", () => {
-  void atlasLoadFoodAliases();
+  void compassLoadFoodAliases();
   void FoodDiscovery.loadGuidance();
   // app.js owns the input handler and delegates here; avoid two renderers racing.
 });

@@ -21,7 +21,7 @@ const MOODS = [
   { id: "big-rich", label: "Big & rich", hint: "Dried fruit, chocolate and weight", test: ({ profile }) => profile.body >= 4 && profile.oak >= 3.5 && profile.fruit >= 3 },
   { id: "smoky-briny", label: "Smoky & briny", hint: "Bonfires, iodine and sea air", test: ({ profile }) => profile.smoke >= 3.5 },
   { id: "sweet-sherried", label: "Sweet & sherried", hint: "Honey, raisins and cocoa", test: ({ profile }) => profile.sweetness >= 3 && profile.fruit >= 3 },
-  { id: "spicy-bold", label: "Spicy & bold", hint: "Pepper, rye bite and warmth", test: ({ profile }) => profile.spice >= 3.5 && profile.body >= 3 },
+  { id: "spicy-bold", label: "Spicy & bold", hint: "Pepper, rye bite and warmth", test: ({ profile }) => profile.spice >= 3.5 },
   { id: "something-unusual", label: "Something unusual", hint: "Off the beaten path: India, Taiwan, England", test: ({ style, region }) => Boolean(style.regionalSignature) || (region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag)) }
 ];
 
@@ -130,6 +130,7 @@ function allPairs() {
   return PAIR_CACHE;
 }
 
+/* No-enhancement fallback: legacy Compare option builder; exercised by tests. */
 function optionMarkup(entries, includeCountry = false) {
   return entries.map(([id, item]) => {
     const label = includeCountry && item.country ? `${item.name} · ${item.country}` : item.name;
@@ -163,7 +164,7 @@ function populateStyles() {
   const entries = Object.entries(STYLES).sort(byName);
   setSelectOptions($("style"), entries);
   setSelectOptions($("cg"), entries);
-  const initial = STYLES["pinot-noir"] ? "pinot-noir" : entries[0]?.[0] || "";
+  const initial = entries[0]?.[0] || "";
   $("style").value = initial;
   $("cg").value = initial;
 }
@@ -403,6 +404,7 @@ function renderBottles(regional) {
   }
 }
 
+/* No-enhancement fallback: rendered only when the Advanced Compare UI is absent; exercised by tests. */
 function renderBiggestDifferences(selections) {
   if (selections.length < 2) return "";
   const rows = [];
@@ -417,6 +419,7 @@ function renderBiggestDifferences(selections) {
   return `<section class="differences" aria-labelledby="diffHeading"><h3 id="diffHeading">What sets them apart</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${escapeHtml(row.metric.label)}</span><span class="diff-text">${escapeHtml(row.high.item.region.name)} pours ${escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${escapeHtml(row.low.item.region.name)} is ${escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>`;
 }
 
+/* No-enhancement fallback: the legacy Compare controls, hidden behind the Advanced Compare UI in production; exercised by tests. */
 function resetCompare() {
   if (document.getElementById("advancedCompareControls")) return;
   const styleId = $("cg").value;
@@ -449,6 +452,7 @@ function resetCompare() {
   emit("compare-controls", { styleId, regions });
 }
 
+/* No-enhancement fallback: reads the hidden legacy .cr selects; exercised by tests. */
 function collectCompareSelections(styleId) {
   const seen = new Set();
   const selections = [];
@@ -467,6 +471,7 @@ function collectCompareSelections(styleId) {
   return { selections, duplicateCount };
 }
 
+/* No-enhancement fallback: legacy Compare renderer behind the Advanced Compare UI; exercised by tests. */
 function renderCompare() {
   if (document.getElementById("advancedCompareControls")) return;
   const styleId = $("cg").value;
@@ -535,8 +540,8 @@ function searchHaystack(item) {
 }
 
 function runSearch() {
-  if (typeof window.renderEnhancedAtlasSearch === "function") {
-    void window.renderEnhancedAtlasSearch();
+  if (typeof window.renderEnhancedCompassSearch === "function") {
+    void window.renderEnhancedCompassSearch();
     return;
   }
   const query = $("searchInput").value.trim().toLowerCase();
@@ -641,7 +646,7 @@ function begin(action) {
     return;
   }
   if (action === "search") {
-    emit("selection-needed", { title: "Search the atlas", text: "Search for a style, region, country or style, then choose a result.", focus: "searchInput" });
+    emit("selection-needed", { title: "Search the Compass", text: "Search for a style, region, country or food, then choose a result.", focus: "searchInput" });
     return;
   }
 
@@ -651,7 +656,7 @@ function begin(action) {
   emit("selection-needed", { title: "Start with a style", text: "Choose a style. If it has one regional expression, Whiskey Compass will open it automatically.", focus: "style" });
 }
 
-function handleGrapeChange() {
+function handleStyleChange() {
   const styleId = $("style").value;
   const regions = fillExploreRegions(styleId, null, true);
   if (regions.length === 1) {
@@ -661,7 +666,7 @@ function handleGrapeChange() {
     emit("selection-needed", { title: "Choose a region", text: "Now choose the regional expression you want to explore.", focus: "region" });
   } else {
     clearCurrentProfile();
-    emit("selection-needed", { title: "No regional expression yet", text: "This style is not currently mapped to a region in the atlas." });
+    emit("selection-needed", { title: "No regional expression yet", text: "This style is not currently mapped to a region in the Compass." });
   }
 }
 
@@ -689,7 +694,7 @@ function handlePlaceRegionChange() {
 }
 
 function wireEvents() {
-  $("style").addEventListener("change", handleGrapeChange);
+  $("style").addEventListener("change", handleStyleChange);
   $("region").addEventListener("change", () => selectProfile($("style").value, $("region").value, false));
   $("country").addEventListener("change", handleCountryChange);
   $("placeRegion").addEventListener("change", handlePlaceRegionChange);

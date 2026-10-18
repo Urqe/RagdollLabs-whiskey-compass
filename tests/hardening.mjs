@@ -92,5 +92,24 @@ for (const value of payloads) {
   assert.equal(host.querySelectorAll("img, svg, script, [onerror], [onload], [onfocus], [onmouseover]").length, 0);
 }
 
+// --- Optional glossary fetch failing still yields an explained dialog ---
+{
+  const app404 = await createApp({ fetch: async (resource, options, localFetch) => {
+    const url = String(resource);
+    if (url.includes("glossary.json")) return { ok: false, status: 404, json: async () => ({}), text: async () => "" };
+    return localFetch(resource, options);
+  } });
+  const { window: w404, document: d404, settle: settle404 } = app404;
+  await settle404();
+  d404.getElementById("glossaryOpen").click();
+  await settle404();
+  await settle404();
+  assert.equal(d404.getElementById("glossaryDialog").open, true, "the glossary dialog must open even when its data failed to load");
+  const content = d404.getElementById("glossaryContent").textContent;
+  assert.ok(content.includes("Definitions could not be loaded"), "the dialog must explain the failure");
+  assert.ok(content.includes("Reload the page to retry"), "the dialog must offer the retry action");
+  await app404.close();
+}
+
 console.log("OK: Whiskey Compass hardening tests passed");
 await app.close();

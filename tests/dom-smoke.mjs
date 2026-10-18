@@ -215,6 +215,26 @@ assert.ok([...document.querySelectorAll("#specialStyle dt")].some(dt => dt.textC
 assert.ok(document.getElementById("specialStyle").textContent.includes("Yamazaki"),
   "Japan's peating row must name the house style");
 
+// --- Every mood button selects a profile on a fresh load ---
+const moodButtons = [...document.querySelectorAll("#moodButtons .mood")];
+assert.equal(moodButtons.length, 6, "all six moods render");
+for (const button of moodButtons) {
+  button.click();
+  await settle();
+  assert.ok(!document.getElementById("exploreView").classList.contains("hidden"),
+    `mood '${button.dataset.mood}' must open a profile`);
+  assert.ok(document.getElementById("title").textContent.trim().length > 0,
+    `mood '${button.dataset.mood}' must set a profile title`);
+}
+
+// --- Landing page featured pours carry real tasting cues ---
+const featuredCues = [...document.querySelectorAll("#featuredDiscoveries .tasting-cue")];
+assert.equal(featuredCues.length, 3, "three featured pours render");
+for (const cue of featuredCues) {
+  assert.ok(cue.textContent.trim().length > 0, "each featured pour needs a tasting cue");
+  assert.ok(!cue.textContent.includes("undefined"), "no literal undefined may render as a tasting cue");
+}
+
 // --- Discovery language: flavor explanations, not technical jargon ---
 window.WhiskeyCompass.selectProfile("bourbon", "kentucky");
 await settle();

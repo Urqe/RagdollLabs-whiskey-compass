@@ -261,6 +261,31 @@ def main() -> None:
                 break
         assert satisfied, f"search rule matches no profile: {rule['id']}"
 
+    # Mood satisfiability: each hardcoded mood predicate from app.js must match
+    # at least one combined profile, so no mood button can dead-end.
+    MOOD_PREDICATES = {
+        "light-delicate": lambda p: p["body"] <= 2.5 and p["smoke"] <= 1.5,
+        "big-rich": lambda p: p["body"] >= 4 and p["oak"] >= 3.5 and p["fruit"] >= 3,
+        "smoky-briny": lambda p: p["smoke"] >= 3.5,
+        "sweet-sherried": lambda p: p["sweetness"] >= 3 and p["fruit"] >= 3,
+        "spicy-bold": lambda p: p["spice"] >= 3.5,
+    }
+    combined_profiles = []
+    for region in regions.values():
+        for style_id, profile in region["styles"].items():
+            base = styles[style_id]
+            combined = {key: max(0, min(5, (base.get(key, 0) or 0) + (profile.get("mods", {}).get(key, 0) or 0))) for key in metric_keys}
+            combined_profiles.append((region, base, combined))
+    for mood_id, predicate in MOOD_PREDICATES.items():
+        assert any(predicate(c) for _, _, c in combined_profiles), f"mood '{mood_id}' matches no profile — recalibrate the mood test or profile scores"
+    # something-unusual is badge/signature-based: at least one profile must qualify.
+    unusual = any(
+        bool(styles[sid].get("regionalSignature")) or any(b in (region.get("badges") or []) for b in ("Discovery", "Emerging region"))
+        for region in regions.values()
+        for sid in region["styles"]
+    )
+    assert unusual, "mood 'something-unusual' matches no profile"
+
     # Dish guidance must be complete: the guidance UI renders these fields verbatim.
     food_dishes = load(DATA / "food-dishes.json")
     pairing_values_final = pairing_values

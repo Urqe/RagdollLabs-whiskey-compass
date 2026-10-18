@@ -115,7 +115,7 @@ function showInvalidInitialRoute() {
   setSelectPlaceholder("region", "Choose a style first…");
   showEmpty(
     "Profile not found",
-    "That style and region combination isn't in the atlas yet. Choose another style or region."
+    "That style and region combination isn't in the Compass yet. Choose another style or region."
   );
   document.getElementById("style")?.focus();
 }
@@ -241,7 +241,12 @@ function renderFeaturedDiscoveries() {
     meta.textContent = `${region.name} · ${region.country}`;
     const cue = document.createElement("span");
     cue.className = "tasting-cue";
-    cue.textContent = ({ "peated-malt": "Bonfire smoke · brine · medicinal", "sherry-malt": "Dried fruit · walnut · chocolate", bourbon: "Caramel corn · vanilla · charred oak" })[styleId];
+    const CUES = [
+      "Bonfire smoke · brine · medicinal",
+      "Dried fruit · walnut · chocolate",
+      "Caramel corn · vanilla · charred oak"
+    ];
+    cue.textContent = CUES[picks.findIndex(([sid, rid]) => sid === styleId && rid === regionId)] ?? "";
     button.append(strong, meta, cue);
     button.addEventListener("click", () => {
       showAppShell();
@@ -337,5 +342,5 @@ document.addEventListener("whiskeycompass:mode-changed", event => {
     return;
   }
   if (event.detail.hasProfile) showExploreResult();
-  else showEmpty("Choose where to begin", "Pick a style, browse by place, search the atlas or use Discover.");
+  else showEmpty("Choose where to begin", "Pick a style, browse by place, search the Compass or use Discover.");
 });

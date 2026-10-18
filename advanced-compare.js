@@ -212,7 +212,7 @@ function advancedRender() {
   if (rows.length) {
     differences.innerHTML = `<section class="differences" aria-labelledby="advancedDiffHeading"><h3 id="advancedDiffHeading">What sets them apart</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${WhiskeyCompass.escapeHtml(row.metric.label)}</span><span class="diff-text">${WhiskeyCompass.escapeHtml(advancedShortName(row.high.item))} pours ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${WhiskeyCompass.escapeHtml(advancedShortName(row.low.item))} is ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>${advancedProductionContext(selections)}`;
   } else if (selections.length >= 2) {
-    differences.innerHTML = `<p class="small">These selections are unusually close on the atlas metrics.</p>${advancedProductionContext(selections)}`;
+    differences.innerHTML = `<p class="small">These selections are unusually close on the sensory metrics.</p>${advancedProductionContext(selections)}`;
   } else {
     differences.replaceChildren();
   }

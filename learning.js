@@ -17,13 +17,18 @@
 let glossaryPromise = null;
 let glossaryData = {};
 let glossaryAliases = [];
+let glossaryLoadFailed = false;
 
 function loadGlossary() {
   if (!glossaryPromise) {
     glossaryPromise = WhiskeyData.json("./data/glossary.json", { optional: true }).then(data => {
       glossaryData = data;
+      glossaryLoadFailed = false;
       glossaryAliases = buildAliasIndex(data);
       return data;
+    }).catch(() => {
+      glossaryLoadFailed = true;
+      return {};
     });
   }
   return glossaryPromise;
@@ -157,7 +162,10 @@ function glossaryEntryCard(entry, compact = false) {
 async function showGlossaryEntry(id) {
   await loadGlossary();
   const entry = glossaryData[id];
-  if (!entry) return;
+  if (!entry) {
+    if (glossaryLoadFailed) return showGlossaryUnavailable();
+    return;
+  }
   const title = document.getElementById("glossaryDialogTitle");
   const intro = document.getElementById("glossaryIntro");
   const content = document.getElementById("glossaryContent");
@@ -175,8 +183,23 @@ async function showGlossaryEntry(id) {
   openDialog();
 }
 
+function showGlossaryUnavailable() {
+  const title = document.getElementById("glossaryDialogTitle");
+  const intro = document.getElementById("glossaryIntro");
+  const content = document.getElementById("glossaryContent");
+  if (!title || !intro || !content) return;
+  title.textContent = "Whiskey glossary";
+  intro.textContent = "Short explanations for technical terms that appear across Whiskey Compass.";
+  const retry = document.createElement("p");
+  retry.className = "small";
+  retry.textContent = "Definitions could not be loaded. Reload the page to retry.";
+  content.replaceChildren(retry);
+  openDialog();
+}
+
 async function showFullGlossary() {
   await loadGlossary();
+  if (glossaryLoadFailed || !Object.keys(glossaryData).length) return showGlossaryUnavailable();
   const title = document.getElementById("glossaryDialogTitle");
   const intro = document.getElementById("glossaryIntro");
   const content = document.getElementById("glossaryContent");
