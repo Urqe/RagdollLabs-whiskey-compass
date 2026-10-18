@@ -58,6 +58,16 @@ def main() -> None:
             if hexval not in CUE_DOT_COLORS and hexval not in SCENE_ART_COLORS:
                 errors.append(f"{path.name}: raw hex #{hexval} outside :root — use a palette token")
 
+    # Asset integrity: every referenced asset exists, every asset is referenced.
+    referenced: set[str] = set()
+    for path in sorted(ROOT.glob("*.css")) + [ROOT / "index.html"] + sorted(ROOT.glob("*.js")):
+        referenced |= {m.group(1) for m in re.finditer(r"assets/([a-z0-9.-]+)", path.read_text(encoding="utf-8"))}
+    existing = {p.name for p in (ROOT / "assets").glob("*")} if (ROOT / "assets").is_dir() else set()
+    for orphan in sorted(existing - referenced):
+        errors.append(f"orphaned asset not referenced anywhere: assets/{orphan}")
+    for missing in sorted(referenced - existing):
+        errors.append(f"asset referenced but missing: assets/{missing}")
+
     undefined = used - defined
     if undefined:
         errors.append(f"tokens used but never defined: {sorted(undefined)}")

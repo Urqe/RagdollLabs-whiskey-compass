@@ -6,9 +6,7 @@
  */
 
 .welcome { min-height: calc(100vh - 44px); display: grid; align-content: center; gap: 18px; }
-.welcome-hero { position: relative; overflow: hidden; min-height: 520px; border: 1px solid var(--line); border-radius: 28px; background:
-  linear-gradient(90deg, rgba(10,8,6,.96) 0%, rgba(10,8,6,.82) 46%, rgba(10,8,6,.12) 100%),
-  url("./assets/whiskey-glass.svg?v=20261017-compass2") center / cover no-repeat; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
+.welcome-hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; box-shadow: 0 24px 60px rgba(0,0,0,.28); }
 .welcome-copy { position: relative; z-index: 1; max-width: 760px; padding: clamp(32px,6vw,78px); }
 .welcome-copy h1 { max-width: 760px; }
 .welcome-copy .tagline { font-size: clamp(20px,3vw,30px); max-width: 700px; }
@@ -120,7 +118,6 @@
 }
 @media (max-width: 620px) {
   .welcome { min-height: auto; }
-  .welcome-hero { min-height: 560px; background-position: 58% center; }
   .welcome-copy { padding: 28px 22px; }
   .welcome-actions { grid-template-columns: 1fr; }
   .welcome-action { min-height: 78px; }
