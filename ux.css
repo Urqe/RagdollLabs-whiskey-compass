@@ -12,7 +12,7 @@
 .welcome-copy { position: relative; z-index: 1; max-width: 760px; padding: clamp(32px,6vw,78px); }
 .welcome-copy h1 { max-width: 760px; }
 .welcome-copy .tagline { font-size: clamp(20px,3vw,30px); max-width: 700px; }
-.welcome-copy > p { max-width: 650px; color: #cbbfa9; line-height: 1.6; font-size: 15px; }
+.welcome-copy > p { max-width: 650px; color: var(--muted); line-height: 1.6; font-size: 15px; }
 .welcome-actions { margin-top: 28px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; max-width: 650px; }
 .welcome-action { min-height: 96px; padding: 14px; text-align: left; border: 1px solid rgba(217,164,78,.26); border-radius: 14px; background: rgba(12,9,7,.78); color: var(--text); cursor: pointer; backdrop-filter: blur(8px); }
 .welcome-action:hover { border-color: var(--gold); background: rgba(24,18,12,.92); transform: translateY(-1px); }
@@ -42,12 +42,10 @@
 .style-cue-dot.malt { background: #c47f3a; }
 .style-cue-dot.bourbon { background: #b8642a; }
 .style-cue-dot.rye { background: #a34d2e; }
-.style-cue-dot.orange { background: #c8783c; }
-.style-cue-dot.wheat { background: #d9a44e; }
+.style-cue-dot.wheat { background: #edb05c; }
 .style-cue-dot.blended { background: #8a6a3d; }
 .style-cue-dot.pot-still { background: #3f7d5a; }
 .style-cue-dot.tennessee { background: #6b4a2f; }
-.style-cue-dot.corn { background: #d9b95c; }
 .style-cue-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: 10px; white-space: nowrap; }
 .search-result .style-cue-dot, .similar-item .style-cue-dot, .welcome-discoveries .style-cue-dot { display: inline-block; vertical-align: -1px; margin-right: 5px; width: 8px; height: 8px; }
 
@@ -56,7 +54,7 @@
 
 /* Food-first ranking remains available, but is summoned from the universal
    search area instead of consuming a second permanent sidebar block. */
-.food-search { margin-top: 10px; border-top: 1px solid #2f2026; padding-top: 8px; }
+.food-search { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
 .food-search > summary, .discover-tools > summary { cursor: pointer; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
 .food-search-inner { padding-top: 3px; }
 .food-result span { line-height: 1.35; }
@@ -69,7 +67,7 @@
 .production { margin-top: 16px; }
 .production > .small { margin-top: -4px; }
 .production-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
-.production-choice { background: var(--surface); border: 1px solid #302128; border-radius: 12px; padding: 12px; }
+.production-choice { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .production-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .production-choice-head strong { font-size: 13px; color: var(--text); }
 .production-prevalence { flex: 0 0 auto; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; }
@@ -83,7 +81,7 @@
 .profile-learning > summary { cursor: pointer; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: var(--gold); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .profile-learning > summary small { color: var(--muted); font-size: 10px; font-weight: 500; letter-spacing: 0; text-transform: none; }
 .profile-learning-content { display: grid; gap: 18px; padding-top: 12px; }
-.learning-section + .learning-section { border-top: 1px solid #2d1e24; padding-top: 4px; }
+.learning-section + .learning-section { border-top: 1px solid var(--line); padding-top: 4px; }
 .learning-section > h3:first-child { margin-top: 8px; }
 .profile-learning .sources { margin-top: 0; }
 
@@ -103,7 +101,7 @@
  */
 .compare-region-field { position: relative; }
 .compare-select { position: relative; }
-.compare-select-trigger { width: 100%; min-height: 58px; padding: 10px 42px 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; text-align: left; border: 1px solid var(--line); border-radius: 10px; background: #100c0e; color: var(--text); cursor: pointer; }
+.compare-select-trigger { width: 100%; min-height: 58px; padding: 10px 42px 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; text-align: left; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--text); cursor: pointer; }
 .compare-select-trigger:hover { border-color: var(--gold); }
 .compare-select-trigger[aria-expanded="true"] { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(233,180,103,.16); }
 .compare-select-trigger:focus-visible, .compare-select-option:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
@@ -111,9 +109,9 @@
 .compare-select-name { display: block; font-size: 14px; color: var(--text); line-height: 1.25; }
 .compare-select-country { display: block; font-size: 10px; line-height: 1.2; color: var(--muted); font-style: italic; font-weight: 400; }
 .compare-select-chevron { position: absolute; right: 14px; top: 50%; transform: translateY(-52%); color: var(--muted); font-size: 17px; pointer-events: none; }
-.compare-select-menu { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); max-height: 280px; overflow-y: auto; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: #130d10; box-shadow: 0 18px 36px rgba(0,0,0,.42); }
+.compare-select-menu { position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + 6px); max-height: 280px; overflow-y: auto; padding: 6px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: 0 18px 36px rgba(0,0,0,.42); }
 .compare-select-option { width: 100%; display: grid; gap: 2px; padding: 10px 11px; text-align: left; border: 0; border-radius: 8px; background: transparent; color: var(--text); cursor: pointer; }
-.compare-select-option:hover, .compare-select-option[aria-selected="true"] { background: #21161a; }
+.compare-select-option:hover, .compare-select-option[aria-selected="true"] { background: var(--panel); }
 .compare-select-option[aria-selected="true"] .compare-select-name { color: var(--gold); }
 
 @media (max-width: 980px) {

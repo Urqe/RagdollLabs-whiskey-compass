@@ -10,16 +10,16 @@
 .glossary-term:hover { color: var(--gold); border-bottom-style: solid; }
 .glossary-term:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
 
-.glossary-dialog { width: min(720px, calc(100vw - 28px)); max-height: min(80vh, 760px); padding: 0; border: 1px solid var(--line); border-radius: 18px; background: #171114; color: var(--text); box-shadow: 0 28px 80px rgba(0,0,0,.56); overflow: hidden; }
-.glossary-dialog::backdrop { background: rgba(7,4,6,.72); backdrop-filter: blur(3px); }
+.glossary-dialog { width: min(720px, calc(100vw - 28px)); max-height: min(80vh, 760px); padding: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); color: var(--text); box-shadow: 0 28px 80px rgba(0,0,0,.56); overflow: hidden; }
+.glossary-dialog::backdrop { background: rgba(5,12,15,.72); backdrop-filter: blur(3px); }
 .glossary-dialog-inner { display: grid; grid-template-rows: auto auto 1fr; max-height: inherit; }
 .glossary-dialog-head { display: flex; justify-content: space-between; align-items: start; gap: 18px; padding: 20px 20px 12px; border-bottom: 1px solid var(--line); }
 .glossary-dialog-head h2 { margin: 3px 0 0; font-size: 28px; }
-.glossary-close { border: 1px solid var(--line); border-radius: 9px; padding: 7px 10px; background: #100c0e; color: var(--muted); cursor: pointer; }
+.glossary-close { border: 1px solid var(--line); border-radius: 9px; padding: 7px 10px; background: var(--bg); color: var(--muted); cursor: pointer; }
 .glossary-close:hover { color: var(--text); border-color: var(--gold); }
 .glossary-dialog > .glossary-dialog-inner > .small { margin: 0; padding: 12px 20px 0; }
 .glossary-content { overflow: auto; padding: 14px 20px 22px; display: grid; gap: 10px; }
-.glossary-entry { padding: 13px 14px; border: 1px solid #302128; border-radius: 12px; background: var(--surface); }
+.glossary-entry { padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
 .glossary-entry h3 { margin: 0 0 7px; font: 18px Georgia, serif; text-transform: none; letter-spacing: 0; color: var(--gold); }
 .glossary-entry p { margin: 0; color: var(--text); font-size: 13px; line-height: 1.5; }
 .glossary-entry .glossary-why { margin-top: 8px; color: var(--muted); }
