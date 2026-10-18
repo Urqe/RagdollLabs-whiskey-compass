@@ -206,8 +206,84 @@ async function showFullGlossary() {
   openDialog();
 }
 
+/*
+ * "How whiskey gets its taste" (the "New to whiskey?" entry) reuses the glossary
+ * dialog. Example buttons open profiles through the guarded
+ * WhiskeyCompass.selectProfile() path, and examples whose profile no longer
+ * exists are dropped, so an outdated reference simply does not render.
+ */
+let tasteBasicsPromise = null;
+
+function loadTasteBasics() {
+  if (!tasteBasicsPromise) tasteBasicsPromise = WhiskeyData.json(WhiskeyDataUrl("./data/taste-basics.json"), { optional: true });
+  return tasteBasicsPromise;
+}
+
+function tasteSectionCard(section) {
+  const article = document.createElement("article");
+  article.className = "glossary-entry taste-section";
+  article.dataset.sectionId = section.id;
+  const heading = document.createElement("h3");
+  heading.textContent = section.heading;
+  article.append(heading, ...(section.body || []).map(text => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    return paragraph;
+  }));
+  const examples = (section.examples || []).filter(example => WhiskeyCompass.combinedProfile(example.style, example.region));
+  if (examples.length) {
+    const list = document.createElement("div");
+    list.className = "taste-examples";
+    for (const example of examples) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "taste-example";
+      button.textContent = example.label;
+      button.addEventListener("click", () => {
+        closeDialog();
+        document.getElementById("welcomeView")?.classList.add("hidden");
+        document.getElementById("appShell")?.classList.remove("hidden");
+        WhiskeyCompass.selectProfile(example.style, example.region, true);
+      });
+      list.append(button);
+    }
+    article.append(list);
+  }
+  return article;
+}
+
+async function showTasteBasics() {
+  const data = await loadTasteBasics();
+  const title = document.getElementById("glossaryDialogTitle");
+  const intro = document.getElementById("glossaryIntro");
+  const content = document.getElementById("glossaryContent");
+  if (!title || !intro || !content) return;
+  if (!data?.sections?.length) {
+    title.textContent = "How whiskey gets its taste";
+    intro.textContent = "";
+    const retry = document.createElement("p");
+    retry.className = "small";
+    retry.textContent = "This guide could not be loaded. Reload the page to retry.";
+    content.replaceChildren(retry);
+    openDialog();
+    return;
+  }
+  title.textContent = data.title;
+  intro.textContent = data.intro;
+  content.replaceChildren(...data.sections.map(tasteSectionCard));
+  const glossary = document.createElement("button");
+  glossary.type = "button";
+  glossary.className = "glossary-browse-all";
+  glossary.textContent = "Browse the whiskey glossary";
+  glossary.addEventListener("click", showFullGlossary, { once: true });
+  content.append(glossary);
+  openDialog();
+  content.scrollTop = 0;
+}
+
 function wireLearningLayer() {
   document.getElementById("glossaryOpen")?.addEventListener("click", showFullGlossary);
+  document.querySelectorAll("[data-taste-basics]").forEach(button => button.addEventListener("click", showTasteBasics));
   document.getElementById("glossaryClose")?.addEventListener("click", closeDialog);
   dialogElement()?.addEventListener("click", event => {
     if (event.target === dialogElement()) closeDialog();

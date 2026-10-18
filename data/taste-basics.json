@@ -1,0 +1,118 @@
+{
+  "title": "How whiskey gets its taste",
+  "intro": "A short guide to the main reasons whiskeys taste different. Each section links to profiles in the Compass where you can see the effect in the scores.",
+  "sections": [
+    {
+      "id": "scores",
+      "heading": "Reading the scores",
+      "body": [
+        "Every profile scores eight traits from 0 to 5: body, peat & smoke, sweetness, spice, fruit, oak, finish length and ABV feel.",
+        "The scores are editorial and relative. They compare typical examples within the Compass rather than measure anything in a lab, and individual bottlings, batches and age statements vary.",
+        "ABV feel is how hot the spirit tastes, not the number on the label. Most whiskey is bottled at 40–46% ABV; cask-strength bottlings at 50–60% feel hotter and usually open up with a few drops of water."
+      ],
+      "examples": [
+        { "style": "unpeated-malt", "region": "lowlands", "label": "Gentle: Lowland malt" },
+        { "style": "taiwanese-malt", "region": "taiwan", "label": "Hotter: Taiwan (Kavalan Solist)" }
+      ]
+    },
+    {
+      "id": "grain",
+      "heading": "The grain sets the base",
+      "body": [
+        "Whiskey is distilled from a fermented grain mash and then aged in wood. The grain is the first big choice.",
+        "Malted barley gives malty, biscuity and fruity flavours and is the basis of single malts. Corn gives sweetness and a rounder body, which is why bourbon, at least 51% corn, tastes sweeter. Rye gives dry, peppery, herbal spice. Wheat, used instead of rye in some bourbons, gives a softer result.",
+        "Irish single pot still whiskey adds unmalted barley to the mash, which gives a creamy, spicy texture."
+      ],
+      "examples": [
+        { "style": "bourbon", "region": "kentucky", "label": "Corn-led: Kentucky bourbon" },
+        { "style": "wheated-bourbon", "region": "kentucky", "label": "Softer: wheated bourbon" },
+        { "style": "rye", "region": "kentucky", "label": "Spicy: straight rye" },
+        { "style": "pot-still", "region": "ireland", "label": "Creamy: Irish pot still" }
+      ]
+    },
+    {
+      "id": "peat",
+      "heading": "Peat and smoke",
+      "body": [
+        "Smoky whisky gets its smoke from drying the malted barley over a peat fire. Smoke compounds called phenols stick to the grain and partly survive into the spirit.",
+        "Peat level is a production choice, not a property of the place. Islay is famous for heavily peated malts but also makes unpeated ones, and peated malts are made in Speyside, Japan and India too.",
+        "Peating is measured in parts per million (ppm) of phenols in the malt. Unpeated malt is close to zero and heavily peated malt is often 30–55 ppm. Much of that is lost in distillation, so a higher number does not mean proportionally more smoke in the glass."
+      ],
+      "examples": [
+        { "style": "unpeated-malt", "region": "islay", "label": "Unpeated: Islay" },
+        { "style": "lightly-peated-malt", "region": "speyside", "label": "A wisp of smoke: Speyside" },
+        { "style": "heavily-peated-malt", "region": "islay", "label": "Heavily peated: Islay" }
+      ]
+    },
+    {
+      "id": "distillation",
+      "heading": "Distillation: lighter or heavier spirit",
+      "body": [
+        "Distilling separates alcohol and flavour compounds from the fermented mash. Pot stills work in batches and keep more of the heavier, oilier compounds. Column stills run continuously and make a lighter spirit; they produce most grain whisky and most American whiskey.",
+        "Scotch malt is usually distilled twice in pot stills. A third distillation, standard in much Irish whiskey and used by a few Scottish distilleries, gives a lighter, cleaner spirit.",
+        "Still shape, how much copper the vapour touches, and where the distiller cuts the run all move the spirit between light and fruity and heavy and oily."
+      ],
+      "examples": [
+        { "style": "unpeated-malt", "region": "lowlands", "label": "Triple distilled: Lowland malt" },
+        { "style": "lightly-peated-malt", "region": "campbeltown", "label": "Heavy and oily: Campbeltown" },
+        { "style": "blended-irish", "region": "ireland", "label": "Column grain plus pot still: blended Irish" }
+      ]
+    },
+    {
+      "id": "cask",
+      "heading": "The cask: often the biggest influence",
+      "body": [
+        "New spirit comes off the still clear. The colour and much of the flavour come from the oak cask, and what the cask held before matters as much as the wood itself.",
+        "Bourbon must be aged in new charred oak containers, which give strong vanilla, caramel and toasted-oak notes. Those barrels are then sold on, and most Scotch, Irish and Japanese whisky ages in ex-bourbon casks, which give softer vanilla and fruit. Ex-sherry casks, usually European oak, add dried fruit, nuts and spice.",
+        "First-fill casks, used for whisky for the first time, give more flavour than refill casks that have already held whisky."
+      ],
+      "examples": [
+        { "style": "bourbon", "region": "kentucky", "label": "New charred oak: Kentucky bourbon" },
+        { "style": "unpeated-malt", "region": "speyside", "label": "Mostly ex-bourbon: Speyside" },
+        { "style": "sherry-malt", "region": "speyside", "label": "Sherry casks: Speyside" }
+      ]
+    },
+    {
+      "id": "climate",
+      "heading": "Climate and time",
+      "body": [
+        "Whiskey matures as the spirit moves in and out of the wood with changes in temperature. Warm climates speed this up and also increase evaporation, known as the angel's share.",
+        "That is why age means different things in different places. A Kentucky bourbon can be well matured at four to eight years and a Taiwanese or Indian malt can taste mature after only a few years, while Scotch often takes ten years or more to reach a similar depth.",
+        "Older is not automatically better: too long in an active cask can make a whiskey woody and tannic. An age statement on the label gives the age of the youngest whiskey in the bottle."
+      ],
+      "examples": [
+        { "style": "unpeated-malt", "region": "speyside", "label": "Cool and slow: Speyside" },
+        { "style": "bourbon", "region": "kentucky", "label": "Hot summers: Kentucky" },
+        { "style": "taiwanese-malt", "region": "taiwan", "label": "Subtropical: Taiwan" }
+      ]
+    },
+    {
+      "id": "labels",
+      "heading": "Reading the label",
+      "body": [
+        "Single malt means 100% malted barley from one distillery. 'Single' refers to the distillery, not to one cask: most single malts are mixed from many casks made there.",
+        "Blended whisky combines malt whisky with lighter grain whisky, and blends make up most Scotch sold. A blended malt mixes single malts from several distilleries, with no grain whisky.",
+        "Scotch must be distilled and matured in Scotland for at least three years. Bourbon must be made in the USA from at least 51% corn and aged in new charred oak; straight bourbon has been aged for at least two years."
+      ],
+      "examples": [
+        { "style": "blended-scotch", "region": "scotland-blends", "label": "Blended Scotch" },
+        { "style": "unpeated-malt", "region": "speyside", "label": "Single malt: Speyside" },
+        { "style": "japan-made-bold-blend", "region": "japan", "label": "Made in Japan, not labelled 'Japanese whisky'" }
+      ]
+    },
+    {
+      "id": "tasting",
+      "heading": "How to taste",
+      "body": [
+        "A tulip-shaped glass such as a Glencairn or copita concentrates the aroma. A tumbler is fine for ice and highballs.",
+        "Smell first, then take a small sip and hold it briefly before swallowing. Then add a few drops of water and taste again: dilution often opens up aromas, especially in stronger whiskeys.",
+        "Ice and mixers are not mistakes. Cold mutes aroma, so they suit lighter, easy-drinking styles better than complex ones. Each profile's 'How to drink it' card gives a starting point."
+      ],
+      "examples": [
+        { "style": "japanese-highball-blend", "region": "japan", "label": "Built for highballs: Japanese blend" },
+        { "style": "taiwanese-malt", "region": "taiwan", "label": "Try with water: Kavalan Solist" }
+      ]
+    }
+  ],
+  "sources": ["swa", "ttb", "kda", "iwai", "jslma"]
+}

@@ -25,7 +25,10 @@ inside that region's copy. The glossary explains the convention.
 
 ## Features
 
-- **Welcome experience** — first-time visitors start from a minimal landing page
+- **Welcome experience** — first-time visitors start from a minimal landing page, including a
+  **New to whiskey?** route into the "How whiskey gets its taste" explainer
+- **How whiskey gets its taste** — a beginner guide to the scores, grain, peat, distillation,
+  casks, climate and age, labels and tasting, with links to profiles that show each effect
 - **Three entry paths** — explore by style family or place, search, or surprise me
 - **Style families and peat levels** — expressions are separated by production
   peating (unpeated, lightly peated, heavily peated) and cask influence;
@@ -68,7 +71,7 @@ defined in `data/`:
 - `styles.json` — style families with base sensory metrics
 - `regions-classics-scotland.json`, `regions-classics-world.json`, `regions-discovery.json` —
   regional profiles with mods, notes, serve guidance, pairings, why-rules, identity and bottles
-- `glossary.json`, `why-rules.json`, `maturity.json`, `production.json` (production choices),
+- `glossary.json`, `taste-basics.json`, `why-rules.json`, `maturity.json`, `production.json` (production choices),
   `whiskey-search.json`, `food-aliases.json`, `food-dishes.json`, `locators.json`, `sources.json`
 
 ## Development

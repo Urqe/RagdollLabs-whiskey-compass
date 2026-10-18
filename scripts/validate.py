@@ -202,6 +202,21 @@ def main() -> None:
             assert previous in {None, glossary_id}, f"{prefix}: alias {alias!r} already belongs to {previous}"
             aliases_seen[normalized] = glossary_id
 
+    # "How whiskey gets its taste": complete sections, real example profiles, known sources.
+    taste = load(DATA / "taste-basics.json")
+    assert taste.get("title") and taste.get("intro") and taste.get("sections"), "taste basics: missing title, intro or sections"
+    section_ids = set()
+    for section in taste["sections"]:
+        prefix = f"taste-basics/{section.get('id')}"
+        assert section.get("id") and section["id"] not in section_ids, f"{prefix}: missing or duplicate id"
+        section_ids.add(section["id"])
+        assert section.get("heading") and section.get("body"), f"{prefix}: missing heading or body"
+        for example in section.get("examples", []):
+            assert example.get("label"), f"{prefix}: example needs a label"
+            assert example.get("style") in regions.get(example.get("region"), {}).get("styles", {}), f"{prefix}: unknown profile {example.get('region')}/{example.get('style')}"
+    for source_id in taste.get("sources", []):
+        assert source_id in sources, f"taste basics: unknown source {source_id}"
+
     extra_locators = set(locators) - set(regions)
     assert not extra_locators, f"locator entries without regions: {sorted(extra_locators)}"
 
