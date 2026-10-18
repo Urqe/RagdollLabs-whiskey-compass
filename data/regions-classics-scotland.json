@@ -118,6 +118,11 @@
             "name": "Bunnahabhain 12",
             "note": "Unpeated and sherry-influenced with coastal weight",
             "tag": "unpeated"
+          },
+          {
+            "name": "Kilchoman Machir Bay",
+            "note": "Farm-distillery Islay: citrus-led with a light peat touch",
+            "tag": "farm distillery"
           }
         ],
         "dilution": "The Classic Laddie is bottled at 50% \u2014 a teaspoon of water softens the heat",
@@ -459,7 +464,7 @@
       "terrain": "Mountains, glens and coastal fringes",
       "soil": "Granite, heather moorland, peat pockets",
       "influences": [
-        "Tall stills in the south give lighter spirits",
+        "Tall stills in the north (Glenmorangie at Tain) give lighter, more delicate spirits",
         "Coastal sites add saline spice in the north and west"
       ]
     },
@@ -487,7 +492,7 @@
     "name": "Lowlands",
     "country": "Scotland",
     "climate": "Cool, temperate, gentle",
-    "summary": "Scotland's lightest malts: grassy, floral and often triple-distilled in the Irish tradition.",
+    "summary": "Scotland's lightest malts: grassy, floral, and home to Scotland's only current triple-distilled malt (Auchentoshan).",
     "styles": {
       "unpeated-malt": {
         "mods": {
@@ -721,7 +726,7 @@
       "terrain": "Small harbor town hemmed by sea",
       "soil": "Peaty pockets over granite",
       "influences": [
-        "Once had 30+ distilleries; three survive",
+        "Once had 30+ distilleries; three survive today \u2014 Springbank, Glen Scotia and Glengyle (Springbank's revived sister)",
         "One distillery bottles unpeated, lightly and heavily peated lines"
       ]
     },
@@ -868,6 +873,99 @@
       "swa",
       "talisker",
       "highlandpark"
+    ]
+  },
+  "scotland-blends": {
+    "name": "Scotland (nationwide blends)",
+    "country": "Scotland",
+    "climate": "Varies by component malt and grain sources",
+    "summary": "The best-selling Scotch category: malt and grain whiskies married for consistency and approachability.",
+    "styles": {
+      "blended-scotch": {
+        "mods": {},
+        "phenol": "unpeated grain base with malt components; some blends add lightly peated malt (e.g. Black Label's Islay component)",
+        "notes": {
+          "Fruit": [
+            "orchard fruit",
+            "vanilla"
+          ],
+          "Oak / ageing": [
+            "light oak",
+            "toffee"
+          ],
+          "Smoke / peat": [
+            "a wisp of smoke in some blends"
+          ]
+        },
+        "serve": "Neat, with water, or as a highball",
+        "dilution": "Typically 40\u201343%; blends are engineered to stay balanced when stretched",
+        "ice": "Excellent over ice and in highballs \u2014 a core use case for the category",
+        "glass": "Tumbler or highball",
+        "ageing": "Blends of various ages; the malt component sets the character, grain lightens the body",
+        "pairings": [
+          "mixed grill",
+          "shortbread",
+          "cheese board"
+        ],
+        "expect": "Light, approachable and consistent: soft fruit and toffee over gentle oak, with optional wisp of smoke.",
+        "style": {
+          "family": "blended",
+          "cue": "blended",
+          "label": "Blended Scotch \u00b7 Light & consistent",
+          "method": "Malt and grain whiskies blended by a master blender for a consistent house style",
+          "effect": "The grain lightens the body while chosen malts provide character; blending for consistency, not just economy"
+        },
+        "bottles": [
+          {
+            "name": "Johnnie Walker Black Label 12",
+            "note": "The benchmark 12-year blend with a subtle Islay smoke component",
+            "tag": "benchmark"
+          },
+          {
+            "name": "Famous Grouse",
+            "note": "Scotland's best-selling blend: approachable, nutty and consistent",
+            "tag": "classic"
+          },
+          {
+            "name": "Ballantine's Finest",
+            "note": "Soft, honeyed and light \u2014 a global best-seller",
+            "tag": "classic"
+          }
+        ],
+        "sources": [
+          "swa",
+          "johnnie-walker",
+          "famous-grouse"
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Nationwide: component whiskies from across Scotland's regions",
+      "terrain": "Blending facilities and warehouses across the country",
+      "soil": "Not site-specific by design",
+      "influences": [
+        "Master blenders marry dozens of component whiskies",
+        "Grain whisky (column still) lightens the body",
+        "Consistency across batches is the craft"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Column-still grain whisky is lighter and cheaper to produce",
+        "effect": "Blends could reach a wide audience at approachable prices, driving Scotch's global growth"
+      },
+      {
+        "cause": "Master blenders marry malt and grain for a repeatable house style",
+        "effect": "A bottle tastes the same year after year \u2014 the category's core promise"
+      }
+    ],
+    "badges": [
+      "Classic"
+    ],
+    "sources": [
+      "swa",
+      "johnnie-walker",
+      "famous-grouse"
     ]
   }
 }

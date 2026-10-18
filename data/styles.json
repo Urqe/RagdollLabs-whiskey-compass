@@ -292,5 +292,19 @@
     "oak": 3.5,
     "finish": 4,
     "heat": 4
+  },
+  "blended-scotch": {
+    "name": "Blended Scotch",
+    "cue": "blended",
+    "family": "blended",
+    "regionalSignature": false,
+    "body": 2.5,
+    "smoke": 0.5,
+    "sweetness": 2.5,
+    "spice": 1.5,
+    "fruit": 2,
+    "oak": 2.5,
+    "finish": 3,
+    "heat": 2.5
   }
 }

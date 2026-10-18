@@ -81,7 +81,7 @@
       "charcoal filtering"
     ],
     "definition": "The Tennessee whiskey requirement that new spirit drips through sugar-maple charcoal before barreling.",
-    "why": "Charcoal mellowing removes sharp, oily compounds early, which is why a 4-year-old Tennessee whiskey can taste smoother than an older bourbon.",
+    "why": "The law applies to whiskey labeled Tennessee whiskey, with named exemptions (e.g. Prichard's, which uses a different process); and the two big houses differ in technique \u2014 Jack Daniel's drips room-temperature spirit through the charcoal, while George Dickel chills the whisky first.",
     "sources": [
       "ttb"
     ],
@@ -94,7 +94,7 @@
       "bonded",
       "bond"
     ],
-    "definition": "A US legal standard from 1897: the whiskey must be at least 4 years old, exactly 100 proof (50% ABV), from one distilling season and one distiller, in a US bonded warehouse.",
+    "definition": "A US legal standard from 1897: the whiskey must be at least 4 years old, exactly 100 proof (50% ABV), the product of one distilling season \u2014 January\u2013June or July\u2013December of a single year \u2014 from one distiller at one distillery, aged in a US bonded warehouse.",
     "why": "Created to guarantee authenticity in an era of doctored whiskey; today it signals honest age and full flavor at a fair price.",
     "sources": [
       "ttb"
@@ -150,10 +150,10 @@
       "mizunara",
       "japanese oak"
     ],
-    "definition": "Japan's indigenous oak (Quercus mongolica), used for maturation after American and European oak proved to leak on it in Japan's climate.",
+    "definition": "Japan's indigenous oak, Quercus mongolica var. grosseserrata (also called Q. crispula or mizunara oak), used for maturation after American and European oak proved leak-prone in Japan's climate.",
     "why": "Mizunara's lactones and eugenols read as sandalwood, incense and coconut; it became the signature of premium Japanese whisky \u2014 a limit born of difficulty.",
     "sources": [
-      "mizunara-ref"
+      "suntory-mizunara"
     ],
     "inline": true
   },
@@ -211,6 +211,37 @@
     "sources": [
       "swa",
       "iwai"
+    ],
+    "inline": true
+  },
+  "japanese-whisky-standard": {
+    "term": "Japanese whisky standard",
+    "aliases": [
+      "japanese whisky standard",
+      "jslma",
+      "japanese whisky definition",
+      "japan-made"
+    ],
+    "definition": "The Japan Spirits & Liqueurs Makers Association's voluntary labeling standards (issued February 2021): for a bottle to be labeled 'Japanese whisky', raw materials must be malted, fermented and distilled in Japan, matured there for at least three years, and bottled in Japan. Full member effect came in April 2024.",
+    "why": "This is why some bottles made in Japan \u2014 like Nikka From the Barrel, which includes selected imported whisky \u2014 are honestly labeled 'Japan-made' rather than 'Japanese whisky': the standard is raw-material based, not just distillery location.",
+    "sources": [
+      "jslma",
+      "nikka-brands"
+    ],
+    "inline": true
+  },
+  "grain-whiskey": {
+    "term": "Grain whiskey",
+    "aliases": [
+      "grain whiskey",
+      "grain whisky",
+      "column still",
+      "grain spirit"
+    ],
+    "definition": "Whiskey distilled from a mash of cereal grains \u2014 typically maize or wheat with some malted barley \u2014 in a continuous column still, producing a lighter, higher-proof spirit than pot-still distillation.",
+    "why": "Grain whiskey is the body of nearly every blended category: it lightens the blend and carries the character of the malt components. Column distillation runs continuously, unlike the batch process of pot stills.",
+    "sources": [
+      "swa"
     ],
     "inline": true
   }

@@ -263,6 +263,14 @@ def main() -> None:
                 break
         assert satisfied, f"search rule matches no profile: {rule['id']}"
 
+    # Source honesty: a non-root URL, or a name that doesn't overpromise a product page.
+    for source_id, source in sources.items():
+        url = source["url"].rstrip("/")
+        is_root = url.count("/") <= 2
+        name = source["name"].lower()
+        if is_root and "distillery information" not in name and "brand information" not in name and "association" not in name and "standards" not in name and "bureau" not in name and "independent" not in name:
+            assert False, f"source {source_id}: root URL with an overpromising name — deepen the URL or rename to distillery/brand information"
+
     # Mood satisfiability: each hardcoded mood predicate from app.js must match
     # at least one combined profile, so no mood button can dead-end.
     # Mirrors MOODS in app.js — keep both in sync.

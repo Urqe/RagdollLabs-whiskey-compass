@@ -145,7 +145,7 @@
     "name": "Taiwan",
     "country": "Taiwan",
     "climate": "Subtropical, humid",
-    "summary": "The world's most decorated new whisky region: Kavalan's subtropical casks sweep international awards.",
+    "summary": "A fast-rising whisky region: Kavalan's Solist range has taken multiple World Whiskies Awards titles since 2015.",
     "styles": {
       "taiwanese-malt": {
         "mods": {
@@ -309,7 +309,6 @@
       "Emerging region"
     ],
     "sources": [
-      "ewg-ref",
       "english-whisky-co",
       "cotswolds"
     ]

@@ -54,6 +54,10 @@ async function renderEnhancedCompassSearch() {
     button.className = "search-result";
     button.dataset.style = item.styleId;
     button.dataset.region = item.regionId;
+    const matchedBottle = (item.regional.bottles || []).find(bottle =>
+      compassNormalize(bottle.name).includes(foodQuery) ||
+      (window.WhiskeySearch ? WhiskeySearch.parse(input.value).remainder : "").split(" ").every(term => compassNormalize(bottle.name).includes(term)));
+    if (matchedBottle) button.dataset.bottle = matchedBottle.name;
     const title = document.createElement("strong");
     const dot = document.createElement("span");
     const displayCue = item.regional.style?.cue || item.style.cue;
@@ -67,7 +71,7 @@ async function renderEnhancedCompassSearch() {
       : `${item.region.country} · ${item.region.climate}${styleLabel}`;
     button.append(title, meta);
     button.addEventListener("click", () => {
-      WhiskeyCompass.selectProfile(item.styleId, item.regionId, true);
+      WhiskeyCompass.selectProfile(item.styleId, item.regionId, true, matchedBottle ? matchedBottle.name : null);
       input.value = "";
       container.replaceChildren();
     });

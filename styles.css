@@ -92,7 +92,7 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 .chips { display: flex; flex-wrap: wrap; gap: 7px; }
 .chip { padding: 6px 9px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; font-size: 11px; color: var(--text); }
 
-.serve { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.serve { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 .box { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
 .box .k { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
 .box .v { font-size: 15px; font-weight: 700; margin-top: 4px; }
@@ -184,3 +184,6 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 .vintage-note strong { color: var(--gold); }
 
 .editorial-scale-note { margin: -6px 0 10px; font-size: 11px; color: var(--muted); }
+
+.bottle-highlight { outline: 2px solid var(--gold); animation: bottle-flash 1.6s ease; }
+@keyframes bottle-flash { 0% { background: var(--copper); } 100% { background: var(--surface); } }

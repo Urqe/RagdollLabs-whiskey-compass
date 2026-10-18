@@ -54,5 +54,9 @@
   "england": {
     "lat": 52.0,
     "lon": -1.5
+  },
+  "scotland-blends": {
+    "lat": 56.5,
+    "lon": -4.2
   }
 }

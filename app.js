@@ -324,7 +324,7 @@ function renderLocator(regionId, region) {
   const y = ((90 - point.lat) / 180) * height;
   const regionName = escapeHtml(region.name);
   const country = escapeHtml(region.country);
-  return `<div class="locator" aria-label="Approximate location of ${escapeAttr(region.name)}"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="World locator map showing ${escapeAttr(region.name)} in ${escapeAttr(region.country)}"><path class="land" d="M18 36l30-20 42 3 20 20-15 22-35 7-16 28-20-7-8-27zM94 93l20 8 17 24-7 31-18-5-12-25zM151 30l42-19 52 7 34 22-7 20-29 4-12 18-24-6-14 23-30-8-4-25-23-15zM221 91l21 2 19 22-7 30-23 10-14-22zM279 119l25 4 8 16-12 13-25-8z"/><path class="gridline" d="M0 80h320M80 0v160M160 0v160M240 0v160"/><circle class="marker-ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/><circle class="marker-core" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5"/></svg><div class="locator-caption">${country} · approximate regional location</div></div>`;
+  return `<div class="locator" aria-label="Approximate location of ${escapeAttr(region.name)}"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="World locator map showing ${escapeAttr(region.name)} in ${escapeAttr(region.country)}"><circle class="marker-ring" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/><circle class="marker-core" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.5"/></svg><div class="locator-caption">${country} · approximate regional location</div></div>`;
 }
 
 function styleCueDot(style, regional = null) {
@@ -379,7 +379,7 @@ function renderExplore() {
   $("sourcesDrawer").replaceChildren(renderSources(region, regional));
   $("bars").innerHTML = METRICS.map(metric => metricBar(metric, profile)).join("");
   $("notes").replaceChildren(renderFlavorGroups(regional.notes));
-  $("serve").replaceChildren(...[["Serve", regional.serve], ["Water & ABV", regional.dilution], ["Ice & highball", regional.ice], ["Glass", regional.glass]].map(([key, value]) => {
+  $("serve").replaceChildren(...[["Serve", regional.serve], ["Water & ABV", regional.dilution], ["Ice & highball", regional.ice], ["Glass", regional.glass], ["Age window", regional.ageing]].map(([key, value]) => {
     const box = WhiskeyDOM.element("div", null, "box");
     box.append(WhiskeyDOM.element("div", key, "k"), WhiskeyDOM.element("div", value, "v"));
     return box;
@@ -401,6 +401,12 @@ function renderBottles(regional) {
     const head = WhiskeyDOM.element("div", null, "bottle-head");
     head.append(WhiskeyDOM.element("strong", bottle.name), WhiskeyDOM.element("span", bottle.tag, "bottle-tag"));
     card.append(head, WhiskeyDOM.element("p", bottle.note, "bottle-note"));
+    if (pendingBottleHighlight && bottle.name === pendingBottleHighlight) {
+      card.classList.add("bottle-highlight");
+      card.setAttribute("tabindex", "-1");
+      window.setTimeout(() => card.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
+      card.addEventListener("animationend", () => card.classList.remove("bottle-highlight"), { once: true });
+    }
     target.append(card);
   }
 }
@@ -566,23 +572,31 @@ function runSearch() {
   }));
 }
 
+let navigatingFromHistory = false;
+let pendingBottleHighlight = null;
 function updateUrl(styleId, regionId) {
   if (!styleId || !regionId) return;
+  if (navigatingFromHistory) return;
   const url = new URL(window.location.href);
   url.searchParams.set("style", styleId);
   url.searchParams.set("region", regionId);
-  window.history.replaceState(null, "", url);
+  // Real history entries so the browser Back button walks profiles.
+  window.history.pushState({ view: "profile", styleId, regionId }, "", url);
 }
 function clearProfileUrl() {
   const url = new URL(window.location.href);
   url.searchParams.delete("style");
   url.searchParams.delete("region");
-  window.history.replaceState(null, "", url);
+  url.searchParams.delete("view");
+  // Entering the welcome view is itself a history entry.
+  if (!window.location.search) return;
+  window.history.pushState({ view: "welcome" }, "", url);
 }
 
-function selectProfile(styleId, regionId, shouldAnnounce = false) {
+function selectProfile(styleId, regionId, shouldAnnounce = false, highlightBottle = null) {
   const profile = combinedProfile(styleId, regionId);
   if (!profile) return false;
+  pendingBottleHighlight = highlightBottle;
   setMode("explore");
   $("style").value = styleId;
   fillExploreRegions(styleId, regionId, false);
@@ -599,6 +613,35 @@ function announce(text) {
   $("liveStatus").textContent = "";
   window.setTimeout(() => { $("liveStatus").textContent = text; }, 30);
 }
+
+function applyCurrentRoute() {
+  const params = new URLSearchParams(window.location.search);
+  const styleId = params.get("style");
+  const regionId = params.get("region");
+  if (styleId && regionId) return Boolean(selectProfile(styleId, regionId, false));
+  return false;
+}
+
+// Browser Back/Forward: render whatever the URL says (profile or welcome).
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+  const styleId = params.get("style");
+  const regionId = params.get("region");
+  navigatingFromHistory = true;
+  try {
+    if (styleId && regionId && combinedProfile(styleId, regionId)) {
+      $("welcomeView").classList.add("hidden");
+      $("appShell").classList.remove("hidden");
+      selectProfile(styleId, regionId, false);
+    } else {
+      $("appShell").classList.add("hidden");
+      $("welcomeView").classList.remove("hidden");
+      clearCurrentProfile();
+    }
+  } finally {
+    navigatingFromHistory = false;
+  }
+});
 
 function applyInitialRoute() {
   const styleId = INITIAL_ROUTE.searchParams.get("style");
@@ -759,3 +802,11 @@ window.WhiskeyCompass = {
 };
 
 document.addEventListener("DOMContentLoaded", init);
+// "/" focuses search from anywhere, Gmail-style (unless typing in a field).
+document.addEventListener("keydown", event => {
+  if (event.key !== "/" || event.ctrlKey || event.metaKey || event.altKey) return;
+  const tag = event.target.tagName;
+  if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA" || event.target.isContentEditable) return;
+  const search = document.getElementById("searchInput");
+  if (search) { event.preventDefault(); search.focus(); }
+});

@@ -741,6 +741,43 @@
         "canada"
       ],
       "producer": true
+    },
+    {
+      "id": "johnnie-walker",
+      "label": "Johnnie Walker",
+      "aliases": [
+        "johnnie walker",
+        "black label",
+        "walker"
+      ],
+      "regions": [
+        "scotland-blends"
+      ],
+      "producer": true
+    },
+    {
+      "id": "famous-grouse-rule",
+      "label": "The Famous Grouse",
+      "aliases": [
+        "famous grouse",
+        "grouse"
+      ],
+      "regions": [
+        "scotland-blends"
+      ],
+      "producer": true
+    },
+    {
+      "id": "ballantines",
+      "label": "Ballantine's",
+      "aliases": [
+        "ballantine's",
+        "ballantines"
+      ],
+      "regions": [
+        "scotland-blends"
+      ],
+      "producer": true
     }
   ]
 }

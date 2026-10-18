@@ -114,9 +114,10 @@ await settle();
 assert.equal(document.getElementById("title").textContent, "Heavily peated malt · Islay");
 assert.ok(document.querySelectorAll("#bars .bar").length > 0);
 assert.ok(document.getElementById("notes").textContent.trim().length > 0);
-// Whiskey-native serving guidance: four boxes, no wine decanting concept.
+// Whiskey-native serving guidance: five boxes including the age window.
 const serveBoxes = [...document.querySelectorAll("#serve .box")].map(box => box.textContent.trim());
-assert.equal(serveBoxes.length, 4, "serving guidance shows four boxes");
+assert.equal(serveBoxes.length, 5, "serving guidance shows five boxes");
+assert.ok(serveBoxes.some(box => box.startsWith("Age window")), "the age window box must render");
 assert.ok(serveBoxes.some(text => text.startsWith("Serve")), "first box is the serve baseline");
 assert.ok(document.querySelector(".serve-card h2").textContent === "How to drink it", "serve card uses whiskey-native heading");
 assert.ok(!document.body.textContent.includes("Decant"), "no wine decanting vocabulary remains");
@@ -338,6 +339,48 @@ for (const query of producerQueries) {
   const results = await search(query);
   assert.ok(results.length > 0, `producer query '${query}' must return at least one result`);
 }
+
+// --- Browser history: Back walks profiles and returns to welcome ---
+// Reset to the welcome entry first so the walk is deterministic.
+window.WhiskeyCompass.clearProfileUrl();
+await settle();
+window.WhiskeyCompass.selectProfile("heavily-peated-malt", "islay");
+await settle();
+window.WhiskeyCompass.selectProfile("bourbon", "kentucky");
+await settle();
+assert.equal(window.history.length >= 3, true, "profile navigation creates history entries");
+window.history.back();
+for (let i = 0; i < 20; i++) await new Promise(resolve => setTimeout(resolve, 10));
+assert.match(document.getElementById("title").textContent, /Islay/, "Back returns to the previous profile");
+window.history.back();
+for (let i = 0; i < 20; i++) await new Promise(resolve => setTimeout(resolve, 10));
+assert.ok(!document.getElementById("welcomeView").classList.contains("hidden"), "Back from the first profile reaches the welcome screen");
+
+// --- Gallery: every profile reachable without dropdowns ---
+document.querySelector("[data-gallery-open]")?.click();
+await settle();
+const galleryCards = [...document.querySelectorAll(".gallery-card")];
+assert.equal(galleryCards.length, window.WhiskeyCompass.allPairs().length,
+  "the gallery shows every profile");
+galleryCards[0].click();
+await settle();
+assert.ok(document.getElementById("galleryView").classList.contains("hidden"), "selecting from the gallery opens the profile");
+assert.ok(document.getElementById("title").textContent.length > 0);
+
+// --- Bottle-name search deep-links with the bottle highlighted ---
+const laphroaigResults = await search("laphroaig");
+assert.ok(laphroaigResults.length > 0, "laphroaig must be searchable");
+laphroaigResults[0].click();
+await settle();
+assert.match(document.getElementById("title").textContent, /Islay/, "laphroaig lands on the Islay profile");
+const highlightedBottle = document.querySelector(".bottle-highlight");
+assert.ok(highlightedBottle && highlightedBottle.textContent.includes("Laphroaig 10"),
+  "the Laphroaig 10 bottle card must be visible and highlighted");
+
+// --- Welcome action labels match their flows ---
+const placeAction = document.querySelector('[data-welcome-action="place"]');
+assert.ok(placeAction, "the first welcome action is place-first");
+assert.match(placeAction.textContent, /Find a place/, "the label matches the flow it launches");
 
 console.log("OK: Whiskey Compass DOM smoke tests passed");
 await close();

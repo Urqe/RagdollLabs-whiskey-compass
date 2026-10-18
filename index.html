@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="RagDollLabs Whiskey Compass — explore how style family, place and production shape a whiskey's character.">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RagDollLabs Whiskey Compass">
+  <meta property="og:title" content="RagDollLabs Whiskey Compass">
+  <meta property="og:description" content="Find your next favourite pour. Explore the places, flavours and craft behind a great whiskey.">
+  <meta property="og:url" content="https://urqe.github.io/RagdollLabs-whiskey-compass/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RagDollLabs Whiskey Compass">
+  <meta name="twitter:description" content="Find your next favourite pour. Explore the places, flavours and craft behind a great whiskey.">
   <title>RagDollLabs Whiskey Compass</title>
   <!-- One release token keeps visible assets in sync after a GitHub Pages deploy. -->
   <link rel="stylesheet" href="./styles.css?v=20261018-whisky-room">
@@ -24,8 +33,8 @@
           <div class="tagline">Find your next favourite pour.</div>
           <p>Pull up a chair. Explore the places, flavours and craft behind a great whiskey.</p>
           <section class="welcome-actions" aria-label="Ways to start using Whiskey Compass">
-            <button class="welcome-action" type="button" data-welcome-action="style"><strong>Explore whiskeys <span aria-hidden="true" class="action-arrow">↗</span></strong><span>Find a place. Discover its character.</span></button>
-            <button class="welcome-action" type="button" data-welcome-action="search"><strong>Find your flavour</strong><span>Search bottles, smoke, spice &amp; more.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="place"><strong>Explore whiskeys <span aria-hidden="true" class="action-arrow">↗</span></strong><span>Find a place. Discover its character.</span></button>
+            <button class="welcome-action" type="button" data-welcome-action="search"><strong>Find your flavour</strong><span>Search styles, regions, flavours &amp; producers.</span></button>
             <button class="welcome-action" type="button" data-welcome-action="surprise"><strong>Surprise me</strong><span>Let curiosity choose.</span></button>
           </section>
         </div>
@@ -37,6 +46,7 @@
       <section aria-labelledby="featuredHeading">
         <h2 id="featuredHeading">Choose your first pour</h2>
         <div id="featuredDiscoveries" class="welcome-discoveries"></div>
+          <p class="gallery-entry"><button type="button" class="gallery-open-link" data-gallery-open>Browse the whole map <span aria-hidden="true">→</span></button></p>
       </section>
     </section>
 
@@ -120,6 +130,13 @@
             <article class="card similar-card"><h2>If you like this, try</h2><p class="small">Three ways onward: follow the same style, stay close in style, or try something more adventurous.</p><div id="similarProfiles" class="similar-grid"></div></article>
           </section>
           <section id="compareView" class="hidden" aria-labelledby="regionalComparisonHeading"><article class="card"><h2 id="regionalComparisonHeading">Regional Comparison</h2><div id="compareMessage" class="compare-message hidden" role="status" aria-live="polite"></div><div class="compareGrid" id="compareGrid"></div><div id="compareDifferences"></div></article></section>
+          <section id="galleryView" class="hidden" aria-labelledby="galleryHeading">
+            <article class="card">
+              <h2 id="galleryHeading">The whole map</h2>
+              <p class="small">Every profile in the Compass, grouped by country. Pick any pour to open its full profile.</p>
+              <div id="galleryGrid" class="gallery-grid"></div>
+            </article>
+          </section>
         </main>
       </div>
     </div>
@@ -151,5 +168,7 @@
   <script src="./learning.js?v=20261018-whisky-room" defer></script>
   <script src="./smart-discovery.js?v=20261018-whisky-room" defer></script>
   <script src="./home-brand.js?v=20261018-whisky-room" defer></script>
+  <script src="./og-preview.js?v=20261018-whisky-room" defer></script>
+  <script src="./gallery.js?v=20261018-whisky-room" defer></script>
 </body>
 </html>

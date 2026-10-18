@@ -56,5 +56,83 @@
       ],
       "vintage": "High-peat bottlings vary batch to batch even at the same age statement."
     }
+  },
+  "kentucky": {
+    "bourbon": {
+      "summary": "Bourbon's age arc is fast by Scotch standards: oak extraction in new charred barrels front-loads the flavor.",
+      "stages": [
+        {
+          "label": "Young (4\u20136)",
+          "effect": "Bold caramel, vanilla and oak spice; the char leads and the grain sweetness is up front."
+        },
+        {
+          "label": "Developing (8\u201312)",
+          "effect": "Oak integrates, darker fruit and leather emerge; many drinkers' sweet spot."
+        },
+        {
+          "label": "Mature (15+)",
+          "effect": "Heavily oak-dominated; can turn tannic and woody \u2014 bourbon matures fast and can over-mature."
+        }
+      ],
+      "vintage": "Barrel entry proof, warehouse placement (higher floors cycle hotter) and mashbill matter as much as the age statement."
+    },
+    "rye": {
+      "summary": "Rye's spice softens and rounds with age while retaining its herbal core.",
+      "stages": [
+        {
+          "label": "Young (4\u20136)",
+          "effect": "Peppery, herbal and bold; the rye grain's spice is the whole story."
+        },
+        {
+          "label": "Developing (6\u201310)",
+          "effect": "Oak sweetness meets the spice; caramel tempers the pepper."
+        },
+        {
+          "label": "Mature (10+)",
+          "effect": "Dried fruit and polished spice; older ryes read closer to a rich bourbon with a herbal thread."
+        }
+      ],
+      "vintage": "High-rye vs low-rye mashbills age differently; high-rye keeps its kick longer."
+    }
+  },
+  "ireland": {
+    "pot-still": {
+      "summary": "Irish pot still whiskey gains sherry depth and softens its spicy barley texture with age.",
+      "stages": [
+        {
+          "label": "Young (10\u201312)",
+          "effect": "Creamy barley spice with fresh fruit; the pot still texture is the star."
+        },
+        {
+          "label": "Developing (15\u201321)",
+          "effect": "Sherry and oak integrate; dried fruit deepens the creamy spice."
+        },
+        {
+          "label": "Mature (21+)",
+          "effect": "Luxurious weight: old pot still whiskey ranks among Ireland's most decorated pours."
+        }
+      ],
+      "vintage": "Cask type dominates: bourbon-led editions stay bright; sherry-led editions deepen early."
+    }
+  },
+  "japan": {
+    "japanese-malt-unpeated": {
+      "summary": "Japanese unpeated malts refine rather than transform: fruit and oak gain polish with age.",
+      "stages": [
+        {
+          "label": "Young (NAS\u201310)",
+          "effect": "Clean orchard fruit and light oak; restraint already in place."
+        },
+        {
+          "label": "Developing (12\u201317)",
+          "effect": "Mizunara aromatics (where used) emerge: sandalwood and incense over deeper fruit."
+        },
+        {
+          "label": "Mature (18+)",
+          "effect": "Layered and delicate; oak recedes behind integrated fruit and spice."
+        }
+      ],
+      "vintage": "Mizunara appears mainly in long-matured or premium editions (Suntory); a 12 without it ages differently."
+    }
   }
 }
