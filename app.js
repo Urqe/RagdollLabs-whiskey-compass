@@ -80,7 +80,7 @@ async function loadData() {
     WhiskeyDataUrl("./data/sources.json"),
     WhiskeyDataUrl("./data/locators.json"),
     WhiskeyDataUrl("./data/why-rules.json"),
-    "./data/whiskey-search.json"
+    WhiskeyDataUrl("./data/whiskey-search.json")
   ];
   const [styles, classicScotland, classicWorld, discovery, sources, locators, whyRules, whiskeySearch] = await Promise.all(paths.map(path => WhiskeyData.json(path)));
   const regionGroups = [classicScotland, classicWorld, discovery];
