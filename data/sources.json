@@ -222,5 +222,73 @@
   "famous-grouse": {
     "name": "The Famous Grouse \u2014 brand information (Edrington)",
     "url": "https://www.thefamousgrouse.com/"
+  },
+  "kyro": {
+    "name": "Kyr\u00f6 Distillery Company \u2014 distillery information",
+    "url": "https://kyrodistillery.com/"
+  },
+  "kyro-core-range": {
+    "name": "Whisky Magazine \u2014 Kyr\u00f6 Distillery Company unveils its core whisky range",
+    "url": "https://www.whiskymag.com/articles/kyroe-distillery-company-unveils-its-core-whisky-range/"
+  },
+  "teerenpeli": {
+    "name": "Teerenpeli Distillery \u2014 distillery information",
+    "url": "https://teerenpelidistillery.com/"
+  },
+  "teerenpeli-profile": {
+    "name": "Whiskey Lore \u2014 Teerenpeli Distillery profile",
+    "url": "https://www.whiskeylore.org/distilleries/eu-uk/finland/teerenpeli-distillery"
+  },
+  "high-coast-range": {
+    "name": "WhiskyNotes \u2014 High Coast \u00c4lv, Hav, Timmer and Berg (core range review)",
+    "url": "https://www.whiskynotes.be/?p=61499"
+  },
+  "high-coast-profile": {
+    "name": "Master of Malt \u2014 Sweden's High Coast distillery",
+    "url": "https://www.masterofmalt.com/blog/post/swedens-high-coast-distillery.aspx"
+  },
+  "santis-locher": {
+    "name": "Whiskipedia \u2014 Brauerei Locher (S\u00e4ntis Malt) distillery profile",
+    "url": "https://whiskipedia.com/distilleries/brauerei-locher/"
+  },
+  "santis-range": {
+    "name": "Master of Malt \u2014 S\u00e4ntis Malt distillery range",
+    "url": "https://www.masterofmalt.com/distilleries/santis-malt/"
+  },
+  "penderyn-faraday": {
+    "name": "WIPO Magazine \u2014 Welsh + Whisky = Gold (Faraday's Law)",
+    "url": "https://www.wipo.int/web/wipo-magazine/articles/welsh--whisky--gold-faradays-law-38745"
+  },
+  "penderyn-profile": {
+    "name": "Whisky.com \u2014 Penderyn distillery profile",
+    "url": "https://www.whisky.com/whisky-database/distilleries/details/penderyn.html"
+  },
+  "lark-classic-cask": {
+    "name": "LARK Distillery \u2014 Classic Cask product page",
+    "url": "https://larkdistillery.com/products/classic-cask"
+  },
+  "sullivans-cove-profile": {
+    "name": "Quill & Pad \u2014 Sullivans Cove distillery profile",
+    "url": "https://quillandpad.com/2019/07/17/sullivans-cove-makes-the-self-professed-worlds-best-whisky-but-does-it-measure-up/"
+  },
+  "tasmania-history": {
+    "name": "Man of Many \u2014 Tasmanian whisky distilleries and history",
+    "url": "https://manofmany.com/lifestyle/drinks/tasmanian-whisky-distilleries"
+  },
+  "milk-honey-profile": {
+    "name": "SMWS Unfiltered \u2014 Milk & Honey distillery profile",
+    "url": "https://unfiltered.smws.com/unfiltered-05-2023/distillery-profile-milk-honey"
+  },
+  "milk-honey-classic": {
+    "name": "Skurnik \u2014 Milk & Honey Classic single malt product page",
+    "url": "https://skurnik.com/sku/single-malt-whisky-classic-milk-honey-distillery"
+  },
+  "abasolo-review": {
+    "name": "Whisky For Everyone \u2014 Abasolo review and production notes",
+    "url": "https://whiskyforeveryone.com/review-abasolo/"
+  },
+  "abasolo-uproxx": {
+    "name": "Uproxx \u2014 Abasolo, a 100% corn Mexican whisky (review)",
+    "url": "https://uproxx.com/life/abasolo-whisky-review/"
   }
 }

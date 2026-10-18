@@ -150,6 +150,85 @@
       ]
     },
     {
+      "id": "finland-rule",
+      "label": "Finland",
+      "aliases": [
+        "finland",
+        "finnish"
+      ],
+      "regions": [
+        "finland"
+      ]
+    },
+    {
+      "id": "sweden-rule",
+      "label": "Sweden",
+      "aliases": [
+        "sweden",
+        "swedish"
+      ],
+      "regions": [
+        "sweden"
+      ]
+    },
+    {
+      "id": "switzerland-rule",
+      "label": "Switzerland",
+      "aliases": [
+        "switzerland",
+        "swiss"
+      ],
+      "regions": [
+        "switzerland"
+      ]
+    },
+    {
+      "id": "wales-rule",
+      "label": "Wales",
+      "aliases": [
+        "wales",
+        "welsh"
+      ],
+      "regions": [
+        "wales"
+      ]
+    },
+    {
+      "id": "australia-rule",
+      "label": "Australia",
+      "aliases": [
+        "australia",
+        "australian",
+        "tasmania",
+        "tasmanian"
+      ],
+      "regions": [
+        "tasmania"
+      ]
+    },
+    {
+      "id": "israel-rule",
+      "label": "Israel",
+      "aliases": [
+        "israel",
+        "israeli"
+      ],
+      "regions": [
+        "israel"
+      ]
+    },
+    {
+      "id": "mexico-rule",
+      "label": "Mexico",
+      "aliases": [
+        "mexico",
+        "mexican"
+      ],
+      "regions": [
+        "mexico"
+      ]
+    },
+    {
       "id": "scotland-rule",
       "label": "Scotland",
       "aliases": [
@@ -776,6 +855,108 @@
       ],
       "regions": [
         "scotland-blends"
+      ],
+      "producer": true
+    },
+    {
+      "id": "kyro",
+      "label": "Kyrö",
+      "aliases": [
+        "kyro"
+      ],
+      "regions": [
+        "finland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "teerenpeli",
+      "label": "Teerenpeli",
+      "aliases": [
+        "teerenpeli"
+      ],
+      "regions": [
+        "finland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "high-coast",
+      "label": "High Coast",
+      "aliases": [
+        "high coast"
+      ],
+      "regions": [
+        "sweden"
+      ],
+      "producer": true
+    },
+    {
+      "id": "santis",
+      "label": "Säntis Malt",
+      "aliases": [
+        "santis",
+        "santis malt"
+      ],
+      "regions": [
+        "switzerland"
+      ],
+      "producer": true
+    },
+    {
+      "id": "penderyn",
+      "label": "Penderyn",
+      "aliases": [
+        "penderyn"
+      ],
+      "regions": [
+        "wales"
+      ],
+      "producer": true
+    },
+    {
+      "id": "lark",
+      "label": "LARK",
+      "aliases": [
+        "lark"
+      ],
+      "regions": [
+        "tasmania"
+      ],
+      "producer": true
+    },
+    {
+      "id": "sullivans-cove",
+      "label": "Sullivans Cove",
+      "aliases": [
+        "sullivans cove",
+        "sullivan's cove"
+      ],
+      "regions": [
+        "tasmania"
+      ],
+      "producer": true
+    },
+    {
+      "id": "milk-and-honey",
+      "label": "Milk & Honey",
+      "aliases": [
+        "milk & honey",
+        "milk and honey"
+      ],
+      "regions": [
+        "israel"
+      ],
+      "producer": true
+    },
+    {
+      "id": "abasolo",
+      "label": "Abasolo",
+      "aliases": [
+        "abasolo"
+      ],
+      "regions": [
+        "mexico"
       ],
       "producer": true
     }

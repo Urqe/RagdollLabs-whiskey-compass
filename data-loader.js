@@ -3,7 +3,7 @@
  */
 // Release token for data files, mirroring the ?v= strategy on index.html assets.
 // Bump this when data/*.json changes so deploys invalidate cached responses.
-const DATA_VERSION = "20261018-basics";
+const DATA_VERSION = "20261018-regions1";
 
 window.WhiskeyData = (() => {
   const requests = new Map();

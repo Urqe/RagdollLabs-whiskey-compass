@@ -37,7 +37,7 @@ inside that region's copy. The glossary explains the convention.
   dilution, ice & highball suitability, glassware
 - **Country → Region → Style hierarchy** — Scotland (Islay, Speyside, Highlands, Lowlands,
   Campbeltown, Islands), USA (Kentucky, Tennessee), Ireland, Japan, Canada, plus emerging
-  India, Taiwan and England
+  India, Taiwan, England, Wales, Finland, Sweden, Switzerland, Tasmania, Israel and Mexico
 - **Sensory profile** — body, peat & smoke, sweetness, spice, fruit, oak, finish length and
   ABV feel on a 0–5 editorial scale, explicitly disclosed as comparative judgement
 - **Notable bottles** — each regional profile carries curated example bottles

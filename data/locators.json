@@ -58,5 +58,33 @@
   "scotland-blends": {
     "lat": 56.5,
     "lon": -4.2
+  },
+  "finland": {
+    "lat": 62.0,
+    "lon": 24.0
+  },
+  "sweden": {
+    "lat": 63.0,
+    "lon": 17.8
+  },
+  "switzerland": {
+    "lat": 47.3,
+    "lon": 9.4
+  },
+  "wales": {
+    "lat": 51.8,
+    "lon": -3.6
+  },
+  "tasmania": {
+    "lat": -42.0,
+    "lon": 147.0
+  },
+  "israel": {
+    "lat": 32.1,
+    "lon": 34.8
+  },
+  "mexico": {
+    "lat": 20.0,
+    "lon": -99.5
   }
 }

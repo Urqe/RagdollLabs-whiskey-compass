@@ -313,5 +313,830 @@
       "english-whisky-co",
       "cotswolds"
     ]
+  },
+  "finland": {
+    "name": "Finland",
+    "country": "Finland",
+    "climate": "Cold continental: long freezing winters, short warm summers",
+    "summary": "A young Nordic whisky country: malted-rye whisky from Kyr\u00f6 and Finland's oldest single malts from Teerenpeli.",
+    "styles": {
+      "malted-rye": {
+        "mods": {},
+        "phenol": "unpeated in the core Kyr\u00f6 Malt; Wood Smoke and Peat Smoke editions are smoked",
+        "notes": {
+          "Spice": [
+            "rye bread",
+            "black pepper",
+            "caraway"
+          ],
+          "Fruit": [
+            "dried apple",
+            "orange peel"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "toasted new oak"
+          ],
+          "Mineral / herbal": [
+            "fresh herbs"
+          ]
+        },
+        "serve": "Neat, with a splash of water, or in a rye cocktail",
+        "dilution": "Kyr\u00f6's core range is bottled at 47.2% ABV; a little water softens the rye spice",
+        "ice": "A large cube works; the spice survives it",
+        "glass": "Glencairn or rocks glass",
+        "ageing": "Young by age statement; new American oak gives a lot of flavour quickly",
+        "pairings": [
+          "rye bread",
+          "smoked fish",
+          "strong cheeses",
+          "dark chocolate"
+        ],
+        "expect": "Spicy and bready: 100% malted rye gives rye-bread spice over vanilla from new oak.",
+        "style": {
+          "family": "rye",
+          "cue": "rye",
+          "label": "Finnish malted rye \u00b7 Spicy & bready",
+          "method": "100% malted Finnish rye, copper pot stills, mostly new American oak (Kyr\u00f6)",
+          "effect": "All the rye is malted; malted rye is usually described as rounder and more bread-like than the raw rye in American mashbills"
+        },
+        "sources": [
+          "kyro-core-range"
+        ],
+        "bottles": [
+          {
+            "name": "Kyr\u00f6 Malt",
+            "note": "The core 100% malted-rye whisky at 47.2%, matured in new American oak",
+            "tag": "malted rye"
+          },
+          {
+            "name": "Kyr\u00f6 Oloroso",
+            "note": "Malted rye with oloroso sherry casks alongside new oak and ex-bourbon",
+            "tag": "sherry cask"
+          }
+        ]
+      },
+      "unpeated-malt": {
+        "mods": {
+          "fruit": 0.5,
+          "sweetness": 0.5,
+          "spice": 0.5
+        },
+        "phenol": "unpeated in the core range; the Savu edition is peated",
+        "notes": {
+          "Fruit": [
+            "nectarine",
+            "apple",
+            "raisin"
+          ],
+          "Oak / ageing": [
+            "butterscotch",
+            "toffee",
+            "sherry"
+          ],
+          "Spice": [
+            "black pepper"
+          ],
+          "Earth / savory": [
+            "savoury oak"
+          ]
+        },
+        "serve": "Neat; a drop of water opens the fruit",
+        "dilution": "Typically around 43%; no water needed",
+        "ice": "A single cube is fine for casual drinking",
+        "glass": "Glencairn",
+        "ageing": "The 10-year-old is the reference point; Kaski is a six-year-old sherry-cask malt",
+        "pairings": [
+          "smoked salmon",
+          "rye bread",
+          "aged cheese",
+          "dark chocolate"
+        ],
+        "expect": "Rounded Nordic malt: toffee and orchard fruit with a peppery, oily edge from bourbon and sherry casks.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Finnish single malt \u00b7 Toffee & pepper",
+          "method": "Pot-distilled local barley, bourbon and sherry casks (Teerenpeli)",
+          "effect": "Sherry casks add dried fruit and toffee to an oily, peppery spirit"
+        },
+        "sources": [
+          "teerenpeli-profile"
+        ],
+        "bottles": [
+          {
+            "name": "Teerenpeli 10",
+            "note": "Bourbon and sherry casks: butterscotch, orchard fruit and pepper",
+            "tag": "benchmark"
+          },
+          {
+            "name": "Teerenpeli Kaski",
+            "note": "Six years in sherry casks: brown sugar, raisin and spice",
+            "tag": "sherry"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Cold continental climate with large seasonal swings",
+      "terrain": "Lakes, farmland and the Ostrobothnian plains",
+      "soil": "Glacial soils; rye has long been Finland's bread grain",
+      "influences": [
+        "Teerenpeli (Lahti, 2002) is Finland's oldest single malt producer",
+        "Kyr\u00f6 (Isokyr\u00f6, opened 2014) makes whisky and gin only from local rye"
+      ]
+    },
+    "why": [
+      {
+        "cause": "100% malted rye instead of a corn-led mashbill",
+        "effect": "Rye spice without bourbon's corn sweetness, with a bready grain character"
+      },
+      {
+        "cause": "New American oak for much of the rye",
+        "effect": "Strong vanilla and toasted-oak flavour even at young ages"
+      },
+      {
+        "cause": "Large swings between freezing winters and warm summers",
+        "effect": "Cask interaction varies sharply by season; most maturation happens in the warm months"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "kyro",
+      "kyro-core-range",
+      "teerenpeli",
+      "teerenpeli-profile"
+    ]
+  },
+  "sweden": {
+    "name": "Sweden (High Coast)",
+    "country": "Sweden",
+    "climate": "Subarctic coast: winters down to about -38\u00b0C, short summers",
+    "summary": "Northern Swedish malt made at 63\u00b0 north, often in small casks of several oak types, with peat used in part of the range.",
+    "styles": {
+      "lightly-peated-malt": {
+        "mods": {
+          "oak": 0.5,
+          "spice": 0.5,
+          "heat": 0.5,
+          "sweetness": -0.5
+        },
+        "phenol": "lightly to moderately peated depending on the expression; \u00c4lv is unpeated",
+        "notes": {
+          "Smoke / peat": [
+            "campfire ash",
+            "sauna wood"
+          ],
+          "Spice": [
+            "clove",
+            "juniper"
+          ],
+          "Fruit": [
+            "green apple",
+            "citrus",
+            "peach"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "custard",
+            "fresh oak"
+          ]
+        },
+        "serve": "Neat with a splash of water",
+        "dilution": "Core range bottled at 46\u201350%; a few drops of water help",
+        "ice": "Water shows more of the oak spice than ice",
+        "glass": "Glencairn",
+        "ageing": "Young no-age-statement core range; small casks speed oak extraction",
+        "pairings": [
+          "smoked fish",
+          "rye bread",
+          "aged cheese"
+        ],
+        "expect": "Crisp and spicy northern malt: oak spice, juniper-like freshness and a light, woody smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Swedish malt \u00b7 Oak spice & light smoke",
+          "method": "Pot-distilled malt, partly peated; first-fill bourbon, virgin oak and small 40-litre casks including Swedish and Hungarian oak (High Coast)",
+          "effect": "Small casks and virgin oak give a lot of wood spice quickly; the peated share adds a light, ashy smoke"
+        },
+        "sources": [
+          "high-coast-range"
+        ],
+        "bottles": [
+          {
+            "name": "High Coast Timmer",
+            "note": "The peated core bottling (46%): vanilla, custard and campfire ash",
+            "tag": "peated"
+          },
+          {
+            "name": "High Coast Hav",
+            "note": "48%, partly peated, small virgin-oak casks: clove, juniper and oak",
+            "tag": "oak spice"
+          },
+          {
+            "name": "High Coast \u00c4lv",
+            "note": "Unpeated, first-fill bourbon (46%): green apple and vanilla",
+            "tag": "unpeated"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Northern Baltic coast at about 63\u00b0 north",
+      "terrain": "The \u00c5ngerman\u00e4lven river valley near the sea, a UNESCO-listed landscape",
+      "soil": "Glacial and post-glacial uplift land",
+      "influences": [
+        "Founded in 2010 as Box distillery; renamed High Coast in 2018",
+        "Mackmyra pioneered Swedish malt, though its ownership has been turbulent since 2024"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Extreme seasonal temperature swings",
+        "effect": "Spirit is pushed into the wood in summer and pulled back in winter, so maturation is uneven through the year"
+      },
+      {
+        "cause": "Small casks and virgin oak",
+        "effect": "More wood contact per litre gives oak spice and vanilla at young ages"
+      },
+      {
+        "cause": "Only part of the spirit is peated",
+        "effect": "Smoke stays in the background rather than dominating"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "high-coast-range",
+      "high-coast-profile"
+    ]
+  },
+  "switzerland": {
+    "name": "Switzerland (Appenzell)",
+    "country": "Switzerland",
+    "climate": "Alpine: cold winters, mild summers",
+    "summary": "Grain distilling was banned in Switzerland until 1999; S\u00e4ntis Malt answered by maturing whisky in old beer casks.",
+    "styles": {
+      "unpeated-malt": {
+        "mods": {
+          "oak": -0.5,
+          "heat": -0.5
+        },
+        "phenol": "unpeated",
+        "notes": {
+          "Fruit": [
+            "malted barley",
+            "honey",
+            "dried apple"
+          ],
+          "Oak / ageing": [
+            "nutty oak",
+            "light toffee"
+          ],
+          "Mineral / herbal": [
+            "fresh herbs"
+          ]
+        },
+        "serve": "Neat",
+        "dilution": "Edition Sigel is 40% and needs no water",
+        "ice": "A cube suits the gentle house style",
+        "glass": "Glencairn",
+        "ageing": "Mostly no age statement; older single casks appear occasionally",
+        "pairings": [
+          "alpine cheeses",
+          "nuts",
+          "light desserts"
+        ],
+        "expect": "Soft, malty Alpine whisky: honeyed barley and nutty oak from old beer casks.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Swiss beer-cask malt \u00b7 Soft & malty",
+          "method": "Malt whisky from a brewery, matured in old oak beer casks (S\u00e4ntis Malt, Brauerei Locher)",
+          "effect": "Long-used beer casks give little new oak flavour, so the malt stays in front"
+        },
+        "sources": [
+          "santis-range"
+        ],
+        "bottles": [
+          {
+            "name": "S\u00e4ntis Malt Edition Sigel",
+            "note": "The entry bottling at 40%, matured in old beer casks",
+            "tag": "beer cask"
+          },
+          {
+            "name": "S\u00e4ntis Malt Edition Himmelberg",
+            "note": "A 43% edition from the same beer-cask house",
+            "tag": "beer cask"
+          }
+        ]
+      },
+      "peated-malt": {
+        "mods": {
+          "heat": 1,
+          "finish": 0.5,
+          "spice": 0.5
+        },
+        "phenol": "peated with high-altitude moor peat and smoked with alpine wood",
+        "notes": {
+          "Smoke / peat": [
+            "peat smoke",
+            "wood smoke"
+          ],
+          "Fruit": [
+            "dried fruit"
+          ],
+          "Oak / ageing": [
+            "old oak"
+          ],
+          "Mineral / herbal": [
+            "alpine herbs"
+          ]
+        },
+        "serve": "Neat with a few drops of water",
+        "dilution": "Bottled at 52%; water opens it and softens the heat",
+        "ice": "Water rather than ice keeps the smoke detail",
+        "glass": "Glencairn",
+        "ageing": "No age statement",
+        "pairings": [
+          "smoked meats",
+          "alpine cheeses",
+          "dark chocolate"
+        ],
+        "expect": "Smoky and alpine: peat and wood smoke together, at a strong 52%.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Swiss peated malt \u00b7 Peat & alpine wood smoke",
+          "method": "Barley dried with high-altitude moor peat and smoked with Appenzell wood, matured in old beer casks (S\u00e4ntis Malt Edition Dreifaltigkeit)",
+          "effect": "Wood smoke alongside peat gives a drier, campfire-like smoke rather than a medicinal one"
+        },
+        "sources": [
+          "santis-range"
+        ],
+        "bottles": [
+          {
+            "name": "S\u00e4ntis Malt Edition Dreifaltigkeit",
+            "note": "Peated and alpine-wood smoked, 52%; Jim Murray's European Whisky of the Year 2010",
+            "tag": "smoky"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Appenzell, at the foot of the Alpstein massif",
+      "terrain": "Alpine pasture and mountain valleys",
+      "soil": "Limestone mountains; spring water from the Alpstein",
+      "influences": [
+        "Distilling spirits from grain was banned until 1 July 1999",
+        "Brauerei Locher, a century-old brewery, began S\u00e4ntis Malt in 1999 and released its first whisky in 2002"
+      ]
+    },
+    "why": [
+      {
+        "cause": "A brewery making whisky after the 1999 law change",
+        "effect": "Old beer casks were at hand and became the house signature"
+      },
+      {
+        "cause": "Long-used beer casks rather than fresh bourbon or sherry wood",
+        "effect": "Less vanilla and dried fruit from the wood; the malt itself stays in front"
+      },
+      {
+        "cause": "Alpine wood smoke in the peated edition",
+        "effect": "A drier, campfire-like smoke rather than the medicinal phenols of Islay peat"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "santis-locher",
+      "santis-range"
+    ]
+  },
+  "wales": {
+    "name": "Wales",
+    "country": "Wales",
+    "climate": "Mild, wet maritime",
+    "summary": "Penderyn revived Welsh whisky in 2004 with an unusual still that makes a very light, high-strength spirit in one run.",
+    "styles": {
+      "unpeated-malt": {
+        "mods": {
+          "body": -1,
+          "fruit": 0.5,
+          "sweetness": 0.5,
+          "heat": -0.5,
+          "finish": -0.5
+        },
+        "phenol": "unpeated in the core range; Penderyn also bottles a peated edition",
+        "notes": {
+          "Fruit": [
+            "raisin",
+            "citrus",
+            "tropical fruit"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "toffee",
+            "Madeira wine"
+          ],
+          "Floral": [
+            "light floral notes"
+          ]
+        },
+        "serve": "Neat, or with ice",
+        "dilution": "Legend and Myth are 41%; the 46% bottlings take a drop of water",
+        "ice": "The light spirit works well over ice",
+        "glass": "Glencairn",
+        "ageing": "No age statement core range; Madeira-cask finishes are the house signature",
+        "pairings": [
+          "fruit desserts",
+          "soft cheese",
+          "seafood"
+        ],
+        "expect": "Light and fruity: a delicate spirit lifted by Madeira-cask sweetness.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Welsh single malt \u00b7 Light & Madeira-sweet",
+          "method": "Faraday still (a pot still with an attached column) producing spirit at about 92% ABV in one run, plus pot stills since 2015; bourbon casks, often Madeira-finished (Penderyn)",
+          "effect": "Very high spirit strength strips out heavier compounds, giving a light spirit that takes on cask sweetness readily"
+        },
+        "sources": [
+          "penderyn-profile",
+          "penderyn-faraday"
+        ],
+        "bottles": [
+          {
+            "name": "Penderyn Legend",
+            "note": "Bourbon-matured, Madeira-finished at 41%: light and fruity",
+            "tag": "madeira"
+          },
+          {
+            "name": "Penderyn Madeira",
+            "note": "The flagship Madeira finish at 46%",
+            "tag": "madeira"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "The edge of the Brecon Beacons (Bannau Brycheiniog), south Wales",
+      "terrain": "Upland valleys",
+      "soil": "Sandstone uplands; local spring water",
+      "influences": [
+        "First bottle sold in 2004, on St David's Day",
+        "Additional distilleries opened in Llandudno (2021) and Swansea (2023)"
+      ]
+    },
+    "why": [
+      {
+        "cause": "The Faraday still, a pot still with a fractionating column attached",
+        "effect": "Spirit at about 92% ABV in one run, much lighter than double-distilled Scotch at around 70%"
+      },
+      {
+        "cause": "Madeira wine casks for finishing",
+        "effect": "Adds dried fruit and sweetness to a delicate base spirit"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "penderyn-faraday",
+      "penderyn-profile"
+    ]
+  },
+  "tasmania": {
+    "name": "Tasmania",
+    "country": "Australia",
+    "climate": "Cool maritime island",
+    "summary": "Australia's whisky island: small-scale distilling was effectively banned until 1992, and its single casks have since won world titles.",
+    "styles": {
+      "unpeated-malt": {
+        "mods": {
+          "oak": 1,
+          "fruit": 0.5,
+          "body": 0.5,
+          "heat": 0.5,
+          "finish": 0.5
+        },
+        "phenol": "unpeated",
+        "notes": {
+          "Fruit": [
+            "dried fig",
+            "orange peel",
+            "red berries"
+          ],
+          "Oak / ageing": [
+            "toasted oak",
+            "toffee",
+            "fortified-wine cask"
+          ],
+          "Spice": [
+            "cinnamon",
+            "nutmeg"
+          ]
+        },
+        "serve": "Neat with a few drops of water",
+        "dilution": "Single casks are typically around 47.5%; a little water opens them",
+        "ice": "Detail shows best without ice",
+        "glass": "Glencairn",
+        "ageing": "Single casks often 10\u201312 years or more; each cask differs",
+        "pairings": [
+          "dark chocolate",
+          "aged cheese",
+          "fruit cake"
+        ],
+        "expect": "Rich and oak-led: dried fruit and toasted oak from single casks, many of them ex-fortified-wine.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Tasmanian single cask \u00b7 Rich & oak-led",
+          "method": "Small-batch malt bottled cask by cask; American oak and French oak, including ex-tawny (Australian fortified wine) casks (Sullivans Cove)",
+          "effect": "Single-cask bottling means each release shows one cask's character; fortified-wine casks add dried fruit and depth"
+        },
+        "sources": [
+          "sullivans-cove-profile"
+        ],
+        "bottles": [
+          {
+            "name": "Sullivans Cove French Oak",
+            "note": "Single-cask French oak; a 2014 cask was the first non-Scotch, non-Japanese World's Best Single Malt",
+            "tag": "award winner"
+          },
+          {
+            "name": "Sullivans Cove American Oak",
+            "note": "Single-cask American oak; ex-tawny editions add dried fruit",
+            "tag": "single cask"
+          }
+        ]
+      },
+      "lightly-peated-malt": {
+        "mods": {
+          "smoke": -0.5,
+          "fruit": 1,
+          "sweetness": 1
+        },
+        "phenol": "a light touch of Tasmanian peat",
+        "notes": {
+          "Fruit": [
+            "toffee apple",
+            "plum pudding",
+            "red berries"
+          ],
+          "Oak / ageing": [
+            "custard",
+            "tawny oak"
+          ],
+          "Smoke / peat": [
+            "a hint of Tasmanian peat"
+          ]
+        },
+        "serve": "Neat",
+        "dilution": "Bottled at 43%; no water needed",
+        "ice": "A cube is workable; the dessert-like fruit shows best without",
+        "glass": "Glencairn",
+        "ageing": "No age statement; small casks speed maturation",
+        "pairings": [
+          "fruit cake",
+          "dark chocolate",
+          "blue cheese"
+        ],
+        "expect": "Dessert-like Tasmanian malt: plum pudding and toffee apple with a faint wisp of local peat.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Tasmanian malt \u00b7 Fruity with a hint of peat",
+          "method": "Double-distilled malt, small casks including ex-tawny, a little Tasmanian peat (LARK Classic Cask)",
+          "effect": "Small fortified-wine casks give rich fruit quickly; local peat adds only a background wisp"
+        },
+        "sources": [
+          "lark-classic-cask"
+        ],
+        "bottles": [
+          {
+            "name": "LARK Classic Cask",
+            "note": "The house benchmark at 43%: plum pudding, toffee apple and a hint of Tasmanian peat",
+            "tag": "benchmark"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Cool island south of mainland Australia",
+      "terrain": "Highlands, river valleys and the Coal River area near Hobart",
+      "soil": "Barley country with local peat bogs",
+      "influences": [
+        "Bill Lark had the 1839 and 1901 distilling Acts amended in 1992, founding LARK",
+        "Sullivans Cove followed in 1994 on Hobart's waterfront"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Ex-tawny and other fortified-wine casks, often small",
+        "effect": "Dried fruit, plum and toffee develop quickly and dominate the profile"
+      },
+      {
+        "cause": "Single-cask bottling",
+        "effect": "Each release can taste noticeably different; the cask matters more than the house"
+      },
+      {
+        "cause": "Local Tasmanian peat used sparingly",
+        "effect": "Earthy background smoke rather than Islay-style medicinal peat"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "tasmania-history",
+      "lark-classic-cask",
+      "sullivans-cove-profile"
+    ]
+  },
+  "israel": {
+    "name": "Israel",
+    "country": "Israel",
+    "climate": "Hot Mediterranean: summers up to about 40\u00b0C and very humid",
+    "summary": "Fast, hot maturation on the Tel Aviv coast and at the Dead Sea, losing up to a quarter of each cask a year.",
+    "styles": {
+      "unpeated-malt": {
+        "mods": {
+          "oak": 0.5,
+          "spice": 0.5,
+          "sweetness": 0.5
+        },
+        "phenol": "unpeated",
+        "notes": {
+          "Fruit": [
+            "honey",
+            "baked apple"
+          ],
+          "Oak / ageing": [
+            "vanilla",
+            "light oak",
+            "red-wine cask"
+          ],
+          "Spice": [
+            "black pepper"
+          ]
+        },
+        "serve": "Neat or with a splash of water",
+        "dilution": "Classic is 46%; a few drops of water soften the pepper",
+        "ice": "A cube is workable for casual drinking",
+        "glass": "Glencairn",
+        "ageing": "About three years can be enough in this climate; no age statement on the core range",
+        "pairings": [
+          "dark chocolate",
+          "spiced desserts",
+          "aged cheese"
+        ],
+        "expect": "Young but full: vanilla, honey and black pepper, with more weight than its age suggests.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Israeli single malt \u00b7 Hot-climate fast maturation",
+          "method": "Unpeated malted barley, double distilled in copper pot stills; ex-bourbon and shaved, toasted, re-charred ex-red-wine (STR) casks (Milk & Honey)",
+          "effect": "Heat speeds the spirit's interaction with the cask, so the whisky tastes fuller at three years than a Scotch of the same age"
+        },
+        "sources": [
+          "milk-honey-classic"
+        ],
+        "bottles": [
+          {
+            "name": "Milk & Honey Classic",
+            "note": "46%, ex-bourbon and STR red-wine casks: vanilla, honey and black pepper",
+            "tag": "classic"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Mediterranean coast at Tel Aviv, plus maturation at the Dead Sea",
+      "terrain": "Coastal city and desert rift valley",
+      "soil": "Not site-specific; the climate is the defining variable",
+      "influences": [
+        "Trial runs in 2014, first single malt released in 2017",
+        "Casks at the Dead Sea, around 50\u00b0C in summer, stay only about 18 months"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Summers around 40\u00b0C with high humidity",
+        "effect": "Fast cask interaction: fuller-bodied whisky at a young age"
+      },
+      {
+        "cause": "Angel's share of up to 25% a year, against about 2% in Scotland",
+        "effect": "Long ageing is impractical; whiskies are bottled young by necessity"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "milk-honey-profile",
+      "milk-honey-classic"
+    ]
+  },
+  "mexico": {
+    "name": "Mexico (Abasolo)",
+    "country": "Mexico",
+    "climate": "High-altitude highland: warm days, cool nights",
+    "summary": "Whisky from heritage Mexican corn, treated by nixtamalization as for tortillas, distilled at about 2,375 m.",
+    "styles": {
+      "heritage-corn": {
+        "mods": {},
+        "phenol": "unpeated",
+        "notes": {
+          "Fruit": [
+            "green apple",
+            "golden syrup"
+          ],
+          "Oak / ageing": [
+            "vanilla toffee",
+            "honey"
+          ],
+          "Earth / savory": [
+            "grilled sweetcorn",
+            "charred corn husk",
+            "toasted tortilla"
+          ],
+          "Spice": [
+            "cinnamon",
+            "white pepper"
+          ]
+        },
+        "serve": "Neat, on the rocks, or in cocktails",
+        "dilution": "Bottled at 43%; no water needed",
+        "ice": "Works well over ice and in highballs",
+        "glass": "Rocks glass or Glencairn",
+        "ageing": "No age statement; second-fill bourbon casks keep the oak in the background",
+        "pairings": [
+          "bbq",
+          "grilled meats",
+          "spiced desserts"
+        ],
+        "expect": "Sweet and creamy: grilled sweetcorn, toasted tortilla and vanilla toffee, quite unlike bourbon.",
+        "style": {
+          "family": "corn",
+          "cue": "corn",
+          "label": "Mexican heritage corn \u00b7 Toasted & creamy",
+          "method": "100% cacahuazintle and heritage maize, nixtamalized, 120-hour fermentation, double distilled in copper pot stills, second-fill ex-bourbon casks (Abasolo)",
+          "effect": "Nixtamalization (cooking corn with lime) gives the toasted-tortilla character; reused casks leave the corn in front"
+        },
+        "sources": [
+          "abasolo-review"
+        ],
+        "bottles": [
+          {
+            "name": "Abasolo El Whisky de M\u00e9xico",
+            "note": "100% nixtamalized heritage corn at 43%: grilled sweetcorn, honey and vanilla toffee",
+            "tag": "heritage corn"
+          }
+        ]
+      }
+    },
+    "identity": {
+      "setting": "Jilotepec, north of Mexico City, at about 2,375 m",
+      "terrain": "Central Mexican highlands",
+      "soil": "Volcanic highland soils where heritage maize is grown",
+      "influences": [
+        "Nixtamalization is a pre-Hispanic technique, still used for tortillas",
+        "Cacahuazintle is a large-kernelled indigenous maize"
+      ]
+    },
+    "why": [
+      {
+        "cause": "Nixtamalization: cooking the corn in alkaline lime water",
+        "effect": "Toasted, tortilla-like corn flavour that untreated bourbon corn doesn't have"
+      },
+      {
+        "cause": "Double distillation in copper pot stills",
+        "effect": "Pot stills keep more of the heavier compounds than a column, giving a creamier texture"
+      },
+      {
+        "cause": "Second-fill ex-bourbon casks rather than new charred oak",
+        "effect": "Less vanilla and char than bourbon; the corn character stays in front"
+      }
+    ],
+    "badges": [
+      "Discovery",
+      "Emerging region"
+    ],
+    "sources": [
+      "abasolo-review",
+      "abasolo-uproxx"
+    ]
   }
 }

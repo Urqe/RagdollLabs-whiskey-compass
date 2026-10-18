@@ -306,5 +306,33 @@
     "oak": 2.5,
     "finish": 3,
     "heat": 2.5
+  },
+  "malted-rye": {
+    "name": "Malted rye whisky",
+    "cue": "rye",
+    "family": "rye",
+    "regionalSignature": false,
+    "body": 3,
+    "smoke": 0,
+    "sweetness": 2,
+    "spice": 3.5,
+    "fruit": 2,
+    "oak": 3.5,
+    "finish": 3.5,
+    "heat": 3
+  },
+  "heritage-corn": {
+    "name": "Heritage corn whisky",
+    "cue": "corn",
+    "family": "corn",
+    "regionalSignature": true,
+    "body": 3,
+    "smoke": 0.5,
+    "sweetness": 3,
+    "spice": 2,
+    "fruit": 2,
+    "oak": 2,
+    "finish": 3,
+    "heat": 2.5
   }
 }

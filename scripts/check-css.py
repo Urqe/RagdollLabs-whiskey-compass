@@ -18,7 +18,6 @@ DEAD_PATTERNS = [
     (r"\.ageing-snapshot", "the ageing snapshot container was removed"),
     (r"\.welcome-brand\b", "the welcome-brand span was removed by the whisky-room hero"),
     (r"#96ind86", "typo'd placeholder color"),
-    (r"\.style-cue-dot\.corn", "corn whiskey style was removed"),
     (r"\.style-cue-dot\.orange", "orange was a wine-era cue"),
 ]
 REQUIRED_TOKENS = {"bg", "panel", "surface", "line", "text", "muted", "gold", "copper", "focus"}

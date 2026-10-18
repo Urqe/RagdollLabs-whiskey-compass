@@ -44,6 +44,7 @@
 .style-cue-dot.blended { background: #8a6a3d; }
 .style-cue-dot.pot-still { background: #3f7d5a; }
 .style-cue-dot.tennessee { background: #6b4a2f; }
+.style-cue-dot.corn { background: #d9a44e; }
 .style-cue-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: 10px; white-space: nowrap; }
 .search-result .style-cue-dot, .similar-item .style-cue-dot, .welcome-discoveries .style-cue-dot { display: inline-block; vertical-align: -1px; margin-right: 5px; width: 8px; height: 8px; }
 
