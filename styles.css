@@ -187,3 +187,5 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 
 .bottle-highlight { outline: 2px solid var(--gold); animation: bottle-flash 1.6s ease; }
 @keyframes bottle-flash { 0% { background: var(--copper); } 100% { background: var(--surface); } }
+
+.category-span-note { margin: -4px 0 10px; font-size: 11px; color: var(--muted); font-style: italic; }

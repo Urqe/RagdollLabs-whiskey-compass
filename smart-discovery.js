@@ -12,7 +12,8 @@ function smartDistance(a, b) {
   return Math.sqrt(SMART_METRICS.reduce((sum, key) => sum + Math.pow((a.profile[key] || 0) - (b.profile[key] || 0), 2), 0));
 }
 
-function smartCompatibilityKey(item) { return WhiskeyModel.compareGroup(item); }
+// Any-vs-any comparison: candidates are all profiles; distance ordering
+// keeps the nearest (most similar) picks first without a group filter.
 function itemRegionFlavor(current, item) {
   // Explanations derive from the expressions' actual scores, never from geography.
   if (!item) return "elsewhere";
@@ -53,11 +54,10 @@ function smartPick(candidates, used, predicate, score = item => item.distance) {
 }
 
 function smartRecommendations(current) {
-  const key = smartCompatibilityKey(current);
   const candidates = WhiskeyCompass.allPairs()
     .filter(item => !(item.styleId === current.styleId && item.regionId === current.regionId))
     .map(item => ({ ...item, distance: smartDistance(current, item) }));
-  const compatible = candidates.filter(item => smartCompatibilityKey(item) === key);
+  const compatible = candidates;
   const used = new Set();
   const picks = [];
   const add = (item, kind, label, reason) => {

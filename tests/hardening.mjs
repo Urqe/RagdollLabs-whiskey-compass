@@ -58,11 +58,16 @@ w.WhiskeyComparison.replace([bourbon, wheated, rye]);
 const slot1 = d.getElementById("advancedCompare1");
 slot1.value = "unpeated-malt::islay";
 slot1.dispatchEvent(new w.Event("change", { bubbles: true }));
-assert.deepEqual(keys(), ["unpeated-malt::islay", "", ""]);
-assert.equal(d.getElementById("advancedBiggestOnly").checked, false);
+// Any-vs-any: changing slot 1 to a different family keeps the other
+// selections; only duplicates are rejected.
+assert.deepEqual(keys(), ["unpeated-malt::islay", "wheated-bourbon::kentucky", "rye::kentucky"]);
+// A full three-slot selection enables concise mode (documented semantic).
+assert.equal(d.getElementById("advancedBiggestOnly").checked, true);
 
 w.WhiskeyComparison.replace([bourbon, bourbon, profile("unpeated-malt", "islay")]);
-assert.deepEqual(keys(), ["bourbon::kentucky", "", ""]);
+// Any-vs-any: the duplicate bourbon is rejected, but the cross-category
+// malt companion is kept (group-based clearing is gone).
+assert.deepEqual(keys(), ["bourbon::kentucky", "", "unpeated-malt::islay"]);
 
 w.WhiskeyComparison.replace([bourbon]);
 w.WhiskeyComparison.setSlot(3, "wheated-bourbon::kentucky");

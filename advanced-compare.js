@@ -45,7 +45,7 @@ function advancedStyle(profile) {
 }
 
 function advancedCompatibilityLabel(profile) {
-  return WhiskeyModel.compareGroupLabel(profile);
+  return "any whiskeys you like";
 }
 
 function advancedCompatible(reference, candidate) { return WhiskeyModel.compatible(reference, candidate); }
@@ -198,7 +198,7 @@ function advancedRender() {
 
   message.classList.add("hidden");
   const reference = selections[0];
-  hint.textContent = `Comparing ${advancedCompatibilityLabel(reference)}. Choose up to three whiskeys.`;
+  hint.textContent = "Differences in the charts reflect both region and production route.";
   const rows = advancedDifferenceRows(selections);
   const biggestOnly = WhiskeyComparison.snapshot().biggestOnly;
   const metricKeys = biggestOnly && rows.length ? new Set(rows.slice(0, 4).map(row => row.metric.key)) : null;
@@ -210,7 +210,7 @@ function advancedRender() {
   }).join("");
 
   if (rows.length) {
-    differences.innerHTML = `<section class="differences" aria-labelledby="advancedDiffHeading"><h3 id="advancedDiffHeading">What sets them apart</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${WhiskeyCompass.escapeHtml(row.metric.label)}</span><span class="diff-text">${WhiskeyCompass.escapeHtml(advancedShortName(row.high.item))} pours ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${WhiskeyCompass.escapeHtml(advancedShortName(row.low.item))} is ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>${advancedProductionContext(selections)}`;
+    differences.innerHTML = `<section class="differences" aria-labelledby="advancedDiffHeading"><h3 id="advancedDiffHeading">What sets them apart</h3>${selections.some(item => WhiskeyModel.familyKey(item) !== WhiskeyModel.familyKey(selections[0])) ? '<p class="small category-span-note">Different production routes: some differences reflect category conventions (cask type, mashbill) as much as region.</p>' : ''}${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${WhiskeyCompass.escapeHtml(row.metric.label)}</span><span class="diff-text">${WhiskeyCompass.escapeHtml(advancedShortName(row.high.item))} pours ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${WhiskeyCompass.escapeHtml(advancedShortName(row.low.item))} is ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>${advancedProductionContext(selections)}`;
   } else if (selections.length >= 2) {
     differences.innerHTML = `<p class="small">These selections are unusually close on the sensory metrics.</p>${advancedProductionContext(selections)}`;
   } else {

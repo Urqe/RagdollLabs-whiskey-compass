@@ -157,8 +157,10 @@ assert.match(adv1.value, /^tennessee::tennessee$/);
 const tennesseeOptions = [...adv2.options].map(option => option.value).filter(Boolean);
 assert.ok(tennesseeOptions.some(value => value.startsWith("bourbon::")), "Tennessee must be able to compare against bourbon");
 assert.ok(tennesseeOptions.some(value => value.startsWith("rye::")), "Tennessee must be able to compare against rye");
+assert.ok(tennesseeOptions.some(value => value.startsWith("heavily-peated-malt::")), "any-vs-any: Tennessee can also compare against an Islay malt");
+assert.ok(tennesseeOptions.some(value => value.startsWith("pot-still::")), "any-vs-any: Tennessee can also compare against Irish pot still");
 const hint = document.getElementById("advancedCompareHint");
-assert.match(hint.textContent, /American whiskeys/i, "the compare hint must use accurate group terminology");
+assert.match(hint.textContent, /region and production route|eight sensory scales/i, "the compare hint must reflect free any-vs-any comparison");
 
 adv2.value = tennesseeOptions.find(value => value.startsWith("bourbon::"));
 adv2.dispatchEvent(new window.Event("change", { bubbles: true }));
@@ -172,6 +174,40 @@ adv3.dispatchEvent(new window.Event("change", { bubbles: true }));
 await settle();
 assert.equal(biggestOnly.checked, true, "a filled third slot enables concise mode");
 assert.ok(document.querySelectorAll("#advancedCompareGrid .compareCard").length === 3, "all three comparison cards render");
+
+// --- Any-vs-any: Blended Scotch vs sherry-cask malt, cross-category render ---
+window.WhiskeyCompass.selectProfile("blended-scotch", "scotland-blends");
+await settle(); await settle();
+window.WhiskeyCompass.setMode("compare");
+await settle(); await settle();
+const blendSlot1 = document.getElementById("advancedCompare1");
+blendSlot1.value = "blended-scotch::scotland-blends";
+blendSlot1.dispatchEvent(new window.Event("change", { bubbles: true }));
+await settle(); await settle();
+assert.match(blendSlot1.value, /^blended-scotch::scotland-blends$/);
+const blendSlot2 = document.getElementById("advancedCompare2");
+const blendOptions = [...blendSlot2.options].map(option => option.value).filter(Boolean);
+assert.ok(blendOptions.includes("sherry-malt::speyside"), "the acceptance case: sherry-cask malt offered next to Blended Scotch");
+// Clear slot 3 left by the earlier three-slot flow, then select the sherry malt.
+const blendSlot3 = document.getElementById("advancedCompare3");
+if (blendSlot3.value) {
+  blendSlot3.value = "";
+  blendSlot3.dispatchEvent(new window.Event("change", { bubbles: true }));
+  await settle();
+}
+blendSlot2.value = "sherry-malt::speyside";
+blendSlot2.dispatchEvent(new window.Event("change", { bubbles: true }));
+await settle();
+assert.equal(document.querySelectorAll("#advancedCompareGrid .compareCard").length, 2, "cross-category comparison renders both cards");
+assert.ok(document.querySelector(".category-span-note"), "cross-category comparisons show the production-routes qualifier");
+assert.ok(document.querySelectorAll("#advancedCompareDifferences .diff-row").length > 0, "differences render for the cross-category pair");
+// Same-family comparison omits the qualifier.
+window.WhiskeyComparison.replace([
+  window.WhiskeyCompass.combinedProfile("heavily-peated-malt", "islay"),
+  window.WhiskeyCompass.combinedProfile("unpeated-malt", "islay")
+]);
+await settle();
+assert.ok(!document.querySelector(".category-span-note"), "same-family comparisons do not show the qualifier");
 
 // --- Recommendations: accurate explanations ---
 window.WhiskeyCompass.selectProfile("tennessee", "tennessee");
