@@ -631,9 +631,8 @@
           "suntory-highball"
         ]
       },
-      "japanese-bold-blend": {
+      "japan-made-bold-blend": {
         "mods": {},
-        "phenol": "unpeated to lightly peated components depending on the recipe \u2014 check the specific bottling",
         "notes": {
           "Fruit": [
             "dried fruit",
@@ -645,33 +644,30 @@
           ],
           "Spice": [
             "warming spice"
-          ],
-          "Smoke / peat": [
-            "a wisp of smoke from its malt components"
           ]
         },
-        "serve": "Neat, or with a splash of water",
+        "serve": "Neat, with a splash of water, as a highball, or on the rocks",
         "dilution": "Bottled at 51.4% ABV; a splash of water opens the aromatics and softens the heat",
         "ice": "A large cube is workable; many drinkers prefer water to keep the dense flavor intact",
         "glass": "Copita or small tumbler",
-        "ageing": "Married from malt and grain components at higher strength (Nikka's From the Barrel)",
+        "ageing": "Married from malt and grain components \u2014 including selected imported whisky \u2014 at higher strength (Nikka's From the Barrel)",
         "pairings": [
           "dark chocolate",
           "aged cheddar",
           "grilled meats"
         ],
-        "expect": "Bold and full-bodied: dense oak and dried fruit with a warming, higher-strength finish.",
+        "expect": "Bold and full-bodied: dense oak and dried fruit with a warming, higher-strength finish. Includes selected imported whisky (Nikka).",
         "style": {
           "family": "blended",
           "cue": "blended",
-          "label": "Japanese bold blend \u00b7 Full & robust",
-          "method": "Malt-forward blend bottled at high strength after marrying (Nikka From the Barrel)",
-          "effect": "The opposite design goal from the highball blends: intensity over stretchability (Nikka)"
+          "label": "Japan-made bold blend \u00b7 Full & robust",
+          "method": "Malt-forward blend bottled at high strength after marrying; includes selected imported whisky alongside Japanese components (Nikka)",
+          "effect": "Its high strength and concentration keep the flavour dense even when diluted with water or soda (Nikka)"
         },
         "bottles": [
           {
             "name": "Nikka From the Barrel",
-            "note": "Malt-forward blend at 51.4% ABV; bold, dense and full-bodied (Nikka)",
+            "note": "Malt-forward blend at 51.4% ABV; includes selected imported whisky; bold, dense and full-bodied (Nikka)",
             "tag": "bold"
           }
         ],

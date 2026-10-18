@@ -273,18 +273,33 @@ assert.equal(indiaPeated.profile.smoke, 4, "Amrut Fusion expression must chart a
 const japanHighballBlend = window.WhiskeyCompass.combinedProfile("japanese-highball-blend", "japan");
 assert.ok(!japanHighballBlend.regional.bottles.some(b => b.name.includes("Nikka")),
   "the light, highball-oriented blend profile must not include the 51.4% bold Nikka From the Barrel");
-const japanBoldBlend = window.WhiskeyCompass.combinedProfile("japanese-bold-blend", "japan");
+const japanBoldBlend = window.WhiskeyCompass.combinedProfile("japan-made-bold-blend", "japan");
 assert.ok(japanBoldBlend.regional.bottles.some(b => b.name.includes("Nikka From the Barrel")),
   "Nikka From the Barrel must live in the bold blend profile where it belongs");
+// Japan-made labelling and the imported-whisky disclosure are explicit.
+assert.match(japanBoldBlend.style.name, /Japan-made bold blend/i,
+  "the style must be labelled Japan-made, not categorically Japanese");
+assert.ok(!japanBoldBlend.style.name.match(/^Japanese/),
+  "the name must avoid implying the formal Japanese-whisky category");
+assert.ok(String(japanBoldBlend.regional.expect).includes("imported whisky"),
+  "the profile must disclose that it includes selected imported whisky (Nikka)");
+assert.ok(japanBoldBlend.regional.bottles.some(b => b.note.includes("imported whisky")),
+  "the bottle note must disclose the imported-whisky content");
+assert.ok(!japanBoldBlend.regional.notes["Smoke / peat"],
+  "no smoke note without a credible source");
+assert.ok(!japanBoldBlend.regional.phenol,
+  "no peating classification without a credible source");
+assert.ok(String(japanBoldBlend.regional.serve).toLowerCase().includes("highball"),
+  "highball must be a serving option");
 
 // --- Nikka search resolves to the bold blend, not the highball Toki profile ---
 const nikkaResults = await search("nikka");
 assert.ok(nikkaResults.length > 0, "nikka must return a result");
-assert.ok(nikkaResults.every(button => /Japanese bold blend/i.test(button.textContent)),
+assert.ok(nikkaResults.every(button => /Japan-made bold blend/i.test(button.textContent)),
   "nikka must resolve to the bold Nikka From the Barrel profile");
 const ftbResults = await search("from the barrel");
 assert.ok(ftbResults.length > 0, "from the barrel must return a result");
-assert.ok(ftbResults.every(button => /Japanese bold blend/i.test(button.textContent)),
+assert.ok(ftbResults.every(button => /Japan-made bold blend/i.test(button.textContent)),
   "from the barrel must not resolve to the light highball blend");
 const tokiResults = await search("toki");
 assert.ok(tokiResults.length > 0 && tokiResults.every(button => /Japanese highball blend/i.test(button.textContent)),

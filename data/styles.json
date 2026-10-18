@@ -265,20 +265,6 @@
     "finish": 3.5,
     "heat": 2.5
   },
-  "japanese-bold-blend": {
-    "name": "Japanese bold blend",
-    "cue": "blended",
-    "family": "blended",
-    "regionalSignature": false,
-    "body": 4,
-    "smoke": 1,
-    "sweetness": 2.5,
-    "spice": 2.5,
-    "fruit": 3,
-    "oak": 3.5,
-    "finish": 4,
-    "heat": 4
-  },
   "japanese-highball-blend": {
     "name": "Japanese highball blend",
     "cue": "blended",
@@ -292,5 +278,19 @@
     "oak": 2.5,
     "finish": 3,
     "heat": 2.5
+  },
+  "japan-made-bold-blend": {
+    "name": "Japan-made bold blend",
+    "cue": "blended",
+    "family": "blended",
+    "regionalSignature": false,
+    "body": 4,
+    "smoke": 1,
+    "sweetness": 2.5,
+    "spice": 2.5,
+    "fruit": 3,
+    "oak": 3.5,
+    "finish": 4,
+    "heat": 4
   }
 }
