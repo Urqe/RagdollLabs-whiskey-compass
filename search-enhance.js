@@ -48,15 +48,20 @@ async function renderEnhancedCompassSearch() {
   }
   FoodDiscovery.appendGuidance(container, foodQuery);
 
+  const bottleTerms = foodQuery ? foodQuery.split(" ").filter(Boolean) : [];
+
   for (const { item, pairingScore } of matches) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "search-result";
     button.dataset.style = item.styleId;
     button.dataset.region = item.regionId;
-    const matchedBottle = (item.regional.bottles || []).find(bottle =>
-      compassNormalize(bottle.name).includes(foodQuery) ||
-      (window.WhiskeySearch ? WhiskeySearch.parse(input.value).remainder : "").split(" ").every(term => compassNormalize(bottle.name).includes(term)));
+    const matchedBottle = bottleTerms.length
+      ? (item.regional.bottles || []).find(bottle => {
+          const name = compassNormalize(bottle.name);
+          return name.includes(foodQuery) || bottleTerms.every(term => name.includes(term));
+        })
+      : null;
     if (matchedBottle) button.dataset.bottle = matchedBottle.name;
     const title = document.createElement("strong");
     const dot = document.createElement("span");

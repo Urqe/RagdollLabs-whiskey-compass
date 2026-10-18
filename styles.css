@@ -145,6 +145,22 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
 .similar-item .similar-region { display: block; color: var(--gold); font-size: 11px; margin-top: 3px; }
 .similar-item .similar-reason { display: block; color: var(--muted); font-size: 11px; line-height: 1.4; margin-top: 7px; }
 
+/* Whole-map gallery: country sections, each holding a responsive grid of profile cards. */
+.gallery-grid { display: grid; gap: 22px; margin-top: 8px; }
+.gallery-country h3 { margin: 0 0 10px; }
+.gallery-region-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.gallery-card { display: flex; flex-direction: column; gap: 4px; text-align: left; border: 1px solid var(--line); background: var(--surface); color: var(--text); border-radius: 12px; padding: 12px; font: inherit; cursor: pointer; }
+.gallery-card:hover { border-color: var(--gold); }
+.gallery-card-head { display: flex; align-items: center; gap: 7px; }
+.gallery-card-head strong { font: 17px Georgia, serif; }
+.gallery-card-region { color: var(--gold); font-size: 11px; }
+.gallery-card-note { color: var(--muted); font-size: 11px; line-height: 1.4; }
+.gallery-entry { margin: 14px 0 0; }
+.gallery-open-link { background: none; border: 0; padding: 4px 0; color: var(--gold); font: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.gallery-open-link:hover { color: var(--focus); }
+.gallery-sidebar-open { margin-top: 14px; width: 100%; min-height: 40px; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-weight: 700; cursor: pointer; }
+.gallery-sidebar-open:hover { border-color: var(--gold); }
+
 .small { font-size: 12px; color: var(--muted); line-height: 1.45; }
 .hidden { display: none !important; }
 .footer { text-align: center; color: var(--muted); font-size: 11px; padding: 22px 0 6px; }
@@ -169,7 +185,7 @@ h3 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: va
   .bar { grid-template-columns: 82px 1fr 36px; }
   .diff-row { grid-template-columns: 1fr; gap: 3px; }
   .identity-grid { grid-template-columns: 84px 1fr; }
-  .mood-grid, .similar-grid { grid-template-columns: 1fr; }
+  .mood-grid, .similar-grid, .gallery-region-grid { grid-template-columns: 1fr; }
   .section-head { display: block; }
   .browse-toggle { margin-bottom: 8px; }
 }

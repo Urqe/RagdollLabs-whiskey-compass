@@ -73,6 +73,7 @@
     if (!gallery || !shell) return;
     document.getElementById("welcomeView")?.classList.add("hidden");
     document.getElementById("exploreView")?.classList.add("hidden");
+    document.getElementById("emptyView")?.classList.add("hidden");
     gallery.classList.remove("hidden");
     shell.classList.remove("hidden");
     buildGallery();

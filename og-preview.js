@@ -1,4 +1,7 @@
-// Deep-link previews: refresh the og:title/og:description to the open profile.
+// Refreshes og:title/og:description to the open profile. Scope is narrow: link
+// previews in Slack, LinkedIn, Facebook, iMessage etc. read the static tags in
+// index.html without running JavaScript, so this only affects tools that
+// execute the page (e.g. browser extensions or JS-rendering crawlers).
 document.addEventListener("whiskeycompass:profile-selected", event => {
   const { profile } = event.detail;
   if (!profile) return;
