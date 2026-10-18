@@ -1,12 +1,12 @@
-/* Maturity & vintage evolution — optional profile depth, hidden when uncurated. */
+/* Age & maturation — optional profile depth, hidden when uncurated. */
 .maturity { margin-top: 18px; padding-top: 2px; border-top: 1px solid var(--line); }
 .maturity > .small { max-width: 780px; }
 .maturity-stages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 10px; }
-.maturity-stage { background: #120d10; border: 1px solid #302128; border-radius: 12px; padding: 12px; }
+.maturity-stage { background: var(--surface); border: 1px solid #302128; border-radius: 12px; padding: 12px; }
 .maturity-stage h4 { margin: 0 0 7px; color: var(--gold); font: 16px Georgia, serif; }
 .maturity-stage p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-.vintage-note { margin-top: 12px; padding: 11px 13px; border-left: 3px solid var(--wine2); border-radius: 8px; background: #120d10; color: var(--muted); font-size: 12px; line-height: 1.5; }
-.vintage-note strong { color: #e5d8dc; }
+.vintage-note { margin-top: 12px; padding: 11px 13px; border-left: 3px solid var(--wine2); border-radius: 8px; background: var(--surface); color: var(--muted); font-size: 12px; line-height: 1.5; }
+.vintage-note strong { color: var(--text); }
 
 @media (max-width: 760px) {
   .maturity-stages { grid-template-columns: 1fr; }

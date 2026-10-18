@@ -1,19 +1,5 @@
 /* Whisky room visual theme. Loaded last; domain data and interaction stay independent. */
-:root {
-  color-scheme: dark;
-  --bg: #0c1b20;
-  --panel: #173039;
-  --surface: #10252c;
-  --line: #304950;
-  --text: #f3e8d5;
-  --muted: #b9b4aa;
-  --gold: #e9b467;
-  --copper: #d99535;
-  --wine: #a75d36;
-  --wine2: #c77e43;
-  --focus: #f4c986;
-}
-body { background: radial-gradient(ellipse at 0 0, #193943 0, transparent 55%), var(--bg); }
+/* Palette tokens live in styles.css :root; this file layers visual overrides on top. */
 .wrap { max-width: 1480px; padding: 28px; }
 button, input, select { font-family: inherit; }
 button { transition: background-color .18s ease, border-color .18s ease; }
@@ -73,8 +59,6 @@ h1, h2 { color: var(--text); }
 .fill { background: linear-gradient(90deg, #a75d36, #e9b467); }
 .score, .identity-grid dd, .why-cause, .style-cue-badge, .production-choice-head strong { color: var(--text); }
 .pill { background: #10252c; color: var(--muted); }
-select, input[type="search"] { background: #0c1b20; border-color: var(--line); min-height: 44px; font-size: 14px; }
-input[type="search"]::placeholder { color: var(--muted); opacity: 1; }
 .mode button, .browse-toggle button, .mood, .glossary-open { background: var(--panel); color: var(--text); border-color: var(--line); }
 .mode button.on, .browse-toggle button.on { background: var(--copper); color: #172025; border-color: var(--copper); }
 .compare-select-option:hover, .compare-select-option[aria-selected="true"] { background: var(--panel); }

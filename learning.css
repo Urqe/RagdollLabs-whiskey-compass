@@ -1,12 +1,9 @@
 /* RagDollLabs Whiskey Compass — brand split + contextual glossary */
 
-/* Keep the central Labs syllable as the wine-red brand accent. RagDoll and the
-   reference label stay gold-toned so the three adjacent Ls remain legible. */
-.brand-ragdoll { color: var(--gold); }
-.brand-labs { color: #a04460; }
-.brand-reference { color: #bda66f; }
+/* Brand split colors are owned by whisky-room.css; these entries are legacy
+   and kept only where they do not conflict. */
 
-.glossary-open { margin-top: 8px; width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: #110c0f; color: var(--gold); font-weight: 700; cursor: pointer; text-align: left; }
+.glossary-open { margin-top: 8px; width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--gold); font-weight: 700; cursor: pointer; text-align: left; }
 .glossary-open:hover { border-color: var(--gold); }
 
 .glossary-term { display: inline; margin: 0; padding: 0 1px; border: 0; border-bottom: 1px dotted var(--gold); background: transparent; color: inherit; font: inherit; line-height: inherit; cursor: help; }
@@ -22,13 +19,13 @@
 .glossary-close:hover { color: var(--text); border-color: var(--gold); }
 .glossary-dialog > .glossary-dialog-inner > .small { margin: 0; padding: 12px 20px 0; }
 .glossary-content { overflow: auto; padding: 14px 20px 22px; display: grid; gap: 10px; }
-.glossary-entry { padding: 13px 14px; border: 1px solid #302128; border-radius: 12px; background: #120d10; }
+.glossary-entry { padding: 13px 14px; border: 1px solid #302128; border-radius: 12px; background: var(--surface); }
 .glossary-entry h3 { margin: 0 0 7px; font: 18px Georgia, serif; text-transform: none; letter-spacing: 0; color: var(--gold); }
-.glossary-entry p { margin: 0; color: #dacdd1; font-size: 13px; line-height: 1.5; }
+.glossary-entry p { margin: 0; color: var(--text); font-size: 13px; line-height: 1.5; }
 .glossary-entry .glossary-why { margin-top: 8px; color: var(--muted); }
-.glossary-entry-focused { border-color: rgba(201,171,107,.5); }
-.glossary-browse-all { justify-self: start; margin-top: 2px; padding: 8px 10px; border: 1px solid var(--gold); border-radius: 9px; background: rgba(201,171,107,.08); color: var(--gold); cursor: pointer; }
-.glossary-browse-all:hover { background: rgba(201,171,107,.15); }
+.glossary-entry-focused { border-color: rgba(233,180,103,.5); }
+.glossary-browse-all { justify-self: start; margin-top: 2px; padding: 8px 10px; border: 1px solid var(--gold); border-radius: 9px; background: rgba(233,180,103,.08); color: var(--gold); cursor: pointer; }
+.glossary-browse-all:hover { background: rgba(233,180,103,.15); }
 
 @media (max-width: 620px) {
   .glossary-dialog { width: calc(100vw - 18px); max-height: 86vh; border-radius: 16px; margin: auto 9px 9px; }

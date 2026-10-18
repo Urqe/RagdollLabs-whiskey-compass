@@ -24,7 +24,7 @@
 .welcome-discoveries .meta { display: block; color: var(--muted); font-size: 10px; margin-top: 4px; }
 
 /* The landing page can be cinematic; once inside the app the masthead gets out
-   of the way so the wine itself becomes the first visual priority. */
+   of the way so the whiskey itself becomes the first visual priority. */
 #appShell .app-masthead { padding: 16px 22px; border-radius: 18px; min-height: 0; }
 #appShell .app-masthead h1 { font-size: clamp(28px,3vw,42px); margin: 4px 0 3px; line-height: 1; }
 #appShell .app-masthead .tagline { font-size: 14px; }
@@ -48,7 +48,7 @@
 .style-cue-dot.pot-still { background: #3f7d5a; }
 .style-cue-dot.tennessee { background: #6b4a2f; }
 .style-cue-dot.corn { background: #d9b95c; }
-.style-cue-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: #d8cbd0; font-size: 10px; white-space: nowrap; }
+.style-cue-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); font-size: 10px; white-space: nowrap; }
 .search-result .style-cue-dot, .similar-item .style-cue-dot, .welcome-discoveries .style-cue-dot { display: inline-block; vertical-align: -1px; margin-right: 5px; width: 8px; height: 8px; }
 
 .sidebar-primary + .sidebar-primary { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
@@ -69,11 +69,11 @@
 .production { margin-top: 16px; }
 .production > .small { margin-top: -4px; }
 .production-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 10px; }
-.production-choice { background: #120d10; border: 1px solid #302128; border-radius: 12px; padding: 12px; }
+.production-choice { background: var(--surface); border: 1px solid #302128; border-radius: 12px; padding: 12px; }
 .production-choice-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.production-choice-head strong { font-size: 13px; color: #eadfe2; }
+.production-choice-head strong { font-size: 13px; color: var(--text); }
 .production-prevalence { flex: 0 0 auto; padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--gold); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; }
-.production-context { margin-top: 6px; color: #c6b6bb; font-size: 10px; font-style: italic; }
+.production-context { margin-top: 6px; color: var(--muted); font-size: 10px; font-style: italic; }
 .production-choice p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
 /* The default profile answers "what is this like?" first. Deeper educational
@@ -85,12 +85,8 @@
 .profile-learning-content { display: grid; gap: 18px; padding-top: 12px; }
 .learning-section + .learning-section { border-top: 1px solid #2d1e24; padding-top: 4px; }
 .learning-section > h3:first-child { margin-top: 8px; }
-.ageing-snapshot { max-width: 440px; }
-.ageing-snapshot .box { margin-top: 2px; }
 .profile-learning .sources { margin-top: 0; }
 
-/* Ageing moves into Learn more, leaving serving guidance as three concise cards. */
-.serve { grid-template-columns: repeat(3,1fr); }
 
 .similar-back-slot { min-height: 0; margin: 2px 0 12px; }
 .similar-back { border: 0; padding: 0; background: transparent; color: var(--gold); font: inherit; font-size: 11px; cursor: pointer; text-align: left; }
@@ -108,8 +104,8 @@
 .compare-region-field { position: relative; }
 .compare-select { position: relative; }
 .compare-select-trigger { width: 100%; min-height: 58px; padding: 10px 42px 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; text-align: left; border: 1px solid var(--line); border-radius: 10px; background: #100c0e; color: var(--text); cursor: pointer; }
-.compare-select-trigger:hover { border-color: #5a3d48; }
-.compare-select-trigger[aria-expanded="true"] { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(201,171,107,.16); }
+.compare-select-trigger:hover { border-color: var(--gold); }
+.compare-select-trigger[aria-expanded="true"] { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(233,180,103,.16); }
 .compare-select-trigger:focus-visible, .compare-select-option:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .compare-select-value { min-width: 0; display: grid; gap: 2px; }
 .compare-select-name { display: block; font-size: 14px; color: var(--text); line-height: 1.25; }

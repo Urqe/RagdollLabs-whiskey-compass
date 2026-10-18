@@ -6,7 +6,8 @@
     "check:syntax": "node scripts/check-syntax.mjs",
     "validate:data": "python3 scripts/validate.py",
     "test": "node tests/dom-smoke.mjs && node tests/hardening.mjs && node tests/validator-integrity.mjs",
-    "validate": "npm run check:syntax && npm run validate:data && npm test"
+    "validate": "npm run check:syntax && npm run check:css && npm run validate:data && npm test",
+    "check:css": "python3 scripts/check-css.py"
   },
   "devDependencies": {
     "jsdom": "^26.1.0"

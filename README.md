@@ -27,13 +27,16 @@ inside that region's copy. The glossary explains the convention.
 
 - **Welcome experience** — first-time visitors start from a minimal landing page
 - **Three entry paths** — explore by style family or place, search, or surprise me
-- **Style families** — the wine atlas's grape axis becomes whiskey's style family:
-  single malt, peated malt, bourbon, wheated bourbon, rye, Tennessee, pot still, blended
+- **Style families and peat levels** — expressions are separated by production
+  peating (unpeated, lightly peated, heavily peated) and cask influence;
+  every profile declares its phenol classification explicitly
+- **How to drink it** — whiskey-native serving guidance per profile: water & ABV
+  dilution, ice & highball suitability, glassware
 - **Country → Region → Style hierarchy** — Scotland (Islay, Speyside, Highlands, Lowlands,
   Campbeltown, Islands), USA (Kentucky, Tennessee), Ireland, Japan, Canada, plus emerging
   India, Taiwan and England
 - **Sensory profile** — body, peat & smoke, sweetness, spice, fruit, oak, finish length and
-  ABV feel on a 0–5 scale
+  ABV feel on a 0–5 editorial scale, explicitly disclosed as comparative judgement
 - **Notable bottles** — each regional profile carries curated example bottles
   (Laphroaig 10, Macallan 12 Sherry Oak, Elijah Craig…) with a one-line character note.
   No prices or scores: they rot; character notes don't
@@ -47,7 +50,14 @@ inside that region's copy. The glossary explains the convention.
   mizunara oak, worm tubs, chill filtration…
 - **Whiskey-appropriate pairings** — chocolate, cheese, BBQ, smoked fish: intensity-matched
   rather than wine-style acid matching
-- **Compare mode** — within-family comparisons with ranked Biggest differences
+- **Compare mode** — comparison-group matching with "What sets them apart"
+  flavor-language differences; Japanese and Indian malts never labelled Scotch
+- **Recommendations in flavor language** — "If you like this, try" describes
+  what you'll taste, derived from the expressions' actual scores, never geography
+- **Sourcing & governance** — every region carries at least two credible sources;
+  profile-level citations validated against sources.json; producer product pages
+  for specific claims; editorial vs sourced facts kept distinct; validation
+  rejects absolute serving directives and out-of-range combined scores
 - **Locator maps** — local SVG maps, no tile service or tracking
 
 ## Data model
@@ -58,7 +68,7 @@ defined in `data/`:
 - `styles.json` — style families with base sensory metrics
 - `regions-classics-scotland.json`, `regions-classics-world.json`, `regions-discovery.json` —
   regional profiles with mods, notes, serve guidance, pairings, why-rules, identity and bottles
-- `glossary.json`, `why-rules.json`, `maturity.json`, `winemaking.json` (production choices),
+- `glossary.json`, `why-rules.json`, `maturity.json`, `production.json` (production choices),
   `whiskey-search.json`, `food-aliases.json`, `food-dishes.json`, `locators.json`, `sources.json`
 
 ## Development

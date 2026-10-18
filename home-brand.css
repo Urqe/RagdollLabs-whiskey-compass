@@ -4,26 +4,24 @@
 .brand-home-link:hover .brand-ragdoll, .brand-home-link:hover .brand-labs { filter: brightness(1.12); }
 .brand-home-link:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 
-/* The landing mascot is drawn inside whiskey-glass.svg, before the foreground
-   table/glassware layers. This transparent hit target keeps the cat clickable
-   without placing a second cat image over the wine glass and decanter. */
-.welcome-ragdoll-link { position: absolute; z-index: 3; right: 5.5%; bottom: 12%; width: 17%; height: 50%; display: block; border-radius: 46% 46% 24% 24%; cursor: pointer; }
-.welcome-ragdoll-link:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
+
+
+
 
 .app-home-cat { margin-left: auto; width: 72px; height: 82px; display: grid; place-items: end center; overflow: hidden; border-radius: 18px; text-decoration: none; }
 .app-home-cat img { width: 72px; height: auto; transform: translateY(19px); transition: transform .18s ease; }
 .app-home-cat:hover img { transform: translateY(15px); }
 .app-home-cat:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 
-.smart-discovery-label { display: inline-flex; align-self: start; margin-bottom: 5px; padding: 3px 7px; border: 1px solid rgba(201,171,107,.28); border-radius: 999px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.smart-discovery-label { display: inline-flex; align-self: start; margin-bottom: 5px; padding: 3px 7px; border: 1px solid rgba(233,180,103,.28); border-radius: 999px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .smart-similar-item { align-content: start; }
 
 @media (max-width: 980px) {
-  .welcome-ragdoll-link { right: 3%; bottom: 10%; width: 20%; height: 46%; }
+  
 }
 
 @media (max-width: 620px) {
-  .welcome-ragdoll-link { right: 1%; bottom: 8%; width: 27%; height: 38%; }
+  
   .app-home-cat { width: 52px; height: 58px; }
   .app-home-cat img { width: 52px; transform: translateY(14px); }
 }
@@ -43,7 +41,7 @@
 .food-guidance a { color: var(--gold); white-space: nowrap; }
 @media (max-width: 980px) {
   .welcome-hero { padding-bottom: 240px; background-size: 100% 100%, 100% 300px; background-position: center, right bottom; background-color: #0c0a08; }
-  .welcome-ragdoll-link { width: 120px; height: 140px; right: 32px; bottom: 50px; }
+  
 }
 @media (max-width: 620px) {
   /* Reserve a separate strip for the scene rather than cropping the cat off-screen. */
@@ -53,5 +51,5 @@
   .welcome-copy > p { font-size: 14px; }
   .welcome-name { font-size: clamp(44px,12vw,64px); }
   .welcome-brand { font-size: 28px; }
-  .welcome-ragdoll-link { width: 100px; height: 110px; right: 28px; bottom: 46px; }
+  
 }
