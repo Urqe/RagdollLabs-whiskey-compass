@@ -203,12 +203,23 @@ def main() -> None:
     extra_locators = set(locators) - set(regions)
     assert not extra_locators, f"locator entries without regions: {sorted(extra_locators)}"
 
-    # Governance: every region needs at least two distinct sources.
+    # Governance: every region needs at least two distinct sources, and every
+    # profile-level source ID must resolve against sources.json.
     for region_id, region in regions.items():
         region_sources = set(region.get("sources", []))
-        profile_sources = {sid for styles_ in [region.get("styles", {})] for sid, p in styles_.items() for sid in [sid] if p.get("sources")}
-        all_sources = region_sources | profile_sources
         assert len(region_sources) >= 2, f"{region_id}: needs at least 2 region-level sources (governance rule)"
+        for source_id in region_sources:
+            assert source_id in sources, f"{region_id}: unknown region source {source_id}"
+        for style_id, profile in region["styles"].items():
+            for source_id in profile.get("sources", []):
+                assert source_id in sources, f"{region_id}/{style_id}: unknown profile source {source_id}"
+
+    # Governance: combined metric scores (base + mods) must stay within 0-5 before clamping.
+    for region_id, region in regions.items():
+        for style_id, profile in region["styles"].items():
+            for metric, modifier in profile.get("mods", {}).items():
+                combined = styles[style_id][metric] + modifier
+                assert 0 <= combined <= 5, f"{region_id}/{style_id}: combined {metric} score {combined} out of range before clamping — recalibrate base or mod"
 
     # Governance: no absolute serving/maturation directives in profile fields.
     # Contextual absolutes inside historical or legal statements are allowed via the whitelist.

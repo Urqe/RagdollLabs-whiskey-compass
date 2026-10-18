@@ -186,5 +186,9 @@
   "kavalan-solist": {
     "name": "Kavalan Solist \u2014 cask-strength single cask range",
     "url": "https://www.kavalanwhisky.com/en/products/solist/"
+  },
+  "rampur": {
+    "name": "Rampur Single Malt \u2014 Double Cask product page (Radico Kaithal)",
+    "url": "https://rampursinglemalt.com/double-cask/"
   }
 }

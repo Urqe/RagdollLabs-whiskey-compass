@@ -492,62 +492,6 @@
     "climate": "Four distinct seasons; cold winters, humid summers",
     "summary": "Malt whisky built on Scottish methods with local precision; styles range from unpeated fruit-forward flagships to clean, lightly peated forest expressions.",
     "styles": {
-      "japanese-malt": {
-        "mods": {},
-        "phenol": "unpeated in the Yamazaki house style; Hakushu uses light peating \u2014 check the specific expression",
-        "notes": {
-          "Fruit": [
-            "pear",
-            "citrus",
-            "peach"
-          ],
-          "Oak / ageing": [
-            "mizunara oak (long-matured editions)",
-            "vanilla"
-          ],
-          "Floral": [
-            "blossom"
-          ],
-          "Earth / savory": [
-            "pine (Hakushu)"
-          ]
-        },
-        "serve": "Neat, or mizuwari (a little water)",
-        "dilution": "Flagships are typically 43% ABV; a few drops of water can soften the heat, though many drinkers take these neat",
-        "ice": "Ice is uncommon for malts in Japan; the highball tradition centres on the blends",
-        "glass": "Copita or small tumbler",
-        "ageing": "12-year flagships are the classic reference points; no-age-statement editions vary more batch to batch",
-        "pairings": [
-          "sashimi",
-          "mild cheeses",
-          "dark chocolate",
-          "yakitori"
-        ],
-        "expect": "Refined and aromatic: orchard fruit over delicate oak; the peated Hakushu expressions add a clean, gentle smoke.",
-        "style": {
-          "family": "malt",
-          "cue": "malt",
-          "label": "Japanese malt \u00b7 Refined & aromatic",
-          "method": "Scottish-style pot distillation; mizunara oak appears mainly in long-matured or premium editions",
-          "effect": "Mizunara is a leak-prone, slow-growing oak historically used when imported casks were scarce; coopered carefully, it contributes sandalwood and incense-like aromas (Suntory)"
-        },
-        "bottles": [
-          {
-            "name": "Yamazaki 12",
-            "note": "Unpeated flagship: fruit, subtle oak spice and balance (Suntory)",
-            "tag": "unpeated"
-          },
-          {
-            "name": "Hakushu 12",
-            "note": "Lightly peated: pine, mint and a clean gentle smoke (Suntory)",
-            "tag": "lightly peated"
-          }
-        ],
-        "sources": [
-          "suntory-mizunara",
-          "nikka-ref"
-        ]
-      },
       "japanese-blended": {
         "mods": {},
         "notes": {
@@ -563,7 +507,7 @@
             "faint smoke"
           ]
         },
-        "serve": "Mizuwari (with water), on the rocks, or as a highball",
+        "serve": "As a highball (whisky and soda over ice), mizuwari, or on the rocks",
         "glass": "Highball glass",
         "ageing": "Blends of various ages; core ranges carry no age statement",
         "pairings": [
@@ -585,18 +529,106 @@
             "name": "Suntory Toki",
             "note": "Built for the highball boom: light, crisp, citrusy",
             "tag": "highball"
-          },
-          {
-            "name": "Nikka From the Barrel",
-            "note": "Cask-strength blend at 51.4% ABV with bold malt-forward character",
-            "tag": "bold"
           }
         ],
-        "dilution": "Core-range blends are typically around 40\u201343%; they are blended to stay balanced when stretched with water or soda",
-        "ice": "The highball (whiskey and soda over ice) is the signature serve for these blends in Japan",
+        "dilution": "Core-range blends are typically 40\u201343% and blended to stay balanced when stretched; mizuwari uses roughly one part whisky to two parts water",
+        "ice": "The highball is the signature serve for this style in Japan; Suntory recommends its blends for highballs",
         "sources": [
           "suntory-mizunara",
-          "nikka-ref"
+          "jwa"
+        ]
+      },
+      "japanese-malt-unpeated": {
+        "mods": {},
+        "phenol": "unpeated \u2014 the Yamazaki house style",
+        "notes": {
+          "Fruit": [
+            "pear",
+            "peach",
+            "citrus"
+          ],
+          "Oak / ageing": [
+            "mizunara oak (long-matured editions)",
+            "vanilla"
+          ],
+          "Floral": [
+            "blossom"
+          ]
+        },
+        "serve": "Neat, with a few drops of water, or on the rocks",
+        "dilution": "Typically 43% ABV; a few drops of water soften the heat. Mizuwari (roughly one part whisky to two parts water) is a traditional way to open aromatics",
+        "ice": "Suntory recommends its malt whiskies on the rocks and in highballs as well as neat \u2014 follow the expression and your own taste",
+        "glass": "Copita or small tumbler",
+        "ageing": "12-year flagships are the classic reference points; no-age-statement editions vary more batch to batch",
+        "pairings": [
+          "sashimi",
+          "mild cheeses",
+          "dark chocolate"
+        ],
+        "expect": "Refined and fruity: orchard and stone fruit over delicate oak, with no peat smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Japanese unpeated malt \u00b7 Refined & fruity",
+          "method": "Scottish-style pot distillation; mizunara oak appears mainly in long-matured or premium editions (Suntory)",
+          "effect": "Mizunara is a leak-prone, slow-growing oak historically used when imported casks were scarce; coopered carefully, it contributes sandalwood and incense-like aromas (Suntory)"
+        },
+        "bottles": [
+          {
+            "name": "Yamazaki 12",
+            "note": "Unpeated flagship: fruit, subtle oak spice and balance (Suntory)",
+            "tag": "unpeated"
+          }
+        ],
+        "sources": [
+          "suntory-mizunara",
+          "jwa"
+        ]
+      },
+      "japanese-malt-peated": {
+        "mods": {},
+        "phenol": "lightly peated \u2014 the Hakushu house style",
+        "notes": {
+          "Smoke / peat": [
+            "gentle, clean peat"
+          ],
+          "Fruit": [
+            "citrus",
+            "green apple"
+          ],
+          "Earth / savory": [
+            "pine",
+            "mint"
+          ]
+        },
+        "serve": "Neat, with a few drops of water, or on the rocks",
+        "dilution": "Typically 43% ABV; a few drops of water soften the heat",
+        "ice": "Suntory explicitly recommends Hakushu on the rocks and in highballs (Suntory's Hakushu serving suggestions)",
+        "glass": "Copita or small tumbler",
+        "ageing": "12-year flagship is the reference point",
+        "pairings": [
+          "yakitori",
+          "smoked fish",
+          "mild cheeses"
+        ],
+        "expect": "Forest freshness with gentle, clean peat: pine and mint over soft smoke.",
+        "style": {
+          "family": "malt",
+          "cue": "malt",
+          "label": "Japanese lightly peated malt \u00b7 Forest & mint",
+          "method": "Lightly peated barley, pot distillation (Suntory's Hakushu)",
+          "effect": "Hakushu's light peating reads clean and green rather than medicinal"
+        },
+        "bottles": [
+          {
+            "name": "Hakushu 12",
+            "note": "Lightly peated: pine, mint and clean gentle smoke (Suntory)",
+            "tag": "lightly peated"
+          }
+        ],
+        "sources": [
+          "suntory-mizunara",
+          "jwa"
         ]
       }
     },

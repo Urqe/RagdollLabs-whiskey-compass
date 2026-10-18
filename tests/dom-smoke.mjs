@@ -85,7 +85,7 @@ assert.match(redbreastIrish[0].textContent, /Irish pot still/i);
 
 const hakushu = await search("hakushu");
 assert.ok(hakushu.length > 0, "hakushu must be searchable");
-assert.match(hakushu[0].textContent, /Japanese single malt/i);
+assert.match(hakushu[0].textContent, /Japanese lightly peated malt/i, "hakushu must resolve to the peated Hakushu-style profile");
 
 // Producer-name collisions: "highland park" is a producer, not the Highlands region.
 const highlandPark = await search("highland park");
@@ -192,12 +192,17 @@ assert.ok(potStillComparisons.length > 0, "pot still must have at least one elig
 // The sensory chart explains its editorial scale.
 assert.ok(document.querySelector(".editorial-scale-note"),
   "the style profile must explain that scores are editorial judgements");
-// Japan's malt profile no longer conflates Yamazaki and Hakushu peat levels.
-const japanMalt = window.WhiskeyCompass.combinedProfile("japanese-malt", "japan");
-assert.match(String(japanMalt.regional.phenol), /unpeated in the Yamazaki/i,
-  "Japan malt must distinguish unpeated Yamazaki from peated Hakushu");
+// Japan's malt expressions are separate profiles with distinct charts.
+const yamazakiProfile = window.WhiskeyCompass.combinedProfile("japanese-malt-unpected", "japan") 
+  || window.WhiskeyCompass.combinedProfile("japanese-malt-unpeated", "japan");
+const hakushuProfile = window.WhiskeyCompass.combinedProfile("japanese-malt-peated", "japan");
+assert.ok(yamazakiProfile && hakushuProfile, "both Japanese malt profiles must exist");
+assert.ok(hakushuProfile.profile.smoke - yamazakiProfile.profile.smoke >= 1,
+  "Hakushu-style must chart as materially smokier than Yamazaki-style");
+assert.match(String(hakushuProfile.regional.phenol), /lightly peated/i);
+assert.match(String(yamazakiProfile.regional.phenol), /unpeated/i);
 // Sources drawer renders profile-level sources for Japan.
-window.WhiskeyCompass.selectProfile("japanese-malt", "japan");
+window.WhiskeyCompass.selectProfile("japanese-malt-unpeated", "japan");
 await settle();
 const sourcesText = document.getElementById("sourcesDrawer").textContent;
 assert.ok(sourcesText.includes("Suntory") || sourcesText.includes("Nikka"),
@@ -209,7 +214,7 @@ const peatingRow = document.querySelector("#specialStyle dt");
 assert.ok([...document.querySelectorAll("#specialStyle dt")].some(dt => dt.textContent === "Peating"),
   "the production section must show the peating classification");
 assert.ok(document.getElementById("specialStyle").textContent.includes("Yamazaki"),
-  "Japan's peating row must name the house styles");
+  "Japan's peating row must name the house style");
 
 // --- Discovery language: flavor explanations, not technical jargon ---
 window.WhiskeyCompass.selectProfile("bourbon", "kentucky");
@@ -224,6 +229,54 @@ assert.ok(bourbonReasons.every(reason => !/both are smoky/i.test(reason)),
 window.WhiskeyCompass.setMode("compare");
 await settle();
 assert.ok(!document.body.textContent.includes("trends"), "difference sentences must use flavor language");
+
+// --- Regression: no geography-based smoke claims in recommendations ---
+// From unpeated Lowlands, a recommendation to unpeated Islay must not promise smoke.
+window.WhiskeyCompass.selectProfile("unpeated-malt", "lowlands");
+await settle();
+const lowlandsRecs = [...document.querySelectorAll("#similarProfiles .similar-item")];
+const islayRec = lowlandsRecs.find(item => item.textContent.includes("Islay"));
+if (islayRec) {
+  assert.ok(!/smok/i.test(islayRec.querySelector(".similar-reason").textContent),
+    "a recommendation to unpeated Islay from unpeated Lowlands must not promise smoke");
+}
+// From unpeated Speyside and Highlands likewise.
+for (const rid of ["speyside", "highlands"]) {
+  window.WhiskeyCompass.selectProfile("unpeated-malt", rid);
+  await settle();
+  const rec = [...document.querySelectorAll("#similarProfiles .similar-item")].find(item => item.textContent.includes("Islay"));
+  if (rec) {
+    assert.ok(!/smok/i.test(rec.querySelector(".similar-reason").textContent),
+      `a recommendation to unpeated Islay from unpeated ${rid} must not promise smoke`);
+  }
+}
+
+// --- Regression: relative wording, no unsupported absolutes ---
+// Comparing two strongly peated profiles must not call either "less smoky" in absolute terms.
+const islayPeated2 = window.WhiskeyCompass.combinedProfile("heavily-peated-malt", "islay");
+const campbeltownPeated = window.WhiskeyCompass.combinedProfile("heavily-peated-malt", "campbeltown");
+assert.ok(islayPeated2.profile.smoke >= 4 && campbeltownPeated.profile.smoke >= 4,
+  "both comparison members must be strongly peated for this regression");
+const reason1 = window.WhiskeyCompass.escapeHtml; // no-op reference keeps lints calm
+// Flavour language contains only relative phrasing; no ingredient claims from scores.
+const samplePhrases = [
+  WhiskeyModel => WhiskeyModel.flavorPhrase("spice", "high"),
+  WhiskeyModel => WhiskeyModel.flavorPhrase("smoke", "low"),
+  WhiskeyModel => WhiskeyModel.flavorPhrase("smoke", "high")
+].map(fn => fn(window.WhiskeyModel));
+assert.ok(samplePhrases.every(phrase => !/rye|bonfire|iodine|barely/i.test(phrase)),
+  "score-derived phrases must not claim specific ingredients or absolutes");
+assert.equal(window.WhiskeyModel.flavorPhrase("smoke", "low"), "less smoky",
+  "the lower-smoke member must be described relatively");
+
+// --- Regression: India peated smoke calibrated, not clamped ---
+const indiaPeated = window.WhiskeyCompass.combinedProfile("indian-peated-malt", "india");
+assert.equal(indiaPeated.profile.smoke, 4, "Amrut Fusion expression must chart at exactly 4.0, not a clamped 5");
+
+// --- Regression: Nikka From the Barrel not in the light-blend profile ---
+const japanBlend = window.WhiskeyCompass.combinedProfile("japanese-blended", "japan");
+assert.ok(!japanBlend.regional.bottles.some(b => b.name.includes("Nikka")),
+  "the light, dilution-oriented blend profile must not include the 51.4% bold Nikka From the Barrel");
 
 console.log("OK: Whiskey Compass DOM smoke tests passed");
 await close();

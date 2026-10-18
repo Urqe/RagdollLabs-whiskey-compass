@@ -43,18 +43,18 @@
           "family": "malt",
           "cue": "malt",
           "label": "Indian malt (unpeated) \u00b7 Tropical richness",
-          "method": "Scottish-style pot distillation; ex-bourbon casks with sherry finishing common (Rampur Double Wood)",
+          "method": "Scottish-style pot distillation; ex-bourbon casks finished in sherry casks (Rampur Double Cask, Radico Kaithal)",
           "effect": "Sustained tropical heat speeds the spirit's interaction with oak, concentrating flavor faster than in Scotland \u2014 the mechanism is physical, not a shortcut to identical complexity"
         },
         "bottles": [
           {
-            "name": "Rampur Double Wood",
-            "note": "Unpeated, sherry-finished Himalayan-region malt",
+            "name": "Rampur Double Cask",
+            "note": "Unpeated, sherry-finished Himalayan-region malt (Radico Kaithal)",
             "tag": "unpeated"
           }
         ],
         "sources": [
-          "amrut-ref"
+          "rampur"
         ]
       },
       "indian-peated-malt": {
@@ -62,7 +62,7 @@
           "oak": 0.5,
           "fruit": 0.5,
           "body": 0.5,
-          "smoke": 3.5
+          "smoke": 0.5
         },
         "phenol": "peated \u2014 Amrut Fusion marries peated and unpeated barley (Amrut's published notes describe pronounced peat)",
         "notes": {

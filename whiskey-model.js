@@ -27,14 +27,14 @@ window.WhiskeyModel = (() => {
   const compareGroupLabel = item => COMPARE_GROUP_LABELS[compareGroup(item)] || familyKey(item);
   const compatible = (a, b) => Boolean(a && b && compareGroup(a) === compareGroup(b));
   const FLAVOR_LANGUAGE = {
-    body: { high: "fuller and weightier on the tongue", low: "lighter and easier-sipping", shared: "full-bodied and weighty" },
-    smoke: { high: "smokier, with more bonfire and peat", low: "cleaner, with barely any smoke", shared: "smoky, with bonfire peat" },
-    sweetness: { high: "sweeter, more honey and caramel", low: "drier, less sweet", shared: "sweet with honey and caramel" },
-    spice: { high: "spicier, with more rye kick and pepper", low: "softer, with gentle spice", shared: "spicy, with rye kick and pepper" },
-    fruit: { high: "fruitier, more orchard and dried fruit", low: "more restrained on fruit", shared: "fruity, orchard and dried fruit" },
-    oak: { high: "more oak-driven, with more vanilla and wood spice", low: "less oak influence, more spirit character", shared: "oak-driven, with vanilla and wood spice" },
-    finish: { high: "longer-finishing, flavors that linger", low: "shorter, quicker finish", shared: "long-finishing" },
-    heat: { high: "hotter, more alcohol burn", low: "gentler, smoother to sip", shared: "warm with a gentle burn" }
+    body: { high: "fuller-bodied", low: "lighter-bodied", shared: "full-bodied" },
+    smoke: { high: "smokier", low: "less smoky", shared: "smoky" },
+    sweetness: { high: "sweeter", low: "drier", shared: "sweet" },
+    spice: { high: "spicier", low: "softer in spice", shared: "spicy" },
+    fruit: { high: "fruitier", low: "more restrained on fruit", shared: "fruity" },
+    oak: { high: "more oak-driven", low: "less oak-influenced", shared: "oak-driven" },
+    finish: { high: "longer-finishing", low: "shorter-finishing", shared: "long-finishing" },
+    heat: { high: "hotter on the palate", low: "gentler", shared: "warm" }
   };
   Object.freeze(FLAVOR_LANGUAGE);
   const flavorPhrase = (key, direction) => FLAVOR_LANGUAGE[key]?.[direction] || key;

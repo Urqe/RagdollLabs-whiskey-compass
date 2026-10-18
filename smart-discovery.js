@@ -13,9 +13,22 @@ function smartDistance(a, b) {
 }
 
 function smartCompatibilityKey(item) { return WhiskeyModel.compareGroup(item); }
-function itemRegionFlavor(item) {
+function itemRegionFlavor(current, item) {
+  // Explanations derive from the expressions' actual scores, never from geography.
   if (!item) return "elsewhere";
-  return item.region.name === "Islay" ? "with more sea and smoke" : `from ${item.region.name}`;
+  const contrasts = [];
+  const smokeDiff = (item.profile.smoke || 0) - (current.profile.smoke || 0);
+  if (smokeDiff >= 1.5) contrasts.push("noticeably smokier");
+  else if (smokeDiff <= -1.5) contrasts.push("cleaner, with less smoke");
+  const bodyDiff = (item.profile.body || 0) - (current.profile.body || 0);
+  if (bodyDiff >= 1.5) contrasts.push("fuller-bodied");
+  else if (bodyDiff <= -1.5) contrasts.push("lighter");
+  const oakDiff = (item.profile.oak || 0) - (current.profile.oak || 0);
+  if (oakDiff >= 1.5) contrasts.push("more oak-driven");
+  const sweetDiff = (item.profile.sweetness || 0) - (current.profile.sweetness || 0);
+  if (sweetDiff >= 1.5) contrasts.push("sweeter");
+  const descriptor = contrasts.length ? contrasts.slice(0, 2).join(" and ") : "a different regional character";
+  return `from ${item.region.name}, ${descriptor}`;
 }
 function smartAppearance(item) { return WhiskeyModel.cue(item); }
 
@@ -55,7 +68,7 @@ function smartRecommendations(current) {
 
   const sameStyle = smartPick(compatible, used, item => item.styleId === current.styleId);
   if (sameStyle) {
-    add(sameStyle, "same-style", "Same style, different place", `Same kind of whiskey, but ${itemRegionFlavor(sameStyle)} — taste how the place changes it.`);
+    add(sameStyle, "same-style", "Same style, different place", `Same kind of whiskey, but ${itemRegionFlavor(current, sameStyle)} — taste how the place changes it.`);
   }
 
   const sameFamily = smartPick(compatible, used, item => item.styleId !== current.styleId);

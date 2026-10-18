@@ -5,7 +5,7 @@
   "scripts": {
     "check:syntax": "node scripts/check-syntax.mjs",
     "validate:data": "python3 scripts/validate.py",
-    "test": "node tests/dom-smoke.mjs && node tests/hardening.mjs",
+    "test": "node tests/dom-smoke.mjs && node tests/hardening.mjs && node tests/validator-integrity.mjs",
     "validate": "npm run check:syntax && npm run validate:data && npm test"
   },
   "devDependencies": {

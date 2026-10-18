@@ -181,20 +181,6 @@
     "finish": 3,
     "heat": 2.5
   },
-  "japanese-malt": {
-    "name": "Japanese single malt",
-    "cue": "malt",
-    "family": "malt",
-    "regionalSignature": false,
-    "body": 3,
-    "smoke": 1,
-    "sweetness": 2,
-    "spice": 2,
-    "fruit": 2.5,
-    "oak": 3,
-    "finish": 3.5,
-    "heat": 2.5
-  },
   "canadian-blended": {
     "name": "Canadian blended",
     "cue": "blended",
@@ -264,5 +250,33 @@
     "oak": 3.5,
     "finish": 3.5,
     "heat": 3
+  },
+  "japanese-malt-unpeated": {
+    "name": "Japanese unpeated malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3,
+    "smoke": 0.5,
+    "sweetness": 2,
+    "spice": 2,
+    "fruit": 3,
+    "oak": 3,
+    "finish": 3.5,
+    "heat": 2.5
+  },
+  "japanese-malt-peated": {
+    "name": "Japanese lightly peated malt",
+    "cue": "malt",
+    "family": "malt",
+    "regionalSignature": false,
+    "body": 3,
+    "smoke": 2,
+    "sweetness": 2,
+    "spice": 2,
+    "fruit": 2.5,
+    "oak": 3,
+    "finish": 3.5,
+    "heat": 2.5
   }
 }
