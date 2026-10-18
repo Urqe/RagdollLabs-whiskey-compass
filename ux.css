@@ -11,7 +11,7 @@
 .welcome-copy h1 { max-width: 760px; }
 .welcome-copy .tagline { font-size: clamp(20px,3vw,30px); max-width: 700px; }
 .welcome-copy > p { max-width: 650px; color: var(--muted); line-height: 1.6; font-size: 15px; }
-.welcome-actions { margin-top: 28px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; max-width: 650px; }
+.welcome-actions { margin-top: 28px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; max-width: 560px; }
 .welcome-action { min-height: 96px; padding: 14px; text-align: left; border: 1px solid rgba(217,164,78,.26); border-radius: 14px; background: rgba(12,9,7,.78); color: var(--text); cursor: pointer; backdrop-filter: blur(8px); }
 .welcome-action:hover { border-color: var(--gold); background: rgba(24,18,12,.92); transform: translateY(-1px); }
 .welcome-action strong { display: block; color: var(--gold); font-size: 13px; }

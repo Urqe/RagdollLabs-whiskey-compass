@@ -18,7 +18,7 @@ async function search(query) {
 }
 
 // Focused shell: one visible Explore search, secondary discovery and learning collapsed.
-assert.equal(document.querySelectorAll("[data-welcome-action]").length, 3);
+assert.equal(document.querySelectorAll("[data-welcome-action]").length, 4);
 assert.ok(document.getElementById("discoverTools") instanceof window.HTMLDetailsElement);
 assert.equal(document.getElementById("discoverTools").open, false);
 assert.ok(document.getElementById("learnMore") instanceof window.HTMLDetailsElement);
