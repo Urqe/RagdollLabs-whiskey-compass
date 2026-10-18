@@ -17,12 +17,12 @@ const CLASSIC_WEIGHT = 1;
 const INITIAL_ROUTE = new URL(window.location.href);
 
 const MOODS = [
-  { id: "light-delicate", label: "Light & delicate", hint: "Gentle, easy-drinking pours", test: ({ profile }) => profile.body <= 2.5 && profile.smoke <= 1.5 },
-  { id: "big-rich", label: "Big & rich", hint: "Full, powerful and sherry-driven", test: ({ profile }) => profile.body >= 4 && profile.oak >= 3.5 && profile.fruit >= 3 },
-  { id: "smoky-briny", label: "Smoky & briny", hint: "Peat smoke, sea spray and bonfires", test: ({ profile }) => profile.smoke >= 3.5 },
-  { id: "sweet-sherried", label: "Sweet & sherried", hint: "Dried fruit, honey and chocolate", test: ({ profile }) => profile.sweetness >= 3 && profile.fruit >= 3 },
-  { id: "spicy-bold", label: "Spicy & bold", hint: "Rye kick, oak spice and heat", test: ({ profile }) => profile.spice >= 3.5 && profile.body >= 3 },
-  { id: "something-unusual", label: "Something unusual", hint: "Signature styles and emerging regions", test: ({ style, region }) => Boolean(style.regionalSignature) || (region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag)) }
+  { id: "light-delicate", label: "Light & delicate", hint: "Soft, sippable and gentle", test: ({ profile }) => profile.body <= 2.5 && profile.smoke <= 1.5 },
+  { id: "big-rich", label: "Big & rich", hint: "Dried fruit, chocolate and weight", test: ({ profile }) => profile.body >= 4 && profile.oak >= 3.5 && profile.fruit >= 3 },
+  { id: "smoky-briny", label: "Smoky & briny", hint: "Bonfires, iodine and sea air", test: ({ profile }) => profile.smoke >= 3.5 },
+  { id: "sweet-sherried", label: "Sweet & sherried", hint: "Honey, raisins and cocoa", test: ({ profile }) => profile.sweetness >= 3 && profile.fruit >= 3 },
+  { id: "spicy-bold", label: "Spicy & bold", hint: "Pepper, rye bite and warmth", test: ({ profile }) => profile.spice >= 3.5 && profile.body >= 3 },
+  { id: "something-unusual", label: "Something unusual", hint: "Off the beaten path: India, Taiwan, England", test: ({ style, region }) => Boolean(style.regionalSignature) || (region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag)) }
 ];
 
 const NOTE_ICONS = {
@@ -336,11 +336,20 @@ function profileDistance(a, b) {
 }
 
 function similarReason(source, candidate) {
-  const close = METRICS.map(metric => ({ label: metric.label, diff: Math.abs(source[metric.key] - candidate[metric.key]) }))
-    .sort((a, b) => a.diff - b.diff)
-    .slice(0, 3)
-    .map(item => item.label.toLowerCase());
-  return `Closest on ${close.join(", ")}.`;
+  const diffs = METRICS.map(metric => ({ key: metric.key, diff: Math.abs(source[metric.key] - candidate[metric.key]) }))
+    .sort((a, b) => a.diff - b.diff);
+  const AROMATIC_ORDER = ["smoke", "fruit", "oak", "sweetness", "spice", "finish", "body", "heat"];
+  const shared = diffs.filter(item => item.key !== "heat" && item.diff <= 1 && source[item.key] >= 3 && candidate[item.key] >= 3)
+    .sort((a, b) => AROMATIC_ORDER.indexOf(a.key) - AROMATIC_ORDER.indexOf(b.key)).slice(0, 2)
+    .map(item => WhiskeyModel.flavorPhrase(item.key, "shared"));
+  const biggest = diffs[diffs.length - 1];
+  const contrast = biggest && biggest.diff >= 1.5
+    ? `expect it ${WhiskeyModel.flavorPhrase(biggest.key, candidate[biggest.key] > source[biggest.key] ? "high" : "low")}`
+    : null;
+  if (shared.length && contrast) return `Tastes similar — both ${shared.join(" and ")} — but ${contrast}.`;
+  if (shared.length) return `Tastes similar: both are ${shared.join(" and ")}.`;
+  if (contrast) return `A different pour: ${contrast}.`;
+  return "A different pour entirely — useful when you want a change of pace.";
 }
 
 function renderSimilar(current) {
@@ -405,7 +414,7 @@ function renderBiggestDifferences(selections) {
   }
   rows.sort((a, b) => b.spread - a.spread);
   if (!rows.length) return "";
-  return `<section class="differences" aria-labelledby="diffHeading"><h3 id="diffHeading">Biggest differences</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${escapeHtml(row.metric.high)}</span><span class="diff-text">${escapeHtml(row.high.item.region.name)} vs ${escapeHtml(row.low.item.region.name)} — ${escapeHtml(row.high.item.region.name)} trends ${escapeHtml(row.metric.high.toLowerCase())}, while ${escapeHtml(row.low.item.region.name)} trends ${escapeHtml(row.metric.low.toLowerCase())}.</span></div>`).join("")}</section>`;
+  return `<section class="differences" aria-labelledby="diffHeading"><h3 id="diffHeading">What sets them apart</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${escapeHtml(row.metric.label)}</span><span class="diff-text">${escapeHtml(row.high.item.region.name)} pours ${escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${escapeHtml(row.low.item.region.name)} is ${escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>`;
 }
 
 function resetCompare() {

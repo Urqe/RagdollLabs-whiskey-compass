@@ -13,18 +13,24 @@ function smartDistance(a, b) {
 }
 
 function smartCompatibilityKey(item) { return WhiskeyModel.compareGroup(item); }
+function itemRegionFlavor(item) {
+  if (!item) return "elsewhere";
+  return item.region.name === "Islay" ? "with more sea and smoke" : `from ${item.region.name}`;
+}
 function smartAppearance(item) { return WhiskeyModel.cue(item); }
 
 function smartIsDiscovery(item) {
   return Boolean(item.style.regionalSignature) || (item.region.badges || []).some(tag => ["Discovery", "Emerging region"].includes(tag));
 }
 
-function smartClosestMetrics(a, b) {
-  return SMART_METRICS.map(key => ({ key, diff: Math.abs((a.profile[key] || 0) - (b.profile[key] || 0)) }))
-    .sort((x, y) => x.diff - y.diff)
-    .slice(0, 3)
-    .map(({ key }) => WhiskeyModel.metrics.find(metric => metric.key === key)?.label || key)
-    .join(", ");
+function smartFlavorBridge(current, candidate) {
+  // Shared traits must be pronounced in both pours (score >= 3), not merely absent.
+  const AROMATIC_ORDER = ["smoke", "fruit", "oak", "sweetness", "spice", "finish", "body", "heat"];
+  const pronounced = SMART_METRICS.filter(key => key !== "heat" && (current.profile[key] || 0) >= 3 && (candidate.profile[key] || 0) >= 3)
+    .sort((x, y) => AROMATIC_ORDER.indexOf(x) - AROMATIC_ORDER.indexOf(y));
+  const shared = pronounced.slice(0, 2).map(key => WhiskeyModel.flavorPhrase(key, "shared")).join(" and ");
+  if (shared) return `Tastes similar: both are ${shared}.`;
+  return "A different flavor journey — worth a detour if you're curious.";
 }
 
 function smartPick(candidates, used, predicate, score = item => item.distance) {
@@ -48,12 +54,13 @@ function smartRecommendations(current) {
   };
 
   const sameStyle = smartPick(compatible, used, item => item.styleId === current.styleId);
-  add(sameStyle, "same-style", "Same style, different place", "See how the same style changes with region, climate and local practice.");
+  if (sameStyle) {
+    add(sameStyle, "same-style", "Same style, different place", `Same kind of whiskey, but ${itemRegionFlavor(sameStyle)} — taste how the place changes it.`);
+  }
 
   const sameFamily = smartPick(compatible, used, item => item.styleId !== current.styleId);
   if (sameFamily) {
-    const groupLabel = WhiskeyModel.compareGroupLabel(current);
-    add(sameFamily, "same-group", "Different style, same comparison group", `A different style within ${groupLabel}; metrics stay meaningfully comparable.`);
+    add(sameFamily, "same-group", "A different angle on the same family", `If you like this, you'll likely enjoy its ${sameFamily.style.name.toLowerCase()} cousin — ${smartFlavorBridge(current, sameFamily)}`);
   }
 
   const adventurous = smartPick(
@@ -62,12 +69,14 @@ function smartRecommendations(current) {
     item => smartIsDiscovery(item) && item.styleId !== current.styleId,
     item => item.distance - (item.style.regionalSignature ? 0.35 : 0) - ((item.region.badges || []).includes("Emerging region") ? 0.2 : 0)
   );
-  add(adventurous, "adventurous", "Something more adventurous", "A discovery-region or regionalSignature-style profile that stays within a meaningful comparison context.");
+  if (adventurous) {
+    add(adventurous, "adventurous", "Something more adventurous", `From ${adventurous.region.name} — an emerging region doing things differently. ${smartFlavorBridge(current, adventurous)}`);
+  }
 
   while (picks.length < 3) {
     const fallback = smartPick(compatible, used, () => true);
     if (!fallback) break;
-    add(fallback, "similar-structure", "Similar structure", `Close on ${smartClosestMetrics(current, fallback)}.`);
+    add(fallback, "similar-flavor", "Similar flavours", smartFlavorBridge(current, fallback));
   }
 
   return picks.slice(0, 3);

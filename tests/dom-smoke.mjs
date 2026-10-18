@@ -211,5 +211,19 @@ assert.ok([...document.querySelectorAll("#specialStyle dt")].some(dt => dt.textC
 assert.ok(document.getElementById("specialStyle").textContent.includes("Yamazaki"),
   "Japan's peating row must name the house styles");
 
+// --- Discovery language: flavor explanations, not technical jargon ---
+window.WhiskeyCompass.selectProfile("bourbon", "kentucky");
+await settle();
+const bourbonReasons = [...document.querySelectorAll("#similarProfiles .similar-reason")].map(n => n.textContent);
+assert.ok(bourbonReasons.length > 0);
+assert.ok(bourbonReasons.every(reason => !/regionalSignature|comparison group|meaningfully comparable|Closest on/i.test(reason)),
+  "recommendations must not use technical comparison vocabulary");
+assert.ok(bourbonReasons.every(reason => !/both are smoky/i.test(reason)),
+  "bourbon recommendations must not claim smokiness as a shared trait");
+// Compare differences speak flavor language.
+window.WhiskeyCompass.setMode("compare");
+await settle();
+assert.ok(!document.body.textContent.includes("trends"), "difference sentences must use flavor language");
+
 console.log("OK: Whiskey Compass DOM smoke tests passed");
 await close();

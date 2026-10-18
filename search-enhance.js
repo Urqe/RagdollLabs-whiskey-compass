@@ -35,7 +35,7 @@ async function renderEnhancedAtlasSearch() {
   if (aliasKnown || matches[0]?.pairingScore > 0) {
     const label = document.createElement("div");
     label.className = "search-empty";
-    label.textContent = `Best pairing matches for “${rawQuery}”`;
+    label.textContent = `Pairs well with “${rawQuery}”`;
     container.appendChild(label);
   }
 
@@ -43,7 +43,7 @@ async function renderEnhancedAtlasSearch() {
   if (searchContext) {
     const context = document.createElement("div");
     context.className = "search-empty";
-    context.textContent = `Showing ${searchContext}`;
+    context.textContent = `Narrowed to ${searchContext}`;
     container.append(context);
   }
   FoodDiscovery.appendGuidance(container, foodQuery);

@@ -188,11 +188,11 @@ function advancedRender() {
   if (!message || !grid || !differences || !hint) return;
 
   if (!selections.length) {
-    message.textContent = "Choose a whiskey in slot 1. The next slots will automatically offer compatible comparisons.";
+    message.textContent = "Pick a whiskey to start. The next slots will fill with whiskeys you can meaningfully compare it to."
     message.classList.remove("hidden");
     grid.replaceChildren();
     differences.replaceChildren();
-    hint.textContent = "Comparisons stay within the same whiskey style family, so differences are meaningful.";
+    hint.textContent = "You can compare whiskeys from the same family side by side — the differences you see are about the whiskey, not apples vs oranges."
     return;
   }
 
@@ -210,7 +210,7 @@ function advancedRender() {
   }).join("");
 
   if (rows.length) {
-    differences.innerHTML = `<section class="differences" aria-labelledby="advancedDiffHeading"><h3 id="advancedDiffHeading">Biggest differences</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${WhiskeyCompass.escapeHtml(row.metric.label)}</span><span class="diff-text">${WhiskeyCompass.escapeHtml(advancedShortName(row.high.item))} is ${WhiskeyCompass.escapeHtml(row.metric.high)}, while ${WhiskeyCompass.escapeHtml(advancedShortName(row.low.item))} is ${WhiskeyCompass.escapeHtml(row.metric.low)}.</span></div>`).join("")}</section>${advancedProductionContext(selections)}`;
+    differences.innerHTML = `<section class="differences" aria-labelledby="advancedDiffHeading"><h3 id="advancedDiffHeading">What sets them apart</h3>${rows.slice(0, 4).map(row => `<div class="diff-row"><span class="diff-metric">${WhiskeyCompass.escapeHtml(row.metric.label)}</span><span class="diff-text">${WhiskeyCompass.escapeHtml(advancedShortName(row.high.item))} pours ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "high"))}; ${WhiskeyCompass.escapeHtml(advancedShortName(row.low.item))} is ${WhiskeyCompass.escapeHtml(WhiskeyModel.flavorPhrase(row.metric.key, "low"))}.</span></div>`).join("")}</section>${advancedProductionContext(selections)}`;
   } else if (selections.length >= 2) {
     differences.innerHTML = `<p class="small">These selections are unusually close on the atlas metrics.</p>${advancedProductionContext(selections)}`;
   } else {
@@ -248,7 +248,7 @@ function advancedInjectUi() {
     <label for="advancedCompare1">Whiskey 1</label><div class="advanced-slot"><select id="advancedCompare1"></select><button type="button" class="advanced-slot-remove" data-slot="1" aria-label="Remove Whiskey 1" hidden>Remove</button></div>
     <label for="advancedCompare2">Whiskey 2</label><div class="advanced-slot"><select id="advancedCompare2" disabled></select><button type="button" class="advanced-slot-remove" data-slot="2" aria-label="Remove Whiskey 2" hidden>Remove</button></div>
     <label for="advancedCompare3">Whiskey 3</label><div class="advanced-slot"><select id="advancedCompare3" disabled></select><button type="button" class="advanced-slot-remove" data-slot="3" aria-label="Remove Whiskey 3" hidden>Remove</button></div>
-    <label class="advanced-check"><input id="advancedBiggestOnly" type="checkbox"> Show only the biggest differences</label>
+    <label class="advanced-check"><input id="advancedBiggestOnly" type="checkbox"> Show only what sets them apart</label>
     <p id="advancedCompareHint" class="small" role="status" aria-live="polite"></p>`;
   controls.insertBefore(panel, document.getElementById("compareHint"));
 
