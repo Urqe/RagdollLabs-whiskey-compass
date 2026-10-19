@@ -1,4 +1,10 @@
-# Next release plan: Navigation & Reliability
+# Release plan
+
+Release order:
+1. **Navigation & Reliability** — maintenance release (R1–R10).
+2. **Content Accuracy & Source Traceability** — following release (C1–C11).
+
+# Maintenance release: Navigation & Reliability
 
 Status: planned  
 Plan date: 2026-10-19  
@@ -200,3 +206,159 @@ Do not replace the current `announce()` timing technique solely on the assumptio
 At the review baseline, syntax, CSS integrity, data validation, hardening, and validator-integrity checks passed. Standard validation failed at the ranking-dependent Islay assertion. The remaining smoke tests passed when that obsolete assertion block was excluded in memory for diagnosis; this was not a fix.
 
 Navigation and focus findings were reproduced through DOM execution. Native Safari layout, touch behavior, and screen-reader behavior still require the manual checks above. No GitHub Actions workflow was present in the reviewed snapshot, so the known failure is local validation rather than a verified CI run failure.
+
+## Following release — Content Accuracy & Source Traceability
+
+Status: planned; follows the Navigation & Reliability maintenance release.  
+Content review date: 2026-10-19  
+Content baseline: `8eb54103d668a0d658a9d281af995d39496b556d` (the subsequent release-plan commit did not change data).
+
+### Goal and sequencing
+
+Ship the maintenance release and complete its release gate first. Then correct factual content, distinguish editorial tasting guidance from established facts, and make supporting sources accessible. These items record review findings and planned verification; they do not imply that content fixes have already shipped. No ranking redesign is required, but corrected category assignments must remain consistent with recommendations and comparison.
+
+### C1. Correct Classic Laddie barley provenance
+
+File: `data/regions-classics-scotland.json`
+
+The bottle note describes Classic Laddie as "Certified unpeated Islay barley". The producer identifies Scottish-grown barley; Islay Barley is a distinct expression.
+
+- [ ] Replace the unsupported Islay-grown/certification claim with expression-specific, producer-supported wording.
+- [ ] Verify the precise expression and market/version being described before changing age or cask details.
+
+Acceptance: Classic Laddie and Islay Barley are not conflated, and provenance wording links to the relevant [producer page](https://uk.bruichladdich.com/products/bruichladdich-the-classic-laddie).
+
+### C2. Correct the Japanese whisky standard
+
+File: `data/glossary.json`
+
+The definition requires raw materials to be malted in Japan. The JSLMA standard requires saccharification, fermentation, and distillation in Japan; it does not require Japanese malting or Japanese-grown grain.
+
+- [ ] Correct the production-location requirement.
+- [ ] Describe the standard's scope accurately and avoid presenting an industry labeling standard as a universal statutory definition.
+- [ ] Check any summarized maturation, bottling, water, and strength requirements against the standard.
+
+Acceptance: The definition follows the [JSLMA English standard](https://www.yoshu.or.jp/files/libs/552/202303291555304944.pdf) and does not imply imported malt is prohibited.
+
+### C3. Verify Rampur Double Cask maturation terminology
+
+File: `data/regions-discovery.json`
+
+The app calls Double Cask sherry-finished. The producer describes a marriage of American bourbon barrels and European oak sherry casks, while separately describing finishing for other expressions.
+
+- [ ] Replace the unsupported sequential finishing description with the producer's supported maturation description, unless expression-specific evidence establishes a finish.
+- [ ] Check all related style, effect, and bottle notes for consistent expression names and cask terminology.
+
+Acceptance: Double Cask is not conflated with PX Sherry or other finished Rampur expressions. Use the [producer's Double Cask page](https://rampursinglemalt.com/double-cask/).
+
+### C4. Clarify first-fill terminology
+
+File: `data/taste-basics.json`
+
+"Used for whisky for the first time" is misleading for a first-fill Scotch cask that previously held bourbon, which is itself whiskey.
+
+- [ ] Explain first-fill in its Scotch context as the first Scotch filling after the previous contents.
+- [ ] Distinguish first-fill, refill, and virgin oak.
+
+Acceptance: The explanation accommodates ex-bourbon first-fill casks without contradiction. Supporting reference: [The Glenlivet's cask guide](https://www.theglenlivet.com/en/our-community/articles/used-casks-in-whisky/).
+
+### C5. Correct sour-mash backset provenance
+
+File: `data/glossary.json`
+
+The definition places the reused acidic material at the previous fermentation stage. Backset is liquid remaining after distillation.
+
+- [ ] Correct the process description and review any linked explanation for the same error.
+
+Acceptance: The glossary correctly identifies post-distillation backset, consistent with [Heaven Hill's distillery explanation](https://heavenhilldistillery.com/bernheim-distillery-3d-tour/).
+
+### C6. Correct and qualify Speyside cask generalizations
+
+File: `data/regions-classics-scotland.json`
+
+The Benromach profile's method omits sherry casks, although the producer specifies first-fill bourbon and sherry maturation. The broader unpeated Speyside description says mostly refill ex-bourbon without establishing that claim for its examples; Glenfiddich 12 uses bourbon and Oloroso sherry casks.
+
+- [ ] Correct Benromach's maturation description.
+- [ ] Qualify broad regional cask statements and ensure examples do not silently contradict them.
+- [ ] Review bottle notes and style summaries together.
+
+Acceptance: Cask claims align with [Benromach 10](https://www.benromach.com/whisky/aged-10-years) and [Glenfiddich 12](https://shop.us.glenfiddich.com/products/glenfiddich-12-year-old); regional tendencies are clearly presented as tendencies.
+
+### C7. Resolve category/example contradictions
+
+Files: `data/regions-world.json`, `data/regions-discovery.json`, affected model/rendering code if needed
+
+Lot No. 40 is presented under a Canadian blended profile even though its own note says it is not a blend. Sweden's single lightly peated profile includes unpeated Älv, lightly peated Hav, and peated Timmer.
+
+- [ ] Choose suitable profiles or explicitly model bottle-specific exceptions instead of assigning all examples the same categorical claims.
+- [ ] Audit smoke explanations and comparisons affected by these assignments.
+- [ ] Preserve valid profile references if entries move.
+
+Acceptance: Canadian blending and Swedish peat claims match the specific expressions; no explanation infers peat merely from geography or from an unsuitable shared profile. References: [Lot No. 40 producer](https://www.pernod-ricard.com/en/brands/lot-no-40), [Timmer](https://www.highcoastwhisky.se/en/products/timmer), and [Älv](https://www.highcoastwhisky.se/en/products/alv).
+
+### C8. Rework unsupported maturity claims
+
+File: `data/maturity.json`
+
+Precise age brackets and causal statements currently lack sources. Examples include oak receding in Japanese whisky at 18+ years and pot-still whisky gaining sherry depth with age. NAS also does not establish that a whisky is young.
+
+- [ ] Audit every age bracket and maturation claim.
+- [ ] Remove unsupported precision or clearly label illustrative editorial guidance.
+- [ ] Distinguish age effects from cask selection, climate, blending, and expression-specific recipes.
+- [ ] Do not use NAS as evidence of youth.
+- [ ] Add sources for factual maturation claims.
+
+Acceptance: Age alone does not promise a flavor or sherry influence; illustrative brackets are not presented as universal thresholds, and supported facts have accessible references.
+
+### C9. Qualify coastal maturation explanations
+
+Files: regional JSON data, especially `data/regions-classics-scotland.json`
+
+Claims that coastal maturation adds salinity or that Skye's exposed maturation intensifies pepper and smoke are stronger than the available evidence. Coastal tasting descriptors do not by themselves establish that mechanism.
+
+- [ ] Audit geographic flavor-causation claims throughout the data.
+- [ ] Retain useful sensory descriptions while removing or qualifying unsupported causal explanations.
+- [ ] Attribute producer interpretations where appropriate and acknowledge uncertainty when evidence conflicts.
+
+Acceptance: Salty, maritime, and peppery tasting notes are distinguished from demonstrated causes. Evaluate conflicting claims rather than treating marketing copy as proof; see the [SMWS discussion of coastal salinity](https://www.smws.ch/en/oily-coastal/).
+
+### C10. Update or explicitly date Glenmorangie Original references
+
+File: `data/regions-classics-scotland.json`
+
+The current-looking example names The Original 10; the flagship changed to 12 years in 2024. The historical 10-year expression remains a valid reference if identified as such.
+
+- [ ] Choose whether the example represents the current flagship or the historical bottling.
+- [ ] Update its age, name, notes, and source consistently, or mark it as historical.
+- [ ] Check other named expressions for similar version drift.
+
+Acceptance: Readers can identify the intended bottling. Current reference: [Glenmorangie The Original 12](https://www.glenmorangie.com/products/the-original-12-years-old).
+
+### C11. Improve source coverage and visibility
+
+Files: `data/sources.json`, `data/production.json`, `data/maturity.json`, `data/glossary.json`, `data/taste-basics.json`, relevant learning and enrichment renderers
+
+At review, 28 of 73 source records pointed to root homepages. Production content relied on a broad SWA reference, maturity had no sources, and some guide/glossary source IDs were not displayed to readers. A real organization or homepage does not establish every nearby claim.
+
+- [ ] Replace generic homepage references with specific supporting pages where available.
+- [ ] Map factual claims to sources at a useful content-unit level.
+- [ ] Display references in learning and enrichment sections, not only profile sources.
+- [ ] Prefer producers for expression details and standards bodies for definitions; use appropriate technical evidence for causal claims.
+- [ ] Label subjective tasting scores and editorial guidance clearly.
+- [ ] Record verification dates for changeable expression details.
+- [ ] Preserve strict outbound URL validation.
+
+Acceptance: Readers can reach evidence for factual claims from the relevant content; references support the actual wording, and unsupported claims are qualified or removed.
+
+### Content release gate
+
+- [ ] Resolve C1–C11 and review the final wording against the cited sources.
+- [ ] Recheck sources at implementation time; product pages and expression versions can change.
+- [ ] Run `npm run validate` successfully after data and rendering changes.
+- [ ] Add focused regression coverage where category/model behavior or source rendering changes.
+- [ ] Check that moved profiles preserve navigation, recommendations, comparisons, and featured cards.
+- [ ] Manually verify reference visibility and usable links on mobile and desktop.
+- [ ] Confirm editorial tasting judgments are distinguishable from legal definitions, production facts, and causal explanations.
+- [ ] Publish release notes identifying factual corrections and any changes to profile categorization.
+
+Review limit: This is a targeted content audit, not certification of every whiskey claim. Unsupported claims are not automatically false, and tasting descriptors remain partly subjective.
