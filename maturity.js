@@ -24,16 +24,17 @@ function signalMaturityRendered(profile, visible) {
 
 async function renderMaturity(profile) {
   const section = document.getElementById("maturity");
+  const wrapper = document.getElementById("ageingLearning");
   const stagesTarget = document.getElementById("maturityStages");
   const summaryTarget = document.getElementById("maturitySummary");
   const variationTarget = document.getElementById("variationNote");
-  if (!section || !stagesTarget || !summaryTarget || !variationTarget || !profile) return;
+  if (!section || !wrapper || !stagesTarget || !summaryTarget || !variationTarget || !profile) return;
 
   const data = await loadMaturity();
   if (maturityProfile !== profile) return;
   const entry = data?.[profile.regionId]?.[profile.styleId];
   if (!entry) {
-    section.classList.add("hidden");
+    wrapper.classList.add("hidden");
     stagesTarget.replaceChildren();
     summaryTarget.textContent = "";
     variationTarget.textContent = "";
@@ -41,6 +42,7 @@ async function renderMaturity(profile) {
     return;
   }
 
+  wrapper.classList.remove("hidden");
   summaryTarget.textContent = entry.summary;
   stagesTarget.replaceChildren();
   for (const stage of entry.stages || []) {
@@ -54,7 +56,6 @@ async function renderMaturity(profile) {
     stagesTarget.appendChild(article);
   }
   variationTarget.textContent = entry.vintage;
-  section.classList.remove("hidden");
   signalMaturityRendered(profile, true);
 }
 
@@ -69,5 +70,5 @@ document.addEventListener("whiskeycompass:profile-selected", event => {
 
 document.addEventListener("whiskeycompass:selection-needed", () => {
   maturityProfile = null;
-  document.getElementById("maturity")?.classList.add("hidden");
+  document.getElementById("ageingLearning")?.classList.add("hidden");
 });

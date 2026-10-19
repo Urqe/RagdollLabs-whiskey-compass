@@ -127,7 +127,7 @@ assert.ok(document.querySelectorAll("#productionChoices .production-choice").len
 
 window.WhiskeyCompass.selectProfile("sherry-malt", "speyside");
 await settle();
-assert.equal(document.getElementById("maturity").classList.contains("hidden"), false);
+assert.equal(document.getElementById("ageingLearning").classList.contains("hidden"), false);
 assert.equal(document.querySelectorAll("#maturityStages .maturity-stage").length, 3);
 
 // Bottle rendering on profiles.
