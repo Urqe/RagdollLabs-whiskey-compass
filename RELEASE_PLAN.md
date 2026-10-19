@@ -3,6 +3,7 @@
 Release order:
 1. **Navigation & Reliability** — maintenance release (R1–R10).
 2. **Content Accuracy & Source Traceability** — following release (C1–C11).
+3. **Bottle Discovery & Coverage** — wider catalogue, search, and sourced expression notes (B1–B6).
 
 # Maintenance release: Navigation & Reliability
 
@@ -362,3 +363,114 @@ Acceptance: Readers can reach evidence for factual claims from the relevant cont
 - [ ] Publish release notes identifying factual corrections and any changes to profile categorization.
 
 Review limit: This is a targeted content audit, not certification of every whiskey claim. Unsupported claims are not automatically false, and tasting descriptors remain partly subjective.
+
+## Third release — Bottle Discovery & Coverage
+
+Status: planned; follows Content Accuracy & Source Traceability.  
+Plan date: 2026-10-19
+
+### Goal and scope
+
+Help visitors find bottles they already know, understand how those expressions relate to the app's style profiles, and discover relevant alternatives. Expand the catalogue incrementally with sourced records. Complete the preceding releases' gates first and reuse their corrected profiles, source presentation, and navigation behavior.
+
+### B1. Separate brands from bottle expressions
+
+- [ ] Introduce stable brand and expression identities in static data, reusing the existing source registry.
+- [ ] Store expression names, brand references, search aliases, relevant bottling/version details, source references, verification dates, and explicit profile coverage.
+- [ ] Keep brand descriptions about the producer's range; attach flavor distinctions to individual expressions.
+- [ ] Migrate existing notable bottles into the shared catalogue without duplicate records or losing curated placement.
+- [ ] Define a manageable initial catalogue and expand only as entries meet the editorial requirements below.
+
+Acceptance: Searching a brand can reveal its individual expressions without assigning the brand a single flavor profile. Existing notable bottles remain accessible, and catalogue entries have unique identities and valid references.
+
+### B2. Extend search to the wider catalogue
+
+- [ ] Match brand names, expression names, aliases, and curated common spelling variants.
+- [ ] Normalize case, accents, and punctuation while preserving proper display names.
+- [ ] Present the matched bottle explicitly, with enough information to distinguish similar names or versions.
+- [ ] Link covered expressions to the relevant profile and keep the matched bottle identifiable when navigating there.
+- [ ] Keep exact expression matches prominent, deduplicate results, and retain existing region/style search.
+- [ ] Make empty results and unsupported-profile results understandable.
+
+Acceptance: Exact names, brand queries, and representative aliases find the intended entries on mobile and desktop. A bottle match does not silently become a claim that its flavor exactly matches the profile.
+
+### B3. Add discreet catalogue browsing
+
+- [ ] Keep the curated notable bottles visible by default.
+- [ ] Add a small "See more bottles" control beneath them, revealing an alphabetical list of additional expressions relevant to that profile.
+- [ ] Provide a separate "Browse all brands" entry to an alphabetical brand directory, with access to each brand's expressions.
+- [ ] Use semantic buttons for disclosure and links for navigation; expose expanded state and preserve keyboard focus.
+- [ ] Keep the directory usable on iPhone/iPad and desktop without overwhelming the profile page.
+- [ ] If browsing creates a separate view, integrate it with the existing route/history model and restore useful context when returning.
+
+Acceptance: The contextual list stays relevant to its profile; the brand directory exposes the broader catalogue. Touch, keyboard, and screen-reader users can open, browse, and leave either surface predictably.
+
+### B4. Add optional expression-to-profile notes
+
+- [ ] Store one short, curated sentence describing a meaningful fit or difference beneath each expression where evidence supports it.
+- [ ] Tie each comparative note to its specific profile so that reassignment or profile changes trigger editorial review.
+- [ ] Prefer wording such as "Less smoky than this profile suggests; more fruit-forward" over an undefined "less smoky than typical".
+- [ ] Label these comparisons as editorial interpretations supported by linked reviews.
+- [ ] Omit a note when there is no useful, defensible distinction; do not force every bottle to have one.
+- [ ] Do not generate notes from review scores or infer bottle-level flavor measurements from profile scores.
+- [ ] Keep supporting references accessible without making the short note visually intrusive.
+
+Illustrative wording only, not claims about named bottles:
+- "Less smoky than this profile suggests; more fruit-forward."
+- "A richer, more sherry-led example of this style."
+- "Close to the profile, with a lighter body and shorter finish."
+
+Acceptance: Each published comparison has relevant supporting evidence and an identifiable comparison profile. Readers can distinguish bottle facts, reviewer impressions, and the app's editorial interpretation. Brand-level text does not imply that all expressions taste alike.
+
+### B5. Apply a claim-specific sourcing policy
+
+Use the source suited to the claim:
+
+| Claim | Preferred evidence |
+| --- | --- |
+| Age, ABV, ingredients, casks, origin | Producer documentation for the exact expression/version |
+| Labeling definitions | Applicable standards body or regulator |
+| Smoke, sweetness, body, finish | Established reviewers; preferably two independent accounts |
+| Difference from an app profile | Editorial synthesis of relevant reviews against the defined profile |
+| Production method causing a flavor | Appropriate technical evidence beyond tasting impressions |
+
+- [ ] Assess reviewers by named authorship, transparent tasting methods, sample/commercial disclosures, expression identification, and useful publication dates.
+- [ ] Treat Whisky Magazine, Whisky Advocate, and Whiskyfun as starting candidates, not automatic approval of every claim on their sites.
+- [ ] Prefer agreement between independent reviews for comparative notes; duplicated producer copy does not count as independent corroboration.
+- [ ] Retain review links, author/publication details where available, review dates, verification dates, and relevant bottling/version information.
+- [ ] Separate a source's observations from the app's inference: "gentle smoke" alone does not establish "less smoky than typical".
+- [ ] Qualify, attribute, or omit conclusions when reliable accounts conflict or evidence is thin.
+- [ ] Summarize in original wording and link to the specific supporting review.
+- [ ] Keep ratings out of flavor measurements; an overall quality score does not measure sweetness, smoke, or body.
+- [ ] Recheck notes when expressions, bottlings, or the underlying profile change.
+
+Methodology references to verify during implementation:
+- [Whisky Magazine blind tasting overview](https://www.whiskymag.com/articles/the-top-rated-whiskies-from-whisky-magazine-issue-205/)
+- [Whisky Advocate Buying Guide methodology, Winter 2025](https://mydigitalpublication.com/publication/?article_id=5090207&i=858619&view=articleBrowser)
+- [Whiskyfun tasting FAQ](https://www.whiskyfun.com/faq.html)
+- [Whiskyfun disclosures](https://www.whiskyfun.com/FTC-disclosure.html)
+
+Acceptance: References substantiate the exact published wording and match the expression being described. Subjective impressions remain visibly distinct from established production facts.
+
+### B6. Make coverage gaps explicit and actionable
+
+- [ ] Allow sourced catalogue entries without a suitable existing profile.
+- [ ] Show basic expression information and "Profile not yet covered" for those entries.
+- [ ] Do not force unmatched expressions into a nearby geographic/style profile or give them inherited comparison scores.
+- [ ] Build a documented backlog from catalogue entries lacking suitable coverage, recording the missing style/region and supporting evidence.
+- [ ] Prioritize later profile additions by meaningful flavor or production distinctions and usefulness for discovery.
+- [ ] Keep future region/style expansion as a separately scoped release; a longer directory alone is not evidence that the model needs more profiles.
+
+Acceptance: Uncovered expressions remain searchable without misleading recommendations or broken links. The backlog explains what is missing and why an addition would improve the app.
+
+### Bottle discovery release gate
+
+- [ ] Validate brand/expression uniqueness, aliases, source references, profile references, and explicit uncovered states.
+- [ ] Run `npm run validate` and add focused search, disclosure, navigation, and coverage regression checks.
+- [ ] Verify representative exact names, brand searches, spelling variants, accented names, and duplicate-name/version cases.
+- [ ] Verify unsupported entries never inherit an unsuitable profile or its scores.
+- [ ] Review every new factual claim and comparative note against its expression-specific evidence.
+- [ ] Check mobile Safari, desktop keyboard/mouse, focus restoration, and screen-reader disclosure behavior.
+- [ ] Measure search responsiveness and initial loading with the expanded catalogue; retain static deployment.
+- [ ] Confirm existing curated examples, profile browsing, recommendations, and Compare still work.
+- [ ] Publish the catalogue scope and any known coverage gaps without implying an exhaustive directory.
